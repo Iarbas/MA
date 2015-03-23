@@ -1,6 +1,4 @@
 \contentsline {chapter}{Abbildungsverzeichnis}{II}{chapter*.3}
 \contentsline {chapter}{Abk\IeC {\"u}rzungsverzeichnis}{III}{chapter*.4}
 \contentsline {chapter}{\numberline {1}Einleitung}{1}{chapter.1}
-\contentsline {section}{\numberline {1.1}Entwicklungsgeschichte}{1}{section.1.1}
-\contentsline {section}{\numberline {1.2}Aufbau und Funktionsweise von Beacons}{1}{section.1.2}
-\contentsline {chapter}{Literaturverzeichnis}{2}{figure.caption.7}
+\contentsline {chapter}{Literaturverzeichnis}{2}{figure.caption.5}

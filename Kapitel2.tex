@@ -1,13 +1,90 @@
-\chapter{Modellierung}
-Hier steht dann Kapitel 2.
+\chapter{Stand der Technik - Einführung in die Beacon-Technologie}
 
-\section{Technische/Physiklische Vorgänge}
-Vielleicht kann man hier auch schon abstrakte Modelle von Signalausdehnung (z.B. Extended Hata Modell - siehe ), Reflektion und Absorbtion annehmen. Für die Erklärung im zweiten Kapitel benötige ich auch die Störung und Interferenzen gleicher Signale. Ich muss ja schließlich erklären, warum ich nicht viele viele iBeacons nebeneinander klatschen kann, um eine möglichst genaue Standortbestimmung zu erhalten (denn die Signale stören sich untereinander).  Desweiteren der Smartphone-Aufbau (hier eingehen auf die Antenne vom Smartphone), iBeacon-Aufbau und Funktionsweise und schlussendlich auch den MIRA-Roboter und den Youbot ein wenig erklären.// //
+\section{Entwicklungsgeschichte}
+Der Grundstein für die Beacon-Technologie legte die Firma Nokia im Jahre 2006. Damals entwickelte die Firma den neuen Standard \textit{Wibree} für die Funkübertragung,
+\begin{wrapfigure}{r}{5.3cm}
+\centering
+\includegraphics[scale=0.07]{Bilder/BLE.png} 
+\caption{Offizielles Bluetooth Smart Logo \cite{BLElogo}}
+\label{BLElogo}
+\end{wrapfigure} der den alten Bluetooth-Standard ersetzen sollte. Mit der Neuentwicklung versprach man sich im Gegensatz zu Bluetooth einen geringeren Stromverbrauch und geringere Kosten, bei einem gleichbleibenden Kommunikationsbereich. Ab dem Jahr 2009 wurde der Bluetooth-Standard um Wibree ergänzt, unter dem Namen \textit{Bluetooth Low Energy (BLE)} darin aufgenommen \cite{Wib2BLE} und anschließend unter \textit{Bluetooth Smart} vermarktet.
 
-Erklärung für die Wahl des Parcours. Hier könnte dann drinne stehen, warum ich welche Situation erstellt habe. Mir ist z.B. aufgefallen, dass die Beacons sich gegenseitig in der Sendestärke beeinflussen. Deswegen musste ich Einzelmessungen vornehmen und hier ließe sich auch begründen nicht zu viele Beacons in der realen Anwendung zu plazieren, um durch Elektrosmog nicht zu viele Einflussfaktoren in die Lokalisierung miteinfließen zu lassen. Viel hilft hier nicht immer viel, weniger ist manchmal besser, etc.
+\vspace{2\baselineskip}
 
-Zuerst werde ich erklären, wie ich die Einzelmessungen und 
+\begin{wrapfigure}{l}{4cm}
+\centering
+\includegraphics[scale=0.5]{Bilder/iBeaconLogo.png} 
+\caption{Offizielles iBeacon Logo \cite{iLogo}}
+\label{iLogo}
+\end{wrapfigure} Die Idee der Nutzung von Bluetooth Low Energy zur Indoor-Lokalisierung stammt dabei von der Firma Apple Inc. und wurde von ihr im Jahre 2013 auf der WWDC (Worldwide Developers Conference)\cite{Apple} unter dem Namen \textit{iBeacon} angekündigt. Obwohl zu dem Zeitpunkt noch kein fertiges Gerät zur Verfügung stand, wurde diese Technologie als Neuerung in Apples mobilen Betriebssystem iOS 7 vorgestellt. Jedoch verzichtet Apple seither auf die Produktion von iBeacons, was andere Unternehmen nutzen um selbst in den Markt einzusteigen. Deren Produkte unterstützen dabei zusätlich die mobilen Betriebssysteme Android ab Version 4.3 und Windows Phone 8. Somit wäre die Beacon-Technologie mittlerweile in über 99,5\% aller mobilen Geräte (Smartphones, Tablets, Smartwatches, etc.) weltweit nutzbar \cite{MobGerSt}.
 
-\section{Parameterschätzung}
-\subsection{App}
-\subsection{Youbot}
+\newpage
+
+\section{Aufbau und Funktionsweise von Beacons} 
+\begin{wrapfigure}{r}{6cm}
+\begin{flushright}
+\includegraphics[scale=0.07]{Bilder/BeaconSchicht.png}
+\caption{Explosionszeichnung Beacon \cite{BeaEx}}
+\label{fig:BeaEx}
+\begin{picture}(0,0)
+\put(-150,177){Schutzhülle}
+\put(-85,182){\line(1,0){25}}
+\put(-150,137){Platine}
+\put(-110,142){\line(1,0){50}}
+\put(-150,100){Batterie}
+\put(-100,105){\line(1,0){40}}
+\put(-150,60){Silikonplatte}
+\put(-80,65){\line(1,0){20}}
+\end{picture}
+\end{flushright}
+\end{wrapfigure}
+Die Grundbausteine eines Beacon sind in der rechten Abbildung \ref{fig:BeaEx} ersichtlich, in der ein \textit{Estimote Beacon} der Firma Estimote Inc. in seinen einzelnen Bestandteile dargestellt ist. Aufgrund der Verwendung der Estimote Beacons in dieser Arbeit, dienen hier zur Veranschaulichung. Die Silikonplatte dient dabei zur Befestigung der Beacons auf glatten Oberflächen, während die Schutzhülle die inneren Bauteile schützt. Zu den inneren Komponenten gehören die Platine mit dem darauf verlöteten Mikrocontroller und dem BLE-Sendemodul, der Antenne und eine Knopfbatterie zur autarken Stromversorgung. Die Beacons haben eine variable Sendeleistung von 1dBm bis -12dBm (entspricht einer Leistung von 1,26 bis 0.06 Milliwatt) und übertragen ihre Daten in Intervallen von 100 Millisekunden bis 1 Sekunde. Die Kommunikation verläuft dabei unidirektional, d.h. nur vom Beacon zum mobilen Gerät. Sodass kein Rückfluss an Informationen möglich ist. Die Daten die bei der Kommunikation übertragen werden sind dabei essentiell für die Positionsbestimmung und bestehen aus:
+\begin{itemize}
+\item einer Identifikationsnummer (16 Bytes)
+\item einem voreingestellter Received Signal Strength Indication(RSSI)-Wert, der bei einer Entfernung von einem Meter zum Beacon zu erwarten wäre (2 Bytes)
+\item zusätzliche Informationen, beschrieben als Major und Minor (jeweils 2 Bytes)
+\end{itemize}
+(Im Anhang ein Beispiel?) 
+
+Die Estimote Beacons sind representativ für die Produkte der gesamten Branche, weswegen sie auch als Referenzprodukt für diese Arbeit dienen.
+
+(Bilder)
+
+Änderbar sind die:
+\begin{itemize}
+\item Identifikationsnummer
+\item eingestellte Signalstärke
+\item Sendeintervall
+\item zusätzliche Angaben
+\end{itemize}
+
+iBeacons sind kleine Bluetooth-Sender die im Raum plaziert werden und anhand des Verlustes der Signalstärke über die Distanz wird die Position relativ vom Empfänger zum Beacon berechnet. Die Strukturen in Gebäuden, wie Wände, Decken und Raumelemente, haben dabei einen negativen Einfluss auf die Signale und erschweren die Berechnung der Position. Es gilt nun ein Verfahren zu entwickeln, welches die Positionierung der iBeacons
+
+Hier könnten theoretische Annahmen beschrieben und erklärt werden. Zum Beispiel ließe sich hier die Funktionsweise von iBeacons erklären, zusammen mit einer kleinen Einleitung in WLAN und Bluetooth (also welche Kanäle benutzt Bluetooth LE, sind die Beacons so schlau und suchen vor einer Signalsendung den Raum ab, ob gerade jemand anderes sendet und warten somit auf einen "freien" Raum). Desweiteren warum 2,4 Ghz als Frequenz beim Bluetooth LE-Format verwendet wird (Politik mit Vergabe der Sendefrequenzen, bei 2,4 Ghz ist die Eigenschwingung von Wasser, deswegen ist diese Frequenz frei, usw.).
+
+Als Referenzprodukt für Beacons dient in dieser Arbeit das \textit{Estimote Beacon} von der Firma \textit{Estimote Inc.}. Als Auswahlkriterium diente zum einen die Verfügbarkeit des Produktes, sowei eine funktionierende SDK, um den Entwicklungsaufwand so gering wie möglich zu halten.
+
+%\section{Verwendungsszenarien}
+%Heute und morgen.
+% Momentan nur willkürliche Plazierung von Beacons, kein Konzept, keine Vereinfachungen, keine Validierung, keine Optimierung
+% 
+% Momentan nur 3 stufiges Verfahren um Position anzugeben (near, middle, far)
+%
+%Der Bedarf an einer innerräumlichen Ortung ist dort vorhanden, wo es für den Besucher schwer ist sich zu orientieren. Diese können sein: Flugplätze, Einkaufszentren und Messehallen. Das Ziel ist es nun den Besuchern dieser Einrichtungen ein ähnliches System bereit zu stellen, wie sie es von den Verkehrswegen her kennen. Es soll mithilfe mobiler Geräte (z.B. Smartphones) lokalisieren und gegebenenfalls durch das Gebäude navigieren möchte, wie er es von den Verkehrswegen her gewohnt ist.
+%
+%Denn in großen Gebieten, wie z.B. Einkaufshäuser, Lagerhallen und Flughäfen braucht man Hunderte von iBeacons, um die gesamte Fläche zu 100 Prozent abzudecken. Im Idealfall kann ich später in Matlab noch Gebiete einpflegen, an der die Karte nach Regionen aufgeteilt wird, in denen die Genauigkeit der Lokalisierung eingestellt werden kann. Damit ließe sich Robotergestützt ein Gebiet abfahren, in denen Vorschläge für die Positionierung von iBeacons anhand eines Optimierungsalgorithmusses generiert werden. Hierbei ließe sich wunderschön eine Pareto-Front bilden, die aus Anzahl von iBeacons und Genauigkeit pro Region Positionierungsvorschläge entwirft. Je nach Kundenwunsch. ROTER FADEN ZU MEINER ARBEIT1
+%
+%Hier kann angesprochen werden das wir ein adaptives Verfahren entwickeln wollen, denn viele bisherige Systeme bieten lediglich ein Landmarkenssystem oder ein Positionierungssystem. Mit den Beacons soll beides möglich sei und je nach Kundenwunsch anpassbar werden.
+%
+%\subsection{Landmarkensysteme}
+%
+%\subsection{Positionierungssysteme}
+%
+% 
+
+
+
+
+
+
+

@@ -1,82 +1,65 @@
 \chapter{Einleitung}
-Ein neues System zur innerräumlichen Lokalisierung stellt das sogenannte iBeacon-Verfahren (z. Dt. Leuchtfeuer) dar. Die Vorteile dieses Systems gegenüber bisherigen Indoor-Lokalisierunglösungen sind zum einen die geringen Kosten, sowie die hohe Flexibilität/Autonomie der einzelnen Elemente. Denn viele andere Ansätze, wie z.B. die Indoor-Positionierung mit künstlichen Magnetfeldern \cite{Magnet}, die WLAN-basierte Ortung \citep{WLAN} oder andere hochfrequenz-basierte Entfernungsmessungen benötigen eine teure und aufwendige Infrastruktur, welche auch eine bauliche Änderung am Gebäude benötigen. Die Einfachheit der Anbringung der Beacons und die weitere Verbreitung des verwendeten Bluetooth-Protokolls auf mobilen Geräten sorgen für ein großes Einsatzspektrum und fördern dabei dessen Verbreitung. 
-
-
-\section{Entwicklungsgeschichte}
-Der Grundstein für die Beacon-Technologie legte die Firma Nokia im Jahre 2006. Damals entwickelte die Firma den neuen Standard \textit{Wibree} für die Funkübertragung,
-\begin{wrapfigure}{r}{5.3cm}
+\begin{wrapfigure}{r}{6.5cm}
 \centering
-\includegraphics[scale=0.07]{Bilder/BLE.png} 
-\caption{Offizielles Bluetooth Smart Logo \cite{BLElogo}}
-\label{BLElogo}
-\end{wrapfigure} der den alten Bluetooth-Standard ersetzen sollte. Mit der Neuentwicklung versprach man sich im Gegensatz zu Bluetooth einen geringeren Stromverbrauch und geringere Kosten, bei einem gleichbleibenden Kommunikationsbereich. Ab dem Jahr 2009 wurde der Bluetooth-Standard um Wibree ergänzt, unter dem Namen \textit{Bluetooth Low Energy (BLE)} darin aufgenommen \cite{Wib2BLE} und anschließend unter \textit{Bluetooth Smart} vermarktet.
-
-\vspace{2\baselineskip}
-
-\begin{wrapfigure}{l}{4cm}
-\centering
-\includegraphics[scale=0.5]{Bilder/iBeaconLogo.png} 
-\caption{Offizielles iBeacon Logo \cite{iLogo}}
-\label{iLogo}
-\end{wrapfigure} Die Idee der Nutzung von Bluetooth Low Energy zur Indoor-Lokalisierung stammt dabei von der Firma Apple Inc. und wurde von ihr im Jahre 2013 auf der WWDC (Worldwide Developers Conference)\cite{Apple} unter dem Namen \textit{iBeacon} angekündigt. Obwohl zu dem Zeitpunkt noch kein fertiges Gerät zur Verfügung stand, wurde diese Technologie als Neuerung in Apples mobilen Betriebssystem iOS 7 vorgestellt. Jedoch verzichtet Apple seither auf die Produktion von iBeacons, was andere Unternehmen nutzen um selbst in den Markt einzusteigen. Deren Produkte unterstützen dabei zusätlich die mobilen Betriebssysteme Android ab Version 4.3 und Windows Phone 8. Somit wäre die Beacon-Technologie mittlerweile in über 99,5\% aller mobilen Geräte (Smartphones, Tablets, Smartwatches, etc.) weltweit nutzbar \cite{MobGerSt}.
-
-\section{Aufbau und Funktionsweise von Beacons}
-Die Grundbausteine eines Beacon sind ein Mikrocontroller, ein BLE-Sendemodul und eine Batterie. Anschaulich wird dies in Abbildung XXX, wo ein \textit{Estimote Beacon} der Firma Estimote Inc. in mehreren Schichten zu sehen ist. Die Estimote Beacons sind representativ für die Produkte der gesamten Branche, weswegen sie auch als Referenzprodukt für diese Arbeit dienen. 
-\begin{wrapfigure}{r}{6cm}
-\begin{flushright}
-\includegraphics[scale=0.07]{Bilder/BeaconSchicht.png}
-\caption{Explosionszeichnung Beacon \cite{BeaEx}}
-\label{iLogo}
-\begin{picture}(0,0)
-\put(-150,177){Schutzhülle}
-\put(-85,182){\line(1,0){25}}
-\put(-150,137){Platine}
-\put(-110,142){\line(1,0){50}}
-\put(-150,100){Batterie}
-\put(-100,105){\line(1,0){40}}
-\put(-150,60){Silikonplatte}
-\put(-80,65){\line(1,0){20}}
-\end{picture}
-\end{flushright}
+\includegraphics[scale=0.8]{Bilder/GPS.png} 
+\caption{Skizze satellitengestütztes Lokalisierungssystem \cite{GPS}}
+\label{GPS}
 \end{wrapfigure}
-
-(Foto von einem nackten Beacon mit Erklärung, bzw. Linien einzeichnen und nummerieren (Antenne, Mikrocontroller, Batterie))
-
-Die Beacons haben eine Sendeleistung von ... bis ... und senden in Intervallen von ... bis ... ms. Unidirektionale Übertragung. 
-
-Dabei sendet ein beacon im Bluetooth Low Energy Protokoll  Zur Lokalisierung senden die Beacons drei Informationen:
+Herkömmliche Navigationssysteme für den "`Outdoor"'-Bereich haben viele Bereiche des alltäglichen Lebens weitgehend erleichtert. Zurück liegen die Tage, in denen Fahrtstrecken über unbekannte Straßen und durch fremde Länder mit analogen Karten lange geplant wurden. Die Navigation, bzw. Lokalisierung basiert dabei auf einer Positionsbestimmung mithilfe von Funksignalen, die von Satelliten ausgesendet werden. Aus diesen Signalen können die Navigationssysteme ihre Position auf der Erde berechnen und schließlich die Information dem Nutzer zur Verfügung stellen. Die eigene Lokalisierung wäre nun auch für den Nutzer in einem Gebäuden hilfreich, damit er sich orientieren kann und beispielsweise in einem großen Kaufhaus schneller zu einem Geschäft findet. Um die Vorteile einer Lokalisierung im "`Indoor"'-Bereich anzuwenden, können die bisherigen satellitengestützen Systeme (GPS, GLONASS, Galileo) jedoch nicht genutzt werden, da die Strukturen der Gebäude ihre Signale absorbieren, bzw. reflektieren. Seit einigen Jahren arbeiten Forschungseinrichtungen und Unternehmen an einer Lösung für die Lokalsierung von Objekten in Gebäuden. Die Forschungsprojekte verfolgen dabei verschiedene Ansätze und Technologien um dieses Ziel zu erreichen, wie z.B. die Projekte "`EVARILOS"' \cite{EVA}, "`Google Indoor Maps"' \cite{GIM} und "`Mobile Indoor Localization"' \cite{MIL}. Jedoch existiert noch keine Lösung die sich bereits durchgesetzt hat und komerziell nutzbar wäre.\\ \\
+Eine neue und vielversprechende Technologie zur innerräumlichen Lokalisierung stellt dabei die Entwicklung von iBeacons (z. Dt. Leuchtfeuer) dar. Die Vorteile dieses Systems gegenüber bisherigen Lösungen sind zum einen die geringen Kosten, sowie die hohe Flexibilität und Autonomie der einzelnen Elemente. Viele bisherigen Technologien zur Indoor-Lokalisierung, wie z.B. in den Boden eingelassene künstlichen Magnetfeldern \cite{Magnet}, RFID-Transponder \cite{RFID} oder funkbasierten Lösungen\citep{WLAN} sind zwar erprobt und erzielen eine hohe Lokalisierungsgenauigkeit, besitzen jedoch den Nachteil einer teuren und aufwendigen Infrastruktur, welche meist auch eine bauliche Änderung am Gebäude benötigt. Die Einfachheit der Anbringung der Beacons, die Kostenvorteile und die weitere Verbreitung des verwendeten Bluetooth-Protokolls auf mobilen Geräten sorgen dabei für ein weites Einsatzspektrum. Jedoch der größte Vorteil der iBeacons gegenüber den konkurrierenden Technologien ist die variable Verwendung der Beacons für beispielsweise einfache, rudimentäre Positionsbestimmungen bis hin zur hochpräzisen Ortung. Je nach Einsatzszenario könnten die Beacons problemlos angepasst und so für ihren Zweck hin optimiert werden.\\ \\
+Um mit den Beacons ein Lokalisierungssystem in Gebäuden aufzubauen, ähnlich dem im Outdoor-Bereich, benötigt es geeignete Verfahren die Beacons zu positionieren und entsprechend auf ihren Einsatzzweck anzupassen. Während für die Satelliten der Outdoor-Systeme Modelle vorhanden sind, die deren Anzahl, Flughöhe und Sendeleistung für eine bestmögliche Lokalisierung berechnen, fehlen die Konzepte für den Indoor-Bereich. Zudem mangelt es an Verfahren die Gebäude mit Beacon-Systemen zweifelsfrei auf die Qualität der Lokalisierung und der räumlichen Abdeckung hin zu validieren. Gegenstand dieser Arbeit soll es dabei sein, ein geeignetes Konzept für die Erstellung von Beacon-Konfigurationen zu gestalten und die Konfiguration anschließend experimentell zu validieren. Dabei soll auf ein automatisiertes und strukturiertes Verfahren mithilfe von Robotern zurückgegriffen werden, um die Validierung weniger fehleranfällig zu designen und somit zu standardisieren.\\ \\
+Aus diesen Anforderungen stellen sich drei zentrale Zielstellungen:
 \begin{itemize}
-\item Identifikationsnummer
-\item eingestellte Signalstärke
-\item zusätzliche Angaben
+\item Entwicklung eines Frameworks und einer systematischen Versuchsplanung für die Messung von Beacon-Signalen
+\item Auswahl und Parameterbestimmung eines Modells für die Signalausbreitung von Beacons mit anschließender Erstellung einer Simulationsumgebung, sowie eine sich daraus konkludierenden optimalen Verteilung von Beacons in einem Raum 
+\item Validierung des Modells und der Simulationergebnisse in einem Testszenario mithilfe eines Roboters  
 \end{itemize}
+Um die Problematik eines bisher fehlenden Planungskonzeptes darzulegen, wird in zuerst der Stand der Technik von Beacons beschrieben und erläutert. Daraus schlussfolgern sich ersten Ansätze, wie ein mögliches Verfahren zur Beacon-Konfiguration aufgebaut sein muss. In Kapitel 2 werden für die erste Zielsetzung alle Werkzeuge zur Messung der Beacon-Signale vorgestellt und in Kapitel 3 diese ausgewertet. Mit den Messwerten werden anschließend die Parameter für die Signalausbreitung der Beacons in einem freien Raum bestimmt und damit die Grundlage für ein Simulationsprogramm gelegt. Da es keine Standards oder Richtlinien für die Lokalisierungsgenauigkeit gibt, werden zusätzlich aus den Messwerten eine Richterskala bestimmt und diese erklärt. Mithilfe der Simulation und eines Optimierungsalgorithmus werden anhand der selbstdefinierten Richterskala geeignete Beacon-Konfigurationen berechnet und diese experimentell in Kapitel 4 überprüft. Dabei wird besonders auf Art der Validierung eingegangen, da sie automatisiert und standardisiert von einem Roboter durchgeführt wird. Am Ende der Arbeit werden die drei gesetzten Ziele mit dem Erreichten verglichen, die Ergebnisse daraus diskutiert und anschließend wird das Konzept daran bewertet. 
+ 
 
-(Bilder)
 
-Änderbar sind die:
-\begin{itemize}
-\item Identifikationsnummer
-\item eingestellte Signalstärke
-\item Sendeintervall
-\item zusätzliche Angaben
-\end{itemize}
 
-iBeacons sind kleine Bluetooth-Sender die im Raum plaziert werden und anhand des Verlustes der Signalstärke über die Distanz wird die Position relativ vom Empfänger zum Beacon berechnet. Die Strukturen in Gebäuden, wie Wände, Decken und Raumelemente, haben dabei einen negativen Einfluss auf die Signale und erschweren die Berechnung der Position. Es gilt nun ein Verfahren zu entwickeln, welches die Positionierung der iBeacons
 
-Hier könnten theoretische Annahmen beschrieben und erklärt werden. Zum Beispiel ließe sich hier die Funktionsweise von iBeacons erklären, zusammen mit einer kleinen Einleitung in WLAN und Bluetooth (also welche Kanäle benutzt Bluetooth LE, sind die Beacons so schlau und suchen vor einer Signalsendung den Raum ab, ob gerade jemand anderes sendet und warten somit auf einen "freien" Raum). Desweiteren warum 2,4 Ghz als Frequenz beim Bluetooth LE-Format verwendet wird (Politik mit Vergabe der Sendefrequenzen, bei 2,4 Ghz ist die Eigenschwingung von Wasser, deswegen ist diese Frequenz frei, usw.).
 
-Als Referenzprodukt für Beacons dient in dieser Arbeit das \textit{Estimote Beacon} von der Firma \textit{Estimote Inc.}. Als Auswahlkriterium diente zum einen die Verfügbarkeit des Produktes, sowei eine funktionierende SDK, um den Entwicklungsaufwand so gering wie möglich zu halten.
-%\section{Verwendungsszenarien}
-%Heute und morgen.
+% Bietet sich leider hier nicht an:(
+
+%Zur Anschaulichkeit sind nachfolgend in Abbildung ... alle funkbasierte Verfahren zur Entfernungsmessung einmal vorgestellt.
 %
-%Der Bedarf an einer innerräumlichen Ortung ist dort vorhanden, wo es für den Besucher schwer ist sich zu orientieren. Diese können sein: Flugplätze, Einkaufszentren und Messehallen. Das Ziel ist es nun den Besuchern dieser Einrichtungen ein ähnliches System bereit zu stellen, wie sie es von den Verkehrswegen her kennen. Es soll mithilfe mobiler Geräte (z.B. Smartphones) lokalisieren und gegebenenfalls durch das Gebäude navigieren möchte, wie er es von den Verkehrswegen her gewohnt ist.
+%\begin{tikzpicture}[level 1/.style={sibling distance=40mm}, edge from parent/.style={->,draw}, >=latex]
+%% root of the the initial tree, level 1
+%\node[root] {HF-basierende Entfernungsmessungen}
+%% The first level, as children of the initial tree
+%  child {node[level 2] (c1) {Defining node and arrow styles}}
+%  child {node[level 2] (c2) {Positioning the nodes}}
+%  child {node[level 2] (c3) {Drawing arrows between nodes}};
 %
-%Denn in großen Gebieten, wie z.B. Einkaufshäuser, Lagerhallen und Flughäfen braucht man Hunderte von iBeacons, um die gesamte Fläche zu 100 Prozent abzudecken. Im Idealfall kann ich später in Matlab noch Gebiete einpflegen, an der die Karte nach Regionen aufgeteilt wird, in denen die Genauigkeit der Lokalisierung eingestellt werden kann. Damit ließe sich Robotergestützt ein Gebiet abfahren, in denen Vorschläge für die Positionierung von iBeacons anhand eines Optimierungsalgorithmusses generiert werden. Hierbei ließe sich wunderschön eine Pareto-Front bilden, die aus Anzahl von iBeacons und Genauigkeit pro Region Positionierungsvorschläge entwirft. Je nach Kundenwunsch. ROTER FADEN ZU MEINER ARBEIT1
+%% The second level, relatively positioned nodes
+%\begin{scope}[every node/.style={level 3}]
+%\node [below of = c1, xshift=15pt] (c11) {Setting shape};
+%\node [below of = c11] (c12) {Choosing color};
+%\node [below of = c12] (c13) {Adding shading};
 %
-%Hier kann angesprochen werden das wir ein adaptives Verfahren entwickeln wollen, denn viele bisherige Systeme bieten lediglich ein Landmarkenssystem oder ein Positionierungssystem. Mit den Beacons soll beides möglich sei und je nach Kundenwunsch anpassbar werden.
+%\node [below of = c2, xshift=15pt] (c21) {Using a Matrix};
+%\node [below of = c21] (c22) {Relatively};
+%\node [below of = c22] (c23) {Absolutely};
+%\node [below of = c23] (c24) {Using overlays};
 %
-%\subsection{Landmarkensysteme}
+%\node [below of = c3, xshift=15pt] (c31) {Default arrows};
+%\node [below of = c31] (c32) {Arrow library};
+%\node [below of = c32] (c33) {Resizing tips};
+%\node [below of = c33] (c34) {Shortening};System
+%\node [below of = c34] (c35) {Bending};
+%\end{scope}
 %
-%\subsection{Positionierungssysteme}
+%% lines from each level 1 node to every one of its "children"
+%\foreach \value in {1,2,3}
+%  \draw[->] (c1.195) |- (c1\value.west);
 %
-% 
+%\foreach \value in {1,...,4}
+%  \draw[->] (c2.195) |- (c2\value.west);
+%
+%\foreach \value in {1,...,5}
+%  \draw[->] (c3.195) |- (c3\value.west);
+%\end{tikzpicture} 
+%
+%\cite{IndLoc} und \cite{DisLok}
