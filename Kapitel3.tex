@@ -12,4 +12,7 @@ Zuerst werde ich erklären, wie ich die Einzelmessungen und
 \subsection{App}
 \subsection{Youbot}
 
+
+Graphik mit Leistungsverbrauch der beacons in Abghängigkeit mit ihren Einstellungen. Die Farbe soll dabei der Leistungsverbrauch und die Achsen die Intervallzeit und die Sendeleistung darstellen. Hier kann man sich auch überlegen die theoretische Akkulaufzeit mit anzugeben. Die Knopfbatterien sind vom Typ CR2450 mit einem Energiegehalt von ca. 1,8 Wh \cite{CR2450}. Der Mikrocontroller kann hier nicht mit eingerehnet werden, da lediglich ein Verbrauch in Abhängigkeit mit der Prozessorgeschwindigkeit \cite{ARM} gegeben ist und für die Beacons keine Informationen vorliegen, in welcher Taktfrequenz diese betrieben werden. Natürlich hat der Prozessor auch eine höhere Taktfrequenz, wenn die Sendeintervalle der Beacons häufiger stattfinden und somit ist beides aneinander gekoppelt. Deswegen Messung des Stromverbrauchs am Beacon bei minimaler Sendeleistung mit den unterschiedlichen Intervallen (niedrigster Stufe, mittlerer und höhster) und dann einfach linear approximieren. 
+
     

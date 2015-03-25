@@ -26,6 +26,15 @@
   Timestamp                = {2015.03.17}
 }
 
+@Electronic{GSwiB,
+  Title                    = {Getting Started with iBeacon},
+  Author                   = {{Apple Inc.}},
+  Url                      = {https://developer.apple.com/ibeacon/Getting-Started-with-iBeacon.pdf},
+
+  Owner                    = {andre},
+  Timestamp                = {2015.03.25}
+}
+
 @Electronic{iLogo,
   Title                    = {iBeacon Logo},
   Author                   = {{Apple Inc.}},
@@ -34,6 +43,15 @@
 
   Owner                    = {andre},
   Timestamp                = {2015.03.16}
+}
+
+@Electronic{ARM,
+  Title                    = {Cortex-Mo Processor},
+  Author                   = {{ARM Limited}},
+  Url                      = {http://www.arm.com/products/processors/cortex-m/cortex-m0.php},
+
+  Owner                    = {andre},
+  Timestamp                = {2015.03.25}
 }
 
 @Electronic{BLElogo,
@@ -107,6 +125,15 @@
   Timestamp                = {2015.03.22}
 }
 
+@Electronic{FUE,
+  Title                    = {Übersicht über die verschiedenen Funktechnologien},
+  Author                   = {{http://www.itwissen.info}},
+  Url                      = {http://www.itwissen.info/definition/lexikon/ultra-low-power-Bluetooth-ULP-ULP-Bluetooth.html},
+
+  Owner                    = {andre},
+  Timestamp                = {2015.03.24}
+}
+
 @Article{Magnet,
   Title                    = {Indoor-Positionierung mit künstlichen Magnetfeldern},
   Author                   = {{J. Blankenbach} and {A. Norrdine}},
@@ -148,6 +175,15 @@
   Timestamp                = {2015.03.16}
 }
 
+@Electronic{CR2450,
+  Title                    = {Datenblatt CR2450B},
+  Author                   = {{Sony Corporation}},
+  Url                      = {http://www.sony.net/Products/MicroBattery/cr/pdf/cr2450b.pdf},
+
+  Owner                    = {andre},
+  Timestamp                = {2015.03.25}
+}
+
 @Standard{EVA,
   Title                    = {Evaluation Of RF-Based Indoor Localization Solutions For The Future Internet (EVARILOS)},
   Author                   = {{Technische Universität Berlin} and {ADVANTIC Sistemas y Servicios S.L.} and {iMinds} and {SICS Swedish ICT AB} and {Televic Healthcare}},
@@ -171,7 +207,7 @@
 @Standard{WLAN,
   Title                    = {FM-based Indoor Localization},
   Organization             = {Microsoft Research},
-  Author                   = {{Y. Chenl} and {D. Lymberopoulos} and {J. Liu} and {B. Priyantha}},
+  Author                   = {{Y. Chen} and {D. Lymberopoulos} and {J. Liu} and {B. Priyantha}},
   Url                      = {http://research.microsoft.com/pubs/163038/sys029fp-Chen.pdf},
 
   Owner                    = {andre},

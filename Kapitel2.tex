@@ -1,22 +1,35 @@
 \chapter{Stand der Technik - Einführung in die Beacon-Technologie}
+Der erste Teil in diesem Kapitel beschäftigt sich mit der Entstehungsgeschichte von iBeacons und nachfolgend mit deren Funktionsweise. Hier wird besonders auf die technischen Möglichkeiten der Technologie eingegangen. Im letzten Abschnitt wird erläutert, wo Beacon-Systeme zum Einstaz kommen und wie aktuelle Lösungsansätze für die Planung der dafür nötigen Infrastruktur aufgebaut sind. Anschließend wird aus den gegebenen Fähigkeiten der Beacons und der momentanen genutzten Fähigkeiten differenziert und eine Aussicht auf ein zukünftiges Konzept zu einer besseren Nutzung gegeben.
 
 \section{Entwicklungsgeschichte}
 Der Grundstein für die Beacon-Technologie legte die Firma Nokia im Jahre 2006. Damals entwickelte die Firma den neuen Standard \textit{Wibree} für die Funkübertragung,
-\begin{wrapfigure}{r}{5.3cm}
+%\begin{wrapfigure}{r}{5.3cm}
+%\centering
+%\includegraphics[scale=0.07]{Bilder/BLE.png} 
+%\caption{Offizielles Bluetooth Smart Logo \cite{BLElogo}}
+%\label{BLElogo}
+%\end{wrapfigure} 
+der den alten Bluetooth-Standard ersetzen sollte. Mit der Neuentwicklung versprach man sich im Gegensatz zu Bluetooth einen geringeren Stromverbrauch und geringere Kosten, bei einem gleichbleibenden Kommunikationsbereich. Ab dem Jahr 2009 wurde der Bluetooth-Standard um Wibree ergänzt und erst unter den Bezeichnungen \textit{Ultra Low Power Bluetooth} (ULP) und dann später als \textit{Bluetooth Low Energy} (BLE) darin aufgenommen \cite{Wib2BLE} und anschließend als \textit{Bluetooth Smart} vermarktet. \par\bigskip
+\begin{figure}[H]
 \centering
 \includegraphics[scale=0.07]{Bilder/BLE.png} 
 \caption{Offizielles Bluetooth Smart Logo \cite{BLElogo}}
 \label{BLElogo}
-\end{wrapfigure} der den alten Bluetooth-Standard ersetzen sollte. Mit der Neuentwicklung versprach man sich im Gegensatz zu Bluetooth einen geringeren Stromverbrauch und geringere Kosten, bei einem gleichbleibenden Kommunikationsbereich. Ab dem Jahr 2009 wurde der Bluetooth-Standard um Wibree ergänzt, unter dem Namen \textit{Bluetooth Low Energy (BLE)} darin aufgenommen \cite{Wib2BLE} und anschließend unter \textit{Bluetooth Smart} vermarktet.
-
-\vspace{2\baselineskip}
-
-\begin{wrapfigure}{l}{4cm}
+\end{figure}
+%\vspace{2\baselineskip}
+%\begin{wrapfigure}{l}{4cm}
+%\centering
+%\includegraphics[scale=0.5]{Bilder/iBeaconLogo.png} 
+%\caption{Offizielles iBeacon Logo \cite{iLogo}}
+%\label{iLogo}
+%\end{wrapfigure} 
+Die Idee der Nutzung von Bluetooth Low Energy zur Indoor-Lokalisierung stammt dabei von der Firma Apple Inc. und wurde von ihr im Jahre 2013 auf der WWDC (Worldwide Developers Conference)\cite{Apple} unter dem Namen \textit{iBeacon} angekündigt. Obwohl zu dem Zeitpunkt noch kein fertiges Gerät zur Verfügung stand, wurde diese Technologie als Neuerung in Apples mobilen Betriebssystem iOS 7 vorgestellt. Jedoch verzichtet Apple seither auf die Produktion von iBeacons, was andere Unternehmen nutzen um selbst in den Markt einzusteigen. Deren Produkte unterstützen dabei zusätlich die mobilen Betriebssysteme Android ab Version 4.3, Windows Phone 8 und neue die neueste Version von Blackberries OS \cite{Bibel}. Somit wäre die Beacon-Technologie mittlerweile in über 99,5\% aller mobilen Geräte (Smartphones, Tablets, Smartwatches, etc.) weltweit nutzbar \cite{MobGerSt}.\par\bigskip
+\begin{figure}[H]
 \centering
 \includegraphics[scale=0.5]{Bilder/iBeaconLogo.png} 
 \caption{Offizielles iBeacon Logo \cite{iLogo}}
 \label{iLogo}
-\end{wrapfigure} Die Idee der Nutzung von Bluetooth Low Energy zur Indoor-Lokalisierung stammt dabei von der Firma Apple Inc. und wurde von ihr im Jahre 2013 auf der WWDC (Worldwide Developers Conference)\cite{Apple} unter dem Namen \textit{iBeacon} angekündigt. Obwohl zu dem Zeitpunkt noch kein fertiges Gerät zur Verfügung stand, wurde diese Technologie als Neuerung in Apples mobilen Betriebssystem iOS 7 vorgestellt. Jedoch verzichtet Apple seither auf die Produktion von iBeacons, was andere Unternehmen nutzen um selbst in den Markt einzusteigen. Deren Produkte unterstützen dabei zusätlich die mobilen Betriebssysteme Android ab Version 4.3 und Windows Phone 8. Somit wäre die Beacon-Technologie mittlerweile in über 99,5\% aller mobilen Geräte (Smartphones, Tablets, Smartwatches, etc.) weltweit nutzbar \cite{MobGerSt}.
+\end{figure}
 
 \newpage
 
@@ -38,33 +51,43 @@ Der Grundstein für die Beacon-Technologie legte die Firma Nokia im Jahre 2006. 
 \end{picture}
 \end{flushright}
 \end{wrapfigure}
-Die Grundbausteine eines Beacon sind in der rechten Abbildung \ref{fig:BeaEx} ersichtlich, in der ein \textit{Estimote Beacon} der Firma Estimote Inc. in seinen einzelnen Bestandteile dargestellt ist. Aufgrund der Verwendung der Estimote Beacons in dieser Arbeit, dienen hier zur Veranschaulichung. Die Silikonplatte dient dabei zur Befestigung der Beacons auf glatten Oberflächen, während die Schutzhülle die inneren Bauteile schützt. Zu den inneren Komponenten gehören die Platine mit dem darauf verlöteten Mikrocontroller und dem BLE-Sendemodul, der Antenne und eine Knopfbatterie zur autarken Stromversorgung. Die Beacons haben eine variable Sendeleistung von 1dBm bis -12dBm (entspricht einer Leistung von 1,26 bis 0.06 Milliwatt) und übertragen ihre Daten in Intervallen von 100 Millisekunden bis 1 Sekunde. Die Kommunikation verläuft dabei unidirektional, d.h. nur vom Beacon zum mobilen Gerät. Sodass kein Rückfluss an Informationen möglich ist. Die Daten die bei der Kommunikation übertragen werden sind dabei essentiell für die Positionsbestimmung und bestehen aus:
+Die Grundbausteine eines Beacon sind in der rechten Abbildung \ref{fig:BeaEx} ersichtlich, in der ein \textit{Estimote Beacon} der Firma Estimote Inc. in seinen einzelnen Bestandteile dargestellt ist. Aufgrund der Verwendung der Estimote Beacons in dieser Arbeit, dienen hier zur Veranschaulichung. Zur Anbringung der Beacons dient die auf der Rückseite befindliche Silikonplatte. Diese haftet an nahezu jeder glatten Oberfläche und kann mithilfe von Wasser normal gereinigt werden. Somit können die Beacons im Grunde unbegrenzt angebracht und wieder abgenommen werden. Die äußere Schutzhülle besteht dabei ebenfalls aus einem Silikon und schützt die inneren Bauteile. Zu den inneren Komponenten gehören die Platine mit dem darauf verlöteten 32-Bit ARM Cortex M0 CPU mit 256 kB Flash-Speicher und dem 2,4 GHz BLE-Sendemodul, einer Antenne und eine Knopfbatterie zur autarken Stromversorgung. Die Beacons haben eine variable Sendeleistung von 4dBm bis -30dBm (entspricht einer Leistung von 2,512 bis 0.001 Milliwatt) und übertragen ihre Daten in Intervallen von 50 bis 0,5 Hertz. Die Kommunikation verläuft dabei bidirektional, d.h. vom Beacon zum Empfangsgerät und zurück. Während die Kommunikation von Beacon zu mobilen Gerät dazu dient, die Lokalisierung des Gerätes zu ermöglichen, dient die Kommunikation vom Smartphone, Tablet, etc. zum Beacon zur Überprüfung des Betriebszustandes und zur Programmierung der Beacons. \\ \\
+Die bei der Signalübertragung verwendete Protokoll-Architektur Bluetooth Low Energy sendet dabei im 2,4 Ghz Band, welches ebenfalls von den Protokollen 802.11 ac/a/b/g/n, älteren Bluetooth-Standards, ZigBee, NFC, etc. genutzt wird. Eine kleine Übersicht zu den einzelnen Varianten und deren Eigenschaften findet sich im Anhang in Bild \ref{fig:FUE}. Die Vorteile vom 2,4 Ghz Band gegenüber anderen Frequenzbändern ergeben sich aus einer großen Reichweite der Funksignale und einer geringen Größe der Antenne für deren Erzeugung. Jedoch besitzt dieses Band auch gewisse Nachteile, die bei der Auslegung von Beacon-Konfiguartionen beachtet werden müssen. Die Verwendung des Protokolls im 2,4 Ghz Band ist dabei historisch bedingt und nahezu alternativlos, da sie zu den ISM-Bändern \cite{BuNet} zählt und nur diese somit frei nutzbar sind. Durch die Benutzung des 2,4 Ghz Bandes für die Datenübertragungen in WLAN oder Bluetooth treten bei vermehrter Nuztung des Bandes leicht Störungen in den Übertragungen auf. Somit hängt die Qualität der Signale und schlussendlich auch die Lokalisierungsgenauigkeit an der lokalen Auslastung des 2,4 Ghz Bandes. Weitere störende Faktoren für die Signalqualität  können auch physische Objekte haben, die sich zwischen Sender und Empfänger befinden. In den Bildern ... und ... wird dies einmal dargestellt. Denn durch die physikalischen Eigenschaften des 2,4 Ghz Bandes werden die Funksignale durch Materialien wie Wasser und Stahl besonders gut absorbiert. Da die meisten Gebäude aus Stahlbeton gebaut sind und der menschliche Körper aus einem großen Anteil aus Wasser besteht, wirken sich diese Umstände besonders stark auf die Qualität der Signale und am Ende auf die Anwendung der BLE-Technik für die Lokalisierung von Menschen in Gebäuden aus. Jedoch sei dies nur am Rande erwähnt und würde unter zusätzlicher Betrachtung dieser Aspekten nur den zeitlichen Rahmen dieser Arbeit sprengen. \\ \\
+\begin{figure}[H]
+$\begin{minipage}[b]{7cm}
+\centering
+\includegraphics[scale=0.13]{Bilder/Wand.png} 
+\caption{Signalschwächung durch Objekte, zB. Wände \cite{GSwiB}}
+\label{fig:Wand}
+\end{minipage}
+\hspace{3cm}
+\begin{minipage}[b]{7cm}
+\centering
+\includegraphics[scale=0.13]{Bilder/Hand.png} 
+\caption{Körper von Menschen blockieren zusätzlich die Signale \cite{GSwiB}}
+\label{fig:Hand}
+\end{minipage}$
+\end{figure}
+Die Daten die bei der Kommunikation übertragen werden sind dabei essentiell für die Positionsbestimmung von Objekten und bestehen aus einer:
 \begin{itemize}
-\item einer Identifikationsnummer (16 Bytes)
-\item einem voreingestellter Received Signal Strength Indication(RSSI)-Wert, der bei einer Entfernung von einem Meter zum Beacon zu erwarten wäre (2 Bytes)
-\item zusätzliche Informationen, beschrieben als Major und Minor (jeweils 2 Bytes)
+\item Identifikationsnummer (Länge von 16 Bytes)
+\item eingestellten Sendeleistung (2 Bytes)
+\item zusätzlichen Information, beschrieben als Major und Minor (jeweils 2 Bytes)
 \end{itemize}
-(Im Anhang ein Beispiel?) 
+Mit der Identifikationsnummer kann zwischen den einzelnen Beacons unterschieden werden, wodurch erst die Möglichkeit einer Lokalisierung entsteht. Denn die Technik setzt voraus, dass die Identitäten der Beacons in einer Datenbank mit Positionsangabe in einem Gebäude hinterlegt sind. Beim Empfang eines gültigen Signals wird der Beacon in der Datenbank gesucht und anschließend die Distanz von Empfangsgerät und Beacon berechnet. Die Berechnung findet auf der Grundlage eines Ausbreitungsmodells von Signalen in Abhängigkeit zur eingestellten Sendeleistung des Beacons statt, in der die empfangene Signalstärke als RSSI-Wert interpretiert  und dadurch eine Distanz geschätzt wird. Die Modelle der Hersteller sind typischerweise nicht frei zugänglich, deswegen sie auch hier nicht vorgestellt werden. Die als zusätzlichen Informationen gekennzeichneten Daten sind eine Erweiterung der Identifikationsnummer und bieten lediglich einen Komfort für die Entwicklung der Datenbanken. Im nächsten Abschnitt wird dies in Tabelle ... noch einmal veranschaulicht.\\ \\  
 
-Die Estimote Beacons sind representativ für die Produkte der gesamten Branche, weswegen sie auch als Referenzprodukt für diese Arbeit dienen.
-
-(Bilder)
-
-Änderbar sind die:
+%%%%%%%%%%%->
+Zur Entwicklung dient die SDK ..., sie ermöglicht ..., Firmware der Beacons ermöglicht Anpassung folgender Einstellungen:
 \begin{itemize}
 \item Identifikationsnummer
 \item eingestellte Signalstärke
 \item Sendeintervall
-\item zusätzliche Angaben
+\item zusätzliche Informationen
 \end{itemize}
-
-iBeacons sind kleine Bluetooth-Sender die im Raum plaziert werden und anhand des Verlustes der Signalstärke über die Distanz wird die Position relativ vom Empfänger zum Beacon berechnet. Die Strukturen in Gebäuden, wie Wände, Decken und Raumelemente, haben dabei einen negativen Einfluss auf die Signale und erschweren die Berechnung der Position. Es gilt nun ein Verfahren zu entwickeln, welches die Positionierung der iBeacons
-
-Hier könnten theoretische Annahmen beschrieben und erklärt werden. Zum Beispiel ließe sich hier die Funktionsweise von iBeacons erklären, zusammen mit einer kleinen Einleitung in WLAN und Bluetooth (also welche Kanäle benutzt Bluetooth LE, sind die Beacons so schlau und suchen vor einer Signalsendung den Raum ab, ob gerade jemand anderes sendet und warten somit auf einen "freien" Raum). Desweiteren warum 2,4 Ghz als Frequenz beim Bluetooth LE-Format verwendet wird (Politik mit Vergabe der Sendefrequenzen, bei 2,4 Ghz ist die Eigenschwingung von Wasser, deswegen ist diese Frequenz frei, usw.).
-
-Als Referenzprodukt für Beacons dient in dieser Arbeit das \textit{Estimote Beacon} von der Firma \textit{Estimote Inc.}. Als Auswahlkriterium diente zum einen die Verfügbarkeit des Produktes, sowei eine funktionierende SDK, um den Entwicklungsaufwand so gering wie möglich zu halten.
+%%%%%%%%%%<-
 
 %\section{Verwendungsszenarien}
+% Unterscheidung der Konzepte für die Beacon-Nutzung in Micro-Lakalisierung und Kontext bezogene Interaktionen (Wo ist wer?, usw.)
 %Heute und morgen.
 % Momentan nur willkürliche Plazierung von Beacons, kein Konzept, keine Vereinfachungen, keine Validierung, keine Optimierung
 % 
@@ -72,13 +95,11 @@ Als Referenzprodukt für Beacons dient in dieser Arbeit das \textit{Estimote Bea
 %
 %Der Bedarf an einer innerräumlichen Ortung ist dort vorhanden, wo es für den Besucher schwer ist sich zu orientieren. Diese können sein: Flugplätze, Einkaufszentren und Messehallen. Das Ziel ist es nun den Besuchern dieser Einrichtungen ein ähnliches System bereit zu stellen, wie sie es von den Verkehrswegen her kennen. Es soll mithilfe mobiler Geräte (z.B. Smartphones) lokalisieren und gegebenenfalls durch das Gebäude navigieren möchte, wie er es von den Verkehrswegen her gewohnt ist.
 %
-%Denn in großen Gebieten, wie z.B. Einkaufshäuser, Lagerhallen und Flughäfen braucht man Hunderte von iBeacons, um die gesamte Fläche zu 100 Prozent abzudecken. Im Idealfall kann ich später in Matlab noch Gebiete einpflegen, an der die Karte nach Regionen aufgeteilt wird, in denen die Genauigkeit der Lokalisierung eingestellt werden kann. Damit ließe sich Robotergestützt ein Gebiet abfahren, in denen Vorschläge für die Positionierung von iBeacons anhand eines Optimierungsalgorithmusses generiert werden. Hierbei ließe sich wunderschön eine Pareto-Front bilden, die aus Anzahl von iBeacons und Genauigkeit pro Region Positionierungsvorschläge entwirft. Je nach Kundenwunsch. ROTER FADEN ZU MEINER ARBEIT1
+%Denn in großen Gebieten, wie z.B. Einkaufshäuser, Lagerhallen und Flughäfen braucht man Hunderte von iBeacons, um die gesamte Fläche zu 100 Prozent abzudecken. Im Idealfall kann ich später in Matlab noch Gebiete einpflegen, an der die Karte nach Regionen aufgeteilt wird, in denen die Genauigkeit der Lokalisierung eingestellt werden kann. Damit ließe sich Robotergestützt ein Gebiet abfahren, in denen Vorschläge für die Positionierung von iBeacons anhand eines Optimierungsalgorithmusses generiert werden. Hierbei ließe sich wunderschön eine Pareto-Front bilden, die aus Anzahl von iBeacons und Genauigkeit pro Region Positionierungsvorschläge entwirft. Je nach Kundenwunsch. ROTER FADEN ZU MEINER ARBEIT!
 %
 %Hier kann angesprochen werden das wir ein adaptives Verfahren entwickeln wollen, denn viele bisherige Systeme bieten lediglich ein Landmarkenssystem oder ein Positionierungssystem. Mit den Beacons soll beides möglich sei und je nach Kundenwunsch anpassbar werden.
 %
-%\subsection{Landmarkensysteme}
-%
-%\subsection{Positionierungssysteme}
+% Hier die Tabelle aus dem Anhang
 %
 % 
 

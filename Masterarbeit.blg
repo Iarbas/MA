@@ -8,55 +8,61 @@ Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 Database file #1: Quellen.bib
-Warning--entry type for "GPS" isn't style-file defined
---line 82 of file Quellen.bib
-Warning--entry type for "GIM" isn't style-file defined
---line 101 of file Quellen.bib
-Warning--entry type for "MIL" isn't style-file defined
---line 132 of file Quellen.bib
-Warning--entry type for "EVA" isn't style-file defined
---line 151 of file Quellen.bib
-Warning--entry type for "WLAN" isn't style-file defined
---line 171 of file Quellen.bib
-You've used 7 entries,
+Warning--entry type for "Bibel" isn't style-file defined
+--line 19 of file Quellen.bib
+Warning--entry type for "GSwiB" isn't style-file defined
+--line 29 of file Quellen.bib
+Warning--entry type for "iLogo" isn't style-file defined
+--line 38 of file Quellen.bib
+Warning--entry type for "BLElogo" isn't style-file defined
+--line 57 of file Quellen.bib
+Warning--entry type for "BeaEx" isn't style-file defined
+--line 109 of file Quellen.bib
+Warning--entry type for "BuNet" isn't style-file defined
+--line 128 of file Quellen.bib
+Warning--entry type for "FUE" isn't style-file defined
+--line 136 of file Quellen.bib
+Warning--entry type for "MobGerSt" isn't style-file defined
+--line 176 of file Quellen.bib
+You've used 10 entries,
             4335 wiz_defined-function locations,
-            869 strings with 6942 characters,
-and the built_in function-call counts, 2592 in all, are:
-= -- 209
-> -- 105
-< -- 17
-+ -- 42
-- -- 35
-* -- 198
-:= -- 518
-add.period$ -- 8
-call.type$ -- 7
-change.case$ -- 32
+            881 strings with 7390 characters,
+and the built_in function-call counts, 2889 in all, are:
+= -- 242
+> -- 67
+< -- 9
++ -- 29
+- -- 19
+* -- 150
+:= -- 527
+add.period$ -- 16
+call.type$ -- 10
+change.case$ -- 30
 chr.to.int$ -- 0
-cite$ -- 7
-duplicate$ -- 83
-empty$ -- 206
-format.name$ -- 69
-if$ -- 522
+cite$ -- 10
+duplicate$ -- 106
+empty$ -- 296
+format.name$ -- 37
+if$ -- 645
 int.to.chr$ -- 0
-int.to.str$ -- 7
-missing$ -- 38
-newline$ -- 45
-num.names$ -- 13
-pop$ -- 54
+int.to.str$ -- 10
+missing$ -- 55
+newline$ -- 65
+num.names$ -- 19
+pop$ -- 61
 preamble$ -- 1
-purify$ -- 32
+purify$ -- 30
 quote$ -- 0
-skip$ -- 80
+skip$ -- 117
 stack$ -- 0
-substring$ -- 70
-swap$ -- 25
-text.length$ -- 17
+substring$ -- 100
+swap$ -- 20
+text.length$ -- 9
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 28
+type$ -- 40
 warning$ -- 0
-while$ -- 30
-width$ -- 8
-write$ -- 86
-(There were 5 warnings)
+while$ -- 28
+width$ -- 12
+write$ -- 129
+(There were 8 warnings)
