@@ -1,9 +1,19 @@
-\BOOKMARK [0][-]{chapter*.4}{Abbildungsverzeichnis}{}% 1
-\BOOKMARK [0][-]{chapter.1}{Stand der Technik - Einf\374hrung in die Beacon-Technologie}{}% 2
-\BOOKMARK [1][-]{section.1.1}{Entwicklungsgeschichte}{chapter.1}% 3
-\BOOKMARK [1][-]{section.1.2}{Aufbau und Funktionsweise von Beacons}{chapter.1}% 4
-\BOOKMARK [0][-]{figure.caption.8}{Literaturverzeichnis}{}% 5
-\BOOKMARK [0][-]{appendix*.10}{Anhang}{}% 6
-\BOOKMARK [1][-]{section.Alph0.1}{Bilder}{appendix*.10}% 7
-\BOOKMARK [1][-]{section.Alph0.2}{Tabellen}{appendix*.10}% 8
-\BOOKMARK [1][-]{section.Alph0.3}{App-Aufbau}{appendix*.10}% 9
+\BOOKMARK [0][-]{chapter.1}{Entwicklung eines Frameworks und Durchf\374hrung von Experimenten}{}% 1
+\BOOKMARK [1][-]{section.1.1}{Verwendete Hardware}{chapter.1}% 2
+\BOOKMARK [2][-]{subsection.1.1.1}{Motorola Moto G}{section.1.1}% 3
+\BOOKMARK [2][-]{subsection.1.1.2}{Youbot}{section.1.1}% 4
+\BOOKMARK [2][-]{subsection.1.1.3}{Scitos G5}{section.1.1}% 5
+\BOOKMARK [1][-]{section.1.2}{Verwendete Software}{chapter.1}% 6
+\BOOKMARK [2][-]{subsection.1.2.1}{ROS}{section.1.2}% 7
+\BOOKMARK [2][-]{subsection.1.2.2}{Android-Studio}{section.1.2}% 8
+\BOOKMARK [2][-]{subsection.1.2.3}{Estimote SDK for Android}{section.1.2}% 9
+\BOOKMARK [2][-]{subsection.1.2.4}{App-Entwicklung}{section.1.2}% 10
+\BOOKMARK [1][-]{section.1.3}{Versuchsplanung}{chapter.1}% 11
+\BOOKMARK [1][-]{section.1.4}{Experimente}{chapter.1}% 12
+\BOOKMARK [2][-]{subsection.1.4.1}{Energieverbrauch eines Beacon}{section.1.4}% 13
+\BOOKMARK [2][-]{subsection.1.4.2}{Distanzmessung mithilfe von Beacons}{section.1.4}% 14
+\BOOKMARK [2][-]{subsection.1.4.3}{Einfluss der Sendefrequenz}{section.1.4}% 15
+\BOOKMARK [2][-]{subsection.1.4.4}{Einfluss der Signalst\344rke}{section.1.4}% 16
+\BOOKMARK [2][-]{subsection.1.4.5}{Auswirkung der Smartphone-Ausrichtung auf die Messungen}{section.1.4}% 17
+\BOOKMARK [2][-]{subsection.1.4.6}{Einfluss anderer Funkquellen auf die RSSI-Messung}{section.1.4}% 18
+\BOOKMARK [0][-]{subsection.1.4.6}{Literaturverzeichnis}{}% 19

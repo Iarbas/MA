@@ -37,6 +37,10 @@
   level 3/.style = {basic, thin, align=left, fill=pink!60, text width=6.5em}
 }
 
+\tikzset{
+    block/.style={draw, rectangle, rounded corners, very thick, minimum height=1cm, text centered,},
+}
+
 % Zur Veraenderung der Ueberschriften
 \usepackage{setspace}                          % fuer den Zeilenabstand
 \usepackage{titlesec}                          % zur Formatierung der Ueberschriften
@@ -89,3 +93,10 @@
 \fancyhead[RO,LE]{\thepage}                    % ungerade rechts, gerade links
 \renewcommand{\chaptermark}[1]{\markboth{#1}{}}% definiert den Befehl chaptermark in leftmark neu, sodass nur der Name angezeigt wird
 \fancyhead[C]{\nouppercase{\leftmark}}
+
+% Definition einiger Farben
+\definecolor{airforceblue}{rgb}{0.36, 0.54, 0.66}
+\definecolor{ballblue}{rgb}{0.13, 0.67, 0.8}
+
+% Fuer die Zentrierung von Tabelleneintraegen
+\newcolumntype{C}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
