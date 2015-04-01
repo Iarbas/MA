@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2014.11.11)  27 MAR 2015 15:38
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2014.11.11)  31 MAR 2015 19:04
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -706,6 +706,7 @@ Now handling font encoding PD1 ...
 (/usr/share/texlive/texmf-dist/tex/latex/latexconfig/hyperref.cfg
 File: hyperref.cfg 2002/06/06 v1.2 hyperref configuration of TeXLive
 )
+Package hyperref Info: Option `colorlinks' set `false' on input line 4319.
 Package hyperref Info: Hyper figures OFF on input line 4443.
 Package hyperref Info: Link nesting OFF on input line 4448.
 Package hyperref Info: Hyper index ON on input line 4451.
@@ -1105,7 +1106,149 @@ File: pgflibraryfadings.code.tex 2008/02/07 v2.10 (rcs-revision 1.3)
 (/usr/share/texmf/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarytrees
 .code.tex
 File: tikzlibrarytrees.code.tex 2008/02/24 v2.10 (rcs-revision 1.2)
-) (/usr/share/texlive/texmf-dist/tex/latex/setspace/setspace.sty
+) (/usr/share/texlive/texmf-dist/tex/latex/pgfplots/pgfplots.sty
+(/usr/share/texlive/texmf-dist/tex/generic/pgfplots/pgfplots.revision.tex)
+Package: pgfplots 2013/10/03 v1.9 Data Visualization (1.9)
+
+(/usr/share/texlive/texmf-dist/tex/generic/pgfplots/pgfplots.code.tex
+(/usr/share/texlive/texmf-dist/tex/generic/pgfplots/pgfplotscore.code.tex
+\t@pgfplots@toka=\toks40
+\t@pgfplots@tokb=\toks41
+\t@pgfplots@tokc=\toks42
+\pgfplots@tmpa=\dimen198
+\c@pgfplots@coordindex=\count145
+\c@pgfplots@scanlineindex=\count146
+
+(/usr/share/texlive/texmf-dist/tex/generic/pgfplots/sys/pgfplotssysgeneric.code
+.tex))
+(/usr/share/texlive/texmf-dist/tex/generic/pgfplots/libs/pgfplotslibrary.code.t
+ex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgfplots/oldpgfcompatib/pgfplotsoldp
+gfsupp_loader.code.tex
+Package pgfplots: loading complementary code for your PGF version...
+
+(/usr/share/texlive/texmf-dist/tex/generic/pgfplots/oldpgfcompatib/pgfplotsoldp
+gfsupp_misc.code.tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgfplots/oldpgfcompatib/pgfplotsoldp
+gfsupp_pgfkeys.code.tex
+\pgfkeys@pathtoks=\toks43
+\pgfkeys@temptoks=\toks44
+
+(/usr/share/texlive/texmf-dist/tex/generic/pgfplots/oldpgfcompatib/pgfplotsoldp
+gfsupp_pgfkeysfiltered.code.tex
+\pgfkeys@tmptoks=\toks45
+))
+(/usr/share/texlive/texmf-dist/tex/generic/pgfplots/oldpgfcompatib/pgfplotsoldp
+gfsupp_pgfmathfloat.code.tex
+\c@pgfmathroundto@lastzeros=\count147
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pgfplots/oldpgfcompatib/pgfplotsoldp
+gfsupp_pgflibraryplothandlers.code.tex
+File: pgflibraryplothandlers.code.tex 2012/09/11 v2.10 (rcs-revision 1.17)
+\pgf@plot@mark@count=\count148
+\pgfplotmarksize=\dimen199
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pgfplots/oldpgfcompatib/pgfplotsoldp
+gfsupp_pgflibraryfpu.code.tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgfplots/oldpgfcompatib/pgfplotsoldp
+gfsupp_pgfcorescopes.code.tex
+File: pgfcorescopes.code.tex 2012/11/30  (rcs-revision 1.38)
+\pgfpic=\box63
+\pgf@hbox=\box64
+\pgf@layerbox@main=\box65
+\pgf@picture@serial@count=\count149
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pgfplots/oldpgfcompatib/pgfplotsoldp
+gfsupp_pgfcorelayers.code.tex
+File: pgfcorelayers.code.tex 2012/11/07  (rcs-revision 1.5)
+))
+(/usr/share/texlive/texmf-dist/tex/generic/pgfplots/util/pgfplotsutil.code.tex
+(/usr/share/texlive/texmf-dist/tex/generic/pgfplots/liststructure/pgfplotslists
+tructure.code.tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgfplots/liststructure/pgfplotslists
+tructureext.code.tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgfplots/liststructure/pgfplotsarray
+.code.tex
+\c@pgfplotsarray@tmp=\count150
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pgfplots/liststructure/pgfplotsmatri
+x.code.tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgfplots/numtable/pgfplotstableshare
+d.code.tex
+\c@pgfplotstable@counta=\count151
+\t@pgfplotstable@a=\toks46
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pgfplots/liststructure/pgfplotsdeque
+.code.tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgfplots/util/pgfplotsbinary.code.te
+x
+(/usr/share/texlive/texmf-dist/tex/generic/pgfplots/util/pgfplotsbinary.data.co
+de.tex))
+(/usr/share/texlive/texmf-dist/tex/generic/pgfplots/util/pgfplotsutil.verb.code
+.tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgfplots/libs/pgflibrarypgfplots.sur
+fshading.code.tex
+\c@pgfplotslibrarysurf@no=\count152
+
+(/usr/share/texlive/texmf-dist/tex/generic/pgfplots/sys/pgflibrarypgfplots.surf
+shading.pgfsys-pdftex.def)))
+(/usr/share/texlive/texmf-dist/tex/generic/pgfplots/util/pgfplotscolormap.code.
+tex
+(/usr/share/texlive/texmf-dist/tex/generic/pgfplots/util/pgfplotscolor.code.tex
+))
+(/usr/share/texlive/texmf-dist/tex/generic/pgfplots/pgfplotsstackedplots.code.t
+ex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgfplots/pgfplotsplothandlers.code.t
+ex
+(/usr/share/texlive/texmf-dist/tex/generic/pgfplots/pgfplotsmeshplothandler.cod
+e.tex))
+(/usr/share/texlive/texmf-dist/tex/generic/pgfplots/pgfplots.scaling.code.tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgfplots/pgfplotscoordprocessing.cod
+e.tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgfplots/pgfplots.errorbars.code.tex
+) (/usr/share/texlive/texmf-dist/tex/generic/pgfplots/pgfplots.markers.code.tex
+) (/usr/share/texlive/texmf-dist/tex/generic/pgfplots/pgfplotsticks.code.tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgfplots/pgfplots.paths.code.tex)
+(/usr/share/texmf/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarydecor
+ations.code.tex
+(/usr/share/texmf/tex/generic/pgf/modules/pgfmoduledecorations.code.tex
+\pgfdecoratedcompleteddistance=\dimen200
+\pgfdecoratedremainingdistance=\dimen201
+\pgfdecoratedinputsegmentcompleteddistance=\dimen202
+\pgfdecoratedinputsegmentremainingdistance=\dimen203
+\pgf@decorate@distancetomove=\dimen204
+\pgf@decorate@repeatstate=\count153
+\pgfdecorationsegmentamplitude=\dimen205
+\pgfdecorationsegmentlength=\dimen206
+)
+\tikz@lib@dec@box=\box66
+)
+(/usr/share/texmf/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarydecor
+ations.pathmorphing.code.tex
+(/usr/share/texmf/tex/generic/pgf/libraries/decorations/pgflibrarydecorations.p
+athmorphing.code.tex))
+(/usr/share/texmf/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarydecor
+ations.pathreplacing.code.tex
+(/usr/share/texmf/tex/generic/pgf/libraries/decorations/pgflibrarydecorations.p
+athreplacing.code.tex))
+\pgfplots@numplots=\count154
+\pgfplots@xmin@reg=\dimen207
+\pgfplots@xmax@reg=\dimen208
+\pgfplots@ymin@reg=\dimen209
+\pgfplots@ymax@reg=\dimen210
+\pgfplots@zmin@reg=\dimen211
+\pgfplots@zmax@reg=\dimen212
+)
+(/usr/share/texmf/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryplotm
+arks.code.tex
+File: tikzlibraryplotmarks.code.tex 2008/01/09 v2.10 (rcs-revision 1.1)
+
+(/usr/share/texmf/tex/generic/pgf/libraries/pgflibraryplotmarks.code.tex
+File: pgflibraryplotmarks.code.tex 2010/10/15 v2.10 (rcs-revision 1.12)
+)))
+(/usr/share/texlive/texmf-dist/tex/generic/pgfplots/libs/tikzlibrarypgfplots.co
+lormaps.code.tex)
+(/usr/share/texlive/texmf-dist/tex/latex/setspace/setspace.sty
 Package: setspace 2011/12/19 v6.7a set line spacing
 )
 
@@ -1117,27 +1260,27 @@ Class scrreprt Warning: Usage of package `titlesec' together
 (scrreprt)              the extended optional argument of the section
 (scrreprt)              commands .
 (scrreprt)              Nevertheless, using requested
-(scrreprt)              package `titlesec' on input line 47.
+(scrreprt)              package `titlesec' on input line 63.
 
 (/usr/share/texlive/texmf-dist/tex/latex/titlesec/titlesec.sty
 Package: titlesec 2011/12/15 v2.10.0 Sectioning titles
-\ttl@box=\box63
+\ttl@box=\box67
 \beforetitleunit=\skip61
 \aftertitleunit=\skip62
-\ttl@plus=\dimen198
-\ttl@minus=\dimen199
-\ttl@toksa=\toks40
-\titlewidth=\dimen200
-\titlewidthlast=\dimen201
-\titlewidthfirst=\dimen202
+\ttl@plus=\dimen213
+\ttl@minus=\dimen214
+\ttl@toksa=\toks47
+\titlewidth=\dimen215
+\titlewidthlast=\dimen216
+\titlewidthfirst=\dimen217
 )
 (/usr/share/texlive/texmf-dist/tex/latex/bezos/accents.sty
 Package: accents 2006/05/12 v1.3 Math Accent Tools
-\cc@skew=\dimen203
-\cc@wd=\dimen204
-\cc@code=\count145
-\cc@group=\count146
-\cc@skewchar=\count147
+\cc@skew=\dimen218
+\cc@wd=\dimen219
+\cc@code=\count155
+\cc@group=\count156
+\cc@skewchar=\count157
 )
 
 Class scrreprt Warning: Usage of package `parskip' together
@@ -1145,7 +1288,7 @@ Class scrreprt Warning: Usage of package `parskip' together
 (scrreprt)              I'd suggest to use option
 (scrreprt)              `parskip' with one of it's several values.
 (scrreprt)              Nevertheless, using requested
-(scrreprt)              package `parskip' on input line 68.
+(scrreprt)              package `parskip' on input line 84.
 
 (/usr/share/texlive/texmf-dist/tex/latex/parskip/parskip.sty
 Package: parskip 2001/04/09 non-zero parskip adjustments
@@ -1159,22 +1302,22 @@ Package: eso-pic 2013/10/06 v2.0d eso-pic (RN)
 (/usr/share/texlive/texmf-dist/tex/latex/pdfpages/pppdftex.def
 File: pppdftex.def 2013/08/25 v0.4v Pdfpages driver for pdfTeX (AM)
 )
-\AM@pagebox=\box64
-\AM@toc@title=\toks41
-\c@AM@survey=\count148
-\AM@templatesizebox=\box65
+\AM@pagebox=\box68
+\AM@toc@title=\toks48
+\c@AM@survey=\count158
+\AM@templatesizebox=\box69
 )
 (/usr/share/texlive/texmf-dist/tex/generic/ulem/ulem.sty
-\UL@box=\box66
-\UL@hyphenbox=\box67
+\UL@box=\box70
+\UL@hyphenbox=\box71
 \UL@skip=\skip63
-\UL@hook=\toks42
-\UL@height=\dimen205
-\UL@pe=\count149
-\UL@pixel=\dimen206
-\ULC@box=\box68
+\UL@hook=\toks49
+\UL@height=\dimen220
+\UL@pe=\count159
+\UL@pixel=\dimen221
+\ULC@box=\box72
 Package: ulem 2012/05/18
-\ULdepth=\dimen207
+\ULdepth=\dimen222
 )
 
 Class scrreprt Warning: Usage of package `fancyhdr' together
@@ -1182,7 +1325,7 @@ Class scrreprt Warning: Usage of package `fancyhdr' together
 (scrreprt)              I'd suggest to use 
 (scrreprt)              package `scrpage2' or `scrlayer-scrpage'.
 (scrreprt)              Nevertheless, using requested
-(scrreprt)              package `fancyhdr' on input line 91.
+(scrreprt)              package `fancyhdr' on input line 107.
 
 (/usr/share/texlive/texmf-dist/tex/latex/fancyhdr/fancyhdr.sty
 \fancy@headwidth=\skip64
@@ -1218,17 +1361,17 @@ File: t1bch.fd 2004/10/18 font definitions for T1/bch.
 )
 (/usr/share/texlive/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count150
-\scratchdimen=\dimen208
-\scratchbox=\box69
-\nofMPsegments=\count151
-\nofMParguments=\count152
-\everyMPshowfont=\toks43
-\MPscratchCnt=\count153
-\MPscratchDim=\dimen209
-\MPnumerator=\count154
-\makeMPintoPDFobject=\count155
-\everyMPtoPDFconversion=\toks44
+\scratchcounter=\count160
+\scratchdimen=\dimen223
+\scratchbox=\box73
+\nofMPsegments=\count161
+\nofMParguments=\count162
+\everyMPshowfont=\toks50
+\MPscratchCnt=\count163
+\MPscratchDim=\dimen224
+\MPnumerator=\count164
+\makeMPintoPDFobject=\count165
+\everyMPtoPDFconversion=\toks51
 ) (/usr/share/texlive/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
 Package: epstopdf-base 2010/02/09 v2.5 Base part for package epstopdf
 
@@ -1248,7 +1391,7 @@ Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: float package is loaded.
 Package caption Info: hyperref package is loaded.
 Package caption Info: End \AtBeginDocument code.
-\AtBeginShipoutBox=\box70
+\AtBeginShipoutBox=\box74
 Package hyperref Info: Link coloring OFF on input line 2.
 
 (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
@@ -1257,7 +1400,7 @@ Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
 (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
 Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 )
-\c@section@level=\count156
+\c@section@level=\count166
 )
 LaTeX Info: Redefining \ref on input line 2.
 LaTeX Info: Redefining \pageref on input line 2.
@@ -1268,7 +1411,11 @@ LaTeX Info: Redefining \nameref on input line 2.
 \openout4 = `Masterarbeit.out'.
 
 
-ABD: EveryShipout initializing macros (./Kapitel3.tex
+ABD: EveryShipout initializing macros
+Package pgfplots notification 'compat/show suggested version=true': you might b
+enefit from \pgfplotsset{compat=1.9} (current compat level: 1.6).
+
+(./Kapitel2.tex
 Kapitel 1.
 
 Class scrreprt Warning: \float@addtolists detected!
@@ -1285,123 +1432,361 @@ Class scrreprt Warning: \float@addtolists detected!
 (scrreprt)              a package that still implements the
 (scrreprt)              deprecated \float@addtolist interface .
 
-<Bilder/MotorolaAntenne.png, id=98, 143.78719pt x 280.04625pt>
-File: Bilder/MotorolaAntenne.png Graphic file (type png)
+<Bilder/BLE.png, id=60, 1764.5925pt x 566.115pt>
+File: Bilder/BLE.png Graphic file (type png)
+ <use Bilder/BLE.png>
+Package pdftex.def Info: Bilder/BLE.png used on input line 15.
+(pdftex.def)             Requested size: 123.53409pt x 39.6321pt.
 
-<use Bilder/MotorolaAntenne.png>
-Package pdftex.def Info: Bilder/MotorolaAntenne.png used on input line 21.
-(pdftex.def)             Requested size: 115.02989pt x 224.0373pt.
+<Bilder/iBeaconLogo.png, id=67, 143.53625pt x 136.51pt>
+File: Bilder/iBeaconLogo.png Graphic file (type png)
+
+<use Bilder/iBeaconLogo.png>
+Package pdftex.def Info: Bilder/iBeaconLogo.png used on input line 29.
+(pdftex.def)             Requested size: 71.76794pt x 68.25482pt.
  [1
 
 
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map} <./Bilder/BLE.png> <./Bilde
+r/iBeaconLogo.png>]
+<Bilder/BeaconSchicht.png, id=88, 1112.155pt x 2228.325pt>
+File: Bilder/BeaconSchicht.png Graphic file (type png)
 
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map} <./Bilder/MotorolaAntenne.p
-ng>]
-<Bilder/Youbot.png, id=112, 339.2675pt x 344.28625pt>
-File: Bilder/Youbot.png Graphic file (type png)
- <use Bilder/Youbot.png>
-Package pdftex.def Info: Bilder/Youbot.png used on input line 33.
-(pdftex.def)             Requested size: 169.63333pt x 172.1427pt.
-LaTeX Font Info:    Try loading font information for OT1+ztmcm on input line 52
+<use Bilder/BeaconSchicht.png>
+Package pdftex.def Info: Bilder/BeaconSchicht.png used on input line 39.
+(pdftex.def)             Requested size: 77.8588pt x 155.99869pt.
+
+Underfull \hbox (badness 1655) in paragraph at lines 40--40
+[][][]\T1/bch/m/n/12 Abb. 1.3[][]: []|Ex-plo-si-ons-zeich-nung
+ []
+
+
+LaTeX Warning: Reference `fig:FUE' on page 2 undefined on input line 55.
+
+LaTeX Font Info:    Try loading font information for OT1+ztmcm on input line 57
 .
-
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1ztmcm.fd
 File: ot1ztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OT1/ztmcm.
 )
-LaTeX Font Info:    Try loading font information for OML+ztmcm on input line 52
+LaTeX Font Info:    Try loading font information for OML+ztmcm on input line 57
 .
 
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/omlztmcm.fd
 File: omlztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OML/ztmcm.
 )
-LaTeX Font Info:    Try loading font information for OMS+ztmcm on input line 52
+LaTeX Font Info:    Try loading font information for OMS+ztmcm on input line 57
 .
 
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/omsztmcm.fd
 File: omsztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OMS/ztmcm.
 )
-LaTeX Font Info:    Try loading font information for OMX+ztmcm on input line 52
+LaTeX Font Info:    Try loading font information for OMX+ztmcm on input line 57
 .
 
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/omxztmcm.fd
 File: omxztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OMX/ztmcm.
 )
-LaTeX Font Info:    Try loading font information for U+rsfs on input line 52.
+LaTeX Font Info:    Try loading font information for U+rsfs on input line 57.
 
 (/usr/share/texlive/texmf-dist/tex/latex/jknapltx/ursfs.fd
 File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 )
-LaTeX Font Info:    Try loading font information for OT1+ptm on input line 52.
+LaTeX Font Info:    Try loading font information for OT1+ptm on input line 57.
 
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1ptm.fd
 File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
 )
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 52.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 57.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <9> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 52.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 57.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 52.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 57.
 
-Underfull \vbox (badness 2229) has occurred while \output is active []
+<Bilder/Wand.png, id=96, 1505.625pt x 963.6pt>
+File: Bilder/Wand.png Graphic file (type png)
+ <use Bilder/Wand.png>
+Package pdftex.def Info: Bilder/Wand.png used on input line 59.
+(pdftex.def)             Requested size: 195.73811pt x 125.2724pt.
 
- [2 <./Bilder/Youbot.png>] [3]) (./Masterarbeit.bbl [4]
-LaTeX Font Info:    Try loading font information for T1+pcr on input line 13.
+Underfull \hbox (badness 2469) in paragraph at lines 60--60
+[][][]\T1/bch/m/n/12 Abb. 1.4[][]: []|Si-gnal-schwä-chung durch
+ []
+
+<Bilder/Hand.png, id=99, 1505.625pt x 963.6pt>
+File: Bilder/Hand.png Graphic file (type png)
+ <use Bilder/Hand.png>
+Package pdftex.def Info: Bilder/Hand.png used on input line 66.
+(pdftex.def)             Requested size: 195.73811pt x 125.2724pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 54--70
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 54--70
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 54--70
+
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [2 <./Bilder/BeaconSchicht.png>]
+LaTeX Font Info:    Try loading font information for OMS+bch on input line 73.
+
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/omsbch.fd
+File: omsbch.fd 
+)
+LaTeX Font Info:    Font shape `OMS/bch/m/n' in size <12> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 73.
+
+Underfull \hbox (badness 10000) in paragraph at lines 80--96
+
+ []
+
+[3 <./Bilder/Wand.png> <./Bilder/Hand.png>] [4]
+<Bilder/Beacon.png, id=132, 87.32625pt x 131.49126pt>
+File: Bilder/Beacon.png Graphic file (type png)
+ <use Bilder/Beacon.png>
+Package pdftex.def Info: Bilder/Beacon.png used on input line 117.
+(pdftex.def)             Requested size: 8.73312pt x 13.14989pt.
+File: Bilder/Beacon.png Graphic file (type png)
+
+<use Bilder/Beacon.png>
+Package pdftex.def Info: Bilder/Beacon.png used on input line 118.
+(pdftex.def)             Requested size: 8.73312pt x 13.14989pt.
+File: Bilder/Beacon.png Graphic file (type png)
+ <use Bilder/Beacon.png>
+Package pdftex.def Info: Bilder/Beacon.png used on input line 119.
+(pdftex.def)             Requested size: 8.73312pt x 13.14989pt.
+
+<Bilder/MotoG.png, id=133, 226.8475pt x 451.6875pt>
+File: Bilder/MotoG.png Graphic file (type png)
+ <use Bilder/MotoG.png>
+Package pdftex.def Info: Bilder/MotoG.png used on input line 120.
+(pdftex.def)             Requested size: 9.07234pt x 18.06442pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 125--127
+
+ []
+
+[5 <./Bilder/Beacon.png> <./Bilder/MotoG.png>]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [6]
+<Bilder/iBeaconShoe.png, id=153, 783.92876pt x 389.455pt>
+File: Bilder/iBeaconShoe.png Graphic file (type png)
+
+<use Bilder/iBeaconShoe.png>
+Package pdftex.def Info: Bilder/iBeaconShoe.png used on input line 160.
+(pdftex.def)             Requested size: 235.18044pt x 116.83739pt.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 164.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7.4> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 164.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <6> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 164.
+LaTeX Font Info:    Try loading font information for T1+pcr on input line 164.
 
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/t1pcr.fd
 File: t1pcr.fd 2001/06/04 font definitions for T1/pcr.
 )
-Underfull \hbox (badness 5578) in paragraph at lines 16--19
-[]\T1/bch/m/sc/12 ARM Li-mi-ted\T1/bch/m/n/12 :  |   []   |   [].  []$\T1/pcr/m
-/n/12 http : / / www . arm . com / products /
+Overfull \vbox (11.3377pt too high) has occurred while \output is active []
+
+
+[7 <./Bilder/iBeaconShoe.png (PNG copy)>] [8]
+<Bilder/iBeaconAirport.png, id=177, 417.56pt x 307.1475pt>
+File: Bilder/iBeaconAirport.png Graphic file (type png)
+
+<use Bilder/iBeaconAirport.png>
+Package pdftex.def Info: Bilder/iBeaconAirport.png used on input line 168.
+(pdftex.def)             Requested size: 208.77948pt x 153.57336pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 172--174
+[][]\T1/bch/m/n/12 Im Ge-gen-satz da-zu stellt die Mikro-
  []
 
 
-Underfull \hbox (badness 1728) in paragraph at lines 21--25
-[]\T1/bch/m/sc/12 B. Klug\T1/bch/m/n/12 :  Mo-to-ro-la Mo-to G Re-view.  In: | 
-  [] []$\T1/pcr/m/n/12 http : / / www .
+Underfull \hbox (badness 2134) in paragraph at lines 172--174
+\T1/bch/m/n/12 und Flug-ha-fen-be-trei-ber ge-nannt wer-den.
  []
 
 
-Underfull \hbox (badness 1675) in paragraph at lines 27--31
-[]\T1/bch/m/sc/12 Kuka AG\T1/bch/m/n/12 :  |   [].  []$\T1/pcr/m/n/12 http : / 
-/ www . kuka-[]labs . com / de / service _ robotics /
+Underfull \hbox (badness 10000) in paragraph at lines 172--174
+
+ []
+
+<Bilder/TrackEstimote.png, id=180, 451.6875pt x 830.10126pt>
+File: Bilder/TrackEstimote.png Graphic file (type png)
+
+<use Bilder/TrackEstimote.png>
+Package pdftex.def Info: Bilder/TrackEstimote.png used on input line 178.
+(pdftex.def)             Requested size: 135.5073pt x 249.0323pt.
+
+Underfull \vbox (badness 2469) has occurred while \output is active []
+
+ [9 <./Bilder/iBeaconAirport.png (PNG copy)>]) (./Masterarbeit.bbl [10 <./Bilde
+r/TrackEstimote.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 11--14
+[]\T1/bch/m/sc/12 5280mobile.net\T1/bch/m/n/12 :  |   []   |   []   |   [].  []
+$\T1/pcr/m/n/12 http : / / 5280mobile . net /
+ []
+
+
+Underfull \hbox (badness 2662) in paragraph at lines 29--33
+[]\T1/bch/m/sc/12 Apple Inc.\T1/bch/m/n/12 :  |   []   |   [].  []$\T1/pcr/m/n/
+12 https : / / developer . apple . com / ibeacon/$[]\T1/bch/m/n/12 .
+ []
+
+
+Underfull \hbox (badness 1253) in paragraph at lines 35--41
+[]\T1/bch/m/sc/12 Bluetooth SIG, Inc.\T1/bch/m/n/12 :  SIG IN-TRO-DU-CES BLUE-T
+OOTH LOW ENER-GY WI-RE-
+ []
+
+
+Underfull \hbox (badness 1082) in paragraph at lines 35--41
+\T1/bch/m/n/12 NO-LO-GY.  In: |   [] (2009).  []$\T1/pcr/m/n/12 http : / / www 
+. bluetooth . com / Pages /
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 49--55
+[]\T1/bch/m/sc/12 D. E. Dil-ger\T1/bch/m/n/12 :  In-si-de iOS 7: iBe-a-cons en-
+han-ce ap-ps' lo-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 49--55
+\T1/bch/m/n/12 ca-ti-on awa-ren-ess via Blue-tooth LE.  In: |   []
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 49--55
+\T1/bch/m/n/12 (2013).  []$\T1/pcr/m/n/12 http : / / appleinsider . com / artic
+les / 13 / 06 / 19 /
+ []
+
+
+Overfull \hbox (54.5972pt too wide) in paragraph at lines 49--55
+\T1/pcr/m/n/12 inside-[]ios-[]7-[]ibeacons-[]enhance-[]apps-[]location-[]awaren
+ess-[]via-[]bluetooth-[]le$[] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 69--73
+[]\T1/bch/m/sc/12 G. Braun-ber-ger\T1/bch/m/n/12 :  |   []   |   []   |   [].  
+[]$\T1/pcr/m/n/12 http : / / www .
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 69--73
+\T1/pcr/m/n/12 faz . net / aktuell / wirtschaft / menschen-[]wirtschaft /
+ []
+
+
+Underfull \hbox (badness 1199) in paragraph at lines 75--79
+[]\T1/bch/m/sc/12 H.-C. Dir-scherl\T1/bch/m/n/12 :  Stau-Warnung - Die-se Verke
+hrslage-Dienste gibt es für Au-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 75--79
+\T1/bch/m/n/12 to-fah-rer.  In: |   [] []$\T1/pcr/m/n/12 http : / / www . pcwel
+t . de / ratgeber /
+ []
+
+
+Overfull \hbox (139.49716pt too wide) in paragraph at lines 75--79
+\T1/pcr/m/n/12 Stau-[]Warnung-[]Google-[]Maps-[]Tomtom-[]Verkehrslage-[]Echtzei
+tverkehrsinformationen-[]373385 .
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 81--82
+[][]$\T1/pcr/m/n/12 http : / / www . bundesnetzagentur . de / SharedDocs / Down
+loads / DE /
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 81--82
+\T1/pcr/m/n/12 Sachgebiete / Telekommunikation / Unternehmen _ Institutionen /
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 81--82
+\T1/pcr/m/n/12 Frequenzen / Allgemeinzuteilungen / 2003 _ 76 _ ISM _ pdf . pdf 
+? _ _ blob =
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 84--89
+[]\T1/bch/m/sc/12 mobile-studien.de\T1/bch/m/n/12 :  |   []   |   []   |   []  
+ |   []   |   [].
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 84--89
+[]$\T1/pcr/m/n/12 http : / / mobile-[]studien . de / marktanteile-[]betriebssys
+teme /
+ []
+
+[11
+
+]
+Underfull \hbox (badness 2865) in paragraph at lines 104--107
+[]\T1/bch/m/sc/12 www.contechlab.com\T1/bch/m/n/12 :  |   []   |   [].  []$\T1/
+pcr/m/n/12 http : / / www . contechlab . com /
  []
 
 )
-
-Package caption Warning: Unused \captionsetup[wrapfigure] on input line 23.
-See the caption package documentation for explanation.
-
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 36.
-[5
-
-]
+ [12]
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 36.
  (./Masterarbeit.aux)
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 36.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 36.
 Package rerunfilecheck Info: File `Masterarbeit.out' has not changed.
-(rerunfilecheck)             Checksum: 7211C186F7882AD89E9386A7417A0751;1417.
+(rerunfilecheck)             Checksum: 381A9BD8CFA9D29607E47FB2A8D52C19;725.
+
+
+LaTeX Warning: There were undefined references.
+
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 36.
  ) 
 Here is how much of TeX's memory you used:
- 22642 strings out of 494935
- 412163 string characters out of 6178121
- 574499 words of memory out of 5000000
- 25322 multiletter control sequences out of 15000+600000
- 40991 words of font info for 65 fonts, out of 8000000 for 9000
+ 30132 strings out of 494935
+ 650076 string characters out of 6178121
+ 905349 words of memory out of 5000000
+ 32616 multiletter control sequences out of 15000+600000
+ 66776 words of font info for 112 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
- 67i,11n,75p,1170b,801s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texliv
-e/texmf-dist/fonts/type1/bitstrea/charter/bchb8a.pfb></usr/share/texlive/texmf-
-dist/fonts/type1/bitstrea/charter/bchr8a.pfb></usr/share/texlive/texmf-dist/fon
-ts/type1/urw/courier/ucrr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/
-symbol/usyr.pfb>
-Output written on Masterarbeit.pdf (5 pages, 237329 bytes).
+ 67i,15n,78p,2412b,778s stack positions out of 5000i,500n,10000p,200000b,80000s
+pdfTeX warning (dest): name{Hfootnote.2} has been referenced but does not exi
+st, replaced by a fixed one
+
+pdfTeX warning (dest): name{Hfootnote.1} has been referenced but does not exist
+, replaced by a fixed one
+
+{/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texlive/
+texmf-dist/fonts/type1/bitstrea/charter/bchb8a.pfb></usr/share/texlive/texmf-di
+st/fonts/type1/bitstrea/charter/bchr8a.pfb></usr/share/texlive/texmf-dist/fonts
+/type1/bitstrea/charter/bchri8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/
+public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public
+/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfon
+ts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/courier/ucrr8a.
+pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/symbol/usyr.pfb></usr/share/
+texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-d
+ist/fonts/type1/urw/times/utmri8a.pfb>
+Output written on Masterarbeit.pdf (12 pages, 2057828 bytes).
 PDF statistics:
- 184 PDF objects out of 1000 (max. 8388607)
- 149 compressed objects within 2 object streams
- 34 named destinations out of 1000 (max. 500000)
- 271 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 289 PDF objects out of 1000 (max. 8388607)
+ 218 compressed objects within 3 object streams
+ 51 named destinations out of 1000 (max. 500000)
+ 231 words of extra memory for PDF output out of 10000 (max. 10000000)
 

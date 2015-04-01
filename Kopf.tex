@@ -23,20 +23,36 @@
 \captionsetup[wrapfigure]{format=plain}		   % auch unter Abb. schreiben
 \captionsetup[figure]{format=plain}
 \usepackage{float}                             % macht die figures dorthin, wohin ich sie haben moechte
-\usepackage{hyperref}
+\usepackage[colorlinks=false]{hyperref}
 \usepackage{breakurl}
 \usepackage{url}
 \usepackage{tikz}							   % fuer schoene Zeichnungen
 \usetikzlibrary{arrows,shapes,positioning,shadows,trees}
-\tikzset{
-  basic/.style  = {draw, text width=2cm, drop shadow, font=\sffamily, rectangle},
-  root/.style   = {basic, rounded corners=2pt, thin, align=center,
-                   fill=green!30},
-  level 2/.style = {basic, rounded corners=6pt, thin,align=center, fill=green!60,
-                   text width=8em},
-  level 3/.style = {basic, thin, align=left, fill=pink!60, text width=6.5em}
-}
+\usepackage{pgfplots}
+\usepgfplotslibrary{colormaps}
+\pgfplotsset{compat=1.6}
 
+% Zur Invertierung von Colormaps
+\makeatletter
+\def\customrevertcolormap#1{%
+    \pgfplotsarraycopy{pgfpl@cm@#1}\to{custom@COPY}%
+    \c@pgf@counta=0
+    \c@pgf@countb=\pgfplotsarraysizeof{custom@COPY}\relax
+    \c@pgf@countd=\c@pgf@countb
+    \advance\c@pgf@countd by-1 %
+    \pgfutil@loop
+    \ifnum\c@pgf@counta<\c@pgf@countb
+        \pgfplotsarrayselect{\c@pgf@counta}\of{custom@COPY}\to\pgfplots@loc@TMPa
+        \pgfplotsarrayletentry\c@pgf@countd\of{pgfpl@cm@#1}=\pgfplots@loc@TMPa
+        \advance\c@pgf@counta by1 %
+        \advance\c@pgf@countd by-1 %
+    \pgfutil@repeat
+%\pgfplots@colormap@showdebuginfofor{#1}%
+}%
+
+\makeatother
+
+% Definition eines Blockes
 \tikzset{
     block/.style={draw, rectangle, rounded corners, very thick, minimum height=1cm, text centered,},
 }

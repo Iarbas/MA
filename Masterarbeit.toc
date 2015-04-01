@@ -1,8 +1,58 @@
-\contentsline {chapter}{Abbildungsverzeichnis}{III}{chapter*.4}
-\contentsline {chapter}{\numberline {1}Stand der Technik - Einf\IeC {\"u}hrung in die Beacon-Technologie}{1}{chapter.1}
-\contentsline {section}{\numberline {1.1}Entwicklungsgeschichte}{1}{section.1.1}
-\contentsline {section}{\numberline {1.2}Aufbau und Funktionsweise von Beacons}{2}{section.1.2}
-\contentsline {section}{\numberline {1.3}Ortungsmethoden}{3}{section.1.3}
-\contentsline {subsection}{\numberline {1.3.1}Kontextbezogene Anwendungen}{4}{subsection.1.3.1}
-\contentsline {subsection}{\numberline {1.3.2}Mikro-Lokalisierung}{4}{subsection.1.3.2}
-\contentsline {chapter}{Literaturverzeichnis}{4}{subsection.1.3.2}
+\contentsline {chapter}{Abbildungsverzeichnis}{IV}{chapter*.4}
+\contentsline {chapter}{Abk\IeC {\"u}rzungsverzeichnis}{V}{chapter*.5}
+\contentsline {chapter}{\numberline {1}Einleitung}{1}{chapter.1}
+\contentsline {chapter}{\numberline {2}Stand der Technik - Einf\IeC {\"u}hrung in die Beacon-Technologie}{3}{chapter.2}
+\contentsline {section}{\numberline {2.1}Entwicklungsgeschichte}{3}{section.2.1}
+\contentsline {section}{\numberline {2.2}Aufbau und Funktionsweise von Beacons}{4}{section.2.2}
+\contentsline {section}{\numberline {2.3}Ortungsmethoden}{5}{section.2.3}
+\contentsline {subsection}{\numberline {2.3.1}Kontextbezogene Anwendungen}{6}{subsection.2.3.1}
+\contentsline {subsection}{\numberline {2.3.2}Mikro-Lokalisierung}{6}{subsection.2.3.2}
+\contentsline {section}{\numberline {2.4}Anwendungsbereiche der Indoor-Lokalisierung}{6}{section.2.4}
+\contentsline {subsection}{\numberline {2.4.1}M\IeC {\"o}gliche Einsatzszenarien}{7}{subsection.2.4.1}
+\contentsline {subsection}{\numberline {2.4.2}Planungskonzepte f\IeC {\"u}r Beacon-Konfigurationen}{8}{subsection.2.4.2}
+\contentsline {chapter}{\numberline {3}Framework und Experimente}{10}{chapter.3}
+\contentsline {section}{\numberline {3.1}Verwendete Hardware}{10}{section.3.1}
+\contentsline {subsection}{\numberline {3.1.1}Motorola Moto G}{10}{subsection.3.1.1}
+\contentsline {subsection}{\numberline {3.1.2}Youbot}{11}{subsection.3.1.2}
+\contentsline {subsection}{\numberline {3.1.3}Scitos G5}{12}{subsection.3.1.3}
+\contentsline {section}{\numberline {3.2}Verwendete Software}{12}{section.3.2}
+\contentsline {subsection}{\numberline {3.2.1}ROS}{12}{subsection.3.2.1}
+\contentsline {subsection}{\numberline {3.2.2}Miracenter}{12}{subsection.3.2.2}
+\contentsline {subsection}{\numberline {3.2.3}Android-Studio}{13}{subsection.3.2.3}
+\contentsline {subsection}{\numberline {3.2.4}Estimote SDK for Android}{13}{subsection.3.2.4}
+\contentsline {section}{\numberline {3.3}App-Entwicklung}{13}{section.3.3}
+\contentsline {subsection}{\numberline {3.3.1}ROS-Anbindung}{13}{subsection.3.3.1}
+\contentsline {subsection}{\numberline {3.3.2}Lagemessung}{13}{subsection.3.3.2}
+\contentsline {subsection}{\numberline {3.3.3}Beacon-Detektierung}{14}{subsection.3.3.3}
+\contentsline {section}{\numberline {3.4}Versuchsplanung}{14}{section.3.4}
+\contentsline {section}{\numberline {3.5}Experimente}{14}{section.3.5}
+\contentsline {subsection}{\numberline {3.5.1}Energieverbrauch eines Beacon}{14}{subsection.3.5.1}
+\contentsline {subsection}{\numberline {3.5.2}Distanzmessung mithilfe von Beacons}{16}{subsection.3.5.2}
+\contentsline {subsubsection}{Einfluss der Intervalll\IeC {\"a}nge}{18}{figure.caption.23}
+\contentsline {subsubsection}{Einfluss der Signalst\IeC {\"a}rke}{18}{figure.caption.23}
+\contentsline {subsection}{\numberline {3.5.3}Auswirkung der Smartphone-Ausrichtung}{18}{subsection.3.5.3}
+\contentsline {subsection}{\numberline {3.5.4}Einfluss anderer Signalquellen}{19}{subsection.3.5.4}
+\contentsline {chapter}{\numberline {4}Konzeptentwurf vom Lighthouse Keeper}{21}{chapter.4}
+\contentsline {section}{\numberline {4.1}Modellbildung}{21}{section.4.1}
+\contentsline {subsection}{\numberline {4.1.1}Das WINNER II Modell}{21}{subsection.4.1.1}
+\contentsline {subsection}{\numberline {4.1.2}Parametersch\IeC {\"a}tzung}{21}{subsection.4.1.2}
+\contentsline {section}{\numberline {4.2}Definition einer Richterskala f\IeC {\"u}r die Qualit\IeC {\"a}t von Beacon-Signalen}{21}{section.4.2}
+\contentsline {section}{\numberline {4.3}Implenetierung}{21}{section.4.3}
+\contentsline {subsection}{\numberline {4.3.1}Grundrissanalyse}{21}{subsection.4.3.1}
+\contentsline {subsection}{\numberline {4.3.2}Simulation}{22}{subsection.4.3.2}
+\contentsline {subsection}{\numberline {4.3.3}Optimierung}{22}{subsection.4.3.3}
+\contentsline {subsubsection}{Partikel-Schwarm-Algorithmus}{22}{subsection.4.3.3}
+\contentsline {subsubsection}{Paretofront}{22}{subsection.4.3.3}
+\contentsline {chapter}{\numberline {5}Evaluation}{23}{chapter.5}
+\contentsline {section}{\numberline {5.1}Aufbau des Parcours}{23}{section.5.1}
+\contentsline {section}{\numberline {5.2}Durchf\IeC {\"u}hrung}{23}{section.5.2}
+\contentsline {subsection}{\numberline {5.2.1}Planung mittel Lighthouse Keeper}{23}{subsection.5.2.1}
+\contentsline {subsection}{\numberline {5.2.2}Messergebnisse}{23}{subsection.5.2.2}
+\contentsline {section}{\numberline {5.3}Auswertung}{23}{section.5.3}
+\contentsline {chapter}{\numberline {6}Zusammenfassung und Ausblick}{24}{chapter.6}
+\contentsline {chapter}{Literaturverzeichnis}{25}{chapter.6}
+\contentsline {chapter}{\nonumberline Anhang}{27}{appendix*.27}
+\contentsline {section}{\numberline {A}Bilder}{27}{section.Alph0.1}
+\contentsline {section}{\numberline {B}Tabellen}{27}{section.Alph0.2}
+\contentsline {section}{\numberline {C}App-Aufbau}{27}{section.Alph0.3}
+\contentsline {chapter}{Selbstst\IeC {\"a}ndigkeitserkl\IeC {\"a}rung}{28}{appendix*.29}

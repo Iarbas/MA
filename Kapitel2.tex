@@ -51,7 +51,7 @@ Die Idee der Nutzung von Bluetooth Low Energy zur Indoor-Lokalisierung stammt da
 \end{picture}
 \end{flushright}
 \end{wrapfigure}
-Die Grundbausteine eines Beacon sind in der rechten Abbildung \ref{fig:BeaEx} ersichtlich, in der ein \textit{Estimote Beacon} der Firma Estimote Inc. in seinen einzelnen Bestandteile dargestellt ist. Aufgrund der Verwendung der Estimote Beacons in dieser Arbeit, dienen hier zur Veranschaulichung. Zur Anbringung der Beacons dient die auf der Rückseite befindliche Silikonplatte. Diese haftet an nahezu jeder glatten Oberfläche und kann mithilfe von Wasser normal gereinigt werden. Somit können die Beacons im Grunde unbegrenzt angebracht und wieder abgenommen werden. Die äußere Schutzhülle besteht dabei ebenfalls aus einem Silikon und schützt die inneren Bauteile. Zu den inneren Komponenten gehören die Platine mit dem darauf verlöteten Nordic nRF51822 Chip(32-Bit ARM Cortex M0 CPU mit 256 kB Flash-Speicher und dem 2,4 GHz BLE-Sendemodul) \cite{nRF5}, einer Antenne und eine Knopfbatterie zur autarken Stromversorgung. Die Beacons haben eine variable Sendeleistung von 4dBm bis -30dBm (entspricht einer Leistung von 2,512 Milliwatt bis 1 Microwatt) und übertragen ihre Daten in Intervallen von 50 bis 0,5 Hertz. Die Kommunikation verläuft dabei bidirektional, d.h. vom Beacon zum Empfangsgerät und zurück. Während die Kommunikation von Beacon zu mobilen Gerät dazu dient, die Lokalisierung des Gerätes zu ermöglichen, dient die Kommunikation vom Smartphone, Tablet, etc. zum Beacon zur Überprüfung des Betriebszustandes und zur Programmierung der Beacons. \\ \\
+Die Grundbausteine eines Beacon sind in der rechten Abbildung \ref{fig:BeaEx} ersichtlich, in der ein \textit{Estimote Beacon} der Firma Estimote Inc. in seinen einzelnen Bestandteile dargestellt ist. Aufgrund der Verwendung der Estimote Beacons in dieser Arbeit, dienen hier zur Veranschaulichung. Zur Anbringung der Beacons dient die auf der Rückseite befindliche Silikonplatte. Diese haftet an nahezu jeder glatten Oberfläche und kann mithilfe von Wasser normal gereinigt werden. Somit können die Beacons im Grunde unbegrenzt angebracht und wieder abgenommen werden. Die äußere Schutzhülle besteht dabei ebenfalls aus einem Silikon und schützt die inneren Bauteile. Zu den inneren Komponenten gehören die Platine mit dem darauf verlöteten Nordic nRF51822 Chip (32-Bit ARM Cortex M0 CPU mit 256 kB Flash-Speicher und dem 2,4 GHz BLE-Sendemodul) \cite{nRF5}, einer Antenne und eine Knopfbatterie zur autarken Stromversorgung. Die Beacons haben eine variable Sendeleistung von 4dBm bis -30dBm (entspricht einer Leistung von 2,512 Milliwatt bis 1 Microwatt) und übertragen ihre Daten in Intervallen von 50 bis 0,5 Hertz. Die Kommunikation verläuft dabei bidirektional, d.h. vom Beacon zum Empfangsgerät und zurück. Während die Kommunikation von Beacon zu mobilen Gerät dazu dient, die Lokalisierung des Gerätes zu ermöglichen, dient die Kommunikation vom Smartphone, Tablet, etc. zum Beacon zur Überprüfung des Betriebszustandes und zur Programmierung der Beacons. \\ \\
 Die bei der Signalübertragung verwendete Protokoll-Architektur Bluetooth Low Energy sendet dabei im 2,4 Ghz Band, welches ebenfalls von den Protokollen 802.11 ac/a/b/g/n, älteren Bluetooth-Standards, ZigBee, NFC, etc. genutzt wird. Eine kleine Übersicht zu den einzelnen Varianten und deren Eigenschaften findet sich im Anhang in Bild \ref{fig:FUE}. Die Vorteile vom 2,4 Ghz Band gegenüber anderen Frequenzbändern ergeben sich aus einer großen Reichweite der Funksignale und einer geringen Größe der Antenne für deren Erzeugung. Jedoch besitzt dieses Band auch gewisse Nachteile, die bei der Auslegung von Beacon-Konfiguartionen beachtet werden müssen. Die Verwendung des Protokolls im 2,4 Ghz Band ist dabei historisch bedingt und nahezu alternativlos, da sie zu den ISM-Bändern \cite{BuNet} zählt und nur diese somit frei nutzbar sind. Durch die Benutzung des 2,4 Ghz Bandes für die Datenübertragungen in WLAN oder Bluetooth treten bei vermehrter Nuztung des Bandes leicht Störungen in den Übertragungen auf. Somit hängt die Qualität der Signale und schlussendlich auch die Lokalisierungsgenauigkeit an der lokalen Auslastung des 2,4 Ghz Bandes. Weitere störende Faktoren für die Signalqualität  können auch physische Objekte haben, die sich zwischen Sender und Empfänger befinden. In den Bildern \ref{fig:Wand} und \ref{fig:Hand} wird dies einmal dargestellt. Denn durch die physikalischen Eigenschaften des 2,4 Ghz Bandes werden die Funksignale durch Materialien wie Wasser und Stahl besonders gut absorbiert. Da die meisten Gebäude aus Stahlbeton gebaut sind und der menschliche Körper aus einem großen Anteil aus Wasser besteht, wirken sich diese Umstände besonders negativ auf die Qualität der Signale und am Ende auf die Anwendung der BLE-Technik für die Lokalisierung von Menschen in Gebäuden aus. Jedoch sei dies nur am Rande erwähnt und würde unter zusätzlicher Betrachtung dieser Aspekten nur den zeitlichen Rahmen dieser Arbeit sprengen. Festghelaten können hier als Gründe für eine Qualitätsminderung der Lokalisierung: die Schwächung der Signale an Objekten, die Phasenauslöschung durch andere Signalquellen und unberechenbaren Reflexionen.\\ \\
 \begin{figure}[H]
 $\begin{minipage}[b]{7cm}
@@ -95,10 +95,62 @@ Mit der Identifikationsnummer kann zwischen den einzelnen Beacons unterschieden 
 \label{table:BeBe}
 \end{table}
 Bei dem obigen Beispiel nutzt eine Warenhauskette mit mehreren Geschäftsstandorten die Beacon-Technologie zur Lokalisierung in ihren verschiedenen Standorten. Zur Vereinfachung besitzen die Beacons nur eine \textit{Universally Unique Identifier} (UUID) und unterscheiden sich jeweils nur in ihren zusätzlichen Informationen und der Sendeleistung. Die gezeigten Informationen liegen auf den mobilen Geräten der Nutzer vor, genauso wie eine Applikation auf den Geräten, die diese Daten verarbeiten kann. Die Information Major steht dabei für den jeweiligen Standort und Minor für die Abteilung in der die Signale der Beacons empfangen werden können der RSSI-Wert in einem definierten Bereich liegt. Abhängig vom Konzept der Ortung kann dieses Wissen unterschiedlich genutzt werden. Bei der Beacon-Technologie unterscheidet man daher in zwei Anwendungskonzepte der Ortung.  
-\subsection{Kontextbezogene Anwendungen}
-Immediate, Near, Far, Unknown
+\subsection{Definitionen von Bereiche}
+Die einfachste Form einer Lokalisierung ist die Aufteilung eines Raumes in Bereiche, in der die Position eines Nutzer zu einem Beacon dadurch angegeben wird, ob er im Nah- oder Fernbereich zu einem Beacon steht. Diese Art der Ortung ist dabei sehr ungenau, da die Distanzinformationen nicht explizit vorliegen, sondern nur ein homogener Distanz-Bereich um ein Beacon definiert ist. Die Distanz zu einem Beacon wird dabei durch die empfangene Signalstärke von einem Beacon geschätzt und diese Einschätzung beruht derzeit noch auf den Erfahrungen des Beacon-Programmierer, bzw. des Installateurs der Beacon-Systeme. Als Beispiel für eine solche Definition wurden einmal vier Zustände in der Tabelle \ref{table:Ranging} festgelegt und deren Bereiche in Abhängigkeit zu der empfangenen Sendeleistung eines Beacon eingegrenzt. In einem fiktiven Einsatszenario könnte somit ein Kunde in einem Supermarkt oder Warenhaus gezielt auf ein Sonderangebot in seiner Nähe aufmerksam gemacht, oder zusätzliche Informationen zu einem Produkt in einer entsprechenden Applikation angezeigt werden.    
+\begin{table}[H]
+\centering
+\begin{tabular}{|>{\centering}p{4cm}|m{12cm}|}
+\hline
+\rowcolor{gray} \textbf{Lagebeschreibung} & \multicolumn{1}{c}{\textbf{Definition}} \\ \hline
+Sehr nah & Dieser Bereich besitzt eine sehr hohe Wahrscheinlichkeit, dass der Nutzer direkt vor einem Beacon steht. Dies gilt für einen Bereich der in einer Distanz von unter 1 Meter zum Beacon liegt. \\ \hline
+Nahbereich & Hier befindet sich der Bereich in einer Sichtlinie zu einem Beacon in einer Distanz von 1 bis 5 Metern. Da es aufgrund von Störungen, wie vorbeilaufende Menschen oder anderer Objekte zur Signalbeeinträchtigung kommen kann, könnte dieser Zustand nicht angezeigt werden, obwohl das Empfangsgerät in diesem Bereich liegt.\\ \hline
+Fernbereich & Hier werden zwar die Signale von einem Beacon empfangen, jedoch kann aufgrund der Signalschwäche nicht eindeutig ein Bereich dem Empfangsgerät zugeordnet werden. Dies impliziert jedoch nicht gleichzeitig eine große Entfernung zum Beacon, da wegen den genannten Störungen das Signal möglicherweise verfälscht wurde. Hier müssen weitere Verfahren und Strategien angewendet werden, um den Nutzer und sein Empfangsgerät genauer zu lokalisieren. Beispielsweise kann dem Nutzer empfohlen werden sein Empfangsgerät höher zu halten oder das er sich ein wenig herumläuft.\\ \hline
+Kein Empfang & Hier wurde ein Beacon nicht erkannt und somit liegt keine physische Nähe zum Beacon vor.\\ \hline
+\end{tabular}
+\caption{Beispiel der Bereichsdefinition; in Anlehnung an: \cite{GSwiB}}
+\label{table:Ranging}
+\end{table}
 \subsection{Mikro-Lokalisierung}
-Lateration
+\begin{wrapfigure}{r}{8cm}
+\centering
+\begin{tikzpicture}
+\node[anchor=mid,inner sep=0] (Beacon1) at (0,0){\includegraphics[scale=0.1]{Bilder/Beacon}};
+\node[anchor=mid,inner sep=0] (Beacon2) at (6,0){\includegraphics[scale=0.1]{Bilder/Beacon}};
+\node[anchor=mid,inner sep=0] (Beacon3) at (3,5){\includegraphics[scale=0.1]{Bilder/Beacon}};
+\node[anchor=mid,inner sep=0] (Beacon3) at (3,2.1){\includegraphics[scale=0.04]{Bilder/MotoG}};
+\end{tikzpicture}
+\caption{Beispiel einer Trilateration zur Positionsbestimmung}
+\label{fig:Trilat}
+\end{wrapfigure}
+Im Gegensatz zur relativen Lokalisierung mittels Lagebeschreibung, existiert noch die Methode der Mikro-Lokalisierung. Diese berechnet eine genaue Distanz zu einem Beacon und letztlich kann mithilfe von zusätzlichen Signalen mehrerer Beacons eine genaue Lokalisierung mit Koordinaten im Raum  durchgeführt werden. Für die Bestimmung einer Position aus den empfangenen Beacon-Signalen existieren mehrere Verfahren. Ein gängige Methode ist die Tri,- bzw. Multilateration die aus der Entfernung eines Punktes zwischen drei oder mehreren Orientierungspunkten dessen Position in einem Koordinatensystem bestimmt. In diesem Fall wären es die Positionen der Beacons die Orientierungspunkte und die Entfernungen ließen sich aus den Signalen der Beacons berechnen. Mit einem Modell der Signalausbreitung wird dabei die Signalsstärke, die durch den Weg vom Beacon zum Empfangsgerät geschwächt wurde, direkt in eine Distanz umgerechnet werden. Im nächsten Kapitel wird ein solches Modell dafür beschrieben. An dieser Stelle soll noch einmal auf die Vorgehensweise zur Lokalisierung mittels Trilateration eingegangen werden. Im ersten Schritt werden dazu die Positionen der Beacons zur Vereinfachung in ein neues Koordinatensystem transformiert. Dabei wird ein Beacon in den Koordinatenursprung verlegt und ein zweiter durch Rotation um die Z-Achse auf die X-Achse gesetzt.\\ \\
+Translation:
+\begin{align*}
+T &= -P_1\\
+P_1' &= P_1 + T = \binom{0}{0}\\
+P_2' &= P_2 + T\\
+P_3' &= P_3 + T
+\end{align*} 
+Rotation:
+\begin{align*}
+\alpha &= -\arcsin \left ( \frac{y_2}{\sqrt{x_2^2+y_2^2}} \right )\\
+R_z\left ( \alpha \right ) &= \begin{bmatrix}
+\cos\left ( \alpha \right ) & -\sin\left ( \alpha \right )\\ 
+\sin\left ( \alpha \right ) & \cos\left ( \alpha \right )
+\end{bmatrix}\\
+P_1'' &= \binom{0}{0}\\
+P_2'' &= R_z\left ( \alpha \right ) \cdot P_2'\\
+P_3'' &= R_z\left ( \alpha \right ) \cdot P_3'
+\end{align*}
+Anhand zweier Formeln lassen sich dann die Koordinaten des Empfangsgerät aus den einzelnen Distanzen berechnen und schließlich ins ursprüngliche Koordinatensystem zurück transformiert werden \cite{Trilat}. Die Distanzen sind dabei gegeben als $r_1$, $r_2$ und $r_3$ und die Koordinaten entprechen der Nummerierung der Punkte nach der Transformation.
+\begin{align*}
+x_{Inter} &= \frac{r_1^2-r_2^2+x_2^2}{2x_2^2}\\
+y_{Inter} &= \frac{r_1^2-r_3^2+x_3^2+y_3^2}{2y_3^2}-\frac{x_3}{y_3}\cdot x_{Inter}
+\end{align*}
+Rücktransformation:
+\begin{align*}
+P_{Inter} = R_z\left ( -\alpha \right ) \cdot \binom{x_{Inter}}{y_{Inter}} - T
+\end{align*}
+Ein großer Nachteil von dieser Methode ist die große Fehleranfälligkeit der Signalübertragung. In der Anwendung in Gebäuden werden die Signale oftmals von Wänden reflektiert oder gedämpft, während die hohe Dichte von Signalquellen weitere Interferenzen verursacht. Um diese Nachteile auszugleichen wird statt der Trilateration eine Multilateration angewendet. Durch die Nutzung mehrerer Beacons können Messrauschen und Störungen zum Teil ausgeglichen und die Genauigkeit der Lokalisierung somit erhöht werden. Jedoch kann in dieser Arbeit nicht auf dieses Verfahren eingegangen werden, da lediglich drei Beacons zur Verfügung standen. 
 
 \section{Anwendungsbereiche der Indoor-Lokalisierung}
 Der Bedarf an einer innerräumlichen Ortung ist normlerweise dort vorhanden, wo es für den Besucher schwer ist sich zu orientieren. Dies können große Gebäudekomplexe sein, oder verwinkelte und unüberschaubare Gänge. Infolge der Digitalisierung der Gesellschaft, oft bezeichnet als "`Digitale Revolution"' oder auch unter anderem Kontext "`Industrie 4.0"' \cite{DigRev}, entstehen durch den großen Grad der Verbreitung von mobilen "`smarten"' Geräten riesige Netzwerke mit einer schier unendlichen Datenflut. Dies eröffnet folglich eine Möglichkeit zur Kommunikation zwischen Mensch und Gebäude, in der die Beacons als "`Sinne"' des Gebäudes verstanden werden können.  
@@ -107,7 +159,7 @@ Der Bedarf an einer innerräumlichen Ortung ist normlerweise dort vorhanden, wo 
 \centering
 \includegraphics[scale=0.3]{Bilder/iBeaconShoe}
 \caption{Beacon Nutzung in Geschäften \cite{Shoe}}
-\label{Nr5}
+\label{fig:Shoe}
 \end{wrapfigure}
 Viele Unternehmen nutzen hier die Möglichkeiten einer vernetzten Welt, um besser das Verhalten der Kundschaft zu verstehen. Um wieder auf das Beispiel von der Warenhauskette zurück zu kommen, wäre es für das Unternehmen von Vorteil zu wissen, wie viele Kunden am Tag eine Filiale besuchen, wie ihr Bewegungsprofil aussieht und was sie am Ende kaufen. Nützlich wären die Informationen für die Preisgestaltung, den Aufbau der Abteilungen im Warenhaus und dies könnte auch zu einer besseren "`Just-In-Time"' Lieferkette führen und somit Lagerkapazitäten einsparen. Natürlich wäre dies auch mit herkömmlichen Methoden möglich, indem Umfragen stattfinden und die Mitarbeiter eines Gechäftes die Kunden genau beobachten. Dies wäre aufgrund hoher Personalkosten nicht nur unrentabel, sondern würde auch den Kunden ein Gefühl der Überwachung vermitteln. Mit der Beacon-Technologie wäre dies kostengünstig und voll automatisiert möglich. Damit potentielle Kunden auch die dafür nötige Software für ihr mobiles Endgerät installieren und an der Auswertung ihrer Daten zustimmen, können die Kunden mit einer entsprechenden Applikation an exklusiven Gewinnspielen, Rabattaktionen oder Punktesystemen teilnehmen, so wie es heute schon durch einige Unternehmen angeboten wird (z.B. DeutschlandCard\footnote{\url{www.deutschlandcard.de}}, Payback\footnote{\url{www.payback.de}}, etc.). Die gesellschaftliche Akzeptanz wäre sicherlich gegeben, da es schon mit den modernen Stauwarnsysteme einen Vergleichfalls im Outdoor-Bereich gibt. Da die Position eines Fahrzeuges entweder durch das eingebaute Navigationssystem bekannt, oder durch die Mobilfunkgeräte der Fahrzeuginsassen ermittelt werden kann, werden schon heute diese Systeme zur Erschaffung von Bewegungsprofilen und damit zur Stauvorhersage genutzt \cite{Stau}. Für ein solches Szenario im Indoor-Bereich würde hauptsächlich die kontextbezogene Lokalisierung in Betracht gezogen werden, da hier die meisten Geschäfte überschaubar sind und schon gute Strukturen zur Orientierung der Kundschaft genutzt werden. Extreme Ausnahmen wie die "`Golden Resources Mall"' in Peking mit 557,419 $\text{m}^2$ Ladenfläche, wo eine genauere Lokalisierung zur Navigation sicherlich sinnvoll wäre, bilden hier eher die Ausnahme. \par\bigskip
 \newpage
@@ -115,7 +167,7 @@ Viele Unternehmen nutzen hier die Möglichkeiten einer vernetzten Welt, um besse
 \centering
 \includegraphics[scale=0.5]{Bilder/iBeaconAirport}
 \caption{Beacon Nutzung im Flughäfen \cite{Airpo}}
-\label{Nr5}
+\label{Airpo}
 \end{wrapfigure}
 Im Gegensatz dazu stellt die Mikro-Lokalisierung ein weiteres mögliches Szenario dar. Sie soll dazu dienen Menschen oder Objekte genau zu lokalisieren, um unter Verwendung von speziellen Applikationen eine bessere Orientierung zu gewährleisten. Daran interessiert sind meist Branchen, die ihre Kundschaft gerne schnell und ohne Umwege zu dem führen möchte, weswegen sie in die Einrichtung des Unternehmens gekommen sind. Als Beispiele können hier Messehallen- und Flughafenbetreiber genannt werden. In diesen Branchen sind die Gebäude meistens sehr komplex und die Kundschaft ist meistens ortsfremd. Der Vorteil den die Unternehmen aus dem System ziehen können, ist eine bessere Verteilung der Kunden durch eine intelligente Pfadplanung. So können die Platzkapazitäten der Einrichtungen besser genutzt und die Gäste somit schneller abgefertigt werden. Wenn zudem ein Unternehmen in seinen Gebäuden eine ähnliches System wie ein Navigationssystem für die Straße bieten kann, bedeutet dies auch einen Wettberbsvorteil und fördert die Kundenzufriedenheit. \\ \\
 Grundsätzlich sind dies hier nur Annahmen für mögliche Szenarien. Da es noch keine praktikablen Anwendungen der Indoor-Lokalisierung gibt, können keine genauen Vorhersagen diesbezüglich getroffen werden. Viele Unternehmen schrecken noch davon ab, weil kein einheitlichen Standard existiert und nur wenige Menschen mit der Technik vertraut sind.  

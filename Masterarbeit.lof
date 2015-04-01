@@ -1,6 +1,27 @@
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {1.1}{\ignorespaces Offizielles Bluetooth Smart Logo \cite {BLElogo}\relax }}{1}{figure.caption.5}
-\contentsline {figure}{\numberline {1.2}{\ignorespaces Offizielles iBeacon Logo \cite {iLogo}\relax }}{1}{figure.caption.6}
-\contentsline {figure}{\numberline {1.3}{\ignorespaces Explosionszeichnung Beacon \cite {BeaEx}\relax }}{2}{figure.caption.7}
-\contentsline {figure}{\numberline {1.4}{\ignorespaces Signalschw\IeC {\"a}chung durch Objekte, zB. W\IeC {\"a}nde \cite {GSwiB}\relax }}{3}{figure.caption.8}
-\contentsline {figure}{\numberline {1.5}{\ignorespaces K\IeC {\"o}rper von Menschen blockieren zus\IeC {\"a}tzlich die Signale \cite {GSwiB}\relax }}{3}{figure.caption.8}
+\contentsline {figure}{\numberline {1.1}{\ignorespaces Skizze satellitengest\IeC {\"u}tztes Lokalisierungssystem \cite {GPS}\relax }}{1}{figure.caption.6}
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {2.1}{\ignorespaces Offizielles Bluetooth Smart Logo \cite {BLElogo}\relax }}{3}{figure.caption.7}
+\contentsline {figure}{\numberline {2.2}{\ignorespaces Offizielles iBeacon Logo \cite {iLogo}\relax }}{3}{figure.caption.8}
+\contentsline {figure}{\numberline {2.3}{\ignorespaces Explosionszeichnung Beacon \cite {BeaEx}\relax }}{4}{figure.caption.9}
+\contentsline {figure}{\numberline {2.4}{\ignorespaces Signalschw\IeC {\"a}chung durch Objekte, zB. W\IeC {\"a}nde \cite {GSwiB}\relax }}{5}{figure.caption.10}
+\contentsline {figure}{\numberline {2.5}{\ignorespaces K\IeC {\"o}rper von Menschen blockieren zus\IeC {\"a}tzlich die Signale \cite {GSwiB}\relax }}{5}{figure.caption.10}
+\contentsline {figure}{\numberline {2.6}{\ignorespaces Beacon Nutzung in Gesch\IeC {\"a}ften \cite {Shoe}\relax }}{7}{figure.caption.12}
+\contentsline {figure}{\numberline {2.7}{\ignorespaces Beacon Nutzung im Flugh\IeC {\"a}fen \cite {Airpo}\relax }}{8}{figure.caption.13}
+\contentsline {figure}{\numberline {2.8}{\ignorespaces Demo der Estimote Indoor Localization App \cite {TrEs}\relax }}{9}{figure.caption.14}
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Anordnung der Atennen an der R\IeC {\"u}ckseite eines Motorola Moto G \cite {Moto}\relax }}{11}{figure.caption.15}
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Youbot von der Kuka AG \cite {You}\relax }}{11}{figure.caption.16}
+\contentsline {figure}{\numberline {3.3}{\ignorespaces Scitos G5 von der MetraLabs GmbH\relax }}{12}{figure.caption.17}
+\contentsline {figure}{\numberline {3.4}{\ignorespaces Grundriss eines Flures in Geb\IeC {\"a}ude 29 der OvGU, Stockwerk 3\relax }}{12}{figure.caption.18}
+\contentsline {figure}{\numberline {3.5}{\ignorespaces Anteile eines Datenpaket in der Beacon-Kommunikation auf der MAC-Ebene\relax }}{15}{figure.caption.19}
+\contentsline {figure}{\numberline {3.6}{\ignorespaces Einfluss der einstellbaren Parameter auf die Lebensdauer einer CR2450-Batterie\relax }}{16}{figure.caption.20}
+\contentsline {figure}{\numberline {3.7}{\ignorespaces Distanz-Signalst\IeC {\"a}rke-Messung Bild 1\relax }}{17}{figure.caption.21}
+\contentsline {figure}{\numberline {3.8}{\ignorespaces Distanz-Signalst\IeC {\"a}rke-Messung Bild 2\relax }}{17}{figure.caption.22}
+\contentsline {figure}{\numberline {3.9}{\ignorespaces Distanz-Signalst\IeC {\"a}rke-Messung Bild 3\relax }}{18}{figure.caption.23}
+\contentsline {figure}{\numberline {3.10}{\ignorespaces Distanz-Signalst\IeC {\"a}rke-Messung bei unterschiedlichen Smartphone-Ausrichtungen\relax }}{19}{figure.caption.24}
+\contentsline {figure}{\numberline {3.11}{\ignorespaces Gleichzeitige Messung dreier naheliegender Beacon-Signale\relax }}{20}{figure.caption.25}
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }

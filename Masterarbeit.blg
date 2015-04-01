@@ -8,56 +8,71 @@ Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 Database file #1: Quellen.bib
-Warning--entry type for "iBPa" isn't style-file defined
---line 38 of file Quellen.bib
-Warning--entry type for "ARM" isn't style-file defined
---line 66 of file Quellen.bib
-Warning--entry type for "You" isn't style-file defined
---line 223 of file Quellen.bib
+Warning--entry type for "Shoe" isn't style-file defined
+--line 5 of file Quellen.bib
+Warning--entry type for "Bibel" isn't style-file defined
+--line 28 of file Quellen.bib
+Warning--entry type for "GSwiB" isn't style-file defined
+--line 47 of file Quellen.bib
+Warning--entry type for "iLogo" isn't style-file defined
+--line 56 of file Quellen.bib
+Warning--entry type for "BLElogo" isn't style-file defined
+--line 85 of file Quellen.bib
+Warning--entry type for "TrEs" isn't style-file defined
+--line 146 of file Quellen.bib
+Warning--entry type for "BeaEx" isn't style-file defined
+--line 155 of file Quellen.bib
+Warning--entry type for "DigRev" isn't style-file defined
+--line 165 of file Quellen.bib
+Warning--entry type for "BuNet" isn't style-file defined
+--line 193 of file Quellen.bib
+Warning--entry type for "MobGerSt" isn't style-file defined
+--line 250 of file Quellen.bib
 Warning--entry type for "nRF5" isn't style-file defined
---line 251 of file Quellen.bib
-Warning--entry type for "CR2450" isn't style-file defined
 --line 260 of file Quellen.bib
-Warning--there's no year in Moto
-You've used 6 entries,
+Warning--entry type for "Airpo" isn't style-file defined
+--line 308 of file Quellen.bib
+Warning--there's no year in Stau
+Warning--there's no year in Trilat
+You've used 16 entries,
             4335 wiz_defined-function locations,
-            859 strings with 6468 characters,
-and the built_in function-call counts, 1751 in all, are:
-= -- 144
-> -- 42
-< -- 6
-+ -- 18
-- -- 12
-* -- 89
-:= -- 328
-add.period$ -- 6
-call.type$ -- 6
-change.case$ -- 18
+            912 strings with 8238 characters,
+and the built_in function-call counts, 4709 in all, are:
+= -- 397
+> -- 115
+< -- 16
++ -- 49
+- -- 33
+* -- 248
+:= -- 861
+add.period$ -- 22
+call.type$ -- 16
+change.case$ -- 49
 chr.to.int$ -- 0
-cite$ -- 7
-duplicate$ -- 64
-empty$ -- 176
-format.name$ -- 24
-if$ -- 384
+cite$ -- 18
+duplicate$ -- 175
+empty$ -- 479
+format.name$ -- 65
+if$ -- 1049
 int.to.chr$ -- 0
-int.to.str$ -- 6
-missing$ -- 35
-newline$ -- 40
-num.names$ -- 12
-pop$ -- 44
+int.to.str$ -- 16
+missing$ -- 89
+newline$ -- 95
+num.names$ -- 31
+pop$ -- 108
 preamble$ -- 1
-purify$ -- 18
+purify$ -- 49
 quote$ -- 0
-skip$ -- 68
+skip$ -- 189
 stack$ -- 0
-substring$ -- 60
-swap$ -- 13
-text.length$ -- 6
+substring$ -- 160
+swap$ -- 35
+text.length$ -- 16
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 24
-warning$ -- 1
-while$ -- 18
-width$ -- 7
-write$ -- 74
-(There were 6 warnings)
+type$ -- 64
+warning$ -- 2
+while$ -- 47
+width$ -- 18
+write$ -- 197
+(There were 14 warnings)
