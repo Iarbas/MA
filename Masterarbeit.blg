@@ -18,61 +18,73 @@ Warning--entry type for "iLogo" isn't style-file defined
 --line 56 of file Quellen.bib
 Warning--entry type for "BLElogo" isn't style-file defined
 --line 85 of file Quellen.bib
+Warning--entry type for "GPS" isn't style-file defined
+--line 137 of file Quellen.bib
 Warning--entry type for "TrEs" isn't style-file defined
 --line 146 of file Quellen.bib
 Warning--entry type for "BeaEx" isn't style-file defined
 --line 155 of file Quellen.bib
 Warning--entry type for "DigRev" isn't style-file defined
 --line 165 of file Quellen.bib
+Warning--entry type for "GIM" isn't style-file defined
+--line 174 of file Quellen.bib
 Warning--entry type for "BuNet" isn't style-file defined
 --line 193 of file Quellen.bib
+Warning--entry type for "FUE" isn't style-file defined
+--line 201 of file Quellen.bib
+Warning--entry type for "MIL" isn't style-file defined
+--line 241 of file Quellen.bib
 Warning--entry type for "MobGerSt" isn't style-file defined
 --line 250 of file Quellen.bib
 Warning--entry type for "nRF5" isn't style-file defined
 --line 260 of file Quellen.bib
+Warning--entry type for "EVA" isn't style-file defined
+--line 288 of file Quellen.bib
 Warning--entry type for "Airpo" isn't style-file defined
 --line 308 of file Quellen.bib
+Warning--entry type for "WLAN" isn't style-file defined
+--line 317 of file Quellen.bib
 Warning--there's no year in Stau
 Warning--there's no year in Trilat
-You've used 16 entries,
+You've used 24 entries,
             4335 wiz_defined-function locations,
-            912 strings with 8238 characters,
-and the built_in function-call counts, 4709 in all, are:
-= -- 397
-> -- 115
-< -- 16
-+ -- 49
-- -- 33
-* -- 248
-:= -- 861
-add.period$ -- 22
-call.type$ -- 16
-change.case$ -- 49
+            957 strings with 9522 characters,
+and the built_in function-call counts, 7545 in all, are:
+= -- 629
+> -- 227
+< -- 34
++ -- 94
+- -- 70
+* -- 458
+:= -- 1419
+add.period$ -- 31
+call.type$ -- 24
+change.case$ -- 84
 chr.to.int$ -- 0
-cite$ -- 18
-duplicate$ -- 175
-empty$ -- 479
-format.name$ -- 65
-if$ -- 1049
+cite$ -- 26
+duplicate$ -- 268
+empty$ -- 712
+format.name$ -- 138
+if$ -- 1632
 int.to.chr$ -- 0
-int.to.str$ -- 16
-missing$ -- 89
-newline$ -- 95
-num.names$ -- 31
-pop$ -- 108
+int.to.str$ -- 24
+missing$ -- 133
+newline$ -- 135
+num.names$ -- 46
+pop$ -- 169
 preamble$ -- 1
-purify$ -- 49
+purify$ -- 84
 quote$ -- 0
-skip$ -- 189
+skip$ -- 280
 stack$ -- 0
-substring$ -- 160
-swap$ -- 35
-text.length$ -- 16
+substring$ -- 240
+swap$ -- 62
+text.length$ -- 34
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 64
+type$ -- 96
 warning$ -- 2
-while$ -- 47
-width$ -- 18
-write$ -- 197
-(There were 14 warnings)
+while$ -- 80
+width$ -- 26
+write$ -- 287
+(There were 20 warnings)
