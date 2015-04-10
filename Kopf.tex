@@ -26,11 +26,39 @@
 \usepackage[colorlinks=false]{hyperref}
 \usepackage{breakurl}
 \usepackage{url}
+
 \usepackage{tikz}							   % fuer schoene Zeichnungen
-\usetikzlibrary{arrows,shapes,positioning,shadows,trees}
+\usetikzlibrary{intersections,calc,arrows,shapes, shapes.symbols,positioning,shadows, shadows.blur,trees,decorations.markings}
+\usepackage{smartdiagram}
 \usepackage{pgfplots}
 \usepgfplotslibrary{colormaps}
 \pgfplotsset{compat=1.6}
+
+% Zum Zeichnen von Kreisdiagrammen
+\tikzset{
+  arc/ccw/.initial=1,
+  arc/large/.initial=0,
+  arc ccw/.style={/tikz/arc/ccw=1},
+  arc cw/.style={/tikz/arc/ccw=0},
+  arc large/.style={/tikz/arc/large=1},
+  arc small/.style={/tikz/arc/large=0}
+}
+\tikzset{
+  arc to/.style={
+    to path={
+      let \p{arcto@1}=($(\tikztotarget)-(\tikztostart)$),
+          \n{arcto@a}={acos(.5*veclen(\p{arcto@1})/(#1))},
+          \n{arcto@s}={180 + atan2(\p{arcto@1}) - ifthenelse(\pgfkeysvalueof{/tikz/arc/large}==1,-1,1)*\n{arcto@a} + ifthenelse(\pgfkeysvalueof{/tikz/arc/ccw}==1,180,0)},
+          \n{arcto@e}={      atan2(\p{arcto@1}) + ifthenelse(\pgfkeysvalueof{/tikz/arc/large}==1,-1,1)*\n{arcto@a} + ifthenelse(\pgfkeysvalueof{/tikz/arc/ccw}==1,180,0)}
+      in
+       \if\pgfkeysvalueof{/tikz/arc/ccw}0
+         (\tikztostart) arc [start angle=\n{arcto@s}, end angle=\n{arcto@e}, radius={#1}] \tikztonodes
+       \else
+         (\tikztostart) arc [start angle=\n{arcto@e}, end angle=\n{arcto@s}, radius={#1}] \tikztonodes
+       \fi
+    }
+  }
+}
 
 % Zur Invertierung von Colormaps
 \makeatletter

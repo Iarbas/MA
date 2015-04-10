@@ -32,13 +32,7 @@
 \newblock
   \url{https://developer.apple.com/ibeacon/Getting-Started-with-iBeacon.pdf}
 
-\bibitem[5]{iLogo}
-\textsc{{Apple Inc.}}:
-\newblock \emph{iBeacon Logo}.
-\newblock \url{https://developer.apple.com/ibeacon/}.
-\newblock \,Version:\,2015
-
-\bibitem[6]{Wib2BLE}
+\bibitem[5]{Wib2BLE}
 \textsc{{Bluetooth SIG, Inc.}}:
 \newblock SIG INTRODUCES BLUETOOTH LOW ENERGY WIRELESS TECHNOLOGY, THE NEXT
   GENERATION OF BLUETOOTH WIRELESS TECHNOLOGY.
@@ -46,13 +40,13 @@
 \newblock
   \url{http://www.bluetooth.com/Pages/Press-Releases-Detail.aspx?ItemID=4}
 
-\bibitem[7]{BLElogo}
+\bibitem[6]{BLElogo}
 \textsc{{Bluetooth SIG, Inc.}}:
 \newblock \emph{Bluetooth Smart Logo}.
 \newblock \url{http://www.bluetooth.com/Pages/Bluetooth-Brand.aspx}.
 \newblock \,Version:\,2014
 
-\bibitem[8]{Apple}
+\bibitem[7]{Apple}
 \textsc{{D. E. Dilger}}:
 \newblock Inside iOS 7: iBeacons enhance apps' location awareness via Bluetooth
   LE.
@@ -60,80 +54,74 @@
 \newblock
   \url{http://appleinsider.com/articles/13/06/19/inside-ios-7-ibeacons-enhance-apps-location-awareness-via-bluetooth-le}
 
-\bibitem[9]{GPS}
+\bibitem[8]{GPS}
 \url{http://commons.wikimedia.org/wiki/File%3AConstellationGPS.gif}
 
-\bibitem[10]{TrEs}
+\bibitem[9]{TrEs}
 \textsc{{Estimote Inc.}}:
 \newblock \emph{Estimote Indoor Localization}.
 \newblock \url{http://estimote.com/indoor/}
 
-\bibitem[11]{BeaEx}
+\bibitem[10]{BeaEx}
 \textsc{{Estimote Inc.}}:
 \newblock \emph{Estimote Beacon Illustration 2}.
 \newblock
   \url{http://estimote.com/assets/gfx/press/press-beacon-illustration-2.cd71f93a.png}.
 \newblock \,Version:\,2015
 
-\bibitem[12]{DigRev}
+\bibitem[11]{DigRev}
 \textsc{{G. Braunberger}}:
 \newblock \emph{Macht der Maschinen}.
 \newblock
   \url{http://www.faz.net/aktuell/wirtschaft/menschen-wirtschaft/digitale-revolution-macht-der-maschinen-12910372.html}
 
-\bibitem[13]{GIM}
+\bibitem[12]{GIM}
 \textsc{{Google Inc.}}:
 \newblock \emph{Google Indoor Maps}.
 \newblock \url{https://www.google.com/maps/about/partners/indoormaps/}
 
-\bibitem[14]{Stau}
+\bibitem[13]{Stau}
 \textsc{{H.-C. Dirscherl}}:
 \newblock Stau-Warnung - Diese Verkehrslage-Dienste gibt es für Autofahrer.
 \newblock {In: }\emph{http://www.pcwelt.de}
   \url{http://www.pcwelt.de/ratgeber/Stau-Warnung-Google-Maps-Tomtom-Verkehrslage-Echtzeitverkehrsinformationen-373385.html}
 
-\bibitem[15]{BuNet}
+\bibitem[14]{BuNet}
 \url{http://www.bundesnetzagentur.de/SharedDocs/Downloads/DE/Sachgebiete/Telekommunikation/Unternehmen\_Institutionen/Frequenzen/Allgemeinzuteilungen/2003\_76\_ISM\_pdf.pdf?\_\_blob=publicationFile&v=5}
 
-\bibitem[16]{FUE}
-\textsc{{http://www.itwissen.info}}:
-\newblock \emph{Übersicht über die verschiedenen Funktechnologien}.
-\newblock
-  \url{http://www.itwissen.info/definition/lexikon/ultra-low-power-Bluetooth-ULP-ULP-Bluetooth.html}
-
-\bibitem[17]{Magnet}
+\bibitem[15]{Magnet}
 \textsc{{J. Blankenbach}} ; \textsc{{A. Norrdine}}:
 \newblock Indoor-Positionierung mit künstlichen Magnetfeldern.
 \newblock {In: }\emph{zfv} 1 (2013).
 \newblock
   \url{geodaesie.info/sites/default/files/privat/zfv\_2013\_1\_Blankenbach\_Norrdine.pdf}
 
-\bibitem[18]{MIL}
+\bibitem[16]{MIL}
 \textsc{{Microsoft Research}}:
 \newblock \emph{Mobile Indoor Localization}.
 \newblock \url{http://research.microsoft.com/en-us/projects/indoorloc/}
 
-\bibitem[19]{MobGerSt}
+\bibitem[17]{MobGerSt}
 \textsc{{mobile-studien.de}}:
 \newblock \emph{Marktanteile mobiler Betriebssysteme Q1 2014}.
 \newblock
   \url{http://mobile-studien.de/marktanteile-betriebssysteme/marktanteile-mobiler-betriebssysteme-q1-2014/}.
 \newblock \,Version:\,2014
 
-\bibitem[20]{nRF5}
+\bibitem[18]{nRF5}
 \textsc{{Nordic Semiconductor}}:
 \newblock \emph{nRF51822 Datasheet}.
 \newblock
   \url{http://www.nordicsemi.com/eng/Products/Bluetooth-Smart-Bluetooth-low-energy/nRF51822}
 
-\bibitem[21]{Trilat}
+\bibitem[19]{Trilat}
 \textsc{{R. Mardeni}} ; \textsc{{S. N. Othman}}:
 \newblock Node Positioning in ZigBee Network Using Trilateration MethodBased on
   the Received Signal Strength Indicator (RSSI).
 \newblock {In: }\emph{European Journal of Scientific Research}
   \url{http://godieboy.com/wp-content/uploads/2012/05/ejsr\_46\_1\_05.pdf}
 
-\bibitem[22]{EVA}
+\bibitem[20]{EVA}
 \textsc{{Technische Universität Berlin}} ; \textsc{{ADVANTIC Sistemas y
   Servicios S.L.}} ; \textsc{{iMinds}} ; \textsc{{SICS Swedish ICT AB}}  ;
   \textsc{{Televic Healthcare}}:
@@ -141,12 +129,12 @@
   Future Internet (EVARILOS)}.
 \newblock \url{http://www.evarilos.eu}
 
-\bibitem[23]{Airpo}
+\bibitem[21]{Airpo}
 \textsc{{www.contechlab.com}}:
 \newblock \emph{iBeacon Airport}.
 \newblock \url{http://www.contechlab.com/ibeacon-application-in-airport/}
 
-\bibitem[24]{WLAN}
+\bibitem[22]{WLAN}
 \textsc{{Y. Chen}} ; \textsc{{D. Lymberopoulos}} ; \textsc{{J. Liu}}  ;
   \textsc{{B. Priyantha}}:
 \newblock \emph{FM-based Indoor Localization}.

@@ -1,15 +1,29 @@
-\chapter{Evaluierung}
+\chapter{Modellentwurf und Entwicklung einer Simulationsumgebung}
+Hier wird die Planung einer Beacon-Konfiguration beschrieben. Die Idee ist es, die Signalausbreitung von einem BLE-Signal zu analysieren und daraus aus Modell zu generieren, um das Verhalten vorherzusagen. Denn mit einem Grundriss (egal ob aus einem Grundrisszeichner oder vom Scitos), können Beacons somit virtuell plaziert und Aussagen darüber getroffen werden, ob Abdeckung des gesamten Raumes gegeben ist und wie die sich Qualität der Lokalisierung dabei verhält. Dabei können schon vor der eigentlichen Installation erste Konfigurationen geplant, Schwachstellen gefunden und die Verteilung der Beacons optimiert werden. 
+\section{Modellbildung}
+Für die Signalausbreitung stehen viel Modelle bereit, jedoch gilt es ein Modell und ein Parametersatz zu finden, um eine allgemeine Gültigkeit des Modells zu gewährleisten. 
+\subsection{Das WINNER II Modell}
+Link auf den Betreuer von Hannes. Nur Aubreitung kein Rauschen.
+\subsection{Parameterschätzung}
+Matlab-Plots.
 
-\section{Aufbau des Parcours}
-Ein paar Sätze wie wir des testfeld errichtet haben 
+\section{Definition einer Richterskala für die Qualität von Beacon-Signalen}
+Aus der einen Übersicht von Mittelwert der RSSi-Werte und der Distanz kann auch mithilfe der coolen 3D-Ansicht von der Verteilung des Signals auf die Wahrscheinlichkeit einer richtigen Distanzschätzung angegeben werden. Hier auf die Ortungsalgorithmen zurück kommen und dieses Wurzelmodell annehmen. Hier als Eingabeparameter die Signalstärke und die Intervalllänge mit angeben. Aber auch sagen, dass alle Messungen (da sie so umfangreich waren) nur für eine Einstellungen und den einen Raum gelten! Drei Signale auf einer Stelle zu einem Signal vergleichen und betonen, dass es sich hierbei nur um eine relative Güte handelt, die noch in keinster Weise verifiziert wurde. Da es viele andere Räume gibt und auch dort mal die Signalausbreitung/Streuung gemessenen werden muss, kann sie nicht als allgemein gültig angenommen werden. Jedoch ist sie zudem abhängig von der eingestellten Signalstärke und Intervalllänge. Man müsste einfach mal alle Einstellungen testen. Jedoch fehlte mir die Zeit und die Räumlichkeiten.  
 
-\section{Durchführung}
-Vorgehen erklären
-\subsection{Planung mittel Lighthouse Keeper}
-Bunte Bilder zeigen. Einmal von den Scan-Ergebnissen vom Scitos G5 und dann was der Lighthouse Keeper daraus gemacht hat.
-\subsection{Messergebnisse}
-Verlinkung vom Video auf Youtube. Aufbereitung der Scitos-Daten. Die empfangene Signalstärke an jedem Messpunkt von jedem Beacon zeigen (3 Bilder)
+\section{Esrtellung der Simulation}
+Programmierung mit Matlabs GUIDE. Aufbau sehr hierachisch. Leicht zu bedienen. 
+\subsection{Grundrissanalyse}
+Vorgehensweise beim Einlesen des Bildes
+\subsection{Manuelle Planung}
+Hier noch die manuelle Eingabe zeigen.
+\subsection{Optimierung}
+Hier spielt wieder die Richterskala, bzw. ihre definierte Güte mit ein.
+\subsubsection{Partikel-Schwarm-Algorithmus}
+Erklärung warum gerade ein genetischer Algorithmus. 
+\subsubsection{Paretofront}
+Auswahl eines Optimierungsergebnisses anhand von der Kalkulation Anzahl Beacons -> gewünschte Genauigkeit/Abdeckung
+\subsection{Simulation}
+Mit dem WINNER II Modell werden die Güte an jedem definierten Bereich berechnet.
 
-\section{Auswertung}
-Diskussion Simulation zu realen Messwerten.
 
+Hier kommt eher die Simulation und Optimierung hin. Jedenfalls brauche ich noch für den Lighthousekeeper einen manuellen Modus, indm ich die Signalstärke einstellen kann. Die Intervalllänge kann dann nur als intuitive Auslegungsgröße beschreiben werden, da mit mit der Intervalllänge auch eine Messabweichung einher geht. Hier kann angesprochen werden, dass Faktoren wie reflektierende Mauern, Böden, Fensterscheiben, etc. ein schnelleres Intervall benötigen, um eine gewisse Lokalisierungsgenauigkeit zu erreichen. Das würde ich als Erfahrungswert interpretieren.Bei der Optimierung muss hingegen keine Signalstärke oder Intervalllänge angegeben werden, da die Berechnung absolut ist. Die Beacons werden so oder so optimal verteilt. Hier wäre noch anzumerken, dass es noch keinen Modus gibt die optimal verteilten beacons in den Manuell-Modus zu übernehmen und dann mit der Signalstärke zu experimentieren. Noch muss man sich die ungefähren Positionen merken.

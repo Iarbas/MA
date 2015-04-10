@@ -1,174 +1,101 @@
-\chapter{Framework und Experimente}
-Während ...
-
-Denn in großen Gebieten, wie z.B. Einkaufshäuser, Lagerhallen und Flughäfen braucht man Hunderte von iBeacons, um die gesamte Fläche zu 100 Prozent abzudecken. Im Idealfall kann ich später in Matlab noch Gebiete einpflegen, an der die Karte nach Regionen aufgeteilt wird, in denen die Genauigkeit der Lokalisierung eingestellt werden kann. Damit ließe sich Robotergestützt ein Gebiet abfahren, in denen Vorschläge für die Positionierung von iBeacons anhand eines Optimierungsalgorithmusses generiert werden. Hierbei ließe sich wunderschön eine Pareto-Front bilden, die aus Anzahl von iBeacons und Genauigkeit pro Region Positionierungsvorschläge entwirft. Je nach Kundenwunsch. ROTER FADEN ZU MEINER ARBEIT!
-
-Hier kann angesprochen werden das wir ein adaptives Verfahren entwickeln wollen, denn viele bisherige Systeme bieten lediglich ein Landmarkenssystem oder ein Positionierungssystem. Mit den Beacons soll beides möglich sei und je nach Kundenwunsch anpassbar werden.
-
-\section{Verwendete Hardware}
-Da die Beacon-Technologie vorrangig zur Indoor-Lokalisierung von Personen eingesetzt wird und als Peripheriegerät meistens ein Smartphone Verwendung findet, wird auch ein solches für die gesamte Testdauer als Messgerät genutzt. Die Wahl fiel dabei auf ein Android-Smartphone mit dem Namen Motorola Moto G der gleichnamigen Firma Motorola Inc., weil es weit verbreitet ist und somit ein großer potentieller Nutzerkreis existiert. Zudem erfüllt es alle Hardware- und Software-Anforderungen zum Empfang von BLE-Signalen. Desweiteren werden zwei Roboter in den Experimenten genutzt, um die Messungen reproduzierbar und standardisiert durchzuführen. Für die reinen Distanz-Signalstärke-Messungen wird der Roboters, bzw. lediglich sein Arm namens "`Youbot"' der Kuka AG und später für die Validierung einer Beacon-Konfiguration der Roboter "`Scitos G5"' der MetraLabs GmbH verwendet. 
-\subsection{Motorola Moto G}
-Dieses Smartphone dient als Empfangsstation des Beacon-Signale. 
+\chapter{Konzeptplanung}
+Nach der Betrachtung des Standes der Technik fällt auf, dass sowohl die Planung, als auch die Inbetriebnahme von den innerräumlichen Ortungssystemen stets ein experimentierlastiger Prozess ist. Es existieren weder bekannte Theorien, noch computergestützte Hilfsmittel für deren Auslegung und Validierung. Zum einen wird es daran liegen, dass es dafür noch keine Notwendigkeit gab und zum anderen, weil es aufgrund der Vielseitigkeit der Anwendungsgebiete und Situationen noch kein gemeinsamer Standard gefunden wurde. Dabei ist das Problem der Erstellung einer guten Indoor-Lokalisierung nicht trivial und hoch Komplex, wenn all die Faktoren hinzugerechnet werden, die das System beeinträchtigen können. Zudem verliert sich der Überblick über alle Signalquellen und deren Position in großen Gebäuden, weswegen auch noch keine Großprojekte diesbezüglich entstehen. Im folgenden soll in diesem Abschnitt ein Konzept entwickelt werden, welche die Theorie mit ergänzender Simulationstechnik im Zusammenspiel mit Experimenten unterstützt und somit ein bekanntes Schema in Wissenschaft und Industrie aufgreift: der Prozessplanung.
+\section{Vorüberlegungen}
+Der erste Schritt für eine systematische Prozessplanung wäre die Schaffung einer Theorie bzw. eines Modells für die Signalausbreitung der BLE-Signale. Dieses muss erst durch Betrachtung der physikalischen Eigenschaften und mathematischen Beziehungen geschaffen oder anhand eines existierenden Modells aus vergleichbaren Technologien abgeleitet werden. Nachdem ein Modell aufgestellt wurde, muss dieses parametrisiert werden, um das Modell auf das reale Verhalten besser abbilden zu können. Mithilfe des Modells lässt sich anschließend eine Simulation erstellen, die die Signalausbreitung von BLE-Signalen in einem Raum prädiktionieren und daraus die Beacons unter Erfüllung von Optimalitätsbedingungen anschließend automatisch verteilen kann. Die Anordnung der Beacons kann so je nach Einsatzszenario angepasst und vor der eigentlichen Installation simuliert und getestet werden. Jedoch muss die fertige Konfiguration erneut durch Messungen auf die gewünschten Funktionen und Qualität der Indoor-Lokalisierung hin geprüft werden. Dieser Kreislauf aus Experimenten, Modellierungen und Simulationen wird dazu in Abbildung \ref{fig:Prozessplanung} grafisch veranschaulicht. Der Vorteil dieser Herangehensweise ist die fundierte Lösung eines Problems, sodass auf die gewonnenen Informationen aufgebaut werden kann und sich mit ihnen wissenschaftlich arbeiten lässt. Für die Planung eines Indoor-Lokalisierungsproblems mittels Beacons bedeutet das, dass die Konfigurationen vorab geplant werden können und diese einheitlich aufgebaut sind. Dadurch ergeben sich auch kommerzielle Vorteile durch eine schnellere Entwicklung von Ortungs- und Navigations-Applikationen und weiterer Softwareprojekte. Zudem wird die Leistungsfähigkeit der Beacon-Technologie messbar, was für eine bessere Definition ihrer Einsatzmöglichkeiten führen wird.
 \begin{figure}[H]
 \centering
-%\includegraphics[scale=0.8]{Bilder/MotorolaAntenne}
-%\caption{Anordnung der Atennen eines Motorola Moto G  \cite{Moto}}
-%\label{fig:Moto}
-%\begin{picture}(0,0)
-%\put(80,240.5){Bluetooth- und WLAN-Atenne}
-%\put(30,245.5){\color{red}\linethickness{0.6mm}\vector(1,0){45}}
-%\end{picture}
-\begin{tikzpicture}
-\node [anchor=south west,inner sep=0] at (0,0) {\includegraphics[scale=0.8]{Bilder/MotorolaAntenne}};
-\draw [red,->,line width=0.65mm] (3,7.415) -- (4.5,7.415);
-\node [anchor=south west,inner sep=0, text width = 4cm] at (5,7) {Bluetooth- und WLAN-Antennen};
+\begin{tikzpicture}[>=latex']
+\def \n {3}
+\def \radius {3cm}
+\node[draw, rectangle, minimum height=1cm,minimum width=3cm, top color=red!40,
+      bottom color=red!5, name path=t1, blur shadow={shadow blur steps=5}] at ({0+90}:\radius) {Experiment};
+\node[draw, rectangle, minimum height=1cm,minimum width=3cm, top color=blue!40,
+      bottom color=blue!5, name path=t2, blur shadow={shadow blur steps=5}] at ({360/\n+80}:\radius) {Simulation};
+\node[draw, rectangle, minimum height=1cm,minimum width=3cm, top color=yellow!40,
+      bottom color=yellow!5, name path=t3, blur shadow={shadow blur steps=5}] at ({360/\n * 2+100}:\radius) {Theorie};
+\path[name path=k]circle[radius=\radius];
+\path[name intersections={of=k and t1,sort by=k,by={i-1,i-2}}]
+     [name intersections={of=k and t2,sort by=k,by={i-3,i-4}}]
+     [name intersections={of=k and t3,sort by=k,by={i-5,i-6}}];
+\draw[stealth-stealth,line width=8pt,black, postaction={draw,stealth-stealth,blue!50,line width=7pt, shorten <=1pt,shorten >=1pt}] (i-2) to[arc to=3cm] (i-3);
+\draw[stealth-stealth,line width=8pt,black, postaction={draw,stealth-stealth,blue!50,line width=7pt, shorten <=1pt,shorten >=1pt}] (i-4) to[arc to=3cm] (i-5);
+\draw[stealth-stealth,line width=8pt,black, postaction={draw,stealth-stealth,blue!50,line width=7pt, shorten <=1pt,shorten >=1pt}] (i-6) to[arc to=3cm] (i-1);
 \end{tikzpicture}
-\caption{Anordnung der Atennen an der Rückseite eines Motorola Moto G  \cite{Moto}}
-\label{fig:Moto}
+\caption{Kreislauf einer Prozessplanung}
+\label{fig:Prozessplanung}
 \end{figure}
-
-!Atennencharackteristiken! Idee für die Erklärung der seltsamen Empfangsqualität bei den verschiednen Ausrichtungen: durch die Verteilung der Antennen ergibt sich auch eine Verteilung der Empfangscharackeristiken. Die dabei aufgenommenen Messwerte sehen bei den unterschiedlichen Ausrichtungen deshalb immer gleich aus, auch wenn die Signale aus einer anderen Richtung kommen, weil die Charackteristik speziell auf auf die normale Position optimiert wurde. Durch die Komplexität der Charackteristiken lässt sich dies nun schlecht visuell darstellen. Wenn man das Verhalten aber kennt (vorsicht, jedes Smartphone hat eine unterschiedliche Charakteristik), kann man Gegenmaßnahmen treffen. -> Heuristik 
-\subsection{Youbot}
-\begin{figure}[H] 
-\centering
-\includegraphics[scale=0.4]{Bilder/Youbot}
-\caption{Youbot von der Kuka AG \cite{You}}
-\end{figure}
-\subsection{Scitos G5}
-\begin{figure}[H] 
-\centering
-\includegraphics[scale=0.2]{Bilder/Scitos}
-\caption{Scitos G5 von der MetraLabs GmbH}
-\end{figure}
-
-\section{Verwendete Software}
-Um die Hardware zu nutzen und das geplante Konzept umzusetzen, benötigt es einer Kommunikation zwischen den Geräten und weiterer Werkzeuge zur Aufnahme von Messungen und deren Verarbeitung. Bei der Umsetzung wurde besonders auf Konfirmität der verschiedenen Systeme und deren reibungslosen Zusammenspiels geachtet. Um eine gemeinsame Basis zu schaffen, wurde das Software-Framework "`Robots Operating System"'(ROS) verwendet. Mit einem gemeinsamen Standard lassen sich die Messungen besser vergleichen, wodurch ihre Qualität und Aussagekraft zunimmt. Die Messungen müssen dabei auf der Smartphone-Plattform und den Roboter-Plattformen aufgenommen und  diese synchronisiert werden. Während ROS die übergeordnete Schnittstelle darstellt, müssen auf den einzelnen Hardware-Elementen die Messungen eigenständig durchgeführt werden. Die Messung auf dem Scitos-Roboter entfällt dabei auf die Software "`Miracenter"' und funktioniert ohne weiteres. Die Software für die Messungen auf dem Smartphone ist hingegen nicht vorgefertig und muss mithilfe eines Editors für Android-Applikationen und einer speziellen Bibliothek für die Kommunikation Smartphone $\rightarrow$ Estimote Beacon entwickelt werden.
-\subsection{ROS}
-Hier wird ROS erklärt.
-\subsection{Miracenter}
-\begin{wrapfigure}{r}{7cm}
-\centering
-\includegraphics[scale=0.9]{Bilder/Flur}
-\caption{Grundriss eines Flures in Gebäude 29 der OvGU, Stockwerk 3}
-\label{fig:Flur}
-\end{wrapfigure}
-Mit der Software "`Miracenter"' der Firma MetraLabs GmbH ist es möglich, mit einem Scitos G5 Roboter den Grundriss eines Raumes zu erstellen. Als Sensorinformationen bezieht die Software Daten von den Inertailsensoren, Schrittmotoren und des Laserscanners und kombiniert diese zu einer Karte. Dabei wird mithilfe der Schrittmotoren der zurückgelegte Weg gemessen und diese Information mit den Inertialsensoren verbessert. Der Laserscanner sucht dabei nach festen Objekten und misst die Entfernung vom Roboter zu den Objekten. Im nebenstehendem Bild ist eine solche Karte als Beispiel aufgeführt. Die Daten die Miracenter dem Nutzer zur Verfügung stellt, bestehen aus der Position des Roboters und seiner Ausrichtung in der Karte. Die Karte liegt dabei als PNG-Datei vor, wobei ein Pixel einer konstanten metrischen Länge entspricht. Die Farbwerte der Bildpunkte beschreiben zudem, ob an einer Stelle ein Hinderniss oder ein frei befahrbarer Raum vorliegt. In Abbildung \ref{fig:Flur} ist zu erkennen, dass die erstellte Karte teilweise verrauscht ist, Wände nicht gerade verlaufen, oder offene Türen und herumlaufende Personen die Messungen verfälschen. Die Karte kann dafür nach der Erstellung von jedem beliebigen Bildbearbeitungsprogramm geöffnet und verändert werden. Dabei ist darauf zu achten die Auflösung nicht zu verändern, da ansonsten die Dimensionen nicht mehr übereinstimmen. Nach der Bearbeitung der Bilddatei kann sie anschließend im Miracenter geladen werden. Mittels Mausklick in die Karte wird die ungefähre Position des Roboters bestimmt. Danach orientiert sich der Scitos automatisch und lokalisiert sich im weiteren Verlauf selbst anhand seiner Sensordaten. Nun können ihm Positionen und Ausrichtung vorgegeben werden und durch seiner internen Pfadplanung steuert er sie autonom an. Durch ein Miracenter-ROS-Interface kann dabei die interne Lokalisierung und die Vorgabe von Position und Ausrichtung vom Scitos extern übermittelt werden. Die gesamte Software ist jedoch proprietär, d.h. nicht quelloffen, sodass ein tieferer Blick in die Funktionsweise der Software dem Nutzer verwehrt bleibt.
-\subsection{Android-Studio}
-Programm zur Erstellung von Apps.
-\subsection{Estimote SDK for Android}
-Bibliothek für die Einbindung in eine Android-App. Heir kann schon auf Teile in der App eingegangen werden.
-\section{App-Entwicklung}
-Was muss die App leisten?
-\subsection{ROS-Anbindung}
-Kurze Beschreibung des Talkers.
-\subsection{Lagemessung}
-Auslesen des Gyros und der Komplementärfilterung.
-\subsection{Beacon-Detektierung}
-Probleme ansprechen mit gleichzeitiger Nutzung von WLAN undBluetooth. Am Ende ein schöner Programmablaufplan.
-
-\section{Versuchsplanung}
-Erklärung der Funktionsweise des Frameworks
-
-\section{Experimente}
-\subsection{Energieverbrauch eines Beacon} 
-Der Wartungsaufwand für ein Beacon hängt maßgeblich an der Laufzeit der in jedem Beacon eingebauten Batterie ab. Die in Kapitel 1 und 2 erwähnten Einstellmöglichkeiten von Sendeleistung und der Häufigkeit von Sendeintervallen beeinflussen dabei den Stromverbrauch der Beacon und somit auch die Betriebsdauer der Batterien. Dieser Abschnitt soll sich damit beschäftigen, inwieweit sich die Parameter auf die Wartungszyklen auswirken. Dies soll später dabei helfen, zwischen der Auslegung der beiden Parameter und des gewünschten Wartungsaufwandes abwägen zu können. Denn in großen Projekten mit mehreren hundert Beacons steigt der Wartungsaufwand proportional und wenn einzelne Beacons andere Einstellungen als die Mehrheit aufweisen (um beispielsweise wichtige Gebiete besser abzudecken), wird auch der Überblick über die nötigen Wartungszyklen verloren gehen. Um die Abhängigkeiten zu veranschaulichen, wird anhand vom Datenblatt des verwendeten Hardware-Chip nRF51822\cite{nRF5} in den genutzten Beacons eine Simulation entworfen, die die Einstellmöglichkeiten als Variablen betrachtet. Als Ausgangsbasis für den Energiespeicher wird eine CR2450-Batterie mit 1,8 Wh\cite{CR2450} angenommen. Hierbei wurde nicht vom Idealzustand ausgegeangen, sondern ein üblicher Faktor von 0,7 hinzu multipliziert, um der Alterung der Zelle und weiterer Effekte Rechnung zu tragen. Durch die gering fliesenden Ströme und der minimalen Bauweise der Beacons, können auch keine direkten Messungen vorgenommen werden. Zudem kann auch nicht verifiziert werden, wie lange ein Sendeauftrag oder ein Zustand vom Prozessor dauert. Um trotzdem ein gutes Simulationsergebnis zu erreichen, muss tiefer in die Funktionsweise der Beacons geschaut werden. Als größte Unbekannte triit dabei die Sendedauer auf. Bei einer angenommenen Datenrate von 250Kbit/s  und bei einer Größe eines Datenpaketes von 38 Bytes \cite{iBPa} (siehe \ref{fig:iBPa}), dauert eine Sendesequenz rund 1 ms. Die benötigte elektrische Leistung für eine vorher definierte Sendeleistung beträgt dabei ein Vielfaches dessen und ist davon stark nichtlinear abhängig. Die dazu nötigen Beziehungen können anhand des Datenblattes des nRF51822 Chips hergeleitet werden. In diesem Fall wurde ein Polynom 4. Grades als Funktion der einstellbaren Sendeleistung aufgstellt, welches annähernd diese Abhängigkeiten beschreibt. Da die Kommunikation bidirektional ist, existiert auch ein Empfangsmodus der ebenfalls mit 1 ms Empfangsdauer angenommen wird, aber dessen Modus hingegen einen konstanten Stromverbrauch aufweist.
-\begin{figure}[H]
+\section{Zielsetzungen}
+Aus den Vorüberlegungen ergibt sich eine klar definierte Struktur, die nun konkret mit einzelnen Abläufen in diesem Absatz beschrieben wird. Die Zielsetzungen sind dabei zum einen, ein Modell für die Ausbreitung von BLE-Signalen zu finden und zu parametrisieren. Dafür braucht es ein systematisches Vorgehen für die Aufnahme der Messwerte und eine Plattform als Empfänger der BLE-Signale. Nachfolgend muss das Modell in eine Simulationsumgebung eingepflegt und ein Optimierungsalgorithmus für die Positionierung der Beacons implementiert werden. Im letzten Schritt soll als Abschluss der Arbeit ein Testfeld mit einer simulierten Konfiguration aufgebaut und die Messungen daraus mit den Simulationsergebnisse verglichen werden. Dafür wird ein mobiles System benötigt, welches vorgegebene Punkte im Feld des Lokalisierungssystems ansteuern und seine Position mit der errechneten Position aus der Trilateration vergleichen kann. Um alle diese Punkte zu erfüllen, müssen Systeme und Werkzeuge gefunden werden, die die Konzeptplanung unterstützen. Im Anschluss werden diese näher benannt und deren Zusammenspiel erläutert.
+\subsection{Hardware-Anforderungen}
+An das Empfängsgerät wird lediglich die Anforderung gestellt, dass die Messung eines Beacon-Signals mit der Messung einer Position synchronisierbar ist und somit über Netzwerkfähigkeit oder Speicher verfügen muss. Dies ist gerade in der Validierungsphase von hoher Wichtigkeit, um standardisierte und reproduzierbare Ergebnisse zu gewährleisten. Da die eigentliche Nutzung des Positionierungssystems mithilfe von Smartphones stattfindet, ist die Verwendung dieser Endgeräte für die Messungen durchaus zu empfehlen. Denn Smartphones besitzen eine große Bandbreite an Schnittstellen und einen internen Speicher, sodass jeweils eine Strategie für die Messwertaufnahme verfolgt werden kann. Zudem existieren von den Herstellern der Beacons bereit fertige Bibliotheken und Entwicklertools, um die Signale von ihren Beacons zu verarbeiten, was einen geringeren Aufwand für die Implementierung bedeutet. Zudem weisen Antennen der Empfangsgeräte Charakteristiken auf, die die Aufnahme der Messungen je nach Ausrichtung des Smartphones beeinflussen. Es gilt somit auch diese Einflüsse zu untersuchen und da die meisten Smartphones auch über Inertialsensoren verfügen, bieten sie gleich zusätzliche Sensordaten in einem Gerät. Die Problematik der Antennencharakteristiken findet sich dabei im nächsten Kapitel. Für die standardisierte Aufnahme der Messwerte bietet sich eine Kombination aus Maschine bzw. Roboter und Smartphone an. Da die Roboter-Systeme mobil sind, um eine Positionsbestimmung unabhängig von der Beacon-Ortung erweitert werden können und ebenfalls Kommunikationfähigkeiten durch entsprechende Middleware besitzen, bietet sich ihre Verwendung für die Überprüfung von Beacon-Konfigurationen an. Es ist dabei nur darauf zu achten, dass es eine entsprechende Halterung für das Smartphone am Roboter existiert. Darüber hinaus kann der gesamte Prozess durch die Verwendung von Robotern in den Experimenten automatisiert werden, welches ebenfalls ein Ziel dieser Arbeit darstellt.  
+\subsection{Konzept der Software-Architektur}
+Im Mittelpunkt der Software-Architektur steht die Datenübertragung der Messwerte aus verteilten Systemen auf ein zentrales System, um diese später im Verarbeitungsschritt zu synchronisieren. Um dies zu gewährleisten müssen alle Plattformen miteinander kommunizieren können und die Art der Übertragung darf dabei nicht zu starken Verzögerungen der Messwertaufnahme führen. Sprich es wird ein effektives und schnelles Framework benötigt, dass die eigentliche Messungen nicht beeinträchtigt. Es muss dabei zwischen den Experimenten unterschieden werden, denn für die Parameterbestimmung des Modells wird keine ständige Positionsmessung benötigt, da diese "`per Hand"' ermittelt werden kann und sich im Laufe einer Messreihe für eine Distanz auch nicht ändert. Hingegen bei der Überprüfung eines bestehenden Lokalisierungssystem fließt die "`externe"' Lokalisierung eines Roboters in den Vektor aus Messwerten mit ein, sodass über das Framework der Kommunikation verschiedene Datentypen von den verschiedenen Plattformen auf die zentrale Verarbeitungsstelle geleitet werden müssen. Die Anforderungen an die einzelnen Anwendungen und unteren Ebenen der Software wird in Abbildung \ref{fig:SoftArch} einmal dargestellt. Die Anforderungen an die einzelnen Anwendungen sind bei dem Smartphone die Erfassung der einzelnen BLE-Signalen von den Beacons und der Messung der eigenen Ausrichtung. Im Gegensatz dazu muss der Roboter seine eigenen Positionsdaten übermitteln und zudem die auf einem externen Computer in der Simulation erstellten Raumelemente ansteuern und somit Befehle vom PC entgegennehmen. Die Simulationsumgebung speichert alle Sensordaten der verteilten Systeme und verarbeitet diese für die eigentliche Validierung der Beacon-Konfiguration. \\ \\
+Da die Simulation zur Erstellung eines Indoor-Lokalisierungssystems in Gebäude bzw. Räumen angewendet wird, muss die Simulationumgebung zuerst den Grundriss eines Gebäudes analysieren und die gewonnenen Daten für die spätere Verwendung verarbeiten. Es bietet sich dabei an den Raum in einzelne Elemente zu unterteilen, sodass die Simulation vereinfacht wird und mit diskreten Werten gerechnet werden kann. Die Informationen über die Anordnung von Objekten und Wänden ist dabei essentiell für die manuelle oder automatische Verteilung der Beacons im Raum und der Simulation der einzelnen Signalstärken in Abhängigkeit zu den Distanzen der Raumelementen zu den Beacons. Der grundlegende Ablauf ist in Abbildung \ref{fig:SimArch} hierfür skizziert. Die Optimierung einer Anordnung von Beacons ist dabei stets subjektiv, da für jedes Szenario andere Anforderungen an das Ortungssystem gestellt werden. Es gilt somit ein Optimierungsalgorithmus zu finden, der mit unterschiedlichen Ansprüchen je nach Situation umgehen und gegebenenfalls auf ein spezielles Optimierungsproblem angepasst werden kann. Auf die Optimierung wird speziell in Kapitel 5 eingegangen.
+\pgfdeclarelayer{background}
+\pgfdeclarelayer{foreground}
+\pgfsetlayers{background,main,foreground}
+\tikzstyle{sensor}=[draw, fill=blue!20, text width=3cm, text centered, minimum height=2.5em]
+\begin{figure}[t]
 \centering
 \begin{tikzpicture}
-    \node [block, fill=magenta!20, text width=2cm, minimum height=1.5cm] (Header) {\small Header \\(2 Bytes)};
-    \node [block, fill=magenta!20, right=0cm of Header, text width=3cm, minimum height=1.5cm] (MAC) {\small MAC Addresse \\(6 Bytes)};
-    \node [block, fill=magenta!20, right=0cm of MAC, text width=2cm, minimum height=1.5cm] (Data) {\small Data \\(30 Bytes)};
-    \node [block, fill=blue!20, below=1cm of Data, text width=2cm, minimum height=1.5cm] (Major) {\small Major\\ (2 Bytes)};
-    \node [block, fill=blue!20, left=0cm of Major, text width=3cm, minimum height=1.5cm] (UUID) {\small Proximity UUID \\(16 Bytes)};
-    \node [block, fill=blue!20, left=0cm of UUID, text width=3cm, minimum height=1.5cm] (Prefix) {\small iBeacon Prefix \\(9 Bytes)};
-    \node [block, fill=blue!20, right=0cm of Major, text width=2cm, minimum height=1.5cm] (Minor) {\small Minor\\ (2 Bytes)};
-    \node [block, fill=blue!20, right=0cm of Minor, text width=2cm, minimum height=1.5cm] (TX) {\small TX Power\\ (1 Bytes)};
-    \draw[very thick,->] (Data) -- (Major);
+	\tikzset{
+    	myarrow/.style={->, >=latex', shorten >=1pt, thick}, 
+	}  
+    \node[cloud, cloud puffs=15.7, text width=3cm, draw, fill=red!10, ] (cloud) at (0,0) {Kommunikations-Framework};
+    \node[sensor] (BeaconSig) at (-6,1) {Beacon-Signale};
+    \node[sensor] (IMU) at (-6,-1) {Inertial-sensoren};
+    \node[above of=BeaconSig] (App) {Smartphone-App};
+    
+    \node[sensor] (Pos) at (0,-5) {Positionsdaten};
+    \node[below of=Pos] (Robo) {Middleware vom Roboter};
+    
+    \node[sensor] (Verar) at (6,1) {Informations-Verarbeitung};
+    \node[sensor] (Steuer) at (6,-1.3) {Steuerung};
+    \node[above of=Verar] (PC) {Simulationsumgebung};
+    
+    \draw[myarrow] (BeaconSig.east) -- ++(2,0) -- ++(0,0.2) |- (Verar.170);
+	\draw[myarrow] (IMU.east) -- ++(2.5,0) -- ++(0,0.5) |- (Verar.180);
+	\draw[myarrow] (Pos.110) -- ++(0,3.45) -- ++(2,0) -- ++(0,1) |- (Verar.190);
+	\draw[myarrow] (Steuer.west) -- ++(-4,0) -| (Pos.70);
+
+    \begin{pgfonlayer}{background}
+        \path (App.north -| BeaconSig.west)+(-0.2,0.2) node (a) {};
+        \path (IMU.south -| BeaconSig.east)+(+0.2,-0.2) node (b) {};
+        \path[fill=blue!10,rounded corners, draw=black!50, dashed] (a) rectangle (b);
+        
+        \path (Pos.north -| Robo.west)+(-0.2,0.2) node (a) {};
+        \path (Robo.south -| Robo.east)+(+0.2,-0.2) node (b) {};
+        \path[fill=blue!10,rounded corners, draw=black!50, dashed] (a) rectangle (b);
+        
+        \path (PC.north -| PC.west)+(-0.2,0.2) node (a) {};
+        \path (Steuer.south -| PC.east)+(+0.2,-0.2) node (b) {};
+        \path[fill=blue!10,rounded corners, draw=black!50, dashed] (a) rectangle (b);    
+    \end{pgfonlayer}
 \end{tikzpicture}
-\caption{Anteile eines Datenpaket in der Beacon-Kommunikation auf der MAC-Ebene}
-\label{fig:iBPa}
+\caption{Überblick auf die Software-Anforderungen}
+\label{fig:SoftArch}
 \end{figure}
-Bei den tatsächlichen Laufzeiten des Sende- und Empfangsmodus muss jedoch ein Unsicherheitsfaktor mit eingerechnet werden, sodass nicht der berechnete Wert für eine Übertragung genommen wurde, sondern das Zweifache dessen, um ein weniger idealisiertes Bild für die einzelnen Vorgänge zu gestalten. 
-\begin{align*}
-t_{TX} &= \text{2 ms} \cdot \text{Intervalle [Hz]} \\
-t_{RX} &= \text{2 ms} \cdot \text{1 Hz} \\
-t_{CPU} &= t_{TX} + t_{RX} \\
-t_{IDLE} &= 1-t_{CPU}
-\end{align*}
-Da für den Sendevorgang noch zusätzlich der Cortex M0 Prozessor aufgeweckt werden muss und dieser das Paket vorbereitet und bis zum Ende der Sendung abwartet, muss hierfür zusätzlich der Energieverbrauch berechnet werden. Da wie erwähnt eine direkte Leistungsmessung an den Beacons durch die gering fließenden Ströme nicht möglich ist, werden aus dem Datenblatt des Prozessors diese rechnerisch ermittelt. Die aktive Phase des Prozessors für alle Operationen vor und nach einer Sendung werden dabei mit 2 ms Sekunden angenommen, welche exakt der Sende- und Empfangsdauer entspricht. Der Energiebedarf der Recheneinheit wurde im Datenblatt mit 4,1 mA bei einem Takt von 16 MHZ angegeben. So ergibt sich für den Prozessor eine Leistung von 12,3 mW. Zusätzlich wird der Stromverbrauch im IDLE-Modus (Schlafphase des Prozessors) mit 2,6 $\mu$A angegeben. Aus den genannten Gegebenheiten lassen sich nachfolgende Gleichungen erstellen und damit eine Simulation eines Lebenszyklus von einer Batterie näherungsweise bestimmen:
-\begin{align*}
-E_{Bat} &=& \text{1,8 Wh} \cdot \text{0,7} &=& \text{1,26 Wh}\\
-L_{CPU} &=& \text{4,1 mA} \cdot \text{3V} &=& \text{12,3 mW}\\
-L_{TX} &=& \text{Polynom 4. Grades (von 4,7 mA }\sim\text{ 11,8 mA)} \cdot \text{3V} &=& \text{14,1 mW} \sim \text{35,4 mW}\\
-L_{RX} &=& \text{6,1 mA} \cdot \text{3V} &=& \text{18,3 mW}\\
-L_{IDLE} &=& \text{2,6 } \mu\text{A} \cdot \text{3V} &=& \text{7,8 } \mu\text{W}
-\end{align*}
-ergeben den Zusammenhang
-\begin{align*}
-t_{Laufzeit} = \frac{E_{Bat}}{L_{CPU}\cdot t_{CPU} + L_{TX}\cdot t_{TX} + L_{RX}\cdot t_{RX} + L_{IDLE}\cdot t_{IDLE}} 
-\end{align*}
-und dies ergibt folgendes Simulationsergebniss:
-\pgfplotsset{
-    colormap/jet,
-}
-\begin{figure}[H]
+\tikzstyle{sensor}=[draw, fill=yellow!20, text width=4cm, text centered, minimum height=2.5em]
+\begin{figure}[b!]
 \centering
 \begin{tikzpicture}
-\customrevertcolormap{jet}
-\begin{axis}[
-    colorbar,
-    colorbar style={ylabel=Betriebsstunden},    
-    view={0}{90},
-    xlabel = {$\text{Intervalllänge [ms]}$},
-    ylabel = {$\text{Sendeleistung [dBm]}$},
-    %ytick pos=right,
-    %x dir=reverse,
-    scale=1.5   
-]
-\addplot3[surf, samples=40, samples y=10, domain=50:2000, domain y=-30:-20]
-{1.8/((4.1e-3 * 3 * 4e-3  * 1000/x) + ((4.2e-5 * (-20) ^ 4 + 2.7e-3 * (-20) ^ 3 + 6.1e-2 * (-20) ^ 2 + 0.65 * (-20) + 8) * 1e-3 * 3 * 2e-3 * 1000/x) + ((6.1e-3 * 2e-3 * 2 + 2.6e-6 * (1 - (4e-3  * 1000/x + 2e-3 * 2))) * 3))};
-\addplot3[surf, samples=40, samples y=24, domain=50:2000, domain y=-20:4]
-{1.8/((4.1e-3 * 3 * 4e-3  * 1000/x) + ((4.2e-5 * y ^ 4 + 2.7e-3 * y ^ 3 + 6.1e-2 * y ^ 2 + 0.65 * y + 8) * 1e-3 * 3 * 2e-3 * 1000/x) + ((6.1e-3 * 2e-3 * 2 + 2.6e-6 * (1 - (4e-3  * 1000/x + 2e-3 * 2))) * 3))};
-\end{axis}
-\end{tikzpicture}
-\caption{Einfluss der einstellbaren Parameter auf die Lebensdauer einer CR2450-Batterie}
-\label{fig:iBBatLe}
-\end{figure}
-Aufgrund der getroffenen Annahmen würde eine Batterie in den niedrigsten Einstellungen für rund 2 Jahre den Betrieb eines Beacon ermöglichen. Im realen Betrieb hatte sich gezeigt, dass eine Batterie schon nach 4 bis 5 Monaten gewechselt werden musste. Während dieser Zeit wurden die Einstellungen nicht geändert und bei einer Intervalllänge von 5 Hz und Sendeleistung von -12 dBm belassen. Beides stimmt mit der Simulation ungefähr überein, was noch kein Beweis für die Gultigkeit der Annahmen bedeutet, jedoch wird der qualitative Verlauf der wechselseitigen Beziehungen von Einstellparameter und Batterielaufzeit skizziert, welcher als Orientierung zur Auslegung der Parameter benutzt werden kann. \\ \\
+	\tikzset{
+    	myarrow/.style={->, >=latex', shorten >=1pt, thick}, 
+	}  
+    \node[sensor] (Grund) at (0,3) {Grundriss-Analyse};
+    \node[sensor] (Pos) at (0,0) {Positionierung der Beacons \\ manuell/optimiert};
+    \node[sensor] (SimSim) at (0,-3) {Simulation};
+    \node[above of=Grund] (Simu) {Simulationsumgebung};
+    
+    \draw[myarrow] (Grund.south) to (Pos.north);
+	\draw[myarrow] (Pos.south) to (SimSim.north);
 
-\subsection{Distanzmessung mithilfe von Beacons}
-Zuerst werden zwei bis drei Distanzen und dazu die berechnete Distanz aus der App gegenübergestellt. Das wird schlecht sein und aus dem weitren Grund, dass es eine "`Black Box"' ist (d.h. man kann nicht einsehen, wie die Distanz aus dem RSSI-Wert berechnet wird), wird hier geplant ein eigenes Modell aufzustellen. Da wurde entschieden für verschiedene Distanzen nur die RSSI-Werte aufzunehmen, um später ein eigenes Modell zu implementieren.
-\begin{figure}[H] 
-\centering
-\includegraphics[scale=0.3]{Bilder/MessungDistanz1}
-\caption{Distanz-Signalstärke-Messung Bild 1}
-\end{figure}
-\begin{figure}[H] 
-\centering
-\includegraphics[scale=0.3]{Bilder/MessungDistanz2}
-\caption{Distanz-Signalstärke-Messung Bild 2}
-\end{figure}
-\begin{figure}[H] 
-\centering
-\includegraphics[scale=0.3]{Bilder/MessungDistanz3}
-\caption{Distanz-Signalstärke-Messung Bild 3}
-\end{figure}
-\subsubsection{Einfluss der Intervalllänge} 
-Wird das Rauschen vermindern.
-\subsubsection{Einfluss der Signalstärke} 
-Dies soll auch in Abhängigkeit zur Signalsstärke passieren, um dessen Ausbreitung zu erforschen.
-\subsection{Auswirkung der Smartphone-Ausrichtung}
-Hier kommen mal alle Messungen rein. Auch die mit den Beacons an allen drei Himmelsrichtungen.
-\begin{figure}[H] 
-\centering
-\includegraphics[scale=0.3]{Bilder/MessungDrehung}
-\caption{Distanz-Signalstärke-Messung bei unterschiedlichen Smartphone-Ausrichtungen}
-\end{figure}
-\subsection{Einfluss anderer Signalquellen} 
-Für die Erklärung aus dem zweiten Kapitel (2,4 Ghz) benötige ich auch die Störung und Interferenzen gleicher Signale. Ich muss ja schließlich erklären, warum ich nicht viele viele iBeacons nebeneinander klatschen kann, um eine möglichst genaue Standortbestimmung zu erhalten (denn die Signale stören sich untereinander). 
-ir ist z.B. aufgefallen, dass die Beacons sich gegenseitig in der Sendestärke beeinflussen. Deswegen musste ich Einzelmessungen vornehmen und hier ließe sich auch begründen nicht zu viele Beacons in der realen Anwendung zu plazieren, um durch Elektrosmog nicht zu viele Einflussfaktoren in die Lokalisierung miteinfließen zu lassen. Viel hilft hier nicht immer viel, weniger ist manchmal besser, etc.
-\begin{figure}[H] 
-\centering
-\includegraphics[scale=0.3]{Bilder/MessungBeacon3}
-\caption{Gleichzeitige Messung dreier naheliegender Beacon-Signale}
+    \begin{pgfonlayer}{background}    
+        \path (Simu.north -| Simu.west)+(-0.2,0.2) node (a) {};
+        \path (SimSim.south -| Simu.east)+(+0.2,-0.2) node (b) {};
+        \path[fill=red!10,rounded corners, draw=black!50] (a) rectangle (b);    
+    \end{pgfonlayer}
+\end{tikzpicture}
+\caption{Überblick auf die Software-Anforderungen}
+\label{fig:SimArch}
 \end{figure}

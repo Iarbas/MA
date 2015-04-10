@@ -14,8 +14,6 @@ Warning--entry type for "Bibel" isn't style-file defined
 --line 28 of file Quellen.bib
 Warning--entry type for "GSwiB" isn't style-file defined
 --line 47 of file Quellen.bib
-Warning--entry type for "iLogo" isn't style-file defined
---line 56 of file Quellen.bib
 Warning--entry type for "BLElogo" isn't style-file defined
 --line 85 of file Quellen.bib
 Warning--entry type for "GPS" isn't style-file defined
@@ -30,8 +28,6 @@ Warning--entry type for "GIM" isn't style-file defined
 --line 174 of file Quellen.bib
 Warning--entry type for "BuNet" isn't style-file defined
 --line 193 of file Quellen.bib
-Warning--entry type for "FUE" isn't style-file defined
---line 201 of file Quellen.bib
 Warning--entry type for "MIL" isn't style-file defined
 --line 241 of file Quellen.bib
 Warning--entry type for "MobGerSt" isn't style-file defined
@@ -46,45 +42,45 @@ Warning--entry type for "WLAN" isn't style-file defined
 --line 317 of file Quellen.bib
 Warning--there's no year in Stau
 Warning--there's no year in Trilat
-You've used 24 entries,
+You've used 22 entries,
             4335 wiz_defined-function locations,
-            957 strings with 9522 characters,
-and the built_in function-call counts, 7545 in all, are:
-= -- 629
-> -- 227
-< -- 34
-+ -- 94
-- -- 70
-* -- 458
-:= -- 1419
-add.period$ -- 31
-call.type$ -- 24
-change.case$ -- 84
+            948 strings with 9289 characters,
+and the built_in function-call counts, 6968 in all, are:
+= -- 582
+> -- 213
+< -- 32
++ -- 88
+- -- 66
+* -- 429
+:= -- 1314
+add.period$ -- 28
+call.type$ -- 22
+change.case$ -- 78
 chr.to.int$ -- 0
-cite$ -- 26
-duplicate$ -- 268
-empty$ -- 712
-format.name$ -- 138
-if$ -- 1632
+cite$ -- 24
+duplicate$ -- 247
+empty$ -- 652
+format.name$ -- 130
+if$ -- 1502
 int.to.chr$ -- 0
-int.to.str$ -- 24
-missing$ -- 133
-newline$ -- 135
-num.names$ -- 46
-pop$ -- 169
+int.to.str$ -- 22
+missing$ -- 121
+newline$ -- 124
+num.names$ -- 42
+pop$ -- 156
 preamble$ -- 1
-purify$ -- 84
+purify$ -- 78
 quote$ -- 0
-skip$ -- 280
+skip$ -- 256
 stack$ -- 0
-substring$ -- 240
-swap$ -- 62
-text.length$ -- 34
+substring$ -- 220
+swap$ -- 58
+text.length$ -- 32
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 96
+type$ -- 88
 warning$ -- 2
-while$ -- 80
-width$ -- 26
-write$ -- 287
-(There were 20 warnings)
+while$ -- 74
+width$ -- 24
+write$ -- 263
+(There were 18 warnings)

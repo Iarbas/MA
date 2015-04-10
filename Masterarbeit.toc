@@ -2,18 +2,14 @@
 \contentsline {chapter}{Tabellenverzeichnis}{IV}{chapter*.5}
 \contentsline {chapter}{Abk\IeC {\"u}rzungsverzeichnis}{V}{chapter*.6}
 \contentsline {chapter}{\numberline {1}Einleitung}{1}{chapter.1}
-\contentsline {chapter}{\numberline {2}Stand der Technik - Einf\IeC {\"u}hrung in die Beacon-Technologie}{3}{chapter.2}
+\contentsline {chapter}{\numberline {2}Stand der Technik -- Einf\IeC {\"u}hrung in die Beacon-Technologie}{3}{chapter.2}
 \contentsline {section}{\numberline {2.1}Entwicklungsgeschichte}{3}{section.2.1}
 \contentsline {section}{\numberline {2.2}Aufbau und Funktionsweise von Beacons}{4}{section.2.2}
 \contentsline {section}{\numberline {2.3}Ortungsmethoden}{5}{section.2.3}
-\contentsline {subsection}{\numberline {2.3.1}Definitionen von Bereiche}{6}{subsection.2.3.1}
+\contentsline {subsection}{\numberline {2.3.1}Definitionen verschiedener Anwendungsfelder}{6}{subsection.2.3.1}
 \contentsline {subsection}{\numberline {2.3.2}Mikro-Lokalisierung}{7}{subsection.2.3.2}
 \contentsline {section}{\numberline {2.4}Anwendungsbereiche der Indoor-Lokalisierung}{9}{section.2.4}
 \contentsline {subsection}{\numberline {2.4.1}M\IeC {\"o}gliche Einsatzszenarien}{9}{subsection.2.4.1}
 \contentsline {subsection}{\numberline {2.4.2}Planungskonzepte f\IeC {\"u}r Beacon-Konfigurationen}{10}{subsection.2.4.2}
-\contentsline {chapter}{Literaturverzeichnis}{12}{figure.caption.17}
-\contentsline {chapter}{\nonumberline Anhang}{14}{appendix*.19}
-\contentsline {section}{\numberline {A}Bilder}{14}{section.Alph0.1}
-\contentsline {section}{\numberline {B}Tabellen}{14}{section.Alph0.2}
-\contentsline {section}{\numberline {C}App-Aufbau}{14}{section.Alph0.3}
-\contentsline {chapter}{Selbstst\IeC {\"a}ndigkeitserkl\IeC {\"a}rung}{15}{appendix*.21}
+\contentsline {chapter}{Literaturverzeichnis}{11}{figure.caption.16}
+\contentsline {chapter}{Selbstst\IeC {\"a}ndigkeitserkl\IeC {\"a}rung}{14}{chapter*.18}

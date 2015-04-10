@@ -2,12 +2,10 @@
 \contentsline {figure}{\numberline {1.1}{\ignorespaces Skizze satellitengest\IeC {\"u}tztes Lokalisierungssystem \cite {GPS}\relax }}{1}{figure.caption.7}
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {2.1}{\ignorespaces Offizielles Bluetooth Smart Logo \cite {BLElogo}\relax }}{3}{figure.caption.8}
-\contentsline {figure}{\numberline {2.2}{\ignorespaces Offizielles iBeacon Logo \cite {iLogo}\relax }}{3}{figure.caption.9}
-\contentsline {figure}{\numberline {2.3}{\ignorespaces Explosionszeichnung Beacon \cite {BeaEx}\relax }}{4}{figure.caption.10}
-\contentsline {figure}{\numberline {2.4}{\ignorespaces Signalschw\IeC {\"a}chung durch Objekte, zB. W\IeC {\"a}nde \cite {GSwiB}\relax }}{5}{figure.caption.11}
-\contentsline {figure}{\numberline {2.5}{\ignorespaces K\IeC {\"o}rper von Menschen blockieren zus\IeC {\"a}tzlich die Signale \cite {GSwiB}\relax }}{5}{figure.caption.11}
-\contentsline {figure}{\numberline {2.6}{\ignorespaces Beispiel einer Trilateration zur Positionsbestimmung\relax }}{7}{figure.caption.14}
-\contentsline {figure}{\numberline {2.7}{\ignorespaces Beacon Nutzung in Gesch\IeC {\"a}ften \cite {Shoe}\relax }}{9}{figure.caption.15}
-\contentsline {figure}{\numberline {2.8}{\ignorespaces Beacon Nutzung im Flugh\IeC {\"a}fen \cite {Airpo}\relax }}{10}{figure.caption.16}
-\contentsline {figure}{\numberline {2.9}{\ignorespaces Demo der Estimote Indoor Localization App \cite {TrEs}\relax }}{11}{figure.caption.17}
-\addvspace {10\p@ }
+\contentsline {figure}{\numberline {2.2}{\ignorespaces Explosionszeichnung Beacon \cite {BeaEx}\relax }}{4}{figure.caption.9}
+\contentsline {figure}{\numberline {2.3}{\ignorespaces Signalschw\IeC {\"a}chung durch Objekte, z.B. W\IeC {\"a}nde \cite {GSwiB}\relax }}{5}{figure.caption.10}
+\contentsline {figure}{\numberline {2.4}{\ignorespaces menschliche K\IeC {\"o}rper blockieren zus\IeC {\"a}tzlich die Signale \cite {GSwiB}\relax }}{5}{figure.caption.10}
+\contentsline {figure}{\numberline {2.5}{\ignorespaces Beispiel einer Trilateration zur Positionsbestimmung\relax }}{7}{figure.caption.13}
+\contentsline {figure}{\numberline {2.6}{\ignorespaces Beacon Nutzung in Gesch\IeC {\"a}ften \cite {Shoe}\relax }}{9}{figure.caption.14}
+\contentsline {figure}{\numberline {2.7}{\ignorespaces Beacon Nutzung im Flugh\IeC {\"a}fen \cite {Airpo}\relax }}{10}{figure.caption.15}
+\contentsline {figure}{\numberline {2.8}{\ignorespaces Demo der Estimote Indoor Localization App \cite {TrEs}\relax }}{11}{figure.caption.16}
