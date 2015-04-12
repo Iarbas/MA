@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2014.11.11)  10 APR 2015 16:30
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2014.11.11)  12 APR 2015 18:40
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1662,179 +1662,139 @@ Class scrreprt Warning: \float@addtolists detected!
 (scrreprt)              a package that still implements the
 (scrreprt)              deprecated \float@addtolist interface .
 
-<Bilder/MotorolaAntenne.png, id=85, 143.78719pt x 280.04625pt>
-File: Bilder/MotorolaAntenne.png Graphic file (type png)
 
-<use Bilder/MotorolaAntenne.png>
-Package pdftex.def Info: Bilder/MotorolaAntenne.png used on input line 18.
-(pdftex.def)             Requested size: 115.02989pt x 224.0373pt.
+Underfull \hbox (badness 10000) in paragraph at lines 2--4
+
+ []
 
 
-Package natbib Warning: Citation `Moto' on page 1 undefined on input line 22.
+Package natbib Warning: Citation `Moto' on page 1 undefined on input line 7.
 
-
-Package natbib Warning: Citation `Moto' on page 1 undefined on input line 22.
-
-[1
-
-
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map} <./Bilder/MotorolaAntenne.p
-ng>] <Bilder/Youbot.png, id=98, 339.2675pt x 344.28625pt>
-File: Bilder/Youbot.png Graphic file (type png)
-
-<use Bilder/Youbot.png>
-Package pdftex.def Info: Bilder/Youbot.png used on input line 30.
-(pdftex.def)             Requested size: 135.70459pt x 137.71205pt.
-
-
-Package natbib Warning: Citation `You' on page 2 undefined on input line 31.
-
-
-Package natbib Warning: Citation `You' on page 2 undefined on input line 31.
-
-<Bilder/Scitos.png, id=99, 655.44875pt x 768.8725pt>
-File: Bilder/Scitos.png Graphic file (type png)
- <use Bilder/Scitos.png>
-Package pdftex.def Info: Bilder/Scitos.png used on input line 36.
-(pdftex.def)             Requested size: 131.08742pt x 153.77177pt.
-LaTeX Font Info:    Try loading font information for OT1+ztmcm on input line 41
-.
+LaTeX Font Info:    Try loading font information for OT1+ztmcm on input line 9.
 
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1ztmcm.fd
 File: ot1ztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OT1/ztmcm.
 )
-LaTeX Font Info:    Try loading font information for OML+ztmcm on input line 41
-.
+LaTeX Font Info:    Try loading font information for OML+ztmcm on input line 9.
+
 
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/omlztmcm.fd
 File: omlztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OML/ztmcm.
 )
-LaTeX Font Info:    Try loading font information for OMS+ztmcm on input line 41
-.
+LaTeX Font Info:    Try loading font information for OMS+ztmcm on input line 9.
+
 
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/omsztmcm.fd
 File: omsztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OMS/ztmcm.
 )
-LaTeX Font Info:    Try loading font information for OMX+ztmcm on input line 41
-.
+LaTeX Font Info:    Try loading font information for OMX+ztmcm on input line 9.
+
 
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/omxztmcm.fd
 File: omxztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OMX/ztmcm.
 )
-LaTeX Font Info:    Try loading font information for U+rsfs on input line 41.
+LaTeX Font Info:    Try loading font information for U+rsfs on input line 9.
 
 (/usr/share/texlive/texmf-dist/tex/latex/jknapltx/ursfs.fd
 File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 )
-LaTeX Font Info:    Try loading font information for OT1+ptm on input line 41.
+LaTeX Font Info:    Try loading font information for OT1+ptm on input line 9.
 
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1ptm.fd
 File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
 )
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 41.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 9.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <9> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 41.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 9.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 41.
- [2 <./Bilder/Youbot.png> <./Bilder/Scitos.png>]
-<Bilder/Flur.png, id=111, 189.70876pt x 210.7875pt>
-File: Bilder/Flur.png Graphic file (type png)
- <use Bilder/Flur.png>
-Package pdftex.def Info: Bilder/Flur.png used on input line 47.
-(pdftex.def)             Requested size: 170.73628pt x 189.707pt.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 9.
+
+<Bilder/MotoG.png, id=43, 226.8475pt x 440.64626pt>
+File: Bilder/MotoG.png Graphic file (type png)
+ <use Bilder/MotoG.png>
+Package pdftex.def Info: Bilder/MotoG.png used on input line 11.
+(pdftex.def)             Requested size: 89.62556pt x 174.09706pt.
 
 
-LaTeX Warning: Reference `fig:Flur' on page 3 undefined on input line 51.
-
-[3 <./Bilder/Flur.png>]
-<Bilder/MessungDistanz1.png, id=122, 373.395pt x 987.69pt>
-File: Bilder/MessungDistanz1.png Graphic file (type png)
-
-<use Bilder/MessungDistanz1.png>
-Package pdftex.def Info: Bilder/MessungDistanz1.png used on input line 73.
-(pdftex.def)             Requested size: 112.01936pt x 296.30928pt.
-
-<Bilder/MessungDistanz2.png, id=123, 674.52pt x 1010.77625pt>
-File: Bilder/MessungDistanz2.png Graphic file (type png)
-
-<use Bilder/MessungDistanz2.png>
-Package pdftex.def Info: Bilder/MessungDistanz2.png used on input line 78.
-(pdftex.def)             Requested size: 202.35756pt x 303.23521pt.
-
-Underfull \vbox (badness 3668) has occurred while \output is active []
-
- [4]
-<Bilder/MessungDistanz3.png, id=136, 1252.68pt x 1050.92625pt>
-File: Bilder/MessungDistanz3.png Graphic file (type png)
-
-<use Bilder/MessungDistanz3.png>
-Package pdftex.def Info: Bilder/MessungDistanz3.png used on input line 83.
-(pdftex.def)             Requested size: 375.8069pt x 315.2803pt.
- [5 <./Bilder/MessungDistanz1.png (PNG copy)> <./Bilder/MessungDistanz2.png (PN
-G copy)>]
-LaTeX Font Info:    Try loading font information for T1+phv on input line 86.
-
-(/usr/share/texlive/texmf-dist/tex/latex/psnfss/t1phv.fd
-File: t1phv.fd 2001/06/04 scalable font definitions for T1/phv.
-)
-LaTeX Font Info:    Font shape `T1/phv/m/n' will be
-(Font)              scaled to size 11.39996pt on input line 86.
-LaTeX Font Info:    Font shape `T1/phv/b/n' will be
-(Font)              scaled to size 11.39996pt on input line 86.
-
-<Bilder/MessungDrehung.png, id=143, 642.4pt x 1046.91125pt>
-File: Bilder/MessungDrehung.png Graphic file (type png)
-
-<use Bilder/MessungDrehung.png>
-Package pdftex.def Info: Bilder/MessungDrehung.png used on input line 94.
-(pdftex.def)             Requested size: 192.72148pt x 314.0758pt.
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [6 <./Bilder/MessungDistanz3.png (PNG copy)>]
-<Bilder/MessungBeacon3.png, id=151, 614.295pt x 1123.19624pt>
-File: Bilder/MessungBeacon3.png Graphic file (type png)
-
-<use Bilder/MessungBeacon3.png>
-Package pdftex.def Info: Bilder/MessungBeacon3.png used on input line 102.
-(pdftex.def)             Requested size: 184.28992pt x 336.96147pt.
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [7 <./Bilder/MessungDrehung.png (PNG copy)>]
-
-Package natbib Warning: Citation `CR2450' on page 8 undefined on input line 107
-.
+Package natbib Warning: Citation `MotoGV' on page 1 undefined on input line 12.
 
 
-Package natbib Warning: Citation `iBPa' on page 8 undefined on input line 107.
+
+Package natbib Warning: Citation `MotoGV' on page 1 undefined on input line 12.
 
 
-LaTeX Warning: Reference `fig:iBPa' on page 8 undefined on input line 107.
+<Bilder/MotorolaAntenne.png, id=45, 170.13562pt x 330.48468pt>
+File: Bilder/MotorolaAntenne.png Graphic file (type png)
 
-[8 <./Bilder/MessungBeacon3.png>]
-Underfull \vbox (badness 2521) has occurred while \output is active []
+<use Bilder/MotorolaAntenne.png>
+Package pdftex.def Info: Bilder/MotorolaAntenne.png used on input line 19.
+(pdftex.def)             Requested size: 89.62556pt x 174.09706pt.
 
- [9])
+Overfull \hbox (17.71474pt too wide) in paragraph at lines 23--24
+ [][] 
+ []
+
+
+Package natbib Warning: Citation `Moto' on page 1 undefined on input line 24.
+
+
+Package natbib Warning: Citation `Moto' on page 1 undefined on input line 24.
+
+[1
+
+
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
+
+LaTeX Warning: Reference `fig:Youbot1' on page 2 undefined on input line 29.
+
+
+LaTeX Warning: Reference `fig:Youbot2' on page 2 undefined on input line 29.
+
+<Bilder/Youbot.png, id=54, 1802.735pt x 3176.86874pt>
+File: Bilder/Youbot.png Graphic file (type png)
+ <use Bilder/Youbot.png>
+Package pdftex.def Info: Bilder/Youbot.png used on input line 33.
+(pdftex.def)             Requested size: 126.20435pt x 222.40353pt.
+
+<Bilder/AxesYB.png, id=55, 1110.1475pt x 1115.16624pt>
+File: Bilder/AxesYB.png Graphic file (type png)
+ <use Bilder/AxesYB.png>
+Package pdftex.def Info: Bilder/AxesYB.png used on input line 40.
+(pdftex.def)             Requested size: 222.02556pt x 223.0293pt.
+
+Overfull \hbox (22.85628pt too wide) in paragraph at lines 40--41
+ [][] 
+ []
+
+
+Package natbib Warning: Citation `You' on page 2 undefined on input line 41.
+
+
+Package natbib Warning: Citation `You' on page 2 undefined on input line 41.
+
+
+Underfull \hbox (badness 1448) in paragraph at lines 41--41
+[][][]\T1/bch/m/n/12 Abb. 1.4[][]: []|Zeich-nung ei-nes Youbot-
+ []
+
+[2 <./Bilder/MotoG.png> <./Bilder/MotorolaAntenne.png>])
 
 Package natbib Warning: There were undefined citations.
 
+
+Package caption Warning: Unused \captionsetup[wrapfigure] on input line 23.
+See the caption package documentation for explanation.
+
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 40.
-[10]
+[3 <./Bilder/Youbot.png> <./Bilder/AxesYB.png>]
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 40.
  (./Masterarbeit.aux)
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 40.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 40.
+Package rerunfilecheck Info: File `Masterarbeit.out' has not changed.
+(rerunfilecheck)             Checksum: 0CC61D13635AA01877D6E1F78BF2B3F1;263.
 
-
-Package rerunfilecheck Warning: File `Masterarbeit.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `Masterarbeit.out':
-(rerunfilecheck)             Before: 5CF899771A8BA276B3924C026D1D1AE6;1102
-(rerunfilecheck)             After:  D35016B7EDC952B2BD9F21C310037ECD;1393.
 
 LaTeX Warning: There were undefined references.
 
@@ -1844,70 +1804,20 @@ LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 40.
  ) 
 Here is how much of TeX's memory you used:
- 36774 strings out of 494935
- 790602 string characters out of 6178121
- 1032876 words of memory out of 5000000
- 39150 multiletter control sequences out of 15000+600000
- 46882 words of font info for 72 fonts, out of 8000000 for 9000
+ 36543 strings out of 494935
+ 787262 string characters out of 6178121
+ 1029876 words of memory out of 5000000
+ 38986 multiletter control sequences out of 15000+600000
+ 30861 words of font info for 56 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
- 67i,12n,78p,10447b,811s stack positions out of 5000i,500n,10000p,200000b,80000s
-pdfTeX warning (dest): name{cite.nRF5} has been referenced but does not exist
-, replaced by a fixed one
-
-pdfTeX warning (dest): name{chapter*.18} has been referenced but does not exist
-, replaced by a fixed one
-
-pdfTeX warning (dest): name{figure.caption.16} has been referenced but does not
- exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{subsection.2.4.2} has been referenced but does not 
-exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{subsection.2.4.1} has been referenced but does not 
-exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{section.2.4} has been referenced but does not exist
-, replaced by a fixed one
-
-pdfTeX warning (dest): name{subsection.2.3.2} has been referenced but does not 
-exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{subsection.2.3.1} has been referenced but does not 
-exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{section.2.3} has been referenced but does not exist
-, replaced by a fixed one
-
-pdfTeX warning (dest): name{section.2.2} has been referenced but does not exist
-, replaced by a fixed one
-
-pdfTeX warning (dest): name{section.2.1} has been referenced but does not exist
-, replaced by a fixed one
-
-pdfTeX warning (dest): name{chapter.2} has been referenced but does not exist, 
-replaced by a fixed one
-
-pdfTeX warning (dest): name{chapter*.6} has been referenced but does not exist,
- replaced by a fixed one
-
-pdfTeX warning (dest): name{chapter*.5} has been referenced but does not exist,
- replaced by a fixed one
-
-pdfTeX warning (dest): name{chapter*.4} has been referenced but does not exist,
- replaced by a fixed one
-
-{/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texlive/
-texmf-dist/fonts/type1/bitstrea/charter/bchb8a.pfb></usr/share/texlive/texmf-di
-st/fonts/type1/bitstrea/charter/bchr8a.pfb></usr/share/texlive/texmf-dist/fonts
-/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/
-public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/he
-lvetic/uhvb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/symbol/usyr.pf
-b></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/t
-exlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on Masterarbeit.pdf (10 pages, 4559013 bytes).
+ 67i,12n,78p,10447b,881s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texliv
+e/texmf-dist/fonts/type1/bitstrea/charter/bchb8a.pfb></usr/share/texlive/texmf-
+dist/fonts/type1/bitstrea/charter/bchr8a.pfb>
+Output written on Masterarbeit.pdf (3 pages, 4959441 bytes).
 PDF statistics:
- 225 PDF objects out of 1000 (max. 8388607)
- 171 compressed objects within 2 object streams
- 56 named destinations out of 1000 (max. 500000)
- 286 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 83 PDF objects out of 1000 (max. 8388607)
+ 49 compressed objects within 1 object stream
+ 10 named destinations out of 1000 (max. 500000)
+ 173 words of extra memory for PDF output out of 10000 (max. 10000000)
 
