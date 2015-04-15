@@ -1,0 +1,18 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage{standalone}
+\usepackage[T1]{fontenc}                       
+\usepackage[utf8]{inputenc}                    
+\usepackage{ngerman}
+\usepackage{pifont,mathptmx,charter,courier}   
+\usepackage[scaled]{helvet} 
+\begin{document}
+\section{Robot Operating System -- ROS}
+Das Robot Operating System oder kurz ROS, ist ein Projekt für die Kommunikation verschiedener Hardware-Plattformen untereinander. Anhand der Namensgebung leitet sich auch schnell der Einsatzzweck -- nämlich für Robotersysteme -- her. Dabei liegen die Schwerpunkte des Projektes auf \cite{ROSPaper}:
+\begin{itemize}
+\item "`Peer to Peer"' (P2P)-Verbindungen
+\item Modularem Aufbau
+\item Unterstützung mehrerer Programmiersprachen
+\item freier Nutzung und Open-Source
+\end{itemize}
+Ein System das auf ROS aufbaut, besteht dabei aus mehreren miteinander verbundenen Rechnern (sog. "`Hosts"') die zur Laufzeit über P2P miteinander kommunizieren. Bei der P2P-Verbindung können alle Teilnehmer ihre "`Dienste"' bzw. ihre Informationen gleichermaßen einander anbieten und nutzen, indem sie Daten im Netzwerk gleichzeitig empfangen und senden können. Dabei läuft auf einem zentralen Server der eigentliche Kern des Frameworks, über den der sämtliche Datenverkehr geleitet wird. Und auf den Host-Systemen laufen die eigentlichen Anwendungen ("`Nodes"'), die über Schnittstellen ("`Sockets"') des Betriebssytems ihre Daten auf das Netzwerk und schließlich an ROS verteilen. Ausgehend von den Nodes werden den gesendeten Nachrichten gesondert Bezeichnungen ("`Topics"') zugeordnet und mit einem Datentyp versehen. Diese Informationen sind allen Teilnehmer des P2P-Netzwerkes bekannt und können von ihnen angefordert werden. Der Kern organisiert dabei eine einheitliche Uhrzeit, die dadurch für alle Nachrichten bzw. deren Zeitstempel in den verteilten Systemen konsistent bleibt und so eine Synchronisierung der Messwerte nicht mehr nötig wird. Somit ermöglicht die Verwendung von ROS den Aufbau des gesamten Kommunikations-Frameworks, wie es in der Konzept-Planung in \ref{sec:KonSofArch} festgehalten wurde.
+\end{document}

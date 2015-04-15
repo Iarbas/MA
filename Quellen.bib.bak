@@ -152,6 +152,15 @@
   Timestamp                = {2015.03.23}
 }
 
+@Electronic{EstSDK,
+  Title                    = {Estimote SDK for Android},
+  Author                   = {{Estimote, Inc.}},
+  Url                      = {https://github.com/Estimote/Android-SDK},
+
+  Owner                    = {andre},
+  Timestamp                = {2015.04.14}
+}
+
 @Electronic{TrEs,
   Title                    = {Estimote Indoor Localization},
   Author                   = {{Estimote, Inc.}},
@@ -178,6 +187,15 @@
 
   Owner                    = {andre},
   Timestamp                = {2015.03.26}
+}
+
+@Electronic{AndStu,
+  Title                    = {Android Studio},
+  Author                   = {{Google, Inc.}},
+  Url                      = {http://developer.android.com/tools/studio/index.html},
+
+  Owner                    = {andre},
+  Timestamp                = {2015.04.14}
 }
 
 @Standard{GIM,
@@ -239,12 +257,30 @@
 }
 
 @Electronic{You,
-  Title                    = {Youbot},
+  Title                    = {Datenblatt Youbot},
   Author                   = {{Kuka AG}},
-  Url                      = {http://www.kuka-labs.com/de/service_robotics/research_education/youbot/},
+  Url                      = {http://www.kuka-labs.com/NR/rdonlyres/4833867A-D24F-410A-9AE4-300FBF671DFD/0/youBot\_datenblatt\_web\_0514.pdf},
 
   Owner                    = {andre},
   Timestamp                = {2015.03.26}
+}
+
+@TechReport{ROSPaper,
+  Title                    = {ROS: an open-source Robot Operating System},
+  Author                   = {{M. Quigley} and {B. Gerkey} and {K. Conley} and {J. Faust} and {T. Foote} and {J. Leibs} and {E. Berger} and {R. Wheeler} and {A. Ng}},
+
+  Owner                    = {andre},
+  Timestamp                = {2015.04.14},
+  Url                      = {https://www.willowgarage.com/sites/default/files/icraoss09-ROS.pdf}
+}
+
+@Electronic{Mira,
+  Title                    = {Scitos G5},
+  Author                   = {{MetraLabs GmbH}},
+  Url                      = {http://metralabs.com/index.php?option=com\_content&view=article&id=70&Itemid=64},
+
+  Owner                    = {andre},
+  Timestamp                = {2015.04.13}
 }
 
 @Standard{MIL,
