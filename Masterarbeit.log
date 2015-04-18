@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2014.11.11)  16 APR 2015 00:57
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2014.11.11)  18 APR 2015 04:15
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1477,37 +1477,10 @@ File: tikzlibraryplotmarks.code.tex 2008/01/09 v2.10 (rcs-revision 1.1)
 File: pgflibraryplotmarks.code.tex 2010/10/15 v2.10 (rcs-revision 1.12)
 )))
 (/usr/share/texlive/texmf-dist/tex/generic/pgfplots/libs/tikzlibrarypgfplots.co
-lormaps.code.tex)
-(/usr/share/texlive/texmf-dist/tex/latex/setspace/setspace.sty
-Package: setspace 2011/12/19 v6.7a set line spacing
-)
-
-Class scrreprt Warning: Usage of package `titlesec' together
-(scrreprt)              with a KOMA-Script class is not recommended.
-(scrreprt)              I'd suggest to use the package only
-(scrreprt)              if you really need it, because it breaks several
-(scrreprt)              KOMA-Script features, i.e., option `headings' and
-(scrreprt)              the extended optional argument of the section
-(scrreprt)              commands .
-(scrreprt)              Nevertheless, using requested
-(scrreprt)              package `titlesec' on input line 91.
-
-(/usr/share/texlive/texmf-dist/tex/latex/titlesec/titlesec.sty
-Package: titlesec 2011/12/15 v2.10.0 Sectioning titles
-\ttl@box=\box86
-\beforetitleunit=\skip67
-\aftertitleunit=\skip68
-\ttl@plus=\dimen295
-\ttl@minus=\dimen296
-\ttl@toksa=\toks47
-\titlewidth=\dimen297
-\titlewidthlast=\dimen298
-\titlewidthfirst=\dimen299
-)
-(/usr/share/texlive/texmf-dist/tex/latex/bezos/accents.sty
+lormaps.code.tex) (/usr/share/texlive/texmf-dist/tex/latex/bezos/accents.sty
 Package: accents 2006/05/12 v1.3 Math Accent Tools
-\cc@skew=\dimen300
-\cc@wd=\dimen301
+\cc@skew=\dimen295
+\cc@wd=\dimen296
 \cc@code=\count189
 \cc@group=\count190
 \cc@skewchar=\count191
@@ -1518,7 +1491,7 @@ Class scrreprt Warning: Usage of package `parskip' together
 (scrreprt)              I'd suggest to use option
 (scrreprt)              `parskip' with one of it's several values.
 (scrreprt)              Nevertheless, using requested
-(scrreprt)              package `parskip' on input line 112.
+(scrreprt)              package `parskip' on input line 97.
 
 (/usr/share/texlive/texmf-dist/tex/latex/parskip/parskip.sty
 Package: parskip 2001/04/09 non-zero parskip adjustments
@@ -1532,22 +1505,48 @@ Package: eso-pic 2013/10/06 v2.0d eso-pic (RN)
 (/usr/share/texlive/texmf-dist/tex/latex/pdfpages/pppdftex.def
 File: pppdftex.def 2013/08/25 v0.4v Pdfpages driver for pdfTeX (AM)
 )
-\AM@pagebox=\box87
-\AM@toc@title=\toks48
+\AM@pagebox=\box86
+\AM@toc@title=\toks47
 \c@AM@survey=\count192
-\AM@templatesizebox=\box88
+\AM@templatesizebox=\box87
 )
 (/usr/share/texlive/texmf-dist/tex/generic/ulem/ulem.sty
-\UL@box=\box89
-\UL@hyphenbox=\box90
-\UL@skip=\skip69
-\UL@hook=\toks49
-\UL@height=\dimen302
+\UL@box=\box88
+\UL@hyphenbox=\box89
+\UL@skip=\skip67
+\UL@hook=\toks48
+\UL@height=\dimen297
 \UL@pe=\count193
-\UL@pixel=\dimen303
-\ULC@box=\box91
+\UL@pixel=\dimen298
+\ULC@box=\box90
 Package: ulem 2012/05/18
-\ULdepth=\dimen304
+\ULdepth=\dimen299
+)
+(/usr/share/texlive/texmf-dist/tex/latex/setspace/setspace.sty
+Package: setspace 2011/12/19 v6.7a set line spacing
+)
+
+Class scrreprt Warning: Usage of package `titlesec' together
+(scrreprt)              with a KOMA-Script class is not recommended.
+(scrreprt)              I'd suggest to use the package only
+(scrreprt)              if you really need it, because it breaks several
+(scrreprt)              KOMA-Script features, i.e., option `headings' and
+(scrreprt)              the extended optional argument of the section
+(scrreprt)              commands .
+(scrreprt)              Nevertheless, using requested
+(scrreprt)              package `titlesec' on input line 109.
+
+(/usr/share/texlive/texmf-dist/tex/latex/titlesec/titlesec.sty
+Package: titlesec 2011/12/15 v2.10.0 Sectioning titles
+\ttl@box=\box91
+\beforetitleunit=\skip68
+\aftertitleunit=\skip69
+\ttl@plus=\dimen300
+\ttl@minus=\dimen301
+\ttl@toksa=\toks49
+\titlewidth=\dimen302
+\titlewidthlast=\dimen303
+\titlewidthfirst=\dimen304
 )
 
 Class scrreprt Warning: Usage of package `fancyhdr' together
@@ -1555,7 +1554,7 @@ Class scrreprt Warning: Usage of package `fancyhdr' together
 (scrreprt)              I'd suggest to use 
 (scrreprt)              package `scrpage2' or `scrlayer-scrpage'.
 (scrreprt)              Nevertheless, using requested
-(scrreprt)              package `fancyhdr' on input line 135.
+(scrreprt)              package `fancyhdr' on input line 129.
 
 (/usr/share/texlive/texmf-dist/tex/latex/fancyhdr/fancyhdr.sty
 \fancy@headwidth=\skip70
@@ -1662,11 +1661,25 @@ Class scrreprt Warning: \float@addtolists detected!
 (scrreprt)              a package that still implements the
 (scrreprt)              deprecated \float@addtolist interface .
 
+LaTeX Font Info:    Try loading font information for T1+phv on input line 1.
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/t1phv.fd
+File: t1phv.fd 2001/06/04 scalable font definitions for T1/phv.
+)
+LaTeX Font Info:    Font shape `T1/phv/m/n' will be
+(Font)              scaled to size 11.39996pt on input line 1.
+LaTeX Font Info:    Font shape `T1/phv/b/n' will be
+(Font)              scaled to size 11.39996pt on input line 1.
+LaTeX Font Info:    Font shape `T1/phv/b/n' will be
+(Font)              scaled to size 23.63593pt on input line 1.
 
 Underfull \hbox (badness 10000) in paragraph at lines 2--4
 
  []
 
+LaTeX Font Info:    Font shape `T1/phv/b/n' will be
+(Font)              scaled to size 16.41594pt on input line 4.
+LaTeX Font Info:    Font shape `T1/phv/b/n' will be
+(Font)              scaled to size 13.67995pt on input line 6.
 
 Package natbib Warning: Citation `Moto' on page 1 undefined on input line 7.
 
@@ -1710,7 +1723,7 @@ LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <9> not available
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 7.
 
-<Bilder/MotoG.png, id=63, 226.8475pt x 440.64626pt>
+<Bilder/MotoG.png, id=103, 226.8475pt x 440.64626pt>
 File: Bilder/MotoG.png Graphic file (type png)
  <use Bilder/MotoG.png>
 Package pdftex.def Info: Bilder/MotoG.png used on input line 11.
@@ -1724,7 +1737,7 @@ Package natbib Warning: Citation `MotoGV' on page 1 undefined on input line 12.
 Package natbib Warning: Citation `MotoGV' on page 1 undefined on input line 12.
 
 
-<Bilder/MotorolaAntenne.png, id=65, 170.13562pt x 330.48468pt>
+<Bilder/MotorolaAntenne.png, id=105, 170.13562pt x 330.48468pt>
 File: Bilder/MotorolaAntenne.png Graphic file (type png)
 
 <use Bilder/MotorolaAntenne.png>
@@ -1745,124 +1758,186 @@ Package natbib Warning: Citation `Moto' on page 1 undefined on input line 24.
 
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
-<Bilder/Youbot.png, id=77, 1802.735pt x 3176.86874pt>
+Underfull \vbox (badness 4168) has occurred while \output is active []
+
+ [2 <./Bilder/MotoG.png> <./Bilder/MotorolaAntenne.png>]
+<Bilder/Youbot.png, id=124, 1802.735pt x 3176.86874pt>
 File: Bilder/Youbot.png Graphic file (type png)
  <use Bilder/Youbot.png>
-Package pdftex.def Info: Bilder/Youbot.png used on input line 33.
+Package pdftex.def Info: Bilder/Youbot.png used on input line 34.
 (pdftex.def)             Requested size: 126.20435pt x 222.40353pt.
 
-<Bilder/AxesYB.png, id=78, 1110.1475pt x 1115.16624pt>
+<Bilder/AxesYB.png, id=125, 1110.1475pt x 1115.16624pt>
 File: Bilder/AxesYB.png Graphic file (type png)
- <use Bilder/AxesYB.png>
-Package pdftex.def Info: Bilder/AxesYB.png used on input line 40.
+
+<use Bilder/AxesYB.png>
+Package pdftex.def Info: Bilder/AxesYB.png used on input line 41.
 (pdftex.def)             Requested size: 222.02556pt x 223.0293pt.
 
 
-Package natbib Warning: Citation `You' on page 2 undefined on input line 41.
+Package natbib Warning: Citation `You' on page 3 undefined on input line 42.
 
 
-Package natbib Warning: Citation `You' on page 2 undefined on input line 41.
+Package natbib Warning: Citation `You' on page 3 undefined on input line 42.
 
-[2 <./Bilder/MotoG.png> <./Bilder/MotorolaAntenne.png>]
 
-Package natbib Warning: Citation `Mira' on page 3 undefined on input line 46.
+Package natbib Warning: Citation `Mira' on page 3 undefined on input line 47.
 
-<Bilder/Scitos.png, id=89, 655.44875pt x 768.8725pt>
+<Bilder/Scitos.png, id=129, 655.44875pt x 768.8725pt>
 File: Bilder/Scitos.png Graphic file (type png)
  <use Bilder/Scitos.png>
-Package pdftex.def Info: Bilder/Scitos.png used on input line 49.
+Package pdftex.def Info: Bilder/Scitos.png used on input line 50.
 (pdftex.def)             Requested size: 131.08742pt x 153.77177pt.
 
-[3 <./Bilder/Youbot.png> <./Bilder/AxesYB.png>]
+[3 <./Bilder/Youbot.png> <./Bilder/AxesYB.png>] [4 <./Bilder/Scitos.png>]
 
-Package natbib Warning: Citation `ROSPaper' on page 4 undefined on input line 5
-6.
+Package natbib Warning: Citation `ROSErkl' on page 5 undefined on input line 57
+.
 
-LaTeX Font Info:    Try loading font information for OMS+bch on input line 58.
+
+Package natbib Warning: Citation `ROSPaper' on page 5 undefined on input line 5
+7.
+
+LaTeX Font Info:    Try loading font information for OMS+bch on input line 59.
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/omsbch.fd
 File: omsbch.fd 
 )
 LaTeX Font Info:    Font shape `OMS/bch/m/n' in size <12> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 58.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 59.
 
 
-LaTeX Warning: Reference `sec:KonSofArch' on page 4 undefined on input line 63.
+LaTeX Warning: Reference `sec:KonSofArch' on page 5 undefined on input line 64.
 
 
-[4 <./Bilder/Scitos.png>] <Bilder/Flur.png, id=103, 189.70876pt x 210.7875pt>
+
+Underfull \hbox (badness 1087) in paragraph at lines 64--65
+\T1/bch/m/n/12 auf-baut, be-steht da-bei aus meh-re-ren mit-ein-an-der ver-bun-
+de-nen Rech-nern (sog.
+ []
+
+
+Underfull \hbox (badness 1264) in paragraph at lines 64--65
+\T1/bch/m/n/12 ^^RHosts^^P) die zur Lauf-zeit über P2P mit-ein-an-der kom-mu-ni
+-zie-ren. Bei der P2P-
+ []
+
+[5] <Bilder/Flur.png, id=148, 189.70876pt x 210.7875pt>
 File: Bilder/Flur.png Graphic file (type png)
-
-<use Bilder/Flur.png>
-Package pdftex.def Info: Bilder/Flur.png used on input line 67.
+ <use Bilder/Flur.png>
+Package pdftex.def Info: Bilder/Flur.png used on input line 68.
 (pdftex.def)             Requested size: 208.68027pt x 231.86696pt.
 
-Underfull \vbox (badness 2469) has occurred while \output is active []
+Underfull \vbox (badness 3838) has occurred while \output is active []
 
- [5 <./Bilder/Flur.png>]
+ [6 <./Bilder/Flur.png>]
 
-Package natbib Warning: Citation `AndStu' on page 6 undefined on input line 75.
-
-
-
-Package natbib Warning: Citation `EstSDK' on page 6 undefined on input line 76.
+Package natbib Warning: Citation `AndStu' on page 7 undefined on input line 76.
 
 
 
-Package natbib Warning: Citation `ROSjava' on page 6 undefined on input line 77
+Package natbib Warning: Citation `EstSDK' on page 7 undefined on input line 77.
+
+
+
+Package natbib Warning: Citation `ROSjava' on page 7 undefined on input line 78
 .
 
+[7]
 
-LaTeX Warning: Reference `sec:Hilfen' on page 6 undefined on input line 80.
+Package natbib Warning: Citation `IMUFilter' on page 8 undefined on input line 
+86.
 
-[6]
-Underfull \hbox (badness 10000) in paragraph at lines 84--86
+
+Overfull \hbox (38.41592pt too wide) in paragraph at lines 113--114
+ [][] 
+ []
+
+
+Package natbib Warning: Citation `IMUFilter' on page 8 undefined on input line 
+114.
+
+
+Package natbib Warning: Citation `IMUFilter' on page 8 undefined on input line 
+114.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 85--117
 
  []
 
-)
+
+Underfull \vbox (badness 3838) has occurred while \output is active []
+
+ [8]
+Underfull \hbox (badness 10000) in paragraph at lines 131--131
+[][][]\T1/bch/m/n/12 Abb. 1.8[][]: []|Quellcode-Beispiel ei-nes Message-Paketes
+ für ei-ne ROSjava-
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [9]
+
+Package natbib Warning: Citation `AndWLBT' on page 10 undefined on input line 1
+35.
+
+\pgf@layerbox@foreground=\box94
+\pgf@layerboxsaved@foreground=\box95
+
+Overfull \hbox (1.60645pt too wide) in paragraph at lines 148--148
+ [][][][]\T1/bch/m/n/12 Messungen 
+ []
+
+
+Overfull \hbox (1.08043pt too wide) in paragraph at lines 182--183
+ [][] 
+ []
+
+[10]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [11]
+Overfull \vbox (74.23126pt too high) has occurred while \output is active []
+
+
+[12] [13])
 
 Package natbib Warning: There were undefined citations.
 
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 40.
-[7]
+[14]
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 40.
  (./Masterarbeit.aux)
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 40.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 40.
+Package rerunfilecheck Info: File `Masterarbeit.out' has not changed.
+(rerunfilecheck)             Checksum: 1DC08CE95388D53E2ED792D1193BE6C5;1369.
 
-
-Package rerunfilecheck Warning: File `Masterarbeit.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `Masterarbeit.out':
-(rerunfilecheck)             Before: 10F0099B75399D4DB55F552F444B5B44;630
-(rerunfilecheck)             After:  F26D075A9BF5A5635DC06BA9BC8F2BEB;897.
 
 LaTeX Warning: There were undefined references.
-
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 40.
  ) 
 Here is how much of TeX's memory you used:
- 36613 strings out of 494935
- 788234 string characters out of 6178121
- 1030875 words of memory out of 5000000
- 39028 multiletter control sequences out of 15000+600000
- 34060 words of font info for 61 fonts, out of 8000000 for 9000
+ 36971 strings out of 494935
+ 794052 string characters out of 6178121
+ 1037875 words of memory out of 5000000
+ 39359 multiletter control sequences out of 15000+600000
+ 38210 words of font info for 68 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
- 67i,12n,78p,10447b,879s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 67i,12n,78p,10447b,1009s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texliv
 e/texmf-dist/fonts/type1/bitstrea/charter/bchb8a.pfb></usr/share/texlive/texmf-
 dist/fonts/type1/bitstrea/charter/bchr8a.pfb></usr/share/texlive/texmf-dist/fon
-ts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/typ
-e1/urw/times/utmri8a.pfb>
-Output written on Masterarbeit.pdf (7 pages, 5587379 bytes).
+ts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type
+1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/
+helvetic/uhvb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/symbol/usyr.
+pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
+Output written on Masterarbeit.pdf (14 pages, 5621793 bytes).
 PDF statistics:
- 152 PDF objects out of 1000 (max. 8388607)
- 107 compressed objects within 2 object streams
- 28 named destinations out of 1000 (max. 500000)
- 223 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 242 PDF objects out of 1000 (max. 8388607)
+ 187 compressed objects within 2 object streams
+ 44 named destinations out of 1000 (max. 500000)
+ 303 words of extra memory for PDF output out of 10000 (max. 10000000)
 

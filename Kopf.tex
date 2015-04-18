@@ -83,29 +83,14 @@
 % Definition eines Blockes
 \tikzset{
     block/.style={draw, rectangle, rounded corners, very thick, minimum height=1cm, text centered,},
+     block2/.style={draw, fill=blue!20, rectangle, rounded corners, text width=2.9cm, text centered, minimum height=1.5cm},
+    sum/.style={draw, fill=blue!20, circle, node distance=1cm,minimum size=0.6cm},
 }
 
-% Zur Veraenderung der Ueberschriften
-\usepackage{setspace}                          % fuer den Zeilenabstand
-\usepackage{titlesec}                          % zur Formatierung der Ueberschriften
-\titleformat{\chapter}[hang]{\normalfont\Large\bfseries}{\thechapter}{0.5em}{}          % Format muss beim chapter mit rein, sonst geht es nicht.
-\titleformat{\section}[hang]{\normalfont\large\bfseries}{\thesection}{0.5em}{}
-\titleformat{\subsection}[hang]{\normalfont\bfseries}{\thesubsection}{0.5em}{}
-
-\titlespacing*{\chapter}
-{0pc}{-20pt}{6pt}[0pc]
-
-\titlespacing{\section}
-{0pc}{10pt}{*1}[0pc]
-\titlespacing{\subsection}
-{0pc}{6pt}{*1}[0pc] 
-
-\usepackage{accents}                           % siehe eine Zeile drunter
-\renewcommand{\dot}[1]{%                       % fuer einen besseren Punkt bei Zeitableitungen
-  \accentset{\mbox{\large .}}{#1}}
-\renewcommand{\ddot}[1]{%
-  \accentset{\mbox{\large .\hspace{-0.2ex}.}}{#1}}
-  
+% siehe eine Zeile drunter
+\usepackage{accents}                           
+\renewcommand{\dot}[1]{\accentset{\mbox{\large .}}{#1}} % fuer einen besseren Punkt bei Zeitableitungen
+\renewcommand{\ddot}[1]{\accentset{\mbox{\large .\hspace{-0.2ex}.}}{#1}}
 
 % Einstellungen
 \usepackage{parskip}                                 % Einzug aus, Absatzabstand ein
@@ -115,19 +100,28 @@
 \setlength{\emergencystretch}{20pt}                  % Zusätliche Zeilendehnbarkeit
 \setlength{\fboxrule}{1pt}\setlength{\fboxsep}{4mm}  % Rechtecke um Gleichungen
 
-\setlength\voffset{-1in}                             % Hier drunter ist das Zeug von Andreas
-\setlength\hoffset{-1in}
-\setlength\topmargin{2cm}
-\setlength\oddsidemargin{2cm}
-\setlength\textheight{23.7cm}
-\setlength\textwidth{17.001cm}
-\setlength\footskip{1cm}
-\setlength\headheight{0.6cm}
-\setlength\headsep{1cm}
-\setlength{\skip\footins}{0.119cm}
-\setlength\tabcolsep{1mm}
-\renewcommand\arraystretch{1.3}
-\renewcommand{\footnoterule}{\rule{200pt}{1pt}{\vspace*{0.5cm}}}
+% Zur Veraenderung der Ueberschriften
+\usepackage{setspace}                          % fuer den Zeilenabstand
+\usepackage{titlesec}                          % zur Formatierung der Ueberschriften
+%\titleformat{\chapter}[hang]{\normalfont\Large\bfseries}{\thechapter}{0.5em}{}          % Format muss beim chapter mit rein, sonst geht es nicht.
+%\titleformat{\section}[hang]{\normalfont\large\bfseries}{\thesection}{0.5em}{}
+%\titleformat{\subsection}[hang]{\normalfont\bfseries}{\thesubsection}{0.5em}{}
+\titlespacing*{\chapter}{0pc}{20pt}{10pt}[0pc]
+\titlespacing{\section}{0pc}{12pt}{5pt}[0pc]
+\titlespacing{\subsection}{0pc}{10pt}{2pt}[0pc]
+%\setlength\voffset{-1in}                             % Hier drunter ist das Zeug von Andreas
+%\setlength\hoffset{-1in}
+%\setlength\topmargin{2cm}
+%\setlength\oddsidemargin{2cm}
+%\setlength\textheight{23.7cm}
+%\setlength\textwidth{17.001cm}
+%\setlength\footskip{1cm}
+%\setlength\headheight{0.6cm}
+%\setlength\headsep{1cm}
+%\setlength{\skip\footins}{0.119cm}
+%\setlength\tabcolsep{1mm}
+%\renewcommand\arraystretch{1.3}
+%\renewcommand{\footnoterule}{\rule{200pt}{1pt}{\vspace*{0.5cm}}}
 
 \renewcommand{\figurename}{Abb.} 				% Abkuerzung von Abbildung
 
