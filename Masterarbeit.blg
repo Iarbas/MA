@@ -8,52 +8,104 @@ Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 Database file #1: Quellen.bib
+Warning--entry type for "Shoe" isn't style-file defined
+--line 5 of file Quellen.bib
+Warning--entry type for "Bibel" isn't style-file defined
+--line 28 of file Quellen.bib
+Warning--entry type for "iBPa" isn't style-file defined
+--line 38 of file Quellen.bib
 Warning--entry type for "MotoGV" isn't style-file defined
 --line 47 of file Quellen.bib
+Warning--entry type for "GSwiB" isn't style-file defined
+--line 56 of file Quellen.bib
+Warning--entry type for "BLElogo" isn't style-file defined
+--line 94 of file Quellen.bib
+Warning--entry type for "GPS" isn't style-file defined
+--line 146 of file Quellen.bib
+Warning--entry type for "EstSDK" isn't style-file defined
+--line 155 of file Quellen.bib
+Warning--entry type for "TrEs" isn't style-file defined
+--line 164 of file Quellen.bib
+Warning--entry type for "BeaEx" isn't style-file defined
+--line 173 of file Quellen.bib
+Warning--entry type for "DigRev" isn't style-file defined
+--line 183 of file Quellen.bib
+Warning--entry type for "AndStu" isn't style-file defined
+--line 192 of file Quellen.bib
+Warning--entry type for "GIM" isn't style-file defined
+--line 201 of file Quellen.bib
+Warning--entry type for "BuNet" isn't style-file defined
+--line 220 of file Quellen.bib
 Warning--entry type for "You" isn't style-file defined
---line 241 of file Quellen.bib
+--line 259 of file Quellen.bib
 Warning--entry type for "Mira" isn't style-file defined
---line 250 of file Quellen.bib
+--line 277 of file Quellen.bib
+Warning--entry type for "MIL" isn't style-file defined
+--line 286 of file Quellen.bib
+Warning--entry type for "MobGerSt" isn't style-file defined
+--line 295 of file Quellen.bib
+Warning--entry type for "nRF5" isn't style-file defined
+--line 316 of file Quellen.bib
+Warning--entry type for "IMUFilter" isn't style-file defined
+--line 325 of file Quellen.bib
+Warning--entry type for "AndWLBT" isn't style-file defined
+--line 344 of file Quellen.bib
+Warning--entry type for "ROSErkl" isn't style-file defined
+--line 353 of file Quellen.bib
+Warning--entry type for "ROSjava" isn't style-file defined
+--line 362 of file Quellen.bib
+Warning--entry type for "CR2450" isn't style-file defined
+--line 371 of file Quellen.bib
+Warning--entry type for "EVA" isn't style-file defined
+--line 380 of file Quellen.bib
+Warning--entry type for "Airpo" isn't style-file defined
+--line 400 of file Quellen.bib
+Warning--entry type for "WLAN" isn't style-file defined
+--line 409 of file Quellen.bib
 Warning--there's no year in Moto
-You've used 4 entries,
+Warning--there's no year in Stau
+Warning--empty number in ROSPaper
+Warning--empty note in ROSPaper
+Warning--there's no year in Trilat
+You've used 36 entries,
             4335 wiz_defined-function locations,
-            849 strings with 6414 characters,
-and the built_in function-call counts, 1193 in all, are:
-= -- 98
-> -- 28
-< -- 4
-+ -- 12
-- -- 8
-* -- 61
-:= -- 224
-add.period$ -- 4
-call.type$ -- 4
-change.case$ -- 12
+            1018 strings with 11082 characters,
+and the built_in function-call counts, 11673 in all, are:
+= -- 960
+> -- 373
+< -- 58
++ -- 154
+- -- 118
+* -- 734
+:= -- 2223
+add.period$ -- 42
+call.type$ -- 36
+change.case$ -- 132
 chr.to.int$ -- 0
-cite$ -- 5
-duplicate$ -- 44
-empty$ -- 120
-format.name$ -- 16
-if$ -- 260
+cite$ -- 41
+duplicate$ -- 408
+empty$ -- 1085
+format.name$ -- 234
+if$ -- 2495
 int.to.chr$ -- 0
-int.to.str$ -- 4
-missing$ -- 23
-newline$ -- 30
-num.names$ -- 8
-pop$ -- 30
+int.to.str$ -- 36
+missing$ -- 199
+newline$ -- 195
+num.names$ -- 70
+pop$ -- 268
 preamble$ -- 1
-purify$ -- 12
+purify$ -- 132
 quote$ -- 0
-skip$ -- 46
+skip$ -- 426
 stack$ -- 0
-substring$ -- 40
-swap$ -- 9
-text.length$ -- 4
+substring$ -- 360
+swap$ -- 99
+text.length$ -- 58
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 16
-warning$ -- 1
-while$ -- 12
-width$ -- 5
-write$ -- 52
-(There were 4 warnings)
+type$ -- 144
+warning$ -- 5
+while$ -- 128
+width$ -- 38
+write$ -- 421
+(There were 32 warnings)

@@ -185,15 +185,16 @@ Nachdem die einzelnen Module fertig gestellt wurden, musste aus ihnen ein gesamt
 \end{figure}
 \section{Experimente}
 Die hier vorgenommenen Versuche betrachten zum einen die Ausbreitung der Signale bei einer fest justierten, für die Arbeit vorher definierten Einstellung der Beacons. Zum anderen werden auch Aspekte der Beacon-Technologie betrachtet, die für spätere Forschungen von Interesse wären, aber auch die Notwendigkeit dieser Arbeit unterstreichen sollen. Denn es macht gerade den Reiz der Beacons aus, dass sie relativ einfach an ihre Bestimmung angepasst werden können. Schließlich ergab sich nach der Aufnahme von über 30 Stunden Sensordaten-Material die Erkenntnis, dass das gesamte Thema weit umfangreicher ist und die möglichen Modi genauere Untersuchungen verdienen. Gerade deswegen soll dies nach der ursprünglichen Aufgabe der Aufnahme von Messwerten für die Modellbildung nachträglich mit einigen Abschnitten über das Verhalten der Beacons gewürdigt werden.
-\subsection{Messung der BLE-Signalausbreitung}
-Für die Versuche wurde zunächst ein großer Raum benötigt, um auch für reale Anwendungen die nötigen Erkenntnisse zu gewinnen. Anschließend bestand das Equipment für das Experiment aus dem Youbot, drei Beacons, dem Moto G und einem Laptop mit installiertem Ubuntu Betriebssystem. In den Bilder ... im Anhang sind eingie Fotos mit dem Aufbau hinterlegt. Die Messungen wurden dabei für jeden der drei Beacons für eine Distanz für jeweils zehn Minuten durchgeführt. Aufgrund der Masse an Daten werden hier nur drei Messreihen exemplarisch in den Abbildungen ... bis ... gezeigt. Es fällt dabei auf , dass die Abweichungen bzw. das Rauschen mit größerer Distanz zunimmt. Für die ersten fünf Distanz-Meter ist die über alle Messreihen die Regel, danach wird es sehr unbestimmt und nimmt sogar ab dem zehnten Meter bis zum fünfzehnten zwischenzeitlich ab. Diese können die "`Verschmutzung"' des Raumes durch andere Signale im 2,4 GHz Band sein oder auch durch Reflektionen der Wände, der Decke oder des Fußbodens hervorgerufen werden. Aufgrund der schon erwähnten Asynchronität der Beacon-Signale, der nicht einsehbaren Messzyklendauer der Estimote SDK und/oder auch der parallelen Nutzung von Bluetooth- und WLAN-Modul des Smartphones, könnten die stärksten Signale von den Beacons manchmal nicht aufgenommen und nur deren "`Echo"' wahrgenommen werden, weil ihnen zu dem Zeitpunkt, als die Signale die Antennen vom Smartphone passierten, niemand zuhörte. Dieser Verdacht sieht sich jedoch nicht bestätigt, wenn nur Abbildung ... betrachtet wird. Hier ist der Abstand zwischen Smartphone und Beacon sehr gering, nichtsdestotrotz werden keine reflektierten Signale aus großerer Entfernung aufgezeichnet, weder in dieser Messung noch in weiteren. Also muss die Verstärkung des Rauschens auf die physikalischen, statt den programmiertechnischen Erklärungen zurückzuführen sein. In dieser ersten Betrachtung des Verhaltens des Systems kann schon von vornerein vermutet werden, dass das Rauschverhalten bzw. das Auftreten von Störungen raumabhängig und somit nur schwer vorhersehbar ist. Bezogen auf den Einsatz einen späteren Modells für andersartige Situationen, lässt zunächst der Versuch einer Modellbildung anzweifeln. Jedoch zeigen gerade die genannten Probleme die Notwendigkeit eines Modells, da es als Mensch unmöglich ist alle genannten Eventualitäten in Betracht zu ziehen. Um den Anfang in einer Theoreifindung zu machen, müssen die gesammelten Daten genauer betrachtet werden und die Ausbreitung des BLE-Signals der Beacons ohne Störungen herausgefiltert werden. In Abbildung ... sind einmal alle Messreihen in einem Diagramm zusammengefasst. Dabei wurde von jeder Messung eines jeden Beacons der Mittelwert der empfangenen Empfangsstärke über der Distanz zwischen Smartphone und Leuchtfeuer aufgetragen. Auf den ersten Blick  fällt auf, dass lediglich bis fünf Meter dadurch eine genaue Aussage über die Entfernung getroffen werden kann. Die Unterschiede bzw. das Fehlen eines Unterschiedes macht es für größere Entfernungen schwer, anhand dessen eine qualitative Berechnung durchzuführen. Deswegen wird der Anteil an Informationen in Abbildung ... erhöht, indem nicht der Mittelwert aller Messungen, sondern die Verteilung der empfangenen Signalstärke farblich über die Entfernungen markiert wurde. Hier erscheint verstärkt das Phänomen, dass das Rauschen nichts mit der Distanz korreliert, sondern ortabhängig ist. Zumindest erhöht sich mit einem größeren Luftweg die Wahrscheinlichkeit, dass dies auftritt. Werden statt aller Messwerte einer Entfernung nur die 100 stärksten zur Mittelwertbildung herangezogen, wie es in Abbildung ... gezeigt wird, sieht die Entwicklung der Abnahme der Signalstärke deutlich vorhersehbarer aus und wird dadurch fassbar. 
+\subsection{Messung der BLE-Signalausbreitung}\label{sec:MessungBLE}
+Für die Versuche wurde zunächst ein großer Raum benötigt, damit der Abstand von Beacon zu Smartphone um mehr als 15 Metern variiert werden kann. Das Equipment für die statischen Experimente bestand aus dem Youbot, drei Beacons, dem Moto G und einem Laptop mit installiertem Ubuntu Betriebssystem. In den Bilder ... im Anhang sind eingie Fotos mit dem Aufbau hinterlegt. Die Messungen wurden dabei für jeden der drei Beacons für eine Distanz für jeweils zehn Minuten durchgeführt. Aufgrund der Masse an Daten werden hier nur drei Messreihen exemplarisch in den Abbildungen ... bis ... für die Signalstärke -12 dB und der Sende-Frequenz von 200 ms gezeigt. Es fällt dabei auf, dass die Abweichungen bzw. das Rauschen mit größerer Distanz zunimmt. Für die ersten fünf Distanz-Meter ist die über alle Messreihen die Regel, danach wird es sehr unbestimmt und nimmt sogar ab dem zehnten Meter bis zum fünfzehnten zwischenzeitlich ab. Diese können die "`Verschmutzung"' des Raumes durch andere Signale im 2,4 GHz Band sein oder auch durch Reflektionen der Wände, der Decke oder des Fußbodens hervorgerufen werden. Aufgrund der schon erwähnten Asynchronität der Beacon-Signale, der nicht einsehbaren Messzyklendauer der Estimote SDK und/oder auch der parallelen Nutzung von Bluetooth- und WLAN-Modul des Smartphones, könnten die stärksten Signale von den Beacons zufällig nicht aufgenommen und nur deren "`Echo"' wahrgenommen werden, weil ihnen zu dem Zeitpunkt, als die Signale die Antennen vom Smartphone passierten, niemand zuhörte. Dieser Verdacht sieht sich jedoch nicht bestätigt, wenn nur Abbildung ... betrachtet wird. Hier ist der Abstand zwischen Smartphone und Beacon sehr gering, nichtsdestotrotz werden keine reflektierten Signale aus großerer Entfernung aufgezeichnet, weder in dieser Messung noch in weiteren. Also muss die Verstärkung des Rauschens auf die physikalischen, statt den programmiertechnischen Erklärungen zurückzuführen sein. In dieser ersten Betrachtung des Systems kann schon von vornerein gesagt werden, dass das Rauschverhalten bzw. das Auftreten von Störungen raumabhängig und somit nur schwer vorhersagbar ist. \\ \\
+Um nun doch wie erwünscht eine qualitativ hochwertige Schätzung über die Signalausbreitung von BLE-Signalen zu gewinnen, muss es zum Anfang ein Modell geben, dass zuerst von einem völlig idealem Verhalten ausgeht. Es muss die Realität dabei nur im Groben abbilden und ausschließlich den Grundstin für die Simulation und deren Erweiterungen legen. Um eine Theorie dafür aufstellen zu können, müssen die gesammelten Daten genauer betrachtet und die Ausbreitung des BLE-Signals der Beacons ohne Störungen herausgefiltert werden. In Abbildung ... sind einmal alle Messreihen in einem Diagramm zusammengefasst. Dabei wurde von jeder Messung eines jeden Beacons der Mittelwert der empfangenen Empfangsstärke über der Distanz zwischen Smartphone und Leuchtfeuer aufgetragen. Auf den ersten Blick  fällt auf, dass lediglich bis fünf Meter dadurch eine genaue Aussage über die Entfernung getroffen werden kann. Die Unterschiede bzw. das Fehlen eines Unterschiedes macht es für größere Entfernungen schwer, anhand dessen eine qualitative Berechnung durchzuführen. Deswegen wird der Anteil an Informationen in Abbildung ... erhöht, indem nicht der Mittelwert aller Messungen, sondern die Verteilung der empfangenen Signalstärke farblich über die Entfernungen markiert wurde. Hier erscheint verstärkt das Phänomen, dass das Rauschen nicht mit der Distanz korreliert, sondern stark ortabhängig ist. Zumindest erhöht sich mit einem größeren Luftweg die Wahrscheinlichkeit, dass dies auftritt. Werden statt aller Messwerte einer Entfernung nur die 100 stärksten zur Mittelwertbildung herangezogen, wie es in Abbildung ... gezeigt wird, sieht die Entwicklung der Abnahme der Signalstärke deutlich vorhersehbarer aus und wird dadurch verwertbar. 
 
 (3 Bilder - 1, 5 und 10 Meter mit Mittelwert) 
 (Bild Mittelwert aller Messungen über Distanz)
 (Bild der verteilung)
 (Bild Mittelwert 100 bester Messungen über Distanz)
 
-In dem Abschnitt über ROSjava wurde in Bild \ref{fig:ROSjavaImpl} eine von der SDK berechneten Distanz erwähnt. Dies ist jedoch nur eingeschränkt nutzbar, wie es Abbildung ... zeigt. Hier wurden die tatsächlichen Distanzen mit den geschätzten der SDK gegenübergestellt und das Ergebnis verdeutlicht noch einmal die Notwendigkeit einer eigenen Theorie, um die Qualität der Berechnung zu erhöhen.
+In dem Abschnitt über ROSjava wurde in Bild \ref{fig:ROSjavaImpl} eine von der SDK berechneten Distanz erwähnt. Diese ist jedoch nur eingeschränkt nutzbar, wie es Abbildung ... belegt. Hier wurden die tatsächlichen Distanzen mit den geschätzten der SDK gegenübergestellt und die Ergebnisse zeigen, dass diese Berechnungen nicht korrekt sind. Woran dies liegt lässt sich dabei nicht begründen und es kann wiederholt nur auf den nicht freien Zugang zu diesen Informationen verwiesen werden.
 
 (Bild reale Distanz über berechneter)
 
@@ -202,83 +203,87 @@ In dem Abschnitt über ROSjava wurde in Bild \ref{fig:ROSjavaImpl} eine von der 
 \subsubsection{Einfluss der Signalstärke} 
 %Dies soll auch in Abhängigkeit zur Signalsstärke passieren, um dessen Ausbreitung zu erforschen.
 \subsection{Auswirkung der Smartphone-Orientierung}
-%Hier kommen mal alle Messungen rein. Auch die mit den Beacons an allen drei Himmelsrichtungen.
-%\begin{figure}[H] 
-%\centering
-%\includegraphics[scale=0.3]{Bilder/MessungDrehung}
-%\caption{Distanz-Signalstärke-Messung bei unterschiedlichen Smartphone-Ausrichtungen}
-%\end{figure}
-\subsection{Einfluss anderer Signalquellen} 
-%Für die Erklärung aus dem zweiten Kapitel (2,4 Ghz) benötige ich auch die Störung und Interferenzen gleicher Signale. Ich muss ja schließlich erklären, warum ich nicht viele viele iBeacons nebeneinander klatschen kann, um eine möglichst genaue Standortbestimmung zu erhalten (denn die Signale stören sich untereinander). 
-%ir ist z.B. aufgefallen, dass die Beacons sich gegenseitig in der Sendestärke beeinflussen. Deswegen musste ich Einzelmessungen vornehmen und hier ließe sich auch begründen nicht zu viele Beacons in der realen Anwendung zu plazieren, um durch Elektrosmog nicht zu viele Einflussfaktoren in die Lokalisierung miteinfließen zu lassen. Viel hilft hier nicht immer viel, weniger ist manchmal besser, etc.
-%\begin{figure}[H] 
-%\centering
-%\includegraphics[scale=0.3]{Bilder/MessungBeacon3}
-%\caption{Gleichzeitige Messung dreier naheliegender Beacon-Signale}
-%\end{figure}
-%
+Imzuge der vorangegangenen Untersuchungen und unter der Vermutung des Einflusses der Antennen-Charakteristiken vom Moto G, stellte sich die Frage wie sehr die Lage des Smartphones die Messungen beeinträchtigte. Schließlich ist der Empfänger, also das Moto G ständig in Bewegung und befindet sich dauernd in neuen Positionen und Ausrichtungen zu den Standorten der Beacons wieder. Dies gilt natürlich nicht für die statischen Versuchen in diesem Kapitel, sondern soll im Hinblick auf die dynamische Validierung mit dem Scitos G5 und auch später für die reale Anwendung erforscht werden. Es soll hierbei die Aussagekraft der gemachten Experimenten und zukünftigen Tests überprüft werden, welche die Grundpfeiler der Modellbildung und später der Simulation bilden. In diesem Sinne gilt es die Abhängigkeit der gemessenen Empfangsstärke des Signals zu der möglichen Orientierungen des Moto G zur Signalquelle zu ermitteln. Um den Aufwand der Messungen so gering wie möglich zu halten, wurden die drei verfügbaren Beacons so um das Smartphone positioniert, dass sie sich quasi auf den drei Raumachsen mit dem Moto G im Koordinatenursprung befinden (siehe Abbildung ...). Weil der Youbot seinen Roboterarm nur in Z-Richtung der Abbildung drehen konnte, ohne dabei die Abstände zu den Beacons zu ändern, wurden einige Konstellationen nicht betrachtet. Es soll hierbei jedoch nicht darum gehen, wie das Smartphone am besten zu halten sei, sondern ob die Intesität Signale aussgehend von der Decke, von den Wänden, von vorn oder von der Seite anders wahrgenommen wird. Die Ergebnisse finden sich in den Abbildungen ... bis ... wieder. Dort sind zum einen die gemessene Empfangsstärke der Beacons in festen Abständen zum Moto G zu sehen und dazu gegenüber die Ausrichtung an den drei Drehachsen. Es fällt auf, dass egal aus welcher Richtung die Signale auf das Smartphone treffen, der Empfang durch die Drehung gleichermaßen beeinträchtigt wird. Das Ergebnis überrascht insofern, dass eigentlich die Änderungen der erhaltenen Signalstärken zu jedem Drehwinkel die gleichen waren. Es gab keine Unterschiede, obwohl die Beacons alle in unterschiedlichen Winkeln zu dem Smartphone und somit zu dessen Antennen standen. Somit erklärt sich dieses Verhalten nicht anhand der Argumentation, dass eine Antenne bestimmte Charakteristiken aufweist und je nach Winkel der die Qualität des Signals ab- oder zunimmt. Um den Einfluss dieses Phänomens auf die statischen Versuche genauer abzuschätzen, wurden nachfolgend die Messungen aus \ref{sec:MessungBLE} noch einmal wiederholt und nur lediglich die Drehung um besagte Z-Achse hinzugefügt (siehe Bild ... im Anhang). Die Ergebnisse in den Abbildungen ... bis ... verwunderten allerdings genauso, denn die fast proportionale Änderung von Ausrichtung zur Stärke der Signalaufnahmeleicht ist relativ leicht zu erfassen und sicherlich auch gut zu filtern, doch mit dem Verständnis wie Antennen funktionieren und der bekannten Theorien lässt sich dieses Verhalten nicht erklären. Die einzige Erkenntnis aus den hier durchgeführten Experimenten ist, dass die Vermutung  der höhsten Empfangsgüte der Antennen bei normaler Halterung des Smartphones in der flachen Hand sich bewahrheitete und die Richtung, aus denen ein Signal stammt, dabei keinen Einfluss hat.
+
+(Bild mit drei beacons auf den drei Achsen - Achsenbschriftung! - In der Mitt das Smartphone und die Drehung skizzieren)
+
+(1 Bild von den Signalverläufen mit den drei Achsen und dazu der Verlauf der drei Drehwinkel) - Bei diesen Bildern noch erklären in welchem Abstand die Beacons aufgeteilt wurden und die Maxima und Minima kennzeichnen. Noch erklären das das beste Signal bei 0 Grad liegt und wo halt das schlechteste liegt.
+
+(1 Bild noch mit den drei ausgewählten Distanzen 1, 5 und 10 Meter und dazu auch die Drehwinkel) - Hier ebenso wie oben alles schön erklären und auch auf die Streuung eingehen, also ob die Signaleintrübung immer gleich blieb oder auch über die Distanz zunahm.
+
+\subsection{Wechselwirkungen zwichen Signalquellen} 
+Unter dem Aspekt der angesprochenen "`Verschmutzung"' eines Raumes durch andere Signalquellen, welche auch im 2,4 GHz Band senden, blieb ein Beweis dieser Behauptungen bisher aus. Der Beweis oder generell die Frage nach Wechselwirkungen mit anderen Transmittern ist insoweit auch wichtig, wenn es um einen Sicherheitsabstand zwischen zweier Beacons geht, bevor sie anfangen sich gegenseitig zu stören. In Bezug auf die generelle Störung von Bluetooth-Signalen durch beispielsweise WLAN-Geräten ist weitgehend bekannt und auch hinreichend erforscht (z.B. \cite{InterBLEWLAN}). Jedoch bleibt die Frage, ob sich Beacons untereinander beeinflussen und wenn ja, wie groß der Mindestabstand gewählt werden muss, sodass die Auswirkungen vernachlässigbar sind. Zur Beantwortung wurden die drei verfügbaren Leuchtfeuer relativ nah zueinander befetigt (siehe Abbildung \ref{fig:Dreier}) und zu den gleichen Distanzen, wie in \ref{sec:MessungBLE} die Signalstärken aufgenommen. In Abbildung ... sind die Ergebnisse aus einem Abstand von 10 cm der Beacons zueinander dargestellt. Im Vergleich zu den Messungen aus ... werden Unterschiede in der empfangenen Signalstärke sichtbar. Das Signal aus dem Beacon-Haufen ist bei gleicher Distanz von Beacon zu Smartphone mitunter 5 bis 10 dBm schwächer, als das Signal von einem alleinstehendem Beacon. Dies beweist somit die grundsätzliche negative Beeinflussung von nah beieinander liegenden Beacons auf deren Sendequalität. In Folge weiterer Untersuchungen ergab sich ein empfohlener Mindestabstand von 50 cm, durch den keine messbaren Verschlechterungen in der Signalstärke mehr vorkamen. An dieser Stelle ist anzumerken, dass hier generell mehr nicht gleich besser bedeutet. Im Hinblick auf die Planung eines Indoor-Lokalisierungs-Systems muss diese Betrachtung in den Gestaltungsprozess mithilfe einer Simulation mit einfließen, sodass der Sicherheitsabstand gewahrt bleibt.
+\begin{figure}[H] 
+\centering
+\includegraphics[scale=0.2]{Bilder/MessungBeacon3}
+\caption{Gleichzeitige Messung dreier naheliegender Beacon-Signale}
+\label{fig:Dreier}
+\end{figure}
+
+(Bild von allen drei signalen zusammen)
+
 \subsection{Energieverbrauch eines Beacon} 
-%Der Wartungsaufwand für ein Beacon hängt maßgeblich an der Laufzeit der in jedem Beacon eingebauten Batterie ab. Die in Kapitel 1 und 2 erwähnten Einstellmöglichkeiten von Sendeleistung und der Häufigkeit von Sendeintervallen beeinflussen dabei den Stromverbrauch der Beacon und somit auch die Betriebsdauer der Batterien. Dieser Abschnitt soll sich damit beschäftigen, inwieweit sich die Parameter auf die Wartungszyklen auswirken. Dies soll später dabei helfen, zwischen der Auslegung der beiden Parameter und des gewünschten Wartungsaufwandes abwägen zu können. Denn in großen Projekten mit mehreren hundert Beacons steigt der Wartungsaufwand proportional und wenn einzelne Beacons andere Einstellungen als die Mehrheit aufweisen (um beispielsweise wichtige Gebiete besser abzudecken), wird auch der Überblick über die nötigen Wartungszyklen verloren gehen. Um die Abhängigkeiten zu veranschaulichen, wird anhand vom Datenblatt des verwendeten Hardware-Chip nRF51822\cite{nRF5} in den genutzten Beacons eine Simulation entworfen, die die Einstellmöglichkeiten als Variablen betrachtet. Als Ausgangsbasis für den Energiespeicher wird eine CR2450-Batterie mit 1,8 Wh\cite{CR2450} angenommen. Hierbei wurde nicht vom Idealzustand ausgegeangen, sondern ein üblicher Faktor von 0,7 hinzu multipliziert, um der Alterung der Zelle und weiterer Effekte Rechnung zu tragen. Durch die gering fliesenden Ströme und der minimalen Bauweise der Beacons, können auch keine direkten Messungen vorgenommen werden. Zudem kann auch nicht verifiziert werden, wie lange ein Sendeauftrag oder ein Zustand vom Prozessor dauert. Um trotzdem ein gutes Simulationsergebnis zu erreichen, muss tiefer in die Funktionsweise der Beacons geschaut werden. Als größte Unbekannte triit dabei die Sendedauer auf. Bei einer angenommenen Datenrate von 250Kbit/s  und bei einer Größe eines Datenpaketes von 38 Bytes \cite{iBPa} (siehe \ref{fig:iBPa}), dauert eine Sendesequenz rund 1 ms. Die benötigte elektrische Leistung für eine vorher definierte Sendeleistung beträgt dabei ein Vielfaches dessen und ist davon stark nichtlinear abhängig. Die dazu nötigen Beziehungen können anhand des Datenblattes des nRF51822 Chips hergeleitet werden. In diesem Fall wurde ein Polynom 4. Grades als Funktion der einstellbaren Sendeleistung aufgstellt, welches annähernd diese Abhängigkeiten beschreibt. Da die Kommunikation bidirektional ist, existiert auch ein Empfangsmodus der ebenfalls mit 1 ms Empfangsdauer angenommen wird, aber dessen Modus hingegen einen konstanten Stromverbrauch aufweist.
-%\begin{figure}[H]
-%\centering
-%\begin{tikzpicture}
-%    \node [block, fill=magenta!20, text width=2cm, minimum height=1.5cm] (Header) {\small Header \\(2 Bytes)};
-%    \node [block, fill=magenta!20, right=0cm of Header, text width=3cm, minimum height=1.5cm] (MAC) {\small MAC Addresse \\(6 Bytes)};
-%    \node [block, fill=magenta!20, right=0cm of MAC, text width=2cm, minimum height=1.5cm] (Data) {\small Data \\(30 Bytes)};
-%    \node [block, fill=blue!20, below=1cm of Data, text width=2cm, minimum height=1.5cm] (Major) {\small Major\\ (2 Bytes)};
-%    \node [block, fill=blue!20, left=0cm of Major, text width=3cm, minimum height=1.5cm] (UUID) {\small Proximity UUID \\(16 Bytes)};
-%    \node [block, fill=blue!20, left=0cm of UUID, text width=3cm, minimum height=1.5cm] (Prefix) {\small iBeacon Prefix \\(9 Bytes)};
-%    \node [block, fill=blue!20, right=0cm of Major, text width=2cm, minimum height=1.5cm] (Minor) {\small Minor\\ (2 Bytes)};
-%    \node [block, fill=blue!20, right=0cm of Minor, text width=2cm, minimum height=1.5cm] (TX) {\small TX Power\\ (1 Bytes)};
-%    \draw[very thick,->] (Data) -- (Major);
-%\end{tikzpicture}
-%\caption{Anteile eines Datenpaket in der Beacon-Kommunikation auf der MAC-Ebene}
-%\label{fig:iBPa}
-%\end{figure}
-%Bei den tatsächlichen Laufzeiten des Sende- und Empfangsmodus muss jedoch ein Unsicherheitsfaktor mit eingerechnet werden, sodass nicht der berechnete Wert für eine Übertragung genommen wurde, sondern das Zweifache dessen, um ein weniger idealisiertes Bild für die einzelnen Vorgänge zu gestalten. 
-%\begin{align*}
-%t_{TX} &= \text{2 ms} \cdot \text{Intervalle [Hz]} \\
-%t_{RX} &= \text{2 ms} \cdot \text{1 Hz} \\
-%t_{CPU} &= t_{TX} + t_{RX} \\
-%t_{IDLE} &= 1-t_{CPU}
-%\end{align*}
-%Da für den Sendevorgang noch zusätzlich der Cortex M0 Prozessor aufgeweckt werden muss und dieser das Paket vorbereitet und bis zum Ende der Sendung abwartet, muss hierfür zusätzlich der Energieverbrauch berechnet werden. Da wie erwähnt eine direkte Leistungsmessung an den Beacons durch die gering fließenden Ströme nicht möglich ist, werden aus dem Datenblatt des Prozessors diese rechnerisch ermittelt. Die aktive Phase des Prozessors für alle Operationen vor und nach einer Sendung werden dabei mit 2 ms Sekunden angenommen, welche exakt der Sende- und Empfangsdauer entspricht. Der Energiebedarf der Recheneinheit wurde im Datenblatt mit 4,1 mA bei einem Takt von 16 MHZ angegeben. So ergibt sich für den Prozessor eine Leistung von 12,3 mW. Zusätzlich wird der Stromverbrauch im IDLE-Modus (Schlafphase des Prozessors) mit 2,6 $\mu$A angegeben. Aus den genannten Gegebenheiten lassen sich nachfolgende Gleichungen erstellen und damit eine Simulation eines Lebenszyklus von einer Batterie näherungsweise bestimmen:
-%\begin{align*}
-%E_{Bat} &=& \text{1,8 Wh} \cdot \text{0,7} &=& \text{1,26 Wh}\\
-%L_{CPU} &=& \text{4,1 mA} \cdot \text{3V} &=& \text{12,3 mW}\\
-%L_{TX} &=& \text{Polynom 4. Grades (von 4,7 mA }\sim\text{ 11,8 mA)} \cdot \text{3V} &=& \text{14,1 mW} \sim \text{35,4 mW}\\
-%L_{RX} &=& \text{6,1 mA} \cdot \text{3V} &=& \text{18,3 mW}\\
-%L_{IDLE} &=& \text{2,6 } \mu\text{A} \cdot \text{3V} &=& \text{7,8 } \mu\text{W}
-%\end{align*}
-%ergeben den Zusammenhang
-%\begin{align*}
-%t_{Laufzeit} = \frac{E_{Bat}}{L_{CPU}\cdot t_{CPU} + L_{TX}\cdot t_{TX} + L_{RX}\cdot t_{RX} + L_{IDLE}\cdot t_{IDLE}} 
-%\end{align*}
-%und dies ergibt folgendes Simulationsergebniss:
-%%\pgfplotsset{
-%%    colormap/jet,
-%%}
-%%\begin{figure}[H]
-%%\centering
-%%\begin{tikzpicture}
-%%\customrevertcolormap{jet}
-%%\begin{axis}[
-%%    colorbar,
-%%    colorbar style={ylabel=Betriebsstunden},    
-%%    view={0}{90},
-%%    xlabel = {$\text{Intervalllänge [ms]}$},
-%%    ylabel = {$\text{Sendeleistung [dBm]}$},
-%%    %ytick pos=right,
-%%    %x dir=reverse,
-%%    scale=1.5   
-%%]
-%%\addplot3[surf, samples=40, samples y=10, domain=50:2000, domain y=-30:-20]
-%%{1.8/((4.1e-3 * 3 * 4e-3  * 1000/x) + ((4.2e-5 * (-20) ^ 4 + 2.7e-3 * (-20) ^ 3 + 6.1e-2 * (-20) ^ 2 + 0.65 * (-20) + 8) * 1e-3 * 3 * 2e-3 * 1000/x) + ((6.1e-3 * 2e-3 * 2 + 2.6e-6 * (1 - (4e-3  * 1000/x + 2e-3 * 2))) * 3))};
-%%\addplot3[surf, samples=40, samples y=24, domain=50:2000, domain y=-20:4]
-%%{1.8/((4.1e-3 * 3 * 4e-3  * 1000/x) + ((4.2e-5 * y ^ 4 + 2.7e-3 * y ^ 3 + 6.1e-2 * y ^ 2 + 0.65 * y + 8) * 1e-3 * 3 * 2e-3 * 1000/x) + ((6.1e-3 * 2e-3 * 2 + 2.6e-6 * (1 - (4e-3  * 1000/x + 2e-3 * 2))) * 3))};
-%%\end{axis}
-%%\end{tikzpicture}
-%%\caption{Einfluss der einstellbaren Parameter auf die Lebensdauer einer CR2450-Batterie}
-%%\label{fig:iBBatLe}
-%%\end{figure}
-%Aufgrund der getroffenen Annahmen würde eine Batterie in den niedrigsten Einstellungen für rund 2 Jahre den Betrieb eines Beacon ermöglichen. Im realen Betrieb hatte sich gezeigt, dass eine Batterie schon nach 4 bis 5 Monaten gewechselt werden musste. Während dieser Zeit wurden die Einstellungen nicht geändert und bei einer Intervalllänge von 5 Hz und Sendeleistung von -12 dBm belassen. Beides stimmt mit der Simulation ungefähr überein, was noch kein Beweis für die Gultigkeit der Annahmen bedeutet, jedoch wird der qualitative Verlauf der wechselseitigen Beziehungen von Einstellparameter und Batterielaufzeit skizziert, welcher als Orientierung zur Auslegung der Parameter benutzt werden kann.
+Der Wartungsaufwand für ein Beacon hängt maßgeblich an der Laufzeit der in jedem Beacon eingebauten Batterie ab. Die in Kapitel 1 und 2 erwähnten Einstellmöglichkeiten von Sendeleistung und der Häufigkeit von Sendeintervallen beeinflussen dabei den Stromverbrauch der Beacon und somit auch die Betriebsdauer der Batterien. Dieser Abschnitt soll sich damit beschäftigen, inwieweit sich die Parameter auf die Wartungszyklen auswirken. Dies soll später dabei helfen, zwischen der Auslegung der beiden Parameter und des gewünschten Wartungsaufwandes abwägen zu können. Denn in großen Projekten mit mehreren hundert Beacons steigt der Wartungsaufwand proportional und wenn einzelne Beacons andere Einstellungen als die Mehrheit aufweisen (um beispielsweise wichtige Gebiete besser abzudecken), wird auch der Überblick über die nötigen Wartungszyklen verloren gehen. Um die Abhängigkeiten zu veranschaulichen, wird anhand vom Datenblatt des verwendeten Hardware-Chip nRF51822\cite{nRF5} in den genutzten Beacons eine Simulation entworfen, die die Einstellmöglichkeiten als Variablen betrachtet. Als Ausgangsbasis für den Energiespeicher wird eine CR2450-Batterie mit 1,8 Wh\cite{CR2450} angenommen. Hierbei wurde nicht vom Idealzustand ausgegeangen, sondern ein üblicher Faktor von 0,7 hinzu multipliziert, um der Alterung der Zelle und weiterer Effekte Rechnung zu tragen. Durch die gering fliesenden Ströme und der minimalen Bauweise der Beacons, können auch keine direkten Messungen vorgenommen werden. Zudem kann auch nicht verifiziert werden, wie lange ein Sendeauftrag oder ein Zustand vom Prozessor dauert. Um trotzdem ein gutes Simulationsergebnis zu erreichen, muss tiefer in die Funktionsweise der Beacons geschaut werden. Als größte Unbekannte triit dabei die Sendedauer auf. Bei einer angenommenen Datenrate von 250Kbit/s  und bei einer Größe eines Datenpaketes von 38 Bytes \cite{iBPa} (siehe \ref{fig:iBPa}), dauert eine Sendesequenz rund 1 ms. Die benötigte elektrische Leistung für eine vorher definierte Sendeleistung beträgt dabei ein Vielfaches dessen und ist davon stark nichtlinear abhängig. Die dazu nötigen Beziehungen können anhand des Datenblattes des nRF51822 Chips hergeleitet werden. In diesem Fall wurde ein Polynom 4. Grades als Funktion der einstellbaren Sendeleistung aufgstellt, welches annähernd diese Abhängigkeiten beschreibt. Da die Kommunikation bidirektional ist, existiert auch ein Empfangsmodus der ebenfalls mit 1 ms Empfangsdauer angenommen wird, aber dessen Modus hingegen einen konstanten Stromverbrauch aufweist.
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}
+    \node [block, fill=magenta!20, text width=2cm, minimum height=1.5cm] (Header) {\small Header \\(2 Bytes)};
+    \node [block, fill=magenta!20, right=0cm of Header, text width=3cm, minimum height=1.5cm] (MAC) {\small MAC Addresse \\(6 Bytes)};
+    \node [block, fill=magenta!20, right=0cm of MAC, text width=2cm, minimum height=1.5cm] (Data) {\small Data \\(30 Bytes)};
+    \node [block, fill=blue!20, below=1cm of Data, text width=2cm, minimum height=1.5cm] (Major) {\small Major\\ (2 Bytes)};
+    \node [block, fill=blue!20, left=0cm of Major, text width=3cm, minimum height=1.5cm] (UUID) {\small Proximity UUID \\(16 Bytes)};
+    \node [block, fill=blue!20, left=0cm of UUID, text width=3cm, minimum height=1.5cm] (Prefix) {\small iBeacon Prefix \\(9 Bytes)};
+    \node [block, fill=blue!20, right=0cm of Major, text width=2cm, minimum height=1.5cm] (Minor) {\small Minor\\ (2 Bytes)};
+    \node [block, fill=blue!20, right=0cm of Minor, text width=2cm, minimum height=1.5cm] (TX) {\small TX Power\\ (1 Bytes)};
+    \draw[very thick,->] (Data) -- (Major);
+\end{tikzpicture}
+\caption{Anteile eines Datenpaket in der Beacon-Kommunikation auf der MAC-Ebene}
+\label{fig:iBPa}
+\end{figure}
+Bei den tatsächlichen Laufzeiten des Sende- und Empfangsmodus muss jedoch ein Unsicherheitsfaktor mit eingerechnet werden, sodass nicht der berechnete Wert für eine Übertragung genommen wurde, sondern das Zweifache dessen, um ein weniger idealisiertes Bild für die einzelnen Vorgänge zu gestalten. 
+\begin{align*}
+t_{TX} &= \text{2 ms} \cdot \text{Intervalle [Hz]} \\
+t_{RX} &= \text{2 ms} \cdot \text{1 Hz} \\
+t_{CPU} &= t_{TX} + t_{RX} \\
+t_{IDLE} &= 1-t_{CPU}
+\end{align*}
+Da für den Sendevorgang noch zusätzlich der Cortex M0 Prozessor aufgeweckt werden muss und dieser das Paket vorbereitet und bis zum Ende der Sendung abwartet, muss hierfür zusätzlich der Energieverbrauch berechnet werden. Da wie erwähnt eine direkte Leistungsmessung an den Beacons durch die gering fließenden Ströme nicht möglich ist, werden aus dem Datenblatt des Prozessors diese rechnerisch ermittelt. Die aktive Phase des Prozessors für alle Operationen vor und nach einer Sendung werden dabei mit 2 ms Sekunden angenommen, welche exakt der Sende- und Empfangsdauer entspricht. Der Energiebedarf der Recheneinheit wurde im Datenblatt mit 4,1 mA bei einem Takt von 16 MHZ angegeben. So ergibt sich für den Prozessor eine Leistung von 12,3 mW. Zusätzlich wird der Stromverbrauch im IDLE-Modus (Schlafphase des Prozessors) mit 2,6 $\mu$A angegeben. Aus den genannten Gegebenheiten lassen sich nachfolgende Gleichungen erstellen und damit eine Simulation eines Lebenszyklus von einer Batterie näherungsweise bestimmen:
+\begin{align*}
+E_{Bat} &=& \text{1,8 Wh} \cdot \text{0,7} &=& \text{1,26 Wh}\\
+L_{CPU} &=& \text{4,1 mA} \cdot \text{3V} &=& \text{12,3 mW}\\
+L_{TX} &=& \text{Polynom 4. Grades (von 4,7 mA }\sim\text{ 11,8 mA)} \cdot \text{3V} &=& \text{14,1 mW} \sim \text{35,4 mW}\\
+L_{RX} &=& \text{6,1 mA} \cdot \text{3V} &=& \text{18,3 mW}\\
+L_{IDLE} &=& \text{2,6 } \mu\text{A} \cdot \text{3V} &=& \text{7,8 } \mu\text{W}
+\end{align*}
+ergeben den Zusammenhang
+\begin{align*}
+t_{Laufzeit} = \frac{E_{Bat}}{L_{CPU}\cdot t_{CPU} + L_{TX}\cdot t_{TX} + L_{RX}\cdot t_{RX} + L_{IDLE}\cdot t_{IDLE}} 
+\end{align*}
+und dies ergibt folgendes Simulationsergebniss:
+\pgfplotsset{
+    colormap/jet,
+}
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}
+\customrevertcolormap{jet}
+\begin{axis}[
+    colorbar,
+    colorbar style={ylabel=Betriebsstunden},    
+    view={0}{90},
+    xlabel = {$\text{Sendefrequenz [ms]}$},
+    ylabel = {$\text{Sendeleistung [dBm]}$},
+    %ytick pos=right,
+    %x dir=reverse,
+    scale=1.5   
+]
+\addplot3[surf, samples=40, samples y=10, domain=50:2000, domain y=-30:-20]
+{1.8/((4.1e-3 * 3 * 4e-3  * 1000/x) + ((4.2e-5 * (-20) ^ 4 + 2.7e-3 * (-20) ^ 3 + 6.1e-2 * (-20) ^ 2 + 0.65 * (-20) + 8) * 1e-3 * 3 * 2e-3 * 1000/x) + ((6.1e-3 * 2e-3 * 2 + 2.6e-6 * (1 - (4e-3  * 1000/x + 2e-3 * 2))) * 3))};
+\addplot3[surf, samples=40, samples y=24, domain=50:2000, domain y=-20:4]
+{1.8/((4.1e-3 * 3 * 4e-3  * 1000/x) + ((4.2e-5 * y ^ 4 + 2.7e-3 * y ^ 3 + 6.1e-2 * y ^ 2 + 0.65 * y + 8) * 1e-3 * 3 * 2e-3 * 1000/x) + ((6.1e-3 * 2e-3 * 2 + 2.6e-6 * (1 - (4e-3  * 1000/x + 2e-3 * 2))) * 3))};
+\end{axis}
+\end{tikzpicture}
+\caption{Einfluss der einstellbaren Parameter auf die Lebensdauer einer CR2450-Batterie}
+\label{fig:iBBatLe}
+\end{figure}
+Aufgrund der getroffenen Annahmen würde eine Batterie in den niedrigsten Einstellungen für rund 2 Jahre den Betrieb eines Beacon ermöglichen. Im realen Betrieb hatte sich gezeigt, dass eine Batterie schon nach 4 bis 5 Monaten gewechselt werden musste. Während dieser Zeit wurden die Einstellungen nicht geändert und bei einer Intervalllänge von 5 Hz und Sendeleistung von -12 dBm belassen. Beides stimmt mit der Simulation ungefähr überein, was noch kein Beweis für die Gultigkeit der Annahmen bedeutet, jedoch wird der qualitative Verlauf der wechselseitigen Beziehungen von Einstellparameter und Batterielaufzeit skizziert, welcher als Orientierung zur Auslegung der Parameter benutzt werden kann.

@@ -1,11 +1,28 @@
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {1.1}{\ignorespaces Skizze satellitengest\IeC {\"u}tztes Lokalisierungssystem \cite {GPS}\relax }}{1}{figure.caption.7}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {2.1}{\ignorespaces Offizielles Bluetooth Smart Logo \cite {BLElogo}\relax }}{3}{figure.caption.8}
-\contentsline {figure}{\numberline {2.2}{\ignorespaces Explosionszeichnung Beacon \cite {BeaEx}\relax }}{4}{figure.caption.9}
-\contentsline {figure}{\numberline {2.3}{\ignorespaces Signalschw\IeC {\"a}chung durch Objekte, z.B. W\IeC {\"a}nde \cite {GSwiB}\relax }}{5}{figure.caption.10}
-\contentsline {figure}{\numberline {2.4}{\ignorespaces menschliche K\IeC {\"o}rper blockieren zus\IeC {\"a}tzlich die Signale \cite {GSwiB}\relax }}{5}{figure.caption.10}
-\contentsline {figure}{\numberline {2.5}{\ignorespaces Beispiel einer Trilateration zur Positionsbestimmung\relax }}{7}{figure.caption.13}
-\contentsline {figure}{\numberline {2.6}{\ignorespaces Beacon Nutzung in Gesch\IeC {\"a}ften \cite {Shoe}\relax }}{9}{figure.caption.14}
-\contentsline {figure}{\numberline {2.7}{\ignorespaces Beacon Nutzung im Flugh\IeC {\"a}fen \cite {Airpo}\relax }}{10}{figure.caption.15}
-\contentsline {figure}{\numberline {2.8}{\ignorespaces Demo der Estimote Indoor Localization App \cite {TrEs}\relax }}{11}{figure.caption.16}
+\contentsline {figure}{\numberline {2.1}{\ignorespaces Offizielles Bluetooth Smart Logo \cite {BLElogo}\relax }}{5}{figure.caption.8}
+\contentsline {figure}{\numberline {2.2}{\ignorespaces Explosionszeichnung Beacon \cite {BeaEx}\relax }}{5}{figure.caption.9}
+\contentsline {figure}{\numberline {2.3}{\ignorespaces Signalschw\IeC {\"a}chung durch Objekte, z.B. W\IeC {\"a}nde \cite {GSwiB}\relax }}{6}{figure.caption.10}
+\contentsline {figure}{\numberline {2.4}{\ignorespaces menschliche K\IeC {\"o}rper blockieren zus\IeC {\"a}tzlich die Signale \cite {GSwiB}\relax }}{6}{figure.caption.10}
+\contentsline {figure}{\numberline {2.5}{\ignorespaces Beispiel einer Trilateration zur Positionsbestimmung\relax }}{9}{figure.caption.13}
+\contentsline {figure}{\numberline {2.6}{\ignorespaces Beacon Nutzung in Gesch\IeC {\"a}ften \cite {Shoe}\relax }}{11}{figure.caption.14}
+\contentsline {figure}{\numberline {2.7}{\ignorespaces Beacon Nutzung im Flugh\IeC {\"a}fen \cite {Airpo}\relax }}{12}{figure.caption.15}
+\contentsline {figure}{\numberline {2.8}{\ignorespaces Demo der Estimote Indoor Localization App \cite {TrEs}\relax }}{14}{figure.caption.16}
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Kreislauf einer Prozessplanung\relax }}{16}{figure.caption.17}
+\contentsline {figure}{\numberline {3.2}{\ignorespaces \IeC {\"U}berblick auf die Software-Anforderungen\relax }}{18}{figure.caption.18}
+\contentsline {figure}{\numberline {3.3}{\ignorespaces \IeC {\"U}berblick auf die Software-Anforderungen\relax }}{19}{figure.caption.19}
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Vorderseite des Motorola Moto G \cite {MotoGV}\relax }}{21}{figure.caption.20}
+\contentsline {figure}{\numberline {4.2}{\ignorespaces R\IeC {\"u}ckseite vom Moto G mit Antennen-Ger\IeC {\"u}st \cite {Moto}\relax }}{21}{figure.caption.20}
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Youbot mit Halterung (gelber Aufsatz)\relax }}{22}{figure.caption.21}
+\contentsline {figure}{\numberline {4.4}{\ignorespaces Zeichnung eines Youbot-Arms und seiner f\IeC {\"u}nf Rotationsachsen \cite {You}\relax }}{22}{figure.caption.21}
+\contentsline {figure}{\numberline {4.5}{\ignorespaces Scitos G5 von der MetraLabs GmbH\relax }}{23}{figure.caption.22}
+\contentsline {figure}{\numberline {4.6}{\ignorespaces Erstellter Grundriss eines Flures in Geb\IeC {\"a}ude 29 der OvGU, Stockwerk 3\relax }}{25}{figure.caption.23}
+\contentsline {figure}{\numberline {4.7}{\ignorespaces Aufbau des Komplement\IeC {\"a}rfilters, in Anlehnung an \cite {IMUFilter}\relax }}{28}{figure.caption.24}
+\contentsline {figure}{\numberline {4.8}{\ignorespaces Quellcode-Beispiel eines Message-Paketes f\IeC {\"u}r eine ROSjava-Implementierung\relax }}{29}{figure.caption.25}
+\contentsline {figure}{\numberline {4.9}{\ignorespaces Programmablaufplan der Lighthouse Keeper Applikation f\IeC {\"u}r Android-Smartphones\relax }}{31}{figure.caption.26}
+\contentsline {figure}{\numberline {4.10}{\ignorespaces Gleichzeitige Messung dreier naheliegender Beacon-Signale\relax }}{36}{figure.caption.27}
+\contentsline {figure}{\numberline {4.11}{\ignorespaces Anteile eines Datenpaket in der Beacon-Kommunikation auf der MAC-Ebene\relax }}{37}{figure.caption.28}
+\contentsline {figure}{\numberline {4.12}{\ignorespaces Einfluss der einstellbaren Parameter auf die Lebensdauer einer CR2450-Batterie\relax }}{38}{figure.caption.29}

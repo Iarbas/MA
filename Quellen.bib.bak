@@ -330,6 +330,15 @@
   Url                      = {http://godieboy.com/wp-content/uploads/2012/05/ejsr\_46\_1\_05.pdf}
 }
 
+@Electronic{AndWLBT,
+  Title                    = {Nexus 4 loses wifi connection when bluetooth is in use},
+  Author                   = {{r...@themmteam.com}},
+  Url                      = {https://code.google.com/p/android/issues/detail?id=41631},
+
+  Owner                    = {andre},
+  Timestamp                = {2015.04.18}
+}
+
 @Electronic{ROSErkl,
   Title                    = {About ROS},
   Author                   = {{ROS.org}},

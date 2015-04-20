@@ -16,7 +16,6 @@ Die Idee der Nutzung von Bluetooth Low Energy zur Indoor-Lokalisierung stammt da
 %\label{iLogo}
 %\end{figure}
 %
-\newpage
 \section{Aufbau und Funktionsweise von Beacons} 
 \begin{wrapfigure}{r}{6cm}
 \begin{flushright}
@@ -123,11 +122,15 @@ P_3' &= P_3 + T
 \end{align*} 
 Rotation:
 \begin{align*}
-\alpha &= -\arcsin \left ( \frac{y_2}{\sqrt{x_2^2+y_2^2}} \right )\\
-R_z\left ( \alpha \right ) &= \begin{bmatrix}
+\alpha = -\arcsin \left ( \frac{y_2}{\sqrt{x_2^2+y_2^2}} \right )\\
+\end{align*} 
+\begin{align*}
+R_z\left ( \alpha \right ) = \begin{bmatrix}
 \cos\left ( \alpha \right ) & -\sin\left ( \alpha \right )\\ 
 \sin\left ( \alpha \right ) & \cos\left ( \alpha \right )
 \end{bmatrix}\\
+\end{align*}
+\begin{align*}
 P_1'' &= \binom{0}{0}\\
 P_2'' &= R_z\left ( \alpha \right ) \cdot P_2'\\
 P_3'' &= R_z\left ( \alpha \right ) \cdot P_3'
