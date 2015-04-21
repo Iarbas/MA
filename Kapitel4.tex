@@ -186,18 +186,98 @@ Nachdem die einzelnen Module fertig gestellt wurden, musste aus ihnen ein gesamt
 \section{Experimente}
 Die hier vorgenommenen Versuche betrachten zum einen die Ausbreitung der Signale bei einer fest justierten, für die Arbeit vorher definierten Einstellung der Beacons. Zum anderen werden auch Aspekte der Beacon-Technologie betrachtet, die für spätere Forschungen von Interesse wären, aber auch die Notwendigkeit dieser Arbeit unterstreichen sollen. Denn es macht gerade den Reiz der Beacons aus, dass sie relativ einfach an ihre Bestimmung angepasst werden können. Schließlich ergab sich nach der Aufnahme von über 30 Stunden Sensordaten-Material die Erkenntnis, dass das gesamte Thema weit umfangreicher ist und die möglichen Modi genauere Untersuchungen verdienen. Gerade deswegen soll dies nach der ursprünglichen Aufgabe der Aufnahme von Messwerten für die Modellbildung nachträglich mit einigen Abschnitten über das Verhalten der Beacons gewürdigt werden.
 \subsection{Messung der BLE-Signalausbreitung}\label{sec:MessungBLE}
-Für die Versuche wurde zunächst ein großer Raum benötigt, damit der Abstand von Beacon zu Smartphone um mehr als 15 Metern variiert werden kann. Das Equipment für die statischen Experimente bestand aus dem Youbot, drei Beacons, dem Moto G und einem Laptop mit installiertem Ubuntu Betriebssystem. In den Bilder ... im Anhang sind eingie Fotos mit dem Aufbau hinterlegt. Die Messungen wurden dabei für jeden der drei Beacons für eine Distanz für jeweils zehn Minuten durchgeführt. Aufgrund der Masse an Daten werden hier nur drei Messreihen exemplarisch in den Abbildungen ... bis ... für die Signalstärke -12 dB und der Sende-Frequenz von 200 ms gezeigt. Es fällt dabei auf, dass die Abweichungen bzw. das Rauschen mit größerer Distanz zunimmt. Für die ersten fünf Distanz-Meter ist die über alle Messreihen die Regel, danach wird es sehr unbestimmt und nimmt sogar ab dem zehnten Meter bis zum fünfzehnten zwischenzeitlich ab. Diese können die "`Verschmutzung"' des Raumes durch andere Signale im 2,4 GHz Band sein oder auch durch Reflektionen der Wände, der Decke oder des Fußbodens hervorgerufen werden. Aufgrund der schon erwähnten Asynchronität der Beacon-Signale, der nicht einsehbaren Messzyklendauer der Estimote SDK und/oder auch der parallelen Nutzung von Bluetooth- und WLAN-Modul des Smartphones, könnten die stärksten Signale von den Beacons zufällig nicht aufgenommen und nur deren "`Echo"' wahrgenommen werden, weil ihnen zu dem Zeitpunkt, als die Signale die Antennen vom Smartphone passierten, niemand zuhörte. Dieser Verdacht sieht sich jedoch nicht bestätigt, wenn nur Abbildung ... betrachtet wird. Hier ist der Abstand zwischen Smartphone und Beacon sehr gering, nichtsdestotrotz werden keine reflektierten Signale aus großerer Entfernung aufgezeichnet, weder in dieser Messung noch in weiteren. Also muss die Verstärkung des Rauschens auf die physikalischen, statt den programmiertechnischen Erklärungen zurückzuführen sein. In dieser ersten Betrachtung des Systems kann schon von vornerein gesagt werden, dass das Rauschverhalten bzw. das Auftreten von Störungen raumabhängig und somit nur schwer vorhersagbar ist. \\ \\
-Um nun doch wie erwünscht eine qualitativ hochwertige Schätzung über die Signalausbreitung von BLE-Signalen zu gewinnen, muss es zum Anfang ein Modell geben, dass zuerst von einem völlig idealem Verhalten ausgeht. Es muss die Realität dabei nur im Groben abbilden und ausschließlich den Grundstin für die Simulation und deren Erweiterungen legen. Um eine Theorie dafür aufstellen zu können, müssen die gesammelten Daten genauer betrachtet und die Ausbreitung des BLE-Signals der Beacons ohne Störungen herausgefiltert werden. In Abbildung ... sind einmal alle Messreihen in einem Diagramm zusammengefasst. Dabei wurde von jeder Messung eines jeden Beacons der Mittelwert der empfangenen Empfangsstärke über der Distanz zwischen Smartphone und Leuchtfeuer aufgetragen. Auf den ersten Blick  fällt auf, dass lediglich bis fünf Meter dadurch eine genaue Aussage über die Entfernung getroffen werden kann. Die Unterschiede bzw. das Fehlen eines Unterschiedes macht es für größere Entfernungen schwer, anhand dessen eine qualitative Berechnung durchzuführen. Deswegen wird der Anteil an Informationen in Abbildung ... erhöht, indem nicht der Mittelwert aller Messungen, sondern die Verteilung der empfangenen Signalstärke farblich über die Entfernungen markiert wurde. Hier erscheint verstärkt das Phänomen, dass das Rauschen nicht mit der Distanz korreliert, sondern stark ortabhängig ist. Zumindest erhöht sich mit einem größeren Luftweg die Wahrscheinlichkeit, dass dies auftritt. Werden statt aller Messwerte einer Entfernung nur die 100 stärksten zur Mittelwertbildung herangezogen, wie es in Abbildung ... gezeigt wird, sieht die Entwicklung der Abnahme der Signalstärke deutlich vorhersehbarer aus und wird dadurch verwertbar. 
-
-(3 Bilder - 1, 5 und 10 Meter mit Mittelwert) 
-(Bild Mittelwert aller Messungen über Distanz)
-(Bild der verteilung)
-(Bild Mittelwert 100 bester Messungen über Distanz)
-
-In dem Abschnitt über ROSjava wurde in Bild \ref{fig:ROSjavaImpl} eine von der SDK berechneten Distanz erwähnt. Diese ist jedoch nur eingeschränkt nutzbar, wie es Abbildung ... belegt. Hier wurden die tatsächlichen Distanzen mit den geschätzten der SDK gegenübergestellt und die Ergebnisse zeigen, dass diese Berechnungen nicht korrekt sind. Woran dies liegt lässt sich dabei nicht begründen und es kann wiederholt nur auf den nicht freien Zugang zu diesen Informationen verwiesen werden.
-
-(Bild reale Distanz über berechneter)
-
+Für die Versuche wurde zunächst ein großer Raum benötigt, damit der Abstand von Beacon zu Smartphone um mehr als 15 Metern variiert werden kann. Das Equipment für die statischen Experimente bestand aus dem Youbot, drei Beacons, dem Moto G und einem Laptop mit installiertem Ubuntu Betriebssystem. In den Bilder ... im Anhang sind eingie Fotos mit dem Aufbau hinterlegt. Die Messungen wurden dabei für jeden der drei Beacons für eine Distanz für jeweils zehn Minuten durchgeführt. Aufgrund der Masse an Daten werden hier nur drei Messreihen exemplarisch in den Abbildungen \ref{fig:Meter1Normal} bis \ref{fig:Meter10Normal} für die Signalstärke -12 dB und der Sende-Frequenz von 200 ms gezeigt. Es fällt dabei auf, dass die Abweichungen bzw. das Rauschen mit größerer Distanz zunimmt. 
+\begin{figure}[H] 
+\centering
+\begin{tikzpicture}
+\begin{axis}[xlabel={Zeit in Sekunden},ylabel={Empfangene Signalstärke in dBm},width=0.6\paperwidth, height=0.2\paperheight]
+\addplot+[mark=none] table [col sep=comma] {TikzDaten/Meter1Normal.dat}; 
+\end{axis}
+\end{tikzpicture}
+\caption{Verlauf der gemessenen Signalstärke eines Beacons über die Zeit aus einer Entfernung von einem Meter}
+\label{fig:Meter1Normal}
+\end{figure}
+\begin{figure}[H] 
+\centering
+\begin{tikzpicture}
+\begin{axis}[xlabel={Zeit in Sekunden},ylabel={Empfangene Signalstärke in dBm},width=0.6\paperwidth, height=0.2\paperheight,]
+\addplot+[mark=none] table [col sep=comma] {TikzDaten/Meter4Normal.dat}; 
+\end{axis}
+\end{tikzpicture}
+\caption{Verlauf der gemessenen Signalstärke eines Beacons über die Zeit aus einer Entfernung von vier Metern}
+\label{fig:Meter4Normal}
+\end{figure}
+\begin{figure}[H] 
+\centering
+\begin{tikzpicture}
+\begin{axis}[xlabel={Zeit in Sekunden},ylabel={Empfangene Signalstärke in dBm},width=0.6\paperwidth, height=0.2\paperheight,]
+\addplot+[mark=none] table [col sep=comma] {TikzDaten/Meter10Normal.dat}; 
+\end{axis}
+\end{tikzpicture}
+\caption{Verlauf der gemessenen Signalstärke eines Beacons über die Zeit aus einer Entfernung von zehn Metern}
+\label{fig:Meter10Normal}
+\end{figure}
+Für die ersten vier Distanz-Meter ist diese Aussage über alle Messreihen die Regel, für darauffolgende größere Entfernungen geschieht es jedoch, dass sich die Signalstärke wieder erhöht und das Rauschen sich vermindert. Dies ist in Abbildung  \ref{fig:MittelwertAlle} einmal dargestellt. Besonders deutlich wird der Bruch der Regel zwischen dem zehnten und dem fünfzehnten Meter, wo der Verlauf der Signalstärke eher einer Achterbahnfahrt gleicht. Der Grund dafür könnte die "`Verschmutzung"' des Raumes durch andere Signale im 2,4 GHz Band sein oder auch durch Reflektionen der Wände, der Decke oder des Fußbodens hervorgerufen werden. Aufgrund der schon erwähnten Asynchronität der Beacon-Signale, der nicht einsehbaren Messzyklen-Dauer der Estimote SDK und/oder auch der parallelen Nutzung von Bluetooth- und WLAN-Modul des Smartphones, ergab sich anfänglich der Verdacht, dass die Ursache für die Signalstörungen in der Messwertaufnahme mithilfe der Lighthouse Keeper App selber liegt. Somit wäre es denkbar, dass die stärksten Signale zufällig nicht aufgenommen und nur deren "`Echo"' wahrgenommen wird, weil ihnen zu dem Zeitpunkt, als die Signale die Antennen vom Smartphone passierten, niemand "`zuhörte"'. Dieser Verdacht sieht sich im Nachhinein nicht bestätigt, wenn nur Abbildung \ref{fig:Meter1Normal} betrachtet wird. Hier ist der Abstand zwischen Smartphone und Beacon sehr gering, nichtsdestotrotz werden keine reflektierten Signale aus großerer Entfernung aufgezeichnet, weder in dieser Messung noch in weiteren Messungen in kurzer Entfernung. Also muss die Verstärkung des Rauschens auf die physikalischen, statt den programmiertechnischen Erklärungen zurückzuführen sein. In dieser ersten Betrachtung des Systems kann schon von vornerein gesagt werden, dass das Rauschverhalten bzw. das Auftreten von Störungen raumabhängig und somit nur schwer vorhersagbar ist.
+\begin{figure}[H] 
+\centering
+\begin{tikzpicture}
+\begin{axis}[ybar,enlargelimits=0.04,bar width=1.5mm,xlabel={Abstand der einzelnen Beacons in Metern},ylabel={Gemittelter RSSI-Wert in dBm},width=0.7\paperwidth, height=0.25\paperheight, ymax=-60, symbolic x coords={0.5,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15}, xtick=data, y dir=reverse, legend style={at={(0.5,1.15)},anchor=south,legend columns=-1},]
+\addplot+[fill=dblue] table [col sep=comma] {TikzDaten/MittelwertAlleBlau.dat}; 
+\addplot+[fill=ice] table [col sep=comma] {TikzDaten/MittelwertAlleEis.dat};
+\addplot+[fill=mint] table [col sep=comma] {TikzDaten/MittelwertAlleMinze.dat};
+\legend{Beacon 1, Beacon 2, Beacon 3}
+\end{axis}
+\end{tikzpicture}
+\caption{Mittelwert der RSSI-Werte von allen Distanzen, wobei die Farbe der Säule für die Farbe des jeweiligen Beacons steht}
+\label{fig:MittelwertAlle}
+\end{figure}
+Um nun doch wie erwünscht eine qualitativ hochwertige Schätzung über die Signalausbreitung von BLE-Signalen zu gewinnen, muss es zum Anfang ein Modell geben, dass zuerst von einem völlig idealem Verhalten ausgeht. Es muss dabei die Realität nur im Groben abbilden können und ausschließlich den Grundstin für die Simulation und deren Erweiterungen legen. Um eine Theorie dafür aufstellen zu können, müssen die gesammelten Daten genauer betrachtet und die Ausbreitung des BLE-Signals der Beacons ohne Störungen herausgefiltert werden. In Abbildung \ref{fig:MittelwertAlle} wurden schon einmal alle Messreihen in einem Diagramm zusammengefasst. Dabei wurde von jeder Messung eines jeden Beacons der Mittelwert der empfangenen Empfangsstärke über der Distanz zwischen Smartphone und Leuchtfeuer aufgetragen. Auf den ersten Blick fällt auf, dass lediglich bis vier Metern dadurch eine genaue Aussage über die Entfernung getroffen werden kann. Die Unterschiede bzw. das Fehlen eines Unterschiedes macht es für größere Entfernungen schwer, anhand dessen eine qualitative Berechnung durchzuführen. Deswegen wird der Anteil an Informationen in Abbildung \ref{fig:DraufVert} und \ref{fig:SeitVert} erhöht, indem nicht der Mittelwert aller Messungen, sondern die Verteilung der empfangenen Signalstärke farblich über die Entfernungen markiert wurde. Hier erscheint verstärkt das Phänomen, dass das Rauschen nicht mit der Distanz korreliert, sondern stark ortsabhängig ist. Zumindest erhöht sich mit einem größeren Luftweg die Wahrscheinlichkeit, dass dies auftritt. Werden statt aller Messwerte einer Entfernung nur die 100 stärksten zur Mittelwertbildung herangezogen, wie es in Abbildung \ref{fig:Mittelwert100} gezeigt wird, sieht die Entwicklung der Abnahme der Signalstärke deutlich vorhersehbarer aus und wird dadurch verwertbar. 
+\begin{figure}[H] 
+\centering
+\begin{tikzpicture}
+    \begin{axis}[view = {0}{90},width=0.6\paperwidth, height=0.35\paperheight,xmin=1,xmax=42,ymin=1,ymax=48, colormap={pos}{color(0)=(white); color(2054)=(blue)}, colorbar, colorbar style={ylabel=Absolute Häufigkeit}, yticklabels={0.5,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15}, ytick={2,5,8,11,14,17,20,23,26,29,32,35,38,41,44,47,50}, xticklabels={-103,-97,-91,-85,-79,-73,-67,-61}, xtick={0,6,12,18,24,30,36,42}, xlabel={gemessene Signalstärke in dBm}, ylabel={Distanz in Meter}]
+    \addplot3[surf] gnuplot [raw gnuplot] {set dgrid3d 42,48 spline; splot 'TikzDaten/Verteilung.dat';};
+    \end{axis}
+\end{tikzpicture}
+\caption{Draufsicht auf die Signalstärken-Verteilung zu den einzelnen Distanzen}
+\label{fig:DraufVert}
+\end{figure}
+\begin{figure}[H] 
+\centering
+\begin{tikzpicture}
+    \begin{axis}[view = {20}{40},width=0.55\paperwidth, height=0.4\paperheight,xmin=1,xmax=42,ymin=1,ymax=48, colormap={pos}{color(0)=(white); color(2054)=(blue)}, colorbar, colorbar style={ylabel=Absolute Häufigkeit}, yticklabels={0.5,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15}, ytick={2,5,8,11,14,17,20,23,26,29,32,35,38,41,44,47,50}, xticklabels={-103,-97,-91,-85,-79,-73,-67,-61}, xtick={0,6,12,18,24,30,36,42}, xlabel={gemessene Signalstärke in dBm}, ylabel={Distanz in Meter}]
+    \addplot3[surf] gnuplot [raw gnuplot] {set dgrid3d 42,48 spline; splot 'TikzDaten/Verteilung.dat';};
+    \end{axis}
+\end{tikzpicture}
+\caption{Seitliche Ansicht auf die Signalstärken-Verteilung zu den einzelnen Distanzen}
+\label{fig:SeitVert}
+\end{figure}
+\begin{figure}[H] 
+\centering
+\begin{tikzpicture}
+\begin{axis}[ybar,enlargelimits=0.04,bar width=1.5mm,xlabel={Abstand der einzelnen Beacons in Metern},ylabel={Gemittelter RSSI-Wert in dBm},width=0.7\paperwidth, height=0.25\paperheight, ymax=-60, symbolic x coords={0.5,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15}, xtick=data, y dir=reverse, legend style={at={(0.5,1.15)},anchor=south,legend columns=-1},]
+\addplot+[fill=dblue] table [col sep=comma] {TikzDaten/Mittelwert100Blau.dat}; 
+\addplot+[fill=ice] table [col sep=comma] {TikzDaten/Mittelwert100Eis.dat};
+\addplot+[fill=mint] table [col sep=comma] {TikzDaten/Mittelwert100Minze.dat};
+\legend{Beacon 1, Beacon 2, Beacon 3}
+\end{axis}
+\end{tikzpicture}
+\caption{Mittelwert der 100 stärksten RSSI-Werte von allen Distanzen, wobei die Farbe der Säule für die Farbe des jeweiligen Beacons steht}
+\label{fig:Mittelwert100}
+\end{figure}
+In dem Abschnitt über ROSjava wurde in Bild \ref{fig:ROSjavaImpl} eine von der SDK berechneten Distanz erwähnt. Diese ist jedoch nur eingeschränkt nutzbar, wie es Abbildung \ref{fig:DisrealDistance} belegt. Hier wurden die tatsächlichen Distanzen mit den geschätzten der SDK gegenübergestellt und die Ergebnisse zeigen, dass diese Berechnungen nicht zuverlässig sind.
+\begin{figure}[H] 
+\centering
+\begin{tikzpicture}
+\begin{axis}[xlabel={Reale Distanz in Meter},ylabel={Geschätzte Distanz in Meter},width=0.7\paperwidth, height=0.25\paperheight,]
+\addplot+[red,mark=*,semithick] table [col sep=comma] {TikzDaten/DisrealDistance.dat}; 
+\addplot+[mark=none,blue,very thick] table [col sep=comma] {TikzDaten/DisrealOptimum.dat};
+\legend{geschätzter Wert,optimaler Verlauf};
+\end{axis}
+\end{tikzpicture}
+\caption{Vergleich der durschnittlichen Distanz-Schätzung zur realen Entfernung}
+\label{fig:DisrealDistance}
+\end{figure}
 \subsubsection{Einfluss der Intervalllänge} 
 %Wird das Rauschen vermindern.
 \subsubsection{Einfluss der Signalstärke} 
@@ -205,7 +285,7 @@ In dem Abschnitt über ROSjava wurde in Bild \ref{fig:ROSjavaImpl} eine von der 
 \subsection{Auswirkung der Smartphone-Orientierung}
 Imzuge der vorangegangenen Untersuchungen und unter der Vermutung des Einflusses der Antennen-Charakteristiken vom Moto G, stellte sich die Frage wie sehr die Lage des Smartphones die Messungen beeinträchtigte. Schließlich ist der Empfänger, also das Moto G ständig in Bewegung und befindet sich dauernd in neuen Positionen und Ausrichtungen zu den Standorten der Beacons wieder. Dies gilt natürlich nicht für die statischen Versuchen in diesem Kapitel, sondern soll im Hinblick auf die dynamische Validierung mit dem Scitos G5 und auch später für die reale Anwendung erforscht werden. Es soll hierbei die Aussagekraft der gemachten Experimenten und zukünftigen Tests überprüft werden, welche die Grundpfeiler der Modellbildung und später der Simulation bilden. In diesem Sinne gilt es die Abhängigkeit der gemessenen Empfangsstärke des Signals zu der möglichen Orientierungen des Moto G zur Signalquelle zu ermitteln. Um den Aufwand der Messungen so gering wie möglich zu halten, wurden die drei verfügbaren Beacons so um das Smartphone positioniert, dass sie sich quasi auf den drei Raumachsen mit dem Moto G im Koordinatenursprung befinden (siehe Abbildung ...). Weil der Youbot seinen Roboterarm nur in Z-Richtung der Abbildung drehen konnte, ohne dabei die Abstände zu den Beacons zu ändern, wurden einige Konstellationen nicht betrachtet. Es soll hierbei jedoch nicht darum gehen, wie das Smartphone am besten zu halten sei, sondern ob die Intesität Signale aussgehend von der Decke, von den Wänden, von vorn oder von der Seite anders wahrgenommen wird. Die Ergebnisse finden sich in den Abbildungen ... bis ... wieder. Dort sind zum einen die gemessene Empfangsstärke der Beacons in festen Abständen zum Moto G zu sehen und dazu gegenüber die Ausrichtung an den drei Drehachsen. Es fällt auf, dass egal aus welcher Richtung die Signale auf das Smartphone treffen, der Empfang durch die Drehung gleichermaßen beeinträchtigt wird. Das Ergebnis überrascht insofern, dass eigentlich die Änderungen der erhaltenen Signalstärken zu jedem Drehwinkel die gleichen waren. Es gab keine Unterschiede, obwohl die Beacons alle in unterschiedlichen Winkeln zu dem Smartphone und somit zu dessen Antennen standen. Somit erklärt sich dieses Verhalten nicht anhand der Argumentation, dass eine Antenne bestimmte Charakteristiken aufweist und je nach Winkel der die Qualität des Signals ab- oder zunimmt. Um den Einfluss dieses Phänomens auf die statischen Versuche genauer abzuschätzen, wurden nachfolgend die Messungen aus \ref{sec:MessungBLE} noch einmal wiederholt und nur lediglich die Drehung um besagte Z-Achse hinzugefügt (siehe Bild ... im Anhang). Die Ergebnisse in den Abbildungen ... bis ... verwunderten allerdings genauso, denn die fast proportionale Änderung von Ausrichtung zur Stärke der Signalaufnahmeleicht ist relativ leicht zu erfassen und sicherlich auch gut zu filtern, doch mit dem Verständnis wie Antennen funktionieren und der bekannten Theorien lässt sich dieses Verhalten nicht erklären. Die einzige Erkenntnis aus den hier durchgeführten Experimenten ist, dass die Vermutung  der höhsten Empfangsgüte der Antennen bei normaler Halterung des Smartphones in der flachen Hand sich bewahrheitete und die Richtung, aus denen ein Signal stammt, dabei keinen Einfluss hat.
 
-(Bild mit drei beacons auf den drei Achsen - Achsenbschriftung! - In der Mitt das Smartphone und die Drehung skizzieren)
+(Bild mit drei beacons auf den drei Achsen - Achsenbschriftung! - In der Mitt das Smartphone und die Drehung skizzieren) 
 
 (1 Bild von den Signalverläufen mit den drei Achsen und dazu der Verlauf der drei Drehwinkel) - Bei diesen Bildern noch erklären in welchem Abstand die Beacons aufgeteilt wurden und die Maxima und Minima kennzeichnen. Noch erklären das das beste Signal bei 0 Grad liegt und wo halt das schlechteste liegt.
 
@@ -220,9 +300,9 @@ Unter dem Aspekt der angesprochenen "`Verschmutzung"' eines Raumes durch andere 
 \label{fig:Dreier}
 \end{figure}
 
-(Bild von allen drei signalen zusammen)
+(Bild von allen drei signalen zusammen) Dazu die Standardabweichung berechnen und angeben von mit und ohne großen Abstand.
 
-\subsection{Energieverbrauch eines Beacon} 
+%\subsection{Energieverbrauch eines Beacon} 
 Der Wartungsaufwand für ein Beacon hängt maßgeblich an der Laufzeit der in jedem Beacon eingebauten Batterie ab. Die in Kapitel 1 und 2 erwähnten Einstellmöglichkeiten von Sendeleistung und der Häufigkeit von Sendeintervallen beeinflussen dabei den Stromverbrauch der Beacon und somit auch die Betriebsdauer der Batterien. Dieser Abschnitt soll sich damit beschäftigen, inwieweit sich die Parameter auf die Wartungszyklen auswirken. Dies soll später dabei helfen, zwischen der Auslegung der beiden Parameter und des gewünschten Wartungsaufwandes abwägen zu können. Denn in großen Projekten mit mehreren hundert Beacons steigt der Wartungsaufwand proportional und wenn einzelne Beacons andere Einstellungen als die Mehrheit aufweisen (um beispielsweise wichtige Gebiete besser abzudecken), wird auch der Überblick über die nötigen Wartungszyklen verloren gehen. Um die Abhängigkeiten zu veranschaulichen, wird anhand vom Datenblatt des verwendeten Hardware-Chip nRF51822\cite{nRF5} in den genutzten Beacons eine Simulation entworfen, die die Einstellmöglichkeiten als Variablen betrachtet. Als Ausgangsbasis für den Energiespeicher wird eine CR2450-Batterie mit 1,8 Wh\cite{CR2450} angenommen. Hierbei wurde nicht vom Idealzustand ausgegeangen, sondern ein üblicher Faktor von 0,7 hinzu multipliziert, um der Alterung der Zelle und weiterer Effekte Rechnung zu tragen. Durch die gering fliesenden Ströme und der minimalen Bauweise der Beacons, können auch keine direkten Messungen vorgenommen werden. Zudem kann auch nicht verifiziert werden, wie lange ein Sendeauftrag oder ein Zustand vom Prozessor dauert. Um trotzdem ein gutes Simulationsergebnis zu erreichen, muss tiefer in die Funktionsweise der Beacons geschaut werden. Als größte Unbekannte triit dabei die Sendedauer auf. Bei einer angenommenen Datenrate von 250Kbit/s  und bei einer Größe eines Datenpaketes von 38 Bytes \cite{iBPa} (siehe \ref{fig:iBPa}), dauert eine Sendesequenz rund 1 ms. Die benötigte elektrische Leistung für eine vorher definierte Sendeleistung beträgt dabei ein Vielfaches dessen und ist davon stark nichtlinear abhängig. Die dazu nötigen Beziehungen können anhand des Datenblattes des nRF51822 Chips hergeleitet werden. In diesem Fall wurde ein Polynom 4. Grades als Funktion der einstellbaren Sendeleistung aufgstellt, welches annähernd diese Abhängigkeiten beschreibt. Da die Kommunikation bidirektional ist, existiert auch ein Empfangsmodus der ebenfalls mit 1 ms Empfangsdauer angenommen wird, aber dessen Modus hingegen einen konstanten Stromverbrauch aufweist.
 \begin{figure}[H]
 \centering
