@@ -1,7 +1,7 @@
 \chapter{Experimente}
 Die durchgeführten Experimente beziehen sich in diesem Teil der Arbeit auf die Messung der Signalstärke der Beacons in Abhängigkeit zu deren Entfernung. Diese Phase in der Prozessplanung legt den Grundstein für die Modellbildung, welche anschließend im nächsten Kapitel vorgenommen wird. Ferner werden einzelne Einflüsse auf die Messungen näher betrachtet und eine Analyse zu der Batterielaufzeit eines Beacons in Abhängigkeit zu seinen Einstellungen aufgestellt. Die hier vorgenommenen Versuche betrachten speziell die Ausbreitung der Signale bei einer fest justierten, für die Arbeit vorher definierten Einstellung der Beacons. Desweiteren werden auch Aspekte der Beacon-Technologie betrachtet, die für spätere Forschungen von Interesse wären, aber auch die Notwendigkeit dieser Arbeit unterstreichen sollen. Denn es macht gerade den Reiz der Beacons aus, dass sie relativ einfach an ihre Bestimmung angepasst werden können. Schließlich ergab sich nach der Aufnahme von über 30 Stunden Sensordaten-Material die Erkenntnis, dass das gesamte Thema weit umfangreicher ist und die möglichen Modi genauere Untersuchungen verdienen. Gerade deswegen soll dies nach der ursprünglichen Aufgabe der Aufnahme von Messwerten für die Modellbildung nachträglich mit einigen Abschnitten über das Verhalten der Beacons gewürdigt werden.
 \section{Messung der BLE-Signalausbreitung}\label{sec:MessungBLE}
-Für die Versuche wurde zunächst ein großer Raum benötigt, damit der Abstand von Beacon zu Smartphone um mehr als 15 Metern variiert werden kann. Das Equipment für die statischen Experimente bestand aus dem Youbot, drei Beacons, dem Moto G und einem Laptop mit installiertem Ubuntu Betriebssystem. In den Bilder \ref{MessungDistanz1} bis \ref{MessungDistanz3} im Anhang sind eingie Fotos mit dem Aufbau hinterlegt. Die Messungen wurden dabei für jeden der drei Beacons für eine Distanz für jeweils zehn Minuten durchgeführt. Aufgrund der Masse an Daten werden hier nur drei Messreihen exemplarisch in der Abbildung \ref{fig:MeterNormal} für die Signalstärke -12 dB und der Sende-Frequenz von 200 ms gezeigt. Es fällt dabei auf, dass die Abweichungen bzw. das Rauschen mit größerer Distanz zunimmt. 
+Für die Versuche wurde zunächst ein großer Raum benötigt, damit der Abstand von Beacon zu Smartphone um mehr als 15 Metern variiert werden kann. Das Equipment für die statischen Experimente bestand aus dem Youbot, drei Beacons, dem Moto G und einem Laptop mit installiertem Ubuntu Betriebssystem. In den Bilder \ref{MessungDistanz1} bis \ref{MessungDistanz3} im Anhang sind eingie Fotos mit dem Aufbau hinterlegt. Die Messungen wurden dabei für jeden der drei Beacons für eine Distanz für jeweils zehn Minuten durchgeführt. Aufgrund der Masse an Daten werden hier nur drei Messreihen exemplarisch in der Abbildung \ref{fig:MeterNormal} für die Signalstärke -12 dBm und der Sende-Frequenz von 200 ms gezeigt. Es fällt dabei auf, dass die Empfangsfeldstärke mit zunehmender Distanz abnimmt, da das Signal durch das Medium Luft einen Widerstand überwinden muss. Auf den ersten Blick nehmen auch die Abweichungen bzw. das Rauschverhalten zu, jedoch ist zu bedenken, dass der Leistungspegel Dezibel Milliwatt (dBm) logarithmischer Natur ist. D.h. in der ersten Messung in der Distanz von einem Meter variiert die gemessene Signalstärke um 2 dBm und im Abstand von 10 Metern um 6 dBm. Da die Differenzen in einem anderen Wertebereich liegen, beträgt die Schwankung der Stärke bei einem Meter umgerechnet rund $0,5 \cdot 10^{-7}$ mW, während sie bei 10 Metern mit nur rund $0,5 \cdot 10^{-8}$ mW in Erscheinung tritt. Wird dies wiederum in Realtion gesetzt und die Abweichungen prozentual beschrieben, stimmen die anfänglichen Aussagen wieder und es kann von einem stärken Rauschen bei größeren Distanzen gesprochen werden.
 \begin{figure}[H] 
 \centering
 \begin{tikzpicture}
@@ -21,7 +21,7 @@ Für die ersten vier Distanz-Meter ist diese Aussage über alle Messreihen die R
 \begin{figure}[H] 
 \centering
 \begin{tikzpicture}
-\begin{axis}[ybar,enlargelimits=0.04,bar width=1.5mm,xlabel={Abstand der einzelnen Beacons in Metern},ylabel={Gemittelter RSSI-Wert in dBm},width=0.7\paperwidth, height=0.25\paperheight, ymax=-60, symbolic x coords={0.5,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15}, xtick=data, y dir=reverse, legend style={at={(0.5,1.15)},anchor=south,legend columns=-1},]
+\begin{axis}[ybar,enlargelimits=0.04,bar width=1.5mm,xlabel={Abstand der einzelnen Beacons in Metern},ylabel={Gemittelter RSSI-Wert in dBm},width=0.7\paperwidth, height=0.25\paperheight, ymax=-60, symbolic x coords={0.5,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15}, xticklabel=\pgfmathprintnumber{\tick}, xtick=data, y dir=reverse, legend style={at={(0.5,1.15)},anchor=south,legend columns=-1},]
 \addplot+[fill=dblue] table [col sep=comma] {TikzDaten/MittelwertAlleBlau.dat}; 
 \addplot+[fill=ice] table [col sep=comma] {TikzDaten/MittelwertAlleEis.dat};
 \addplot+[fill=mint] table [col sep=comma] {TikzDaten/MittelwertAlleMinze.dat};
@@ -35,17 +35,17 @@ Um nun doch wie erwünscht eine qualitativ hochwertige Schätzung über die Sign
 \begin{figure}[H] 
 \centering
 \begin{tikzpicture}
-    \begin{axis}[view = {0}{90},width=0.6\paperwidth, height=0.35\paperheight,xmin=1,xmax=42,ymin=1,ymax=48, colormap={pos}{color(0)=(white); color(2054)=(blue)}, colorbar, colorbar style={ylabel=Absolute Häufigkeit}, yticklabels={0.5,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15}, ytick={2,5,8,11,14,17,20,23,26,29,32,35,38,41,44,47,50}, xticklabels={-103,-97,-91,-85,-79,-73,-67,-61}, xtick={0,6,12,18,24,30,36,42}, xlabel={gemessene Signalstärke in dBm}, ylabel={Distanz in Meter}]
+    \begin{axis}[view = {0}{90},width=0.6\paperwidth, height=0.35\paperheight,xmin=1,xmax=42,ymin=1,ymax=48, colormap={pos}{color(0)=(white); color(2054)=(blue)}, colorbar, colorbar style={ylabel=Absolute Häufigkeit}, yticklabels={\text{0,5},1,2,3,4,5,6,7,8,9,10,11,12,13,14,15}, ytick={2,5,8,11,14,17,20,23,26,29,32,35,38,41,44,47,50}, xticklabels={-103,-97,-91,-85,-79,-73,-67,-61}, xtick={0,6,12,18,24,30,36,42}, xlabel={gemessene Signalstärke in dBm}, ylabel={Distanz in Meter}]
     \addplot3[surf] gnuplot [raw gnuplot] {set dgrid3d 42,48 spline; splot 'TikzDaten/Verteilung.dat';};
     \end{axis}
 \end{tikzpicture}
-\caption{Draufsicht auf die Signalstärken-Verteilung zu den einzelnen Distanzen}
+\caption{Top-View auf die Signalstärken-Verteilung zu den einzelnen Distanzen}
 \label{fig:DraufVert}
 \end{figure}
 \begin{figure}[H] 
 \centering
 \begin{tikzpicture}
-    \begin{axis}[view = {20}{40},width=0.55\paperwidth, height=0.35\paperheight,xmin=1,xmax=42,ymin=1,ymax=48, colormap={pos}{color(0)=(white); color(2054)=(blue)}, colorbar, colorbar style={ylabel=Absolute Häufigkeit}, yticklabels={0.5,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15}, ytick={2,5,8,11,14,17,20,23,26,29,32,35,38,41,44,47,50}, xticklabels={-103,-97,-91,-85,-79,-73,-67,-61}, xtick={0,6,12,18,24,30,36,42}, xlabel={gemessene Signalstärke in dBm}, ylabel={Distanz in Meter}]
+    \begin{axis}[view = {20}{40},width=0.55\paperwidth, height=0.35\paperheight,xmin=1,xmax=42,ymin=1,ymax=48, colormap={pos}{color(0)=(white); color(2054)=(blue)}, colorbar, colorbar style={ylabel=Absolute Häufigkeit}, yticklabels={1,3,5,7,9,11,13,15}, ytick={5,11,17,23,29,35,41,47,50}, xticklabels={-103,-97,-91,-85,-79,-73,-67,-61}, xtick={0,6,12,18,24,30,36,42}, xlabel={gemessene Signalstärke in dBm}, ylabel={Distanz in Meter}]
     \addplot3[surf] gnuplot [raw gnuplot] {set dgrid3d 42,48 spline; splot 'TikzDaten/Verteilung.dat';};
     \end{axis}
 \end{tikzpicture}
@@ -55,7 +55,7 @@ Um nun doch wie erwünscht eine qualitativ hochwertige Schätzung über die Sign
 \begin{figure}[H] 
 \centering
 \begin{tikzpicture}
-\begin{axis}[ybar,enlargelimits=0.04,bar width=1.5mm,xlabel={Abstand der einzelnen Beacons in Metern},ylabel={Gemittelter RSSI-Wert in dBm},width=0.7\paperwidth, height=0.2\paperheight, ymax=-60, symbolic x coords={0.5,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15}, xtick=data, y dir=reverse, legend style={at={(0.5,1.15)},anchor=south,legend columns=-1},]
+\begin{axis}[ybar,enlargelimits=0.04,bar width=1.5mm,xlabel={Abstand der einzelnen Beacons in Metern},ylabel={Gemittelter RSSI-Wert in dBm},width=0.7\paperwidth, height=0.2\paperheight, ymax=-60, symbolic x coords={0.5,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15}, xticklabel=\pgfmathprintnumber{\tick}, xtick=data, y dir=reverse, legend style={at={(0.5,1.15)},anchor=south,legend columns=-1},]
 \addplot+[fill=dblue] table [col sep=comma] {TikzDaten/Mittelwert100Blau.dat}; 
 \addplot+[fill=ice] table [col sep=comma] {TikzDaten/Mittelwert100Eis.dat};
 \addplot+[fill=mint] table [col sep=comma] {TikzDaten/Mittelwert100Minze.dat};
@@ -146,9 +146,9 @@ Unter dem Aspekt der angesprochenen "`Verschmutzung"' eines Raumes durch andere 
 \cline{3-5}
 \multicolumn{2}{c|}{} & Beacon 1 & Beacon 2 & Beacon 3 \\
 \hline
-\multirow{2}{*}{Messung} & aus \ref{fig:MeterNormal} & 0.6946 & 0.8950 & 0.7822 \\
+\multirow{2}{*}{Messung} & aus \ref{fig:MeterNormal} & 0,6946 & 0,8950 & 0,7822 \\
 \cline{2-5}
-& aus \ref{fig:DreiZusammen} & 0.7316 & 1.6508 & 1.0937 \\
+& aus \ref{fig:DreiZusammen} & 0,7316 & 1,6508 & 1,0937 \\
 \hline
 \end{tabular}
 \end{center}
@@ -200,16 +200,7 @@ und dies ergibt folgendes Simulationsergebniss:
 \centering
 \begin{tikzpicture}
 \customrevertcolormap{jet}
-\begin{axis}[
-    colorbar,
-    colorbar style={ylabel=Betriebsstunden},    
-    view={0}{90},
-    xlabel = {$\text{Sendefrequenz [ms]}$},
-    ylabel = {$\text{Sendeleistung [dBm]}$},
-    %ytick pos=right,
-    %x dir=reverse,
-    scale=1.5   
-]
+\begin{axis}[colorbar, colorbar style={ylabel=Betriebsstunden}, view={0}{90}, xlabel = {$\text{Sendefrequenz [ms]}$}, ylabel = {$\text{Sendeleistung [dBm]}$}, scale=1.5]
 \addplot3[surf, samples=40, samples y=10, domain=50:2000, domain y=-30:-20]
 {1.8/((4.1e-3 * 3 * 4e-3  * 1000/x) + ((4.2e-5 * (-20) ^ 4 + 2.7e-3 * (-20) ^ 3 + 6.1e-2 * (-20) ^ 2 + 0.65 * (-20) + 8) * 1e-3 * 3 * 2e-3 * 1000/x) + ((6.1e-3 * 2e-3 * 2 + 2.6e-6 * (1 - (4e-3  * 1000/x + 2e-3 * 2))) * 3))};
 \addplot3[surf, samples=40, samples y=24, domain=50:2000, domain y=-20:4]

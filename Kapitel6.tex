@@ -1,32 +1,77 @@
-\chapter{Modellentwurf und Entwicklung einer Simulationsumgebung}
-Hier wird die Planung einer Beacon-Konfiguration beschrieben. Die Idee ist es, die Signalausbreitung von einem BLE-Signal zu analysieren und daraus aus Modell zu generieren, um das Verhalten vorherzusagen. Denn mit einem Grundriss (egal ob aus einem Grundrisszeichner oder vom Scitos), können Beacons somit virtuell plaziert und Aussagen darüber getroffen werden, ob Abdeckung des gesamten Raumes gegeben ist und wie die sich Qualität der Lokalisierung dabei verhält. Dabei können schon vor der eigentlichen Installation erste Konfigurationen geplant, Schwachstellen gefunden und die Verteilung der Beacons optimiert werden. 
+\chapter{Modellentwurf und Simulation}
+Nach der sehr detaillreichen Analyse der Messwerte wird in diesem Kapitel ein Modell aus den aufbereiteten Daten gewonnen und dieses anschließend in eine Simulationsumgebung implementiert. Aus den Messungen muss zunächst qualitativ eine Aussage über das Verhalten der BLE-Signale getroffen werden, um nachfolgend ein geeignetes mathematisches Modell zu finden. Dieses gewählte Modell wird darauf an die Gegebenheiten mit einer Parameterschätzung angepasst. Für die Anpassung wird zunächst ein Minimierungsproblem anhand der Messwerte aus dem vorigen Kapitel erstellt, welches mit einem Partikel-Schwarm-Optimierer gelöst wird. Die daraus gewonnenen Parameter lassen sich in die Modellgleichung einsetzen, um mit dessen Hilfe die Signalausbreitung der Beacons in einem Gebäude vorherzusagen. \\ \\
+Die Vorhersage der Aubreitung von BLE-Funkwellen in einer Simulation kann dazu genutzt werden, mithilfe von einem Optimierungsverfahren die Leuchtfeuer in einem Raum so anzubringen, dass ein Lokalisierungssystem aus dieser Technologie mit maximaler Genauigkeit konfiguriert werden kann. Um zuerst die Abmessungen des betreffenden Raumes zu ermitteln, wird der Grundriss durch die Verwendung des Scitos G5 und der Software Miracenter als Bilddatei erstellt. Somit gelten die Wände als Begrenzung und der verbleibende Rest als Platz für die Signalausbreitung. Die maximale Genauigkeit der Positionsbestimmung würde logischerweise erreicht werden, wenn der komplette Raum mit Beacons unter Einhaltung des Mindestabstandes übersäht wäre, was jedoch nicht ökonomisch ist. Deswegen wird zusätzlich die Anzahl der Beacons in die Problemformulierung mit eingearbeitet, sodass für jede mögliche Beacon-Anzahl eine optimale Konfiguration existiert. 
 \section{Modellbildung}
-Für die Signalausbreitung stehen viel Modelle bereit, jedoch gilt es ein Modell und ein Parametersatz zu finden, um eine allgemeine Gültigkeit des Modells zu gewährleisten. 
+Zunächst wird in diesem Abschnitt das zugrunde liegende Modell für das Verhalten der Signalausbreitung der Beacons bestimmt. Dazu wird aus Tabelle \ref{tab:Uebersicht} ein geeignetes Kanalmodell ausgesucht und dessen ungefährer Verlauf bestimmt. An diesem Verlauf wird es an den realen Messwerten validiert und anschließend in dessen Qualität durch die Parameterschätzung verbessert. Die genannten Modelle in der Tabelle können mit ihren Spezifikationen im Grunde alle als Ausbreitungsmodell für die Leuchtfeuer dienen. Jedoch fällt die erste Wahl auf das sogenannte WINNER II Modell, weil in dessen Beschreibung die Anwendung in großen Räume mit hohem Aufkommen von Datenverkehr steht. Und da eben diese Gegebenheit in den Messungen aus dem vorigen Kapitel vorhanden waren und für den späteren Einsatzorte (z.B. Kaufhäuser, Flugplätze etc.) der Beacon-Systeme gegeben sein werden, bietet sich dieses Modell besonders vor den anderen an. Zudem beträgt die Reichweite eines Beacons nur 70 Meter, wohingegen die Geltungsbereiche der anderen Modelle dafür überdimensioniert erscheinen.
+\begin{table}[H]
+%\begin{tabular}{|p{1.3cm}|p{2.5cm}|p{1.5cm}|p{2cm}|p{3cm}|p{3cm}|}
+\begin{tabular}{|m{1.6cm}|m{1.9cm}|m{1.7cm}|m{1.6cm}|m{3.1cm}|m{3.1cm}|}
+\hline 
+Modell & Antennen-höhen & Frequenz & Bereich & In-/Outdoor & Bemerkungen \\ \hline 
+Free Space Loss & nicht begrenzt & $f\geq$30 MHz & LOS begrenzt & Indoor-Indoor- bzw. Outdoor-Outdoor-Übertragungen bei direkter Sichtverbindung (LOS) & Systeme, bei denen direkte Sichtverbindung angenommen werden kann \\ \hline 
+Extended Hata & $h_1=$[1 m ; 10 m] $h_2=$[30 m ; 100 m] & 30 MHz -- 3GHz & $d\leq40$ km & automatisches Hinzuaddieren von Verlusten an Wänden bei Indoor-Outdoor- bzw. Indoor-Indoor Übertragungen (mehrere Räume/Gebäude) & mobile Dienste und andere Dienste, ohne direkte Sichtverbindung, nur im Bereich 2 -- 3 GHz implementiert \\ \hline 
+Extended Hata-SRD & $h=$[1,5 m ; 3 m] & 30 MHz -- 3GHz & $d\leq0,3$ km & automatisches Hinzuaddieren von Verlusten an Wänden bei Indoor-Outdoor- bzw. Indoor-Indoor Übertragungen (mehrere Räume/Gebäude) & Kurzstrecken-verbindungen, bei denen wenigstens LOS angenommen werden kann \\ \hline 
+WINNER II & $h\leq6$ m & 2 GHz -- 6GHz & $d=$[5 m ; 100 m] & Indoor-Indoor-Übertragungen bei LOS oder NLOS & Anwendung in großen offenen Räümen bei hohem Datenverkehr (z.B. Konferenzhalle, Fabrikgebäude) \\ \hline 
+\end{tabular} 
+\caption{Übersicht der Kanalmodelle im Indoor-Bereich, in Anlehung an \cite{Kanal}}
+\label{tab:Uebersicht}
+\end{table}
 \subsection{Das WINNER II Modell}
-Link auf den Betreuer von Hannes. Nur Aubreitung kein Rauschen.
+Das WINNER II Modell \cite{WII}, benannt nach dem "`Wireless-World-Initiative-New-Radio"' (WINNER)-Konsortium, welches aus dem Zusammenschluss mehrerer Unternehmen besteht und die Verbesserung der Leistung von Mobilfunkkommunikationssystemen anstrebt, beinhaltet verschiedene Aspekte in der Berechnung von Ausbreitungsverlsuten. Die Formel die dem Modell zu Grunde liegt, beschreibt den Verlust einer Signalsstärke in Abhängigkeit zu einem zurückgelegten Weg folgendermaßen:
+\begin{align*}
+L_{WINNER}\left [ dBm \right ]=A\cdot log_{10}\left (d\left [ m \right ]\right ) + B + C\cdot log_{10}\left (\frac{f_c\left [ GHz \right ]}{5}\right )
+\end{align*}
+In der Formel steht $L_{WINNER}$ für den Leistungspegel in Dezibel Milliwatt (dBm), der das logarithmische Verhältnis aus einer Leistung in Form der Empfangsstärke im Vergleich zur anfänglichen Sendeleistung des Beacons angibt. So kann die obige Gleichung umgeschrieben werden zu:
+\begin{align*}
+10\cdot log_{10}\left (\frac{P_{Sendung}\left [ mW \right ]}{P_{Empfang}\left [ mW \right ]}\right )=A\cdot log_{10}\left (d\left [ m \right ]\right ) + B + C\cdot log_{10}\left (\frac{f_c\left [ GHz \right ]}{5}\right )
+\end{align*}
+oder auch direkt als dBm-Einheit formuliert werden:
+\begin{align}
+L_{Sendung}\left [ dBm \right ] - L_{Empfang}\left [ dBm \right ]=A\cdot log_{10}\left (d\left [ m \right ]\right ) + B + C\cdot log_{10}\left (\frac{f_c\left [ GHz \right ]}{5}\right ) \label{eq:WII}
+\end{align}
+Die Parameter der Gleichen bestehen primär aus einem Koeffizienten $A$, der die in der Luft zurückgelegte Strecke des Signals proportional gewichtet. Desweiteren fließen zum einen noch der additive Einfluss von dem Parameter $B$ für sonstige Störfaktoren und zum anderen der ebenfalls multiplikative Faktor $C$ zur Gewichtung des Ausbreitungsverlustes durch die Frequenz $f_c$ mit ein. In Abbildung \ref{fig:QualiWII} ist der qualitative Verlauf der Empfangsstärke, die nach oben hin abnimmt und der Distanz, welche nach rechts hinzunimmt, skizziert. Als Parameter wurden Werte aus der Fachliteratur \cite{Kanal} entnommen und in die Gleichung eingesetzt. Im Vergleich zu Abbildung \ref{fig:Mittelwert100} sieht der Funktionsverlauf weitgehend identisch aus, sodass nun mit der Parameterschätzung begonnen werden kann.  
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}
+\begin{axis}[ymax=-40, xlabel={Distanz}, ylabel={Empfangsstärke}, width=0.5\paperwidth, height=0.2\paperheight, xtick = \empty, y dir=reverse, ytick = \empty, axis y line = left, axis x line = bottom, axis line style = {-latex}]
+\addplot[domain=0.5:15, samples=100]{-(13.9*ln(x)+64.4+20*ln(2.4/5)+12)};
+\end{axis}
+\end{tikzpicture}
+\caption{Qualitativer Verlauf des WINNER II-Modells}
+\label{fig:QualiWII}
+\end{figure}
 \subsection{Parameterschätzung}
-Matlab-Plots.
-
-\section{Definition einer Richterskala für die Qualität von Beacon-Signalen}
-Aus der einen Übersicht von Mittelwert der RSSi-Werte und der Distanz kann auch mithilfe der coolen 3D-Ansicht von der Verteilung des Signals auf die Wahrscheinlichkeit einer richtigen Distanzschätzung angegeben werden. Hier auf die Ortungsalgorithmen zurück kommen und dieses Wurzelmodell annehmen. Hier als Eingabeparameter die Signalstärke und die Intervalllänge mit angeben. Aber auch sagen, dass alle Messungen (da sie so umfangreich waren) nur für eine Einstellungen und den einen Raum gelten! Drei Signale auf einer Stelle zu einem Signal vergleichen und betonen, dass es sich hierbei nur um eine relative Güte handelt, die noch in keinster Weise verifiziert wurde. Da es viele andere Räume gibt und auch dort mal die Signalausbreitung/Streuung gemessenen werden muss, kann sie nicht als allgemein gültig angenommen werden. Jedoch ist sie zudem abhängig von der eingestellten Signalstärke und Intervalllänge. Man müsste einfach mal alle Einstellungen testen. Jedoch fehlte mir die Zeit und die Räumlichkeiten.  
-
-\section{Esrtellung der Simulation}
-Programmierung mit Matlabs GUIDE. Aufbau sehr hierachisch. Leicht zu bedienen. 
-\subsection{Grundrissanalyse}
-Vorgehensweise beim Einlesen des Bildes
-\subsection{Manuelle Planung}
-Hier noch die manuelle Eingabe zeigen.
-\subsection{Optimierung}
-Hier spielt wieder die Richterskala, bzw. ihre definierte Güte mit ein.
-\subsubsection{Partikel-Schwarm-Algorithmus}
-Erklärung warum gerade ein genetischer Algorithmus. 
-\subsubsection{Paretofront}
-Auswahl eines Optimierungsergebnisses anhand von der Kalkulation Anzahl Beacons -> gewünschte Genauigkeit/Abdeckung
-\subsection{Simulation}
-Mit dem WINNER II Modell werden die Güte an jedem definierten Bereich berechnet.
+Um die qualitative Repräsentation des WINNER II-Modells in eine qualitative für die Beschreibung des Ausbreitungsverlustes von BLE-Signalen zu überführen, müssen die Parameter $A$, $B$ und $C$ dementsprechend angepasst werden. Die Gleichung aus \ref{eq:WII} vereinfacht dabei sich nochmals, wenn $f_c$ als konstant angenommen wird und die Ausdrücke aus $B$ und $C$ miteinander zu dem neuen Parameter $B^{\ast}$ zusammengefasst werden. Die Anpassung wird dabei in Form einer Optimierungsaufgabe vorgenommen, wobei es gilt die richtige Distanz anhand der RSSI-Werte zu schätzen. Im vorangegangenen Kapitel ergaben die Messungen, dass unter Betrachtung aller Daten es sehr schwierig ist eine genaue Vorhersage zu treffen. Deswegen wurden nur die stärksten 100 Signale einer Distanz gemittelt und diese Ergebnisse unter \ref{fig:Mittelwert100} vorgestellt. Die Durschnittswerte wurden anschließend zusammen mit den realen Distanzen in gleicher Reihenfolge der Länge $k$ in die zwei Vektoren $d_{real}\left ( k \right )$ und $RSSI\left ( k \right )$ gespeichert. Aus der Umstellung der Gleichung \ref{eq:WII} nach $d$ lässt sich aus dem empfangenen RSSI-Wert die geschätzte Entfernung bestimmen. Mit all diesen Informationen lässt sich ein Optimierungsproblem so formulieren, das eine zu minimierende Kostenfunktion $J$ als Differenz aus der direkt gemessenen Distanz von Beacon zu Smartphone zu der berechneten Distanz aufgefasst und durch deren folgende Quadrierung so eine parabolische Funktion erstellt wird. Die Quadrierung bewirkt, dass der Wert der Kostenfunktion von allen Seiten in Richtung des globalen Minimums abnimmt und somit das Optimierungsproblem einfacher zu lösen ist. 
+\begin{align}
+\underset{A,B^{\ast}}{min}\, J=\sum_{k=1}^{k_{end}}\left ( d_{real}\left ( k \right ) -10^{\frac{L_{Sendung} - RSSI\left ( k \right ) - B^{\ast}}{A}} \right )^{2} \label{eq:WIIOpti}
+\end{align}
+Als Lösungsalgorithmus für die Optimierung wird ein Partikel-Schwarm-Algorithmus (PSO) gewählt. Der Partikel-Schwarm-Optimierer ist ein Algorithmus mit einer künstlichen Intelligenz, die es zur Aufgabe hat eine Funktion zu minimieren bzw. zu maximieren. Es ist dabei einfacher sich die Partikel als einen Vogelschwarm vorzustellen. Der Grundgedanke dabei ist, dass mehreren Partikel ein zufälliger Startwert $p\left( t \right)$ im Suchraum unter Berücksichtigung der Gleichungsnebenbedingungen zugeordnet wird. D.h. im übertragenden Sinn, dass ein Vogelschwarm auf einer Wiese ausgesetzt wird. Ausgehend von diesem Startwert werden die einzelnen Vögel/Partikel im ersten Schritt in verschiedene Richtungen mit unterschiedlichen Geschwindigkeiten geschickt. Anschließend werden an den Zielpunkten die Kostenfunktionen mit den Positionen (oder auch Parametersätzen) berechnet und so der Funktionswert bestimmt. Die Schwarmintelligenz wird hierbei so realisiert, dass jedes Individuum seine aktuelle Position mit den zugehörigen Kosten kennt, sowie über die Position des Partikels mit den geringsten Kosten im ganzen Schwarm informiert wird. In Folge des Wissens um die beste Position, fliegen alle Vögel/Partikel in Richtung des lokalen Minimas und decken somit den gesamten Raum ab. \\ \\
+Als Gleichung aufgefasst wird die Geschwindigkeit $v$ im nächsten Zeitschritt $t+1$ eines Partikels aus der alten Geschwindigkeit $v\left( t \right)$, aus den drei konstanten Gewichtungen $w$, $r_1$ und $r_2$, zwei Zufallszahlen $c_1$ und $c_2$ und verschiedenen Positionen berechnet. Die Positionen sind zum einen die aktuelle Position $x\left( t \right)$, die mit den besten Kosten des einzelnden Individuums $p$ und die Position der geringsten Kosten im ganzen Schwarm $g$. Im ganzen lauten die Gleichungen zur Bestimmung des nächsten Punktes \cite{PSO}:
+\begin{align}
+v\left( t+1 \right)&=\left( w\cdot v\left( t \right) \right) + \left( c_1\cdot r_1\cdot \left( p - x\left( t \right) \right) \right) + \left( c_2\cdot r_2\cdot \left( g - x\left( t \right) \right) \right) \\
+x\left( t+1 \right)&=x\left( t \right) + v\left( t+1 \right)
+\end{align}
+Der Vorteil dieses Verfahrens ist es, dass der komplette Suchraum abgetastet wird und durch die Intelligenz des Schwarms die Parametersätze mit den geringsten Kosten identifiziert werden. Der Nachteil ist der relativ hohe Rechenaufwand im Gegensatz zu anderen Verfahren (z.B. Newton, Trust-Region, Simplex etc.), zumal kein besseres Ergebnis mit dem PSO für ein solches Problem zu erwarten wäre. Jedoch baut der Erweiterte Partikel-Schwarm-Optimierer in dem nächsten Abschnitt auf dem PSO auf, sodass in diesem Teil der Arbeit die Vorstellung der einfachen Variante sich geradezu anbietet.\\ \\
+Als Ergebnis der Parameterschätzung sind zum einen die Vergleiche aus realer zu berechneten Distanz in Abbildung ..., der Gegenüberstellung mit den Messwerten in Abbildung ... und zum anderen die Tabelle ... mit den ermittelten Parametern aufgeführt.  
 
 
-Hier kommt eher die Simulation und Optimierung hin. Jedenfalls brauche ich noch für den Lighthousekeeper einen manuellen Modus, indm ich die Signalstärke einstellen kann. Die Intervalllänge kann dann nur als intuitive Auslegungsgröße beschreiben werden, da mit mit der Intervalllänge auch eine Messabweichung einher geht. Hier kann angesprochen werden, dass Faktoren wie reflektierende Mauern, Böden, Fensterscheiben, etc. ein schnelleres Intervall benötigen, um eine gewisse Lokalisierungsgenauigkeit zu erreichen. Das würde ich als Erfahrungswert interpretieren.Bei der Optimierung muss hingegen keine Signalstärke oder Intervalllänge angegeben werden, da die Berechnung absolut ist. Die Beacons werden so oder so optimal verteilt. Hier wäre noch anzumerken, dass es noch keinen Modus gibt die optimal verteilten beacons in den Manuell-Modus zu übernehmen und dann mit der Signalstärke zu experimentieren. Noch muss man sich die ungefähren Positionen merken.
-
-
-
+%\section{Definition einer Richterskala für die Qualität von Beacon-Signalen}
+%Aus der einen Übersicht von Mittelwert der RSSi-Werte und der Distanz kann auch mithilfe der coolen 3D-Ansicht von der Verteilung des Signals auf die Wahrscheinlichkeit einer richtigen Distanzschätzung angegeben werden. Hier auf die Ortungsalgorithmen zurück kommen und dieses Wurzelmodell annehmen. Hier als Eingabeparameter die Signalstärke und die Intervalllänge mit angeben. Aber auch sagen, dass alle Messungen (da sie so umfangreich waren) nur für eine Einstellungen und den einen Raum gelten! Drei Signale auf einer Stelle zu einem Signal vergleichen und betonen, dass es sich hierbei nur um eine relative Güte handelt, die noch in keinster Weise verifiziert wurde. Da es viele andere Räume gibt und auch dort mal die Signalausbreitung/Streuung gemessenen werden muss, kann sie nicht als allgemein gültig angenommen werden. Jedoch ist sie zudem abhängig von der eingestellten Signalstärke und Intervalllänge. Man müsste einfach mal alle Einstellungen testen. Jedoch fehlte mir die Zeit und die Räumlichkeiten.  
+%
+%\section{Entwicklung der Simulationsumgebung}
+%Programmierung mit Matlabs GUIDE. Aufbau sehr hierachisch. Leicht zu bedienen. 
+%\subsection{Grundrissanalyse}
+%Vorgehensweise beim Einlesen des Bildes
+%\subsection{Manuelle Planung}
+%Hier noch die manuelle Eingabe zeigen.
+%\subsection{Optimierung}
+%Hier spielt wieder die Richterskala, bzw. ihre definierte Güte mit ein.
+%\subsubsection{Erweiterter Partikel-Schwarm-Algorithmus}
+%Erklärung warum gerade ein genetischer Algorithmus. 
+%\subsubsection{Paretofront}
+%Auswahl eines Optimierungsergebnisses anhand von der Kalkulation Anzahl Beacons -> gewünschte Genauigkeit/Abdeckung
+%\subsection{Simulation}
+%Mit dem WINNER II Modell werden die Güte an jedem definierten Bereich berechnet.
+%
+%
+%Hier kommt eher die Simulation und Optimierung hin. Jedenfalls brauche ich noch für den Lighthousekeeper einen manuellen Modus, indm ich die Signalstärke einstellen kann. Die Intervalllänge kann dann nur als intuitive Auslegungsgröße beschreiben werden, da mit mit der Intervalllänge auch eine Messabweichung einher geht. Hier kann angesprochen werden, dass Faktoren wie reflektierende Mauern, Böden, Fensterscheiben etc. ein schnelleres Intervall benötigen, um eine gewisse Lokalisierungsgenauigkeit zu erreichen. Das würde ich als Erfahrungswert interpretieren.Bei der Optimierung muss hingegen keine Signalstärke oder Intervalllänge angegeben werden, da die Berechnung absolut ist. Die Beacons werden so oder so optimal verteilt. Hier wäre noch anzumerken, dass es noch keinen Modus gibt die optimal verteilten beacons in den Manuell-Modus zu übernehmen und dann mit der Signalstärke zu experimentieren. Noch muss man sich die ungefähren Positionen merken.

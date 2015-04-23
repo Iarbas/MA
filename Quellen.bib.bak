@@ -35,6 +35,16 @@
   Timestamp                = {2015.03.17}
 }
 
+@PhdThesis{Kanal,
+  Title                    = {Modellierung des Zeit- und Fehlerverhaltens industrieller Funklösungen zur Bewertung der Koexistenz},
+  Author                   = {{A. Schimschar}},
+  School                   = {Otto-von-Guericke-Universität Magdeburg},
+  Year                     = {2013},
+
+  Owner                    = {andre},
+  Timestamp                = {2015.04.23}
+}
+
 @Electronic{iBPa,
   Title                    = {How do iBeacons work?},
   Author                   = {{A. Warski}},
@@ -302,6 +312,17 @@
   Timestamp                = {2015.03.16}
 }
 
+@Article{InterBLEWLAN,
+  Title                    = {Interference Evaluation of Bluetooth and IEEE 802.11b Systems},
+  Author                   = {{N. Golmie} and {R.E. Van Dyck} and {A. Soltanian} and {A. Tonnerre} and {O. Rebala}},
+  Journal                  = {Wireless Networks},
+  Year                     = {2003},
+  Volume                   = {9},
+
+  Owner                    = {andre},
+  Timestamp                = {2015.04.20}
+}
+
 @Electronic{nRF5,
   Title                    = {nRF51822 Datasheet},
   Author                   = {{Nordic Semiconductor}},
@@ -309,6 +330,17 @@
 
   Owner                    = {andre},
   Timestamp                = {2015.03.27}
+}
+
+@TechReport{WII,
+  Title                    = {WINNER II Channel Models},
+  Author                   = {{P. Kyösti et al}},
+  Institution              = {WINNER},
+  Year                     = {2007},
+
+  Owner                    = {andre},
+  Timestamp                = {2015.04.23},
+  Url                      = {http://www.ist-winner.org/WINNER2-Deliverables/D1.1.2v1.1.pdf}
 }
 
 @Electronic{IMUFilter,

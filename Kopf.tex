@@ -27,13 +27,15 @@
 \usepackage[colorlinks=false]{hyperref}
 \usepackage{breakurl}
 \usepackage{url}
+\usepackage{acronym}						   % fuer die Abkuerzungen
+\usepackage{icomma}
 
 \usepackage{tikz}							   % fuer schoene Zeichnungen
 \usetikzlibrary{intersections,calc,arrows,shapes, shapes.symbols,positioning,shadows, shadows.blur,trees,decorations.markings,patterns,pgfplots.groupplots}
 \usepackage{smartdiagram}
 \usepackage{pgfplots}
 \usepgfplotslibrary{colormaps}
-\pgfplotsset{compat=1.6}
+\pgfplotsset{compat=1.6, /pgf/number format/use comma, /pgf/number format/1000 sep={}, y tick label style={/pgf/number format/use comma, /pgf/number format/1000 sep={}}, x tick label style={/pgf/number format/use comma, /pgf/number format/1000 sep={}}}
 
 % Zum Zeichnen von Kreisdiagrammen
 \tikzset{
@@ -111,6 +113,7 @@
 %\titleformat{\section}[hang]{\normalfont\large\bfseries}{\thesection}{0.5em}{}
 %\titleformat{\subsection}[hang]{\normalfont\bfseries}{\thesubsection}{0.5em}{}
 \titlespacing*{\chapter}{0pc}{20pt}{10pt}[0pc]
+\renewcommand*\chapterheadstartvskip{\vspace*{-1cm}}
 \titlespacing{\section}{0pc}{12pt}{5pt}[0pc]
 \titlespacing{\subsection}{0pc}{10pt}{2pt}[0pc]
 %\setlength\voffset{-1in}                             % Hier drunter ist das Zeug von Andreas
