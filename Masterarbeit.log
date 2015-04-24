@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2014.11.11)  23 APR 2015 05:38
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2014.11.11)  24 APR 2015 08:06
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -1601,7 +1601,11 @@ Class scrreprt Warning: Usage of package `fancyhdr' together
 \f@ncyO@olf=\skip79
 \f@ncyO@orf=\skip80
 ))
-(./Masterarbeit.aux)
+(./Masterarbeit.aux
+
+LaTeX Warning: Label `fig:WIISauelengraph' multiply defined.
+
+)
 \openout1 = `Masterarbeit.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 2.
@@ -1713,113 +1717,213 @@ Underfull \hbox (badness 10000) in paragraph at lines 2--4
 
 LaTeX Font Info:    Font shape `T1/phv/b/n' will be
 (Font)              scaled to size 16.41594pt on input line 4.
-LaTeX Font Info:    Try loading font information for OT1+ztmcm on input line 8.
+LaTeX Font Info:    Try loading font information for OT1+ztmcm on input line 7.
 
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1ztmcm.fd
 File: ot1ztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OT1/ztmcm.
 )
-LaTeX Font Info:    Try loading font information for OML+ztmcm on input line 8.
+LaTeX Font Info:    Try loading font information for OML+ztmcm on input line 7.
 
 
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/omlztmcm.fd
 File: omlztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OML/ztmcm.
 )
-LaTeX Font Info:    Try loading font information for OMS+ztmcm on input line 8.
+LaTeX Font Info:    Try loading font information for OMS+ztmcm on input line 7.
 
 
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/omsztmcm.fd
 File: omsztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OMS/ztmcm.
 )
-LaTeX Font Info:    Try loading font information for OMX+ztmcm on input line 8.
+LaTeX Font Info:    Try loading font information for OMX+ztmcm on input line 7.
 
 
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/omxztmcm.fd
 File: omxztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OMX/ztmcm.
 )
-LaTeX Font Info:    Try loading font information for U+rsfs on input line 8.
+LaTeX Font Info:    Try loading font information for U+rsfs on input line 7.
 
 (/usr/share/texlive/texmf-dist/tex/latex/jknapltx/ursfs.fd
 File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 )
-LaTeX Font Info:    Try loading font information for OT1+ptm on input line 8.
+LaTeX Font Info:    Try loading font information for OT1+ptm on input line 7.
 
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1ptm.fd
 File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
 )
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 8.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 7.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <9> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 8.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 7.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 8.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 7.
 
-Underfull \hbox (badness 10000) in paragraph at lines 11--11
+Underfull \hbox (badness 10000) in paragraph at lines 10--10
 []|\T1/bch/m/n/12 Free
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 11--11
+Underfull \hbox (badness 10000) in paragraph at lines 10--10
 \T1/bch/m/n/12 Space
  []
 
 
-Underfull \hbox (badness 6927) in paragraph at lines 11--11
+Underfull \hbox (badness 6927) in paragraph at lines 10--10
 []|\T1/bch/m/n/12 nicht be-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 11--11
+Underfull \hbox (badness 10000) in paragraph at lines 10--10
 []|$\OML/ztmcm/m/it/12 f \OMS/ztmcm/m/n/12 ^^U$\T1/bch/m/n/12 30
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 11--11
+Underfull \hbox (badness 10000) in paragraph at lines 10--10
 []|\T1/bch/m/n/12 Indoor-Indoor-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 11--11
+Underfull \hbox (badness 10000) in paragraph at lines 10--10
 \T1/bch/m/n/12 bzw. Outdoor-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 11--11
+Underfull \hbox (badness 10000) in paragraph at lines 10--10
 \T1/bch/m/n/12 Outdoor-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 11--11
+Underfull \hbox (badness 10000) in paragraph at lines 10--10
 \T1/bch/m/n/12 Übertragungen
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 11--11
+Underfull \hbox (badness 10000) in paragraph at lines 10--10
 \T1/bch/m/n/12 bei di-rek-ter
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 11--11
+Underfull \hbox (badness 10000) in paragraph at lines 10--10
 \T1/bch/m/n/12 Sicht-ver-bin-dung
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 11--11
+Underfull \hbox (badness 10000) in paragraph at lines 10--10
 []|\T1/bch/m/n/12 Systeme, bei
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 11--11
+Underfull \hbox (badness 10000) in paragraph at lines 10--10
 \T1/bch/m/n/12 de-nen di-rek-te
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 11--11
+Underfull \hbox (badness 10000) in paragraph at lines 10--10
 \T1/bch/m/n/12 Sicht-ver-bin-dung
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 11--11
+Underfull \hbox (badness 10000) in paragraph at lines 10--10
 \T1/bch/m/n/12 an-ge-nom-men
+ []
+
+
+Overfull \hbox (3.59137pt too wide) in paragraph at lines 11--11
+[]|\T1/bch/m/n/12 Extended
+ []
+
+
+Underfull \hbox (badness 5288) in paragraph at lines 11--11
+\T1/bch/m/n/12 ; 10 m]
+ []
+
+
+Underfull \hbox (badness 3942) in paragraph at lines 11--11
+[]|\T1/bch/m/n/12 30 MHz
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 11--11
+[]|$\OML/ztmcm/m/it/12 d \OMS/ztmcm/m/n/12 ^^T \OT1/ztmcm/m/n/12 40$
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 11--11
+[]|\T1/bch/m/n/12 automatisches
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 11--11
+\T1/bch/m/n/12 Hin-zu-ad-die-ren
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 11--11
+\T1/bch/m/n/12 von Ver-lus-ten
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 11--11
+\T1/bch/m/n/12 an Wän-den
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 11--11
+\T1/bch/m/n/12 bei Indoor-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 11--11
+\T1/bch/m/n/12 Outdoor- bzw.
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 11--11
+\T1/bch/m/n/12 Indoor-Indoor
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 11--11
+\T1/bch/m/n/12 Über-tra-gun-gen
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 11--11
+\T1/bch/m/n/12 (meh-re-re Räu-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 11--11
+[]|\T1/bch/m/n/12 mobile Diens-te
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 11--11
+\T1/bch/m/n/12 und an-de-re
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 11--11
+\T1/bch/m/n/12 Diens-te, oh-ne
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 11--11
+\T1/bch/m/n/12 di-rek-te Sicht-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 11--11
+\T1/bch/m/n/12 ver-bin-dung,
+ []
+
+
+Underfull \hbox (badness 1917) in paragraph at lines 11--11
+\T1/bch/m/n/12 nur im Be-reich
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 11--11
+\T1/bch/m/n/12 2 -- 3 GHz
  []
 
 
@@ -1828,8 +1932,8 @@ Overfull \hbox (3.59137pt too wide) in paragraph at lines 12--12
  []
 
 
-Underfull \hbox (badness 5288) in paragraph at lines 12--12
-\T1/bch/m/n/12 ; 10 m]
+Underfull \hbox (badness 10000) in paragraph at lines 12--12
+\T1/bch/m/n/12 Hata-
  []
 
 
@@ -1839,263 +1943,167 @@ Underfull \hbox (badness 3942) in paragraph at lines 12--12
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 12--12
-[]|$\OML/ztmcm/m/it/12 d \OMS/ztmcm/m/n/12 ^^T \OT1/ztmcm/m/n/12 40$
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 12--12
-[]|\T1/bch/m/n/12 automatisches
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 12--12
-\T1/bch/m/n/12 Hin-zu-ad-die-ren
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 12--12
-\T1/bch/m/n/12 von Ver-lus-ten
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 12--12
-\T1/bch/m/n/12 an Wän-den
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 12--12
-\T1/bch/m/n/12 bei Indoor-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 12--12
-\T1/bch/m/n/12 Outdoor- bzw.
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 12--12
-\T1/bch/m/n/12 Indoor-Indoor
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 12--12
-\T1/bch/m/n/12 Über-tra-gun-gen
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 12--12
-\T1/bch/m/n/12 (meh-re-re Räu-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 12--12
-[]|\T1/bch/m/n/12 mobile Diens-te
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 12--12
-\T1/bch/m/n/12 und an-de-re
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 12--12
-\T1/bch/m/n/12 Diens-te, oh-ne
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 12--12
-\T1/bch/m/n/12 di-rek-te Sicht-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 12--12
-\T1/bch/m/n/12 ver-bin-dung,
- []
-
-
-Underfull \hbox (badness 1917) in paragraph at lines 12--12
-\T1/bch/m/n/12 nur im Be-reich
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 12--12
-\T1/bch/m/n/12 2 -- 3 GHz
- []
-
-
-Overfull \hbox (3.59137pt too wide) in paragraph at lines 13--13
-[]|\T1/bch/m/n/12 Extended
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 13--13
-\T1/bch/m/n/12 Hata-
- []
-
-
-Underfull \hbox (badness 3942) in paragraph at lines 13--13
-[]|\T1/bch/m/n/12 30 MHz
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 13--13
 []|$\OML/ztmcm/m/it/12 d \OMS/ztmcm/m/n/12 ^^T \OT1/ztmcm/m/n/12 0\OML/ztmcm/m/
 it/12 ;\OT1/ztmcm/m/n/12 3$
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 13--13
+Underfull \hbox (badness 10000) in paragraph at lines 12--12
 []|\T1/bch/m/n/12 automatisches
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 13--13
+Underfull \hbox (badness 10000) in paragraph at lines 12--12
 \T1/bch/m/n/12 Hin-zu-ad-die-ren
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 13--13
+Underfull \hbox (badness 10000) in paragraph at lines 12--12
 \T1/bch/m/n/12 von Ver-lus-ten
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 13--13
+Underfull \hbox (badness 10000) in paragraph at lines 12--12
 \T1/bch/m/n/12 an Wän-den
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 13--13
+Underfull \hbox (badness 10000) in paragraph at lines 12--12
 \T1/bch/m/n/12 bei Indoor-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 13--13
+Underfull \hbox (badness 10000) in paragraph at lines 12--12
 \T1/bch/m/n/12 Outdoor- bzw.
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 13--13
+Underfull \hbox (badness 10000) in paragraph at lines 12--12
 \T1/bch/m/n/12 Indoor-Indoor
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 13--13
+Underfull \hbox (badness 10000) in paragraph at lines 12--12
 \T1/bch/m/n/12 Über-tra-gun-gen
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 13--13
+Underfull \hbox (badness 10000) in paragraph at lines 12--12
 \T1/bch/m/n/12 (meh-re-re Räu-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 13--13
+Underfull \hbox (badness 10000) in paragraph at lines 12--12
 []|\T1/bch/m/n/12 Kurzstrecken-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 13--13
+Underfull \hbox (badness 10000) in paragraph at lines 12--12
 \T1/bch/m/n/12 verbindungen,
  []
 
 
-Underfull \hbox (badness 4872) in paragraph at lines 13--13
+Underfull \hbox (badness 4872) in paragraph at lines 12--12
 \T1/bch/m/n/12 bei de-nen we-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 13--13
+Underfull \hbox (badness 10000) in paragraph at lines 12--12
 \T1/bch/m/n/12 nigs-tens LOS
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 13--13
+Underfull \hbox (badness 10000) in paragraph at lines 12--12
 \T1/bch/m/n/12 an-ge-nom-men
  []
 
 
-Overfull \hbox (1.27542pt too wide) in paragraph at lines 14--14
+Overfull \hbox (1.27542pt too wide) in paragraph at lines 13--13
 []|\T1/bch/m/n/12 WINNER
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 14--14
+Underfull \hbox (badness 10000) in paragraph at lines 13--13
 []|\T1/bch/m/n/12 Indoor-Indoor-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 14--14
+Underfull \hbox (badness 10000) in paragraph at lines 13--13
 \T1/bch/m/n/12 Übertragungen
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 14--14
+Underfull \hbox (badness 10000) in paragraph at lines 13--13
 \T1/bch/m/n/12 bei LOS oder
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 14--14
+Underfull \hbox (badness 10000) in paragraph at lines 13--13
 []|\T1/bch/m/n/12 Anwendung in
  []
 
 
-Underfull \hbox (badness 6204) in paragraph at lines 14--14
+Underfull \hbox (badness 6204) in paragraph at lines 13--13
 \T1/bch/m/n/12 groÿen of-fe-nen
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 14--14
+Underfull \hbox (badness 10000) in paragraph at lines 13--13
 \T1/bch/m/n/12 Räü-men bei
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 14--14
+Underfull \hbox (badness 10000) in paragraph at lines 13--13
 \T1/bch/m/n/12 ho-hem Da-ten-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 14--14
+Underfull \hbox (badness 10000) in paragraph at lines 13--13
 \T1/bch/m/n/12 ver-kehr (z.B.
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 14--14
+Underfull \hbox (badness 10000) in paragraph at lines 13--13
 \T1/bch/m/n/12 Kon-fe-renz-hal-le,
  []
 
 
-Package natbib Warning: Citation `Kanal' on page 1 undefined on input line 16.
+Package natbib Warning: Citation `Kanal' on page 1 undefined on input line 15.
 
 
-Package natbib Warning: Citation `Kanal' on page 1 undefined on input line 16.
+Package natbib Warning: Citation `Kanal' on page 1 undefined on input line 15.
 
 [1
 
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
 LaTeX Font Info:    Font shape `T1/phv/b/n' will be
-(Font)              scaled to size 13.67995pt on input line 19.
+(Font)              scaled to size 13.67995pt on input line 18.
 
 
-Package natbib Warning: Citation `WII' on page 2 undefined on input line 20.
+Package natbib Warning: Citation `WII' on page 2 undefined on input line 19.
 
 [2]
 
-Package natbib Warning: Citation `Kanal' on page 3 undefined on input line 32.
+Package natbib Warning: Citation `Kanal' on page 3 undefined on input line 31.
 
 
 LaTeX Warning: Reference `fig:Mittelwert100' on page 3 undefined on input line 
-32.
+31.
 
 
 LaTeX Warning: Reference `fig:Mittelwert100' on page 3 undefined on input line 
-44.
+43.
 
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [3]
-Underfull \hbox (badness 10000) in paragraph at lines 47--50
+
+Package natbib Warning: Citation `PSO' on page 4 undefined on input line 48.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 46--49
 
  []
 
@@ -2103,17 +2111,29 @@ Underfull \hbox (badness 10000) in paragraph at lines 47--50
 Underfull \vbox (badness 1442) has occurred while \output is active []
 
  [4]
+PGFPlots: reading {TikzDaten/WIISauelengraph.dat}
+PGFPlots: reading {TikzDaten/WIIRSSI.dat}
+Missing character: There is no ; in font nullfont!
 
-Package natbib Warning: Citation `PSO' on page 5 undefined on input line 53.
-
-
-Package natbib Warning: Citation `PSO' on page 5 undefined on input line 53.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 53--56
+Underfull \hbox (badness 10000) in paragraph at lines 52--69
 
  []
 
+PGFPlots: reading {TikzDaten/WIIdberech.dat}
+PGFPlots: reading {TikzDaten/DisrealOptimum.dat}
+Missing character: There is no ; in font nullfont!
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [5]
+[6]
+PGFPlots: reading {TikzDaten/GueteSauelengraph05.dat}
+PGFPlots: reading {TikzDaten/GueteOpit05.dat}
+Missing character: There is no ; in font nullfont!
+ [7]
+PGFPlots: reading {TikzDaten/GueteSauelengraph2.dat}
+PGFPlots: reading {TikzDaten/GueteOpit2.dat}
+Missing character: There is no ; in font nullfont!
 )
 
 Package natbib Warning: There were undefined citations.
@@ -2123,27 +2143,30 @@ Package caption Warning: Unused \captionsetup[wrapfigure] on input line 24.
 See the caption package documentation for explanation.
 
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 41.
-[5]
+[8]
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 41.
  (./Masterarbeit.aux)
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 41.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 41.
 Package rerunfilecheck Info: File `Masterarbeit.out' has not changed.
-(rerunfilecheck)             Checksum: 11B749CCD45F642A812F76395AA807E2;269.
+(rerunfilecheck)             Checksum: 70670D84BF03F1C1AFFD0B6CF14D6E40;351.
 
 
 LaTeX Warning: There were undefined references.
 
+
+LaTeX Warning: There were multiply-defined labels.
+
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 41.
  ) 
 Here is how much of TeX's memory you used:
- 37523 strings out of 494935
- 812102 string characters out of 6178121
- 1047135 words of memory out of 5000000
- 39911 multiletter control sequences out of 15000+600000
- 51976 words of font info for 86 fonts, out of 8000000 for 9000
+ 37726 strings out of 494935
+ 816350 string characters out of 6178121
+ 1518361 words of memory out of 5000000
+ 40083 multiletter control sequences out of 15000+600000
+ 44936 words of font info for 82 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
- 67i,14n,78p,10447b,1814s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 67i,20n,94p,10447b,2173s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texliv
 e/texmf-dist/fonts/type1/bitstrea/charter/bchb8a.pfb></usr/share/texlive/texmf-
 dist/fonts/type1/bitstrea/charter/bchr8a.pfb></usr/share/texlive/texmf-dist/fon
@@ -2154,10 +2177,10 @@ fonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhv
 b8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/symbol/usyr.pfb></usr/sh
 are/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/tex
 mf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on Masterarbeit.pdf (5 pages, 102740 bytes).
+Output written on Masterarbeit.pdf (8 pages, 130588 bytes).
 PDF statistics:
- 121 PDF objects out of 1000 (max. 8388607)
- 85 compressed objects within 1 object stream
- 16 named destinations out of 1000 (max. 500000)
- 153 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 161 PDF objects out of 1000 (max. 8388607)
+ 121 compressed objects within 2 object streams
+ 30 named destinations out of 1000 (max. 500000)
+ 161 words of extra memory for PDF output out of 10000 (max. 10000000)
 

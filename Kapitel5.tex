@@ -70,7 +70,7 @@ In dem Abschnitt über ROSjava wurde in Bild \ref{fig:ROSjavaImpl} eine von der 
 \begin{figure}[H] 
 \centering
 \begin{tikzpicture}
-\begin{axis}[xlabel={Reale Distanz in Meter},ylabel={Geschätzte Distanz in Meter},width=0.7\paperwidth, height=0.25\paperheight,]
+\begin{axis}[xlabel={Reale Distanz in Meter}, ylabel={Geschätzte Distanz in Meter}, width=0.7\paperwidth, height=0.25\paperheight, legend pos=north west]
 \addplot+[red,mark=*,semithick] table [col sep=comma] {TikzDaten/DisrealDistance.dat}; 
 \addplot+[mark=none,blue,very thick] table [col sep=comma] {TikzDaten/DisrealOptimum.dat};
 \legend{geschätzter Wert,optimaler Verlauf};

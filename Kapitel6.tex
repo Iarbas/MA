@@ -4,7 +4,6 @@ Die Vorhersage der Aubreitung von BLE-Funkwellen in einer Simulation kann dazu g
 \section{Modellbildung}
 Zunächst wird in diesem Abschnitt das zugrunde liegende Modell für das Verhalten der Signalausbreitung der Beacons bestimmt. Dazu wird aus Tabelle \ref{tab:Uebersicht} ein geeignetes Kanalmodell ausgesucht und dessen ungefährer Verlauf bestimmt. An diesem Verlauf wird es an den realen Messwerten validiert und anschließend in dessen Qualität durch die Parameterschätzung verbessert. Die genannten Modelle in der Tabelle können mit ihren Spezifikationen im Grunde alle als Ausbreitungsmodell für die Leuchtfeuer dienen. Jedoch fällt die erste Wahl auf das sogenannte WINNER II Modell, weil in dessen Beschreibung die Anwendung in großen Räume mit hohem Aufkommen von Datenverkehr steht. Und da eben diese Gegebenheit in den Messungen aus dem vorigen Kapitel vorhanden waren und für den späteren Einsatzorte (z.B. Kaufhäuser, Flugplätze etc.) der Beacon-Systeme gegeben sein werden, bietet sich dieses Modell besonders vor den anderen an. Zudem beträgt die Reichweite eines Beacons nur 70 Meter, wohingegen die Geltungsbereiche der anderen Modelle dafür überdimensioniert erscheinen.
 \begin{table}[H]
-%\begin{tabular}{|p{1.3cm}|p{2.5cm}|p{1.5cm}|p{2cm}|p{3cm}|p{3cm}|}
 \begin{tabular}{|m{1.6cm}|m{1.9cm}|m{1.7cm}|m{1.6cm}|m{3.1cm}|m{3.1cm}|}
 \hline 
 Modell & Antennen-höhen & Frequenz & Bereich & In-/Outdoor & Bemerkungen \\ \hline 
@@ -52,12 +51,105 @@ v\left( t+1 \right)&=\left( w\cdot v\left( t \right) \right) + \left( c_1\cdot r
 x\left( t+1 \right)&=x\left( t \right) + v\left( t+1 \right)
 \end{align}
 Der Vorteil dieses Verfahrens ist es, dass der komplette Suchraum abgetastet wird und durch die Intelligenz des Schwarms die Parametersätze mit den geringsten Kosten identifiziert werden. Der Nachteil ist der relativ hohe Rechenaufwand im Gegensatz zu anderen Verfahren (z.B. Newton, Trust-Region, Simplex etc.), zumal kein besseres Ergebnis mit dem PSO für ein solches Problem zu erwarten wäre. Jedoch baut der Erweiterte Partikel-Schwarm-Optimierer in dem nächsten Abschnitt auf dem PSO auf, sodass in diesem Teil der Arbeit die Vorstellung der einfachen Variante sich geradezu anbietet.\\ \\
-Als Ergebnis der Parameterschätzung sind zum einen die Vergleiche aus realer zu berechneten Distanz in Abbildung ..., der Gegenüberstellung mit den Messwerten in Abbildung ... und zum anderen die Tabelle ... mit den ermittelten Parametern aufgeführt.  
+Als Ergebnis der Parameterschätzung wurden in Abbildung \ref{fig:WIISauelengraph} zunächst die berechneten RSSI-Werte für die jeweiligen Distanzen im Vergleich zu den gemmesenen Mittelwerte aller drei Beacons gegenübergestellt. Wie schon in der Analyse der Messwerte kritisiert, entspricht das Verhalten des Ausbreitungsverlustes ab dem zehnten Meter nicht mehr der theoretischen Annahme. Während der Verlauf vom ersten Abschnitt sehr gut geschätzt werden kann, versagt aber das einfache WINNER II-Modell bei größeren Distnazen. Ähnlich verhält es sich bei der Schätzung der Entfernung, wie Abbildung \ref{fig:WIIDistance} zeigt. Hier wurde das Modell lediglich nach $d$ umgestellt und als Eingabe dienten die Mittelwerte aus \ref{fig:WIISauelengraph}. In Tabelle \ref{tab:Parameterwerte} sind die Parameter aus der Optimierung aufgeführt, welche in das Modell zur Berechnung der letzten Diagramme eingesetzt wurden. 
+\begin{figure}[H] 
+\centering
+\begin{tikzpicture}
+\begin{axis}[ybar, bar width=1.5mm, xlabel={Abstand der einzelnen Beacons in Metern}, ylabel={Gemittelter RSSI-Wert in dBm}, width=0.7\paperwidth, height=0.2\paperheight, y dir=reverse, legend style={at={(0.25,1.15)}, anchor=south, legend columns=5, /tikz/every even column/.append style={column sep=0.2cm}}, enlarge y limits=false, enlarge x limits=false, ymin=-90,ymax=-60, xmin=0.3,xmax=15.7]
+\addplot+[fill=dblue] table [col sep=comma] {TikzDaten/WIISauelengraph.dat}; 
+\legend{Mittelwert aller drei Beacons}
+\end{axis}
+\begin{axis}[xtick = \empty, ytick = \empty, width=0.7\paperwidth, height=0.2\paperheight, y dir=reverse, legend style={at={(0.75,1.15)}, anchor=south, legend columns=5, /tikz/every even column/.append style={column sep=0.2cm}}, enlarge y limits=false, enlarge x limits=false, ymin=-90,ymax=-60, xmin=0.3,xmax=15.7]
+\addplot+[mark=none,red,very thick] table [col sep=comma] {TikzDaten/WIIRSSI.dat};
+\legend{geschätzter RSSI-Wert};
+\end{axis}
+\end{tikzpicture}
+\caption{Mittelwert der RSSI-Werte von allen Distanzen und allen Beacons mit dem Vergleich zu dem berechneten RSSI-Wert aus dem WINNER II-Modell}
+\label{fig:WIISauelengraph}
+\end{figure}
+\begin{figure}[H] 
+\centering
+\begin{tikzpicture}
+\begin{axis}[xlabel={Reale Distanz in Meter},ylabel={Geschätzte Distanz in Meter},width=0.7\paperwidth, height=0.25\paperheight, enlarge y limits=0.01, enlarge x limits=false, xmin=0.3,xmax=15.7, legend pos=north west]
+\addplot+[red,mark=*,semithick] table [col sep=comma] {TikzDaten/WIIdberech.dat}; 
+\addplot+[mark=none,blue,very thick] table [col sep=comma] {TikzDaten/DisrealOptimum.dat};
+\legend{geschätzter Wert,optimaler Verlauf};
+\end{axis}
+\end{tikzpicture}
+\caption{Vergleich der durschnittlichen Distanz-Schätzung mit dem WINNER II-Modell zur realen Entfernung}
+\label{fig:WIIDistance}
+\end{figure}
+\begin{table}[H]
+\begin{center}
+\begin{tabular}{|c|c|c|}
+\cline{2-3}
+\multicolumn{1}{c|}{} & \multicolumn{2}{c|}{Parameter} \\
+\cline{2-3}
+\multicolumn{1}{c|}{} & $A$ & $B^{\ast}$ \\
+\hline
+\multirow{1}{*}{Wert} & $16,2623$ & $55,1046$ \\
+\hline
+\end{tabular}
+\end{center}
+\caption{Werte der Parameter}
+\label{tab:Parameterwerte}
+\end{table} 
+\section{Vertrauensgehalt von Beacon-Signalen}
+Im Hinblick auf die verschiedenen Betriebsmodi der Beacons, den unterschiedlichen Arten der Positionsbestimmung (Landmarkensystem und Mikro-Lokalisierung) und vielen noch nicht vorgestellten Techniken mit denen sich die Vorhersage der Position bestimmen und verbessern lassen, fällt es sehr schwer die Güte der Leuchtfeuer-Signale einzuschätzen. Mit Güte soll gemeint sein, inwieweit dem Modell \ref{eq:WII} vertraut wird die aktuelle Position zu schätzen und wie genau diese Schätzung in Metern oder Zentimetern erfasst werden kann. Um unabhängig von der Art der Lokalisierung, dem Anwendungsbereich und den eingesetzten Techniken die Güte angeben zu können, wird lediglich die Wahrscheinlichkeit mit dem WINNER II-Modell die tatsächliche Distanz zu ermitteln, als Wert dafür angenommen. D.h. aus den Messungen der RSSI-Werte vom vorigen Kapitel werden diesesmal alle Daten für die Distanzberechnung herangezogen und mit einer Toleranz versehen. Die berechneten Entfernungen werden darauf mit realen Distanzen verglichen und im Falle, dass sie sich nur in einem definierten Spielraum voneinander unterscheiden, wird dies als eine erfolgreiche Positionsbestimmung angesehen. Der prozentuale Anteil aller erfolgreichen Berechnungen wird so als Gütemaß gewertet und somit wird Qualität der Beacon-Signale als eine statistische Wahrscheinlichkeit, des Empfanges einer für das Modell geeigneten Signalsstärke pro Messung, aufgefasst. Die Ergebnisse aus diesen Überlegungen finden sich in Abbildung ... und .. wieder. Sie zeigen einmal die Wahrscheinlichkeit $W_{berech}$ ein gültiges Signal zu empfangen bei einer Toleranz von $0,5$ und bei $2$ Metern, wobei die dazugehörigen festen Distanzen die jeweiligen gemittelten drei Messreihen $d_{mitt}$ darstellen. Zudem wurde versucht die Güte als Funktion zu charakterisieren. Dazu wurde die Funktion \ref{eq:Umkehrfunktion} aufgrund ihrer Art ausgewählt und um weitere Parameter erweitert \ref{eq:eUmkehrfunktion}, welche schließlich durch die Lösung des Minimierungsproblems\ref{eq:OptiUmkehrfunktion} und unter der Verwendung vom PSO bestimmt wurden (Ergebnis siehe Tabelle \ref{tab:ParameterwerteGuete}).
+\begin{align}
+W_{berech}&=\frac{1}{d_{mitt}+1} \label{eq:Umkehrfunktion}\\
+W_{berech}&=\frac{1}{p_1\cdot d_{mitt}+p_2} + p_3 \label{eq:eUmkehrfunktion}\\
+\underset{p_1,p_2,p_3}{min}\, J&=\sum_{k=1}^{k=15}\left ( W_{real}\left ( k \right ) - W_{berech} \right )^{2} \label{eq:OptiUmkehrfunktion} \\
+\end{align}
+\begin{table}[H]
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|}
+\cline{3-5}
+\multicolumn{2}{c|}{} & \multicolumn{3}{c|}{Parameter} \\
+\cline{3-5}
+\multicolumn{2}{c|}{} & $p_1$ & $p_2$ & $p_3$ \\
+\hline
+\multirow{2}{*}{Toleranz} & $0,5$ m & $3,3777$ & $-0,6746$ & $0.0163$\\
+\cline{2-5}
+& $2$ m & $0,2035$ & $0,7145$ & $0,1594$\\
+\hline
+\end{tabular}
+\end{center}
+\caption{Werte der Parameter}
+\label{tab:ParameterwerteGuete}
+\end{table} 
+Der Vorteil dieser Betrachtweise liegt in den Funktionen der Beacons, da hier die Frequenz bzw. Häufigkeit der Sendevorgänge eingestellt werden kann. Durch die Erhöhung der Sendungen pro Sekunde lässt sich somit die Zeit verringern, bis ein gültiges Signal das Messgerät erreicht. Anhand dieser Einstellmöglichkeiten lässt sich zusammen mit der hier vorgestellten Skala die Dynamik der Messungen beeinflussen. 
+\begin{figure}[H] 
+\centering
+\begin{tikzpicture}
+\begin{axis}[ybar, bar width=1.5mm, xlabel={Abstand der einzelnen Beacons in Metern}, ylabel={Wahrscheinlichkeit}, width=0.7\paperwidth, height=0.2\paperheight, legend style={at={(0.25,1.15)}, anchor=south, legend columns=5, /tikz/every even column/.append style={column sep=0.2cm}}, enlarge y limits=false, enlarge x limits=false, ymin=0,ymax=1, xmin=0.3,xmax=15.7]
+\addplot+[fill=dblue] table [col sep=comma] {TikzDaten/GueteSauelengraph05.dat}; 
+\legend{Mittelwert aller drei Beacons}
+\end{axis}
+\begin{axis}[xtick = \empty, ytick = \empty, width=0.7\paperwidth, height=0.2\paperheight, legend style={at={(0.75,1.15)}, anchor=south, legend columns=5, /tikz/every even column/.append style={column sep=0.2cm}}, enlarge y limits=false, enlarge x limits=false, ymin=0,ymax=1, xmin=0.3,xmax=15.7]
+\addplot+[mark=none,red,very thick] table [col sep=comma] {TikzDaten/GueteOpit05.dat};
+\legend{Approximation};
+\end{axis}
+\end{tikzpicture}
+\caption{Mittelwert der Wahrscheinlichkeiten gültiger Signale in einem Toleranzbereich von $0,5$ Metern, von allen Distanzen und allen Beacons im Verbund zu deren Approximation}
+\label{fig:GueteSauelengraph05}
+\end{figure} 
+\begin{figure}[H] 
+\centering
+\begin{tikzpicture}
+\begin{axis}[ybar, bar width=1.5mm, xlabel={Abstand der einzelnen Beacons in Metern}, ylabel={Wahrscheinlichkeit}, width=0.7\paperwidth, height=0.2\paperheight, legend style={at={(0.25,1.15)}, anchor=south, legend columns=5, /tikz/every even column/.append style={column sep=0.2cm}}, enlarge y limits=false, enlarge x limits=false, ymin=0,ymax=1, xmin=0.3,xmax=15.7]
+\addplot+[fill=dblue] table [col sep=comma] {TikzDaten/GueteSauelengraph2.dat}; 
+\legend{Mittelwert aller drei Beacons}
+\end{axis}
+\begin{axis}[xtick = \empty, ytick = \empty, width=0.7\paperwidth, height=0.2\paperheight, legend style={at={(0.75,1.15)}, anchor=south, legend columns=5, /tikz/every even column/.append style={column sep=0.2cm}}, enlarge y limits=false, enlarge x limits=false, ymin=0,ymax=1, xmin=0.3,xmax=15.7]
+\addplot+[mark=none,red,very thick] table [col sep=comma] {TikzDaten/GueteOpit2.dat};
+\legend{Approximation};
+\end{axis}
+\end{tikzpicture}
+\caption{Mittelwert der Wahrscheinlichkeiten gültiger Signale in einem Toleranzbereich von $2$ Metern, von allen Distanzen und allen Beacons im Verbund zu deren Approximation}
+\label{fig:GueteSauelengraph05}
+\end{figure} 
 
-
-%\section{Definition einer Richterskala für die Qualität von Beacon-Signalen}
-%Aus der einen Übersicht von Mittelwert der RSSi-Werte und der Distanz kann auch mithilfe der coolen 3D-Ansicht von der Verteilung des Signals auf die Wahrscheinlichkeit einer richtigen Distanzschätzung angegeben werden. Hier auf die Ortungsalgorithmen zurück kommen und dieses Wurzelmodell annehmen. Hier als Eingabeparameter die Signalstärke und die Intervalllänge mit angeben. Aber auch sagen, dass alle Messungen (da sie so umfangreich waren) nur für eine Einstellungen und den einen Raum gelten! Drei Signale auf einer Stelle zu einem Signal vergleichen und betonen, dass es sich hierbei nur um eine relative Güte handelt, die noch in keinster Weise verifiziert wurde. Da es viele andere Räume gibt und auch dort mal die Signalausbreitung/Streuung gemessenen werden muss, kann sie nicht als allgemein gültig angenommen werden. Jedoch ist sie zudem abhängig von der eingestellten Signalstärke und Intervalllänge. Man müsste einfach mal alle Einstellungen testen. Jedoch fehlte mir die Zeit und die Räumlichkeiten.  
-%
 %\section{Entwicklung der Simulationsumgebung}
 %Programmierung mit Matlabs GUIDE. Aufbau sehr hierachisch. Leicht zu bedienen. 
 %\subsection{Grundrissanalyse}
