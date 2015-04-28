@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2014.11.11)  24 APR 2015 08:06
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2014.11.11)  27 APR 2015 19:35
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -1601,11 +1601,7 @@ Class scrreprt Warning: Usage of package `fancyhdr' together
 \f@ncyO@olf=\skip79
 \f@ncyO@orf=\skip80
 ))
-(./Masterarbeit.aux
-
-LaTeX Warning: Label `fig:WIISauelengraph' multiply defined.
-
-)
+(./Masterarbeit.aux)
 \openout1 = `Masterarbeit.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 2.
@@ -2134,7 +2130,14 @@ Missing character: There is no ; in font nullfont!
 PGFPlots: reading {TikzDaten/GueteSauelengraph2.dat}
 PGFPlots: reading {TikzDaten/GueteOpit2.dat}
 Missing character: There is no ; in font nullfont!
-)
+
+Underfull \vbox (badness 4060) has occurred while \output is active []
+
+ [8]
+(./GrundAnaly.tex)
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [9])
 
 Package natbib Warning: There were undefined citations.
 
@@ -2143,27 +2146,24 @@ Package caption Warning: Unused \captionsetup[wrapfigure] on input line 24.
 See the caption package documentation for explanation.
 
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 41.
-[8]
+[10]
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 41.
  (./Masterarbeit.aux)
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 41.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 41.
 Package rerunfilecheck Info: File `Masterarbeit.out' has not changed.
-(rerunfilecheck)             Checksum: 70670D84BF03F1C1AFFD0B6CF14D6E40;351.
+(rerunfilecheck)             Checksum: FA94305D111CA1AAFBC31A428DAE6065;481.
 
 
 LaTeX Warning: There were undefined references.
 
-
-LaTeX Warning: There were multiply-defined labels.
-
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 41.
  ) 
 Here is how much of TeX's memory you used:
- 37726 strings out of 494935
- 816350 string characters out of 6178121
- 1518361 words of memory out of 5000000
- 40083 multiletter control sequences out of 15000+600000
+ 37782 strings out of 494935
+ 817325 string characters out of 6178121
+ 1525614 words of memory out of 5000000
+ 40131 multiletter control sequences out of 15000+600000
  44936 words of font info for 82 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
  67i,20n,94p,10447b,2173s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -2177,10 +2177,10 @@ fonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhv
 b8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/symbol/usyr.pfb></usr/sh
 are/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/tex
 mf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on Masterarbeit.pdf (8 pages, 130588 bytes).
+Output written on Masterarbeit.pdf (10 pages, 141679 bytes).
 PDF statistics:
- 161 PDF objects out of 1000 (max. 8388607)
- 121 compressed objects within 2 object streams
- 30 named destinations out of 1000 (max. 500000)
- 161 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 197 PDF objects out of 1000 (max. 8388607)
+ 151 compressed objects within 2 object streams
+ 35 named destinations out of 1000 (max. 500000)
+ 201 words of extra memory for PDF output out of 10000 (max. 10000000)
 

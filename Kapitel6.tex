@@ -64,7 +64,7 @@ Als Ergebnis der Parameterschätzung wurden in Abbildung \ref{fig:WIISauelengrap
 \legend{geschätzter RSSI-Wert};
 \end{axis}
 \end{tikzpicture}
-\caption{Mittelwert der RSSI-Werte von allen Distanzen und allen Beacons mit dem Vergleich zu dem berechneten RSSI-Wert aus dem WINNER II-Modell}
+\caption{Durschnittlicher RSSI-Werte im Vergleich zum berechneten RSSI-Wert aus dem WINNER II-Modell über die einzelnen Entfernungen}
 \label{fig:WIISauelengraph}
 \end{figure}
 \begin{figure}[H] 
@@ -76,7 +76,7 @@ Als Ergebnis der Parameterschätzung wurden in Abbildung \ref{fig:WIISauelengrap
 \legend{geschätzter Wert,optimaler Verlauf};
 \end{axis}
 \end{tikzpicture}
-\caption{Vergleich der durschnittlichen Distanz-Schätzung mit dem WINNER II-Modell zur realen Entfernung}
+\caption{Vergleich der Distanz-Schätzung mit dem WINNER II-Modell zur gemessenen Entfernung}
 \label{fig:WIIDistance}
 \end{figure}
 \begin{table}[H]
@@ -94,8 +94,8 @@ Als Ergebnis der Parameterschätzung wurden in Abbildung \ref{fig:WIISauelengrap
 \caption{Werte der Parameter}
 \label{tab:Parameterwerte}
 \end{table} 
-\section{Vertrauensgehalt von Beacon-Signalen}
-Im Hinblick auf die verschiedenen Betriebsmodi der Beacons, den unterschiedlichen Arten der Positionsbestimmung (Landmarkensystem und Mikro-Lokalisierung) und vielen noch nicht vorgestellten Techniken mit denen sich die Vorhersage der Position bestimmen und verbessern lassen, fällt es sehr schwer die Güte der Leuchtfeuer-Signale einzuschätzen. Mit Güte soll gemeint sein, inwieweit dem Modell \ref{eq:WII} vertraut wird die aktuelle Position zu schätzen und wie genau diese Schätzung in Metern oder Zentimetern erfasst werden kann. Um unabhängig von der Art der Lokalisierung, dem Anwendungsbereich und den eingesetzten Techniken die Güte angeben zu können, wird lediglich die Wahrscheinlichkeit mit dem WINNER II-Modell die tatsächliche Distanz zu ermitteln, als Wert dafür angenommen. D.h. aus den Messungen der RSSI-Werte vom vorigen Kapitel werden diesesmal alle Daten für die Distanzberechnung herangezogen und mit einer Toleranz versehen. Die berechneten Entfernungen werden darauf mit realen Distanzen verglichen und im Falle, dass sie sich nur in einem definierten Spielraum voneinander unterscheiden, wird dies als eine erfolgreiche Positionsbestimmung angesehen. Der prozentuale Anteil aller erfolgreichen Berechnungen wird so als Gütemaß gewertet und somit wird Qualität der Beacon-Signale als eine statistische Wahrscheinlichkeit, des Empfanges einer für das Modell geeigneten Signalsstärke pro Messung, aufgefasst. Die Ergebnisse aus diesen Überlegungen finden sich in Abbildung ... und .. wieder. Sie zeigen einmal die Wahrscheinlichkeit $W_{berech}$ ein gültiges Signal zu empfangen bei einer Toleranz von $0,5$ und bei $2$ Metern, wobei die dazugehörigen festen Distanzen die jeweiligen gemittelten drei Messreihen $d_{mitt}$ darstellen. Zudem wurde versucht die Güte als Funktion zu charakterisieren. Dazu wurde die Funktion \ref{eq:Umkehrfunktion} aufgrund ihrer Art ausgewählt und um weitere Parameter erweitert \ref{eq:eUmkehrfunktion}, welche schließlich durch die Lösung des Minimierungsproblems\ref{eq:OptiUmkehrfunktion} und unter der Verwendung vom PSO bestimmt wurden (Ergebnis siehe Tabelle \ref{tab:ParameterwerteGuete}).
+\section{Vertrauens-Skala}
+Im Hinblick auf die verschiedenen Betriebsmodi der Beacons, den unterschiedlichen Arten der Positionsbestimmung (Landmarkensystem und Mikro-Lokalisierung) und vielen noch nicht vorgestellten Techniken mit denen sich die Vorhersage der Position bestimmen und verbessern lassen, fällt es sehr schwer die Güte der Leuchtfeuer-Signale einzuschätzen. Mit Güte soll gemeint sein, inwieweit dem Modell \ref{eq:WII} vertraut wird die aktuelle Position zu schätzen und wie genau diese Schätzung in Metern oder Zentimetern erfasst werden kann. Um unabhängig von der Art der Lokalisierung, dem Anwendungsbereich und den eingesetzten Techniken die Güte angeben zu können, wird lediglich die Wahrscheinlichkeit mit dem WINNER II-Modell die tatsächliche Distanz zu ermitteln, als Wert dafür angenommen. D.h. aus den Messungen der RSSI-Werte vom vorigen Kapitel werden diesesmal alle Daten für die Distanzberechnung herangezogen und mit einer Toleranz versehen. Die berechneten Entfernungen werden darauf mit realen Distanzen verglichen und im Falle, dass sie sich nur in einem definierten Spielraum voneinander unterscheiden, wird dies als eine erfolgreiche Positionsbestimmung angesehen. Der prozentuale Anteil aller erfolgreichen Berechnungen wird so als Gütemaß gewertet und somit wird Qualität der Beacon-Signale als eine statistische Wahrscheinlichkeit, des Empfanges einer für das Modell geeigneten Signalsstärke pro Messung, aufgefasst. Die Ergebnisse aus diesen Überlegungen finden sich in Abbildung \ref{fig:GueteSauelengraph05} und \ref{fig:GueteSauelengraph2} wieder. Sie zeigen einmal die Wahrscheinlichkeit $W_{berech}$ ein gültiges Signal zu empfangen bei einer Toleranz von $0,5$ und bei $2$ Metern, wobei die dazugehörigen festen Distanzen die jeweiligen gemittelten drei Messreihen $d_{mitt}$ darstellen. Zudem wurde versucht die Güte als Funktion zu charakterisieren. Dazu wurde die Funktion \ref{eq:Umkehrfunktion} aufgrund ihrer Art ausgewählt und um weitere Parameter erweitert \ref{eq:eUmkehrfunktion}, welche schließlich durch die Lösung des Minimierungsproblems\ref{eq:OptiUmkehrfunktion} und unter der Verwendung vom PSO bestimmt wurden (Ergebnis siehe Tabelle \ref{tab:ParameterwerteGuete}).
 \begin{align}
 W_{berech}&=\frac{1}{d_{mitt}+1} \label{eq:Umkehrfunktion}\\
 W_{berech}&=\frac{1}{p_1\cdot d_{mitt}+p_2} + p_3 \label{eq:eUmkehrfunktion}\\
@@ -118,20 +118,20 @@ W_{berech}&=\frac{1}{p_1\cdot d_{mitt}+p_2} + p_3 \label{eq:eUmkehrfunktion}\\
 \caption{Werte der Parameter}
 \label{tab:ParameterwerteGuete}
 \end{table} 
-Der Vorteil dieser Betrachtweise liegt in den Funktionen der Beacons, da hier die Frequenz bzw. Häufigkeit der Sendevorgänge eingestellt werden kann. Durch die Erhöhung der Sendungen pro Sekunde lässt sich somit die Zeit verringern, bis ein gültiges Signal das Messgerät erreicht. Anhand dieser Einstellmöglichkeiten lässt sich zusammen mit der hier vorgestellten Skala die Dynamik der Messungen beeinflussen. 
+Der Vorteil dieser Betrachtweise liegt in den Funktionen der Beacons, da hier die Frequenz bzw. Häufigkeit der Sendevorgänge eingestellt werden kann. Durch die Erhöhung der ubertragungen pro Sekunde lässt sich somit die Zeit verringern, bis ein gültiges Signal das Messgerät erreicht. Anhand dieser Einstellmöglichkeiten lässt sich zusammen mit der hier vorgestellten Skala die Dynamik der Messungen beeinflussen. 
 \begin{figure}[H] 
 \centering
 \begin{tikzpicture}
 \begin{axis}[ybar, bar width=1.5mm, xlabel={Abstand der einzelnen Beacons in Metern}, ylabel={Wahrscheinlichkeit}, width=0.7\paperwidth, height=0.2\paperheight, legend style={at={(0.25,1.15)}, anchor=south, legend columns=5, /tikz/every even column/.append style={column sep=0.2cm}}, enlarge y limits=false, enlarge x limits=false, ymin=0,ymax=1, xmin=0.3,xmax=15.7]
 \addplot+[fill=dblue] table [col sep=comma] {TikzDaten/GueteSauelengraph05.dat}; 
-\legend{Mittelwert aller drei Beacons}
+\legend{gemessener Durschnittswert}
 \end{axis}
 \begin{axis}[xtick = \empty, ytick = \empty, width=0.7\paperwidth, height=0.2\paperheight, legend style={at={(0.75,1.15)}, anchor=south, legend columns=5, /tikz/every even column/.append style={column sep=0.2cm}}, enlarge y limits=false, enlarge x limits=false, ymin=0,ymax=1, xmin=0.3,xmax=15.7]
 \addplot+[mark=none,red,very thick] table [col sep=comma] {TikzDaten/GueteOpit05.dat};
 \legend{Approximation};
 \end{axis}
 \end{tikzpicture}
-\caption{Mittelwert der Wahrscheinlichkeiten gültiger Signale in einem Toleranzbereich von $0,5$ Metern, von allen Distanzen und allen Beacons im Verbund zu deren Approximation}
+\caption{Wahrscheinlichkeit des Empfangs gültiger Signale in einem Toleranzbereich von $0,5$ Metern und dessen Approximation}
 \label{fig:GueteSauelengraph05}
 \end{figure} 
 \begin{figure}[H] 
@@ -139,21 +139,22 @@ Der Vorteil dieser Betrachtweise liegt in den Funktionen der Beacons, da hier di
 \begin{tikzpicture}
 \begin{axis}[ybar, bar width=1.5mm, xlabel={Abstand der einzelnen Beacons in Metern}, ylabel={Wahrscheinlichkeit}, width=0.7\paperwidth, height=0.2\paperheight, legend style={at={(0.25,1.15)}, anchor=south, legend columns=5, /tikz/every even column/.append style={column sep=0.2cm}}, enlarge y limits=false, enlarge x limits=false, ymin=0,ymax=1, xmin=0.3,xmax=15.7]
 \addplot+[fill=dblue] table [col sep=comma] {TikzDaten/GueteSauelengraph2.dat}; 
-\legend{Mittelwert aller drei Beacons}
+\legend{gemessener Durschnittswert}
 \end{axis}
 \begin{axis}[xtick = \empty, ytick = \empty, width=0.7\paperwidth, height=0.2\paperheight, legend style={at={(0.75,1.15)}, anchor=south, legend columns=5, /tikz/every even column/.append style={column sep=0.2cm}}, enlarge y limits=false, enlarge x limits=false, ymin=0,ymax=1, xmin=0.3,xmax=15.7]
 \addplot+[mark=none,red,very thick] table [col sep=comma] {TikzDaten/GueteOpit2.dat};
 \legend{Approximation};
 \end{axis}
 \end{tikzpicture}
-\caption{Mittelwert der Wahrscheinlichkeiten gültiger Signale in einem Toleranzbereich von $2$ Metern, von allen Distanzen und allen Beacons im Verbund zu deren Approximation}
-\label{fig:GueteSauelengraph05}
+\caption{Wahrscheinlichkeit des Empfangs gültiger Signale in einem Toleranzbereich von $2$ Metern und dessen Approximation}
+\label{fig:GueteSauelengraph2}
 \end{figure} 
+\section{Entwicklung der Simulationsumgebung}
+Mit den gewonnen Erkenntnissen aus der Modellierung können nun Vorhersagen über die Signalausbreitung und der Genauigkeit von Beacons getroffen werden, die schließlich zu einer optimalen Planung eines Indoor-Lokalisierungssystems genutzt werden können. Dazu wird zunächst eine Entwicklungsumgebung zur Herstellung der Simulation benötigt. Als Basis der Simulation wird eine grafische Oberfläche (GUI) mit dem Editor GUIDE aus dem Programm MATLAB \cite{GUIDE} erstellt. In dieser Sektion werden die einzelnen Funktionen der GUI besprochen und deren Verarbeitungskette vorgestellt. Hierfür wird als erstes auf die Konvertierung der Zeichnung eines Grundrisses (als PNG-Bilddatei) in verarbeitbare Informationen eingegangen, welche von substantieller Bedeutung für den gesamten Simulations-Prozess sind. Anschließend kann darauf aufbauend die eigentliche Implementierung begonnen werden. Hierbei wird speziell der Aspekt einer optimalen Verteilung, unter besonderer Betrachtung der Vertrauens-Skala, aufgegriffen. Eigens dafür wurde der vorher vorgestellte Partikel-Schwarm-Algorithmus aus der Parameterschätzung erweitert, sodass er auch für den abstrakten Fall einer Anordnung von Funkbaken eingesetzt werden kann. Abschließend wird auf einen fiktiver Raum das komplette Lighthouse Keeper-Prinzip einmal dargestellt.  
+\subsection{Grundrissanalyse}
+Vorgehensweise beim Einlesen des Bildes
+\input{GrundAnaly}
 
-%\section{Entwicklung der Simulationsumgebung}
-%Programmierung mit Matlabs GUIDE. Aufbau sehr hierachisch. Leicht zu bedienen. 
-%\subsection{Grundrissanalyse}
-%Vorgehensweise beim Einlesen des Bildes
 %\subsection{Manuelle Planung}
 %Hier noch die manuelle Eingabe zeigen.
 %\subsection{Optimierung}

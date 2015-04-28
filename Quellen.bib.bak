@@ -256,6 +256,17 @@
   Url                      = {geodaesie.info/sites/default/files/privat/zfv\_2013\_1\_Blankenbach\_Norrdine.pdf}
 }
 
+@Article{PSO,
+  Title                    = {Particle Swarm Optimization},
+  Author                   = {{J. McCaffrey}},
+  Journal                  = {MSDN Magazine},
+  Year                     = {2011},
+
+  Owner                    = {andre},
+  Timestamp                = {2015.04.23},
+  Url                      = {https://msdn.microsoft.com/en-us/magazine/hh335067.aspx}
+}
+
 @PhdThesis{IndLoc,
   Title                    = {Improving teh Speed and Accuracy of Indoor Localization},
   Author                   = {{K. Kleisouris}},
@@ -282,6 +293,15 @@
   Owner                    = {andre},
   Timestamp                = {2015.04.14},
   Url                      = {https://www.willowgarage.com/sites/default/files/icraoss09-ROS.pdf}
+}
+
+@Electronic{GUIDE,
+  Title                    = {MATLAB GUI},
+  Author                   = {{MathWorks, Inc.}},
+  Url                      = {http://de.mathworks.com/discovery/matlab-gui.html},
+
+  Owner                    = {andre},
+  Timestamp                = {2015.04.27}
 }
 
 @Electronic{Mira,
