@@ -155,8 +155,8 @@
 
 @Electronic{GPS,
   Author                   = {{El pak}},
+  Note                     = {\url{http://commons.wikimedia.org/wiki/File%3AConstellationGPS.gif}, Aufgerufen am: 23.03.2015},
   Organization             = {Wikipedia},
-  Url                      = {http://commons.wikimedia.org/wiki/File%3AConstellationGPS.gif},
 
   Owner                    = {andre},
   Timestamp                = {2015.03.23}

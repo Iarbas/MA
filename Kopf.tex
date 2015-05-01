@@ -1,4 +1,4 @@
-\documentclass[12pt,a4paper,twoside]{scrreprt}
+\documentclass[12pt,a4paper,twoside,BCOR=8mm,openright]{scrbook}
 \usepackage{pdflscape}                         % fuer Querformate und so
 \usepackage{wrapfig}                           % ermoeglicht, Bilder von Text umfliessen zu lassen
 \usepackage[pdftex]{graphicx}                  % einbinden Graphiken
@@ -24,9 +24,17 @@
 \captionsetup[wrapfigure]{format=plain}		   % auch unter Abb. schreiben
 \captionsetup[figure]{format=plain}
 \usepackage{float}                             % macht die figures dorthin, wohin ich sie haben moechte
+\usepackage{url}
+\PassOptionsToPackage{hyphens}{url}
 \usepackage[colorlinks=false]{hyperref}
 \usepackage{breakurl}
-\usepackage{url}
+\expandafter\def\expandafter\UrlBreaks\expandafter{\UrlBreaks%
+  \do\a\do\b\do\c\do\d\do\e\do\f\do\g\do\h\do\i\do\j%
+  \do\k\do\l\do\m\do\n\do\o\do\p\do\q\do\r\do\s\do\t%
+  \do\u\do\v\do\w\do\x\do\y\do\z\do\A\do\B\do\C\do\D%
+  \do\E\do\F\do\G\do\H\do\I\do\J\do\K\do\L\do\M\do\N%
+  \do\O\do\P\do\Q\do\R\do\S\do\T\do\U\do\V\do\W\do\X%
+  \do\Y\do\Z\do\*\do\-\do\~\do\'\do\"\do\-}%
 \usepackage{acronym}						   % fuer die Abkuerzungen
 \usepackage{icomma}
 
@@ -106,8 +114,9 @@
 \setlength{\emergencystretch}{20pt}                  % Zusätliche Zeilendehnbarkeit
 \setlength{\fboxrule}{1pt}\setlength{\fboxsep}{4mm}  % Rechtecke um Gleichungen
 
-% Zur Veraenderung der Ueberschriften
+% Zur Veraenderung vom Zeilenabstand und der Ueberschriften
 \usepackage{setspace}                          % fuer den Zeilenabstand
+\renewcommand{\baselinestretch}{1.25}\normalsize % Zeilenabstand
 \usepackage{titlesec}                          % zur Formatierung der Ueberschriften
 %\titleformat{\chapter}[hang]{\normalfont\Large\bfseries}{\thechapter}{0.5em}{}          % Format muss beim chapter mit rein, sonst geht es nicht.
 %\titleformat{\section}[hang]{\normalfont\large\bfseries}{\thesection}{0.5em}{}
@@ -120,8 +129,8 @@
 %\setlength\hoffset{-1in}
 %\setlength\topmargin{2cm}
 %\setlength\oddsidemargin{2cm}
-%\setlength\textheight{23.7cm}
-%\setlength\textwidth{17.001cm}
+\setlength\textheight{23.7cm}
+\setlength\textwidth{15.001cm}
 %\setlength\footskip{1cm}
 %\setlength\headheight{0.6cm}
 %\setlength\headsep{1cm}
