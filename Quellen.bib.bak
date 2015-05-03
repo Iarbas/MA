@@ -5,7 +5,7 @@
 @Electronic{Shoe,
   Title                    = {What is iBeacon},
   Author                   = {{5280mobile.net}},
-  Url                      = {http://5280mobile.net/ibeacon-proximity/},
+  Note                     = {\url{http://5280mobile.net/ibeacon-proximity/}, Aufgerufen am 26.03.2015},
 
   Owner                    = {andre},
   Timestamp                = {2015.03.26}
@@ -16,19 +16,19 @@
   Author                   = {{A. Athalye} and {V. Savic} and {M. Bolic} and {P. M. Djuric}},
   Journal                  = {IEEE Sensors Journal},
   Year                     = {2013},
+  Note                     = {\url{http://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=6310003}, Aufgerufen am 19.03.2015},
   Number                   = {2},
   Pages                    = {528-537},
   Volume                   = {13},
 
   Owner                    = {andre},
-  Timestamp                = {2015.03.19},
-  Url                      = {http://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=6310003}
+  Timestamp                = {2015.03.19}
 }
 
 @Electronic{Bibel,
   Title                    = {iBeacon Bible 2.0},
   Author                   = {{A. Cavallini}},
-  Url                      = {https://meetingofideas.files.wordpress.com/2014/06/ibeacon-bible-2-0.pdf},
+  Note                     = {\url{https://meetingofideas.files.wordpress.com/2014/06/ibeacon-bible-2-0.pdf}, Aufgerufen am 17.03.2015},
   Year                     = {2015},
 
   Owner                    = {andre},
@@ -48,7 +48,7 @@
 @Electronic{iBPa,
   Title                    = {How do iBeacons work?},
   Author                   = {{A. Warski}},
-  Url                      = {http://www.warski.org/blog/2014/01/how-ibeacons-work/},
+  Note                     = {\url{http://www.warski.org/blog/2014/01/how-ibeacons-work/}, Aufgerufen am 27.03.2015},
 
   Owner                    = {andre},
   Timestamp                = {2015.03.27}
@@ -57,7 +57,7 @@
 @Electronic{MotoGV,
   Title                    = {Motorola Moto G},
   Author                   = {{Amazon.com, Inc.}},
-  Url                      = {http://www.amazon.de/Motorola-Smartphone-HD-Display-Megapixel-Quad-Core-Prozessor-Schwarz/dp/B00GJG0Q0I/ref=sr\_1\_1?ie=UTF8&qid=1428844430&sr=8-1&keywords=Motorola+Xt1032},
+  Note                     = {\url{http://www.amazon.de/Motorola-Smartphone-HD-Display-Megapixel-Quad-Core-Prozessor-Schwarz/dp/B00GJG0Q0I/ref=sr\_1\_1?ie=UTF8&qid=1428844430&sr=8-1&keywords=Motorola+Xt1032}, Aufgerufen am 12.04.2015},
 
   Owner                    = {andre},
   Timestamp                = {2015.04.12}
@@ -66,7 +66,7 @@
 @Electronic{GSwiB,
   Title                    = {Getting Started with iBeacon},
   Author                   = {{Apple, Inc.}},
-  Url                      = {https://developer.apple.com/ibeacon/Getting-Started-with-iBeacon.pdf},
+  Note                     = {\url{https://developer.apple.com/ibeacon/Getting-Started-with-iBeacon.pdf}, Aufgerufen am 25.03.2015},
 
   Owner                    = {andre},
   Timestamp                = {2015.03.25}
@@ -75,7 +75,7 @@
 @Electronic{iLogo,
   Title                    = {iBeacon Logo},
   Author                   = {{Apple, Inc.}},
-  Url                      = {https://developer.apple.com/ibeacon/},
+  Note                     = {\url{https://developer.apple.com/ibeacon/}, Aufgerufen am 16.03.2015},
   Year                     = {2015},
 
   Owner                    = {andre},
@@ -85,7 +85,7 @@
 @Electronic{ARM,
   Title                    = {Cortex-Mo Processor},
   Author                   = {{ARM Limited}},
-  Url                      = {http://www.arm.com/products/processors/cortex-m/cortex-m0.php},
+  Note                     = {\url{http://www.arm.com/products/processors/cortex-m/cortex-m0.php}, Aufgerufen am 25.03.2015},
 
   Owner                    = {andre},
   Timestamp                = {2015.03.25}
@@ -95,16 +95,16 @@
   Title                    = {Motorola Moto G Review},
   Author                   = {{B. Klug}},
   Journal                  = {www.anandtech.com},
+  Note                     = {\url{http://www.anandtech.com/show/7586/motorola-moto-g-review/7}, Aufgerufen am 26.03.2015},
 
   Owner                    = {andre},
-  Timestamp                = {2015.03.26},
-  Url                      = {http://www.anandtech.com/show/7586/motorola-moto-g-review/7}
+  Timestamp                = {2015.03.26}
 }
 
 @Electronic{BLElogo,
   Title                    = {Bluetooth Smart Logo},
   Author                   = {{Bluetooth SIG, Inc.}},
-  Url                      = {http://www.bluetooth.com/Pages/Bluetooth-Brand.aspx},
+  Note                     = {\url{http://www.bluetooth.com/Pages/Bluetooth-Brand.aspx}, Aufgerufen am 15.03.2015},
   Year                     = {2014},
 
   Owner                    = {andre},
@@ -116,10 +116,10 @@
   Author                   = {{Bluetooth SIG, Inc.}},
   Journal                  = {bluetooth.com},
   Year                     = {2009},
+  Note                     = {\url{http://www.bluetooth.com/Pages/Press-Releases-Detail.aspx?ItemID=4}, Aufgerufen am 16.03.2015},
 
   Owner                    = {andre},
-  Timestamp                = {2015.03.16},
-  Url                      = {http://www.bluetooth.com/Pages/Press-Releases-Detail.aspx?ItemID=4}
+  Timestamp                = {2015.03.16}
 }
 
 @Article{Apple,
@@ -127,10 +127,10 @@
   Author                   = {{D. E. Dilger}},
   Journal                  = {appleinsider.com},
   Year                     = {2013},
+  Note                     = {\url{http://appleinsider.com/articles/13/06/19/inside-ios-7-ibeacons-enhance-apps-location-awareness-via-bluetooth-le}, Aufgerufen am 15.03.2015},
 
   Owner                    = {andre},
-  Timestamp                = {2015.03.15},
-  Url                      = {http://appleinsider.com/articles/13/06/19/inside-ios-7-ibeacons-enhance-apps-location-awareness-via-bluetooth-le}
+  Timestamp                = {2015.03.15}
 }
 
 @PhdThesis{DisLok,
@@ -138,16 +138,26 @@
   Author                   = {{E. Köppe}},
   School                   = {Freie Universität Berlin},
   Year                     = {2014},
+  Note                     = {\url{http://www.diss.fu-berlin.de/diss/servlets/MCRFileNodeServlet/FUDISS\_derivate\_000000015646/Arbeitx2014-08xonlinexVersion.pdf}, Aufgerufen am 15.03.2015},
 
   Owner                    = {andre},
-  Timestamp                = {2015.03.15},
-  Url                      = {http://www.diss.fu-berlin.de/diss/servlets/MCRFileNodeServlet/FUDISS\_derivate\_000000015646/Arbeitx2014-08xonlinexVersion.pdf}
+  Timestamp                = {2015.03.15}
+}
+
+@TechReport{SPEA2,
+  Title                    = {SPEA2: Improving the Strength Pareto Evolutionary Algorithm},
+  Author                   = {{E. Zitzler} and {M. Laumanns} and {L. Thiele}},
+  Institution              = {Swiss Federal Institute of Technology (ETH) Zurich},
+  Year                     = {2001},
+
+  Owner                    = {andre},
+  Timestamp                = {2015.05.02}
 }
 
 @Electronic{Ekahau,
   Title                    = {Wi-Fi RTLS The Myths vs. The Facts},
   Author                   = {{Ekahau Inc.}},
-  Url                      = {http://www.ekahau.com/userData/ekahau/documents/white-papers/RTLS\_myths\_vs\_facts\_Ekahau\_2013\_letter.pdf},
+  Note                     = {\url{http://www.ekahau.com/userData/ekahau/documents/white-papers/RTLS\_myths\_vs\_facts\_Ekahau\_2013\_letter.pdf}, Aufgerufen am 31.03.2015},
 
   Owner                    = {andre},
   Timestamp                = {2015.03.31}
@@ -155,7 +165,7 @@
 
 @Electronic{GPS,
   Author                   = {{El pak}},
-  Note                     = {\url{http://commons.wikimedia.org/wiki/File%3AConstellationGPS.gif}, Aufgerufen am: 23.03.2015},
+  Note                     = {\url{http://commons.wikimedia.org/wiki/File%3AConstellationGPS.gif}, Aufgerufen am 23.03.2015},
   Organization             = {Wikipedia},
 
   Owner                    = {andre},
@@ -165,7 +175,7 @@
 @Electronic{EstSDK,
   Title                    = {Estimote SDK for Android},
   Author                   = {{Estimote, Inc.}},
-  Url                      = {https://github.com/Estimote/Android-SDK},
+  Note                     = {\url{https://github.com/Estimote/Android-SDK}, Aufgerufen am 14.04.2015},
 
   Owner                    = {andre},
   Timestamp                = {2015.04.14}
@@ -174,7 +184,7 @@
 @Electronic{TrEs,
   Title                    = {Estimote Indoor Localization},
   Author                   = {{Estimote, Inc.}},
-  Url                      = {http://estimote.com/indoor/},
+  Note                     = {\url{http://estimote.com/indoor/}, Aufgerufen am 26.03.2015},
 
   Owner                    = {andre},
   Timestamp                = {2015.03.26}
@@ -183,7 +193,7 @@
 @Electronic{BeaEx,
   Title                    = {Estimote Beacon Illustration 2},
   Author                   = {{Estimote, Inc.}},
-  Url                      = {http://estimote.com/assets/gfx/press/press-beacon-illustration-2.cd71f93a.png},
+  Note                     = {\url{http://estimote.com/assets/gfx/press/press-beacon-illustration-2.cd71f93a.png}, Aufgerufen am 17.03.2015},
   Year                     = {2015},
 
   Owner                    = {andre},
@@ -193,7 +203,7 @@
 @Electronic{DigRev,
   Title                    = {Macht der Maschinen},
   Author                   = {{G. Braunberger}},
-  Url                      = {http://www.faz.net/aktuell/wirtschaft/menschen-wirtschaft/digitale-revolution-macht-der-maschinen-12910372.html},
+  Note                     = {\url{http://www.faz.net/aktuell/wirtschaft/menschen-wirtschaft/digitale-revolution-macht-der-maschinen-12910372.html}, Aufgerufen am 26.03.2015},
 
   Owner                    = {andre},
   Timestamp                = {2015.03.26}
@@ -202,7 +212,7 @@
 @Electronic{AndStu,
   Title                    = {Android Studio},
   Author                   = {{Google, Inc.}},
-  Url                      = {http://developer.android.com/tools/studio/index.html},
+  Note                     = {\url{http://developer.android.com/tools/studio/index.html}, Aufgerufen am 14.04.2015},
 
   Owner                    = {andre},
   Timestamp                = {2015.04.14}
@@ -211,7 +221,7 @@
 @Standard{GIM,
   Title                    = {Google Indoor Maps},
   Author                   = {{Google, Inc.}},
-  Url                      = {https://www.google.com/maps/about/partners/indoormaps/},
+  Note                     = {\url{https://www.google.com/maps/about/partners/indoormaps/}, Aufgerufen am 22.03.2015},
 
   Owner                    = {andre},
   Timestamp                = {2015.03.22}
@@ -221,15 +231,15 @@
   Title                    = {Stau-Warnung - Diese Verkehrslage-Dienste gibt es für Autofahrer},
   Author                   = {{H.-C. Dirscherl}},
   Journal                  = {http://www.pcwelt.de},
+  Note                     = {\url{http://www.pcwelt.de/ratgeber/Stau-Warnung-Google-Maps-Tomtom-Verkehrslage-Echtzeitverkehrsinformationen-373385.html}, Aufgerufen am 26.03.2015},
 
   Owner                    = {andre},
-  Timestamp                = {2015.03.26},
-  Url                      = {http://www.pcwelt.de/ratgeber/Stau-Warnung-Google-Maps-Tomtom-Verkehrslage-Echtzeitverkehrsinformationen-373385.html}
+  Timestamp                = {2015.03.26}
 }
 
 @Electronic{BuNet,
   Author                   = {{http://www.bundesnetzagentur.de}},
-  Url                      = {http://www.bundesnetzagentur.de/SharedDocs/Downloads/DE/Sachgebiete/Telekommunikation/Unternehmen\_Institutionen/Frequenzen/Allgemeinzuteilungen/2003\_76\_ISM\_pdf.pdf?\_\_blob=publicationFile&v=5},
+  Note                     = {\url{http://www.bundesnetzagentur.de/SharedDocs/Downloads/DE/Sachgebiete/Telekommunikation/Unternehmen\_Institutionen/Frequenzen/Allgemeinzuteilungen/2003\_76\_ISM\_pdf.pdf?\_\_blob=publicationFile&v=5}, Aufgerufen am 25.03.2015},
 
   Owner                    = {andre},
   Timestamp                = {2015.03.25}
@@ -238,7 +248,7 @@
 @Electronic{FUE,
   Title                    = {Übersicht über die verschiedenen Funktechnologien},
   Author                   = {{http://www.itwissen.info}},
-  Url                      = {http://www.itwissen.info/definition/lexikon/ultra-low-power-Bluetooth-ULP-ULP-Bluetooth.html},
+  Note                     = {\url{http://www.itwissen.info/definition/lexikon/ultra-low-power-Bluetooth-ULP-ULP-Bluetooth.html}, Aufgerufen am 24.03.2015},
 
   Owner                    = {andre},
   Timestamp                = {2015.03.24}
@@ -249,11 +259,11 @@
   Author                   = {{J. Blankenbach} and {A. Norrdine}},
   Journal                  = {zfv},
   Year                     = {2013},
+  Note                     = {\url{geodaesie.info/sites/default/files/privat/zfv\_2013\_1\_Blankenbach\_Norrdine.pdf}, Aufgerufen am 14.03.2015},
   Volume                   = {1},
 
   Owner                    = {andre},
-  Timestamp                = {2015.03.14},
-  Url                      = {geodaesie.info/sites/default/files/privat/zfv\_2013\_1\_Blankenbach\_Norrdine.pdf}
+  Timestamp                = {2015.03.14}
 }
 
 @Article{PSO,
@@ -261,14 +271,14 @@
   Author                   = {{J. McCaffrey}},
   Journal                  = {MSDN Magazine},
   Year                     = {2011},
+  Note                     = {\url{https://msdn.microsoft.com/en-us/magazine/hh335067.aspx}, Aufgerufen am 23.04.2015},
 
   Owner                    = {andre},
-  Timestamp                = {2015.04.23},
-  Url                      = {https://msdn.microsoft.com/en-us/magazine/hh335067.aspx}
+  Timestamp                = {2015.04.23}
 }
 
 @PhdThesis{IndLoc,
-  Title                    = {Improving teh Speed and Accuracy of Indoor Localization},
+  Title                    = {Improving the Speed and Accuracy of Indoor Localization},
   Author                   = {{K. Kleisouris}},
   School                   = {New Brunswick - Rutgers University},
   Year                     = {2009},
@@ -280,7 +290,7 @@
 @Electronic{You,
   Title                    = {Datenblatt Youbot},
   Author                   = {{Kuka AG}},
-  Url                      = {http://www.kuka-labs.com/NR/rdonlyres/4833867A-D24F-410A-9AE4-300FBF671DFD/0/youBot\_datenblatt\_web\_0514.pdf},
+  Note                     = {\url{http://www.kuka-labs.com/NR/rdonlyres/4833867A-D24F-410A-9AE4-300FBF671DFD/0/youBot\_datenblatt\_web\_0514.pdf}, Aufgerufen am 26.03.2015},
 
   Owner                    = {andre},
   Timestamp                = {2015.03.26}
@@ -289,16 +299,16 @@
 @TechReport{ROSPaper,
   Title                    = {ROS: an open-source Robot Operating System},
   Author                   = {{M. Quigley} and {B. Gerkey} and {K. Conley} and {J. Faust} and {T. Foote} and {J. Leibs} and {E. Berger} and {R. Wheeler} and {A. Ng}},
+  Note                     = {\url{https://www.willowgarage.com/sites/default/files/icraoss09-ROS.pdf}, Aufgerufen am 14.04.2015},
 
   Owner                    = {andre},
-  Timestamp                = {2015.04.14},
-  Url                      = {https://www.willowgarage.com/sites/default/files/icraoss09-ROS.pdf}
+  Timestamp                = {2015.04.14}
 }
 
 @Electronic{GUIDE,
   Title                    = {MATLAB GUI},
   Author                   = {{MathWorks, Inc.}},
-  Url                      = {http://de.mathworks.com/discovery/matlab-gui.html},
+  Note                     = {\url{http://de.mathworks.com/discovery/matlab-gui.html}, Aufgerufen am 27.04.2015},
 
   Owner                    = {andre},
   Timestamp                = {2015.04.27}
@@ -307,7 +317,7 @@
 @Electronic{Mira,
   Title                    = {Scitos G5},
   Author                   = {{MetraLabs GmbH}},
-  Url                      = {http://metralabs.com/index.php?option=com\_content&view=article&id=70&Itemid=64},
+  Note                     = {\url{http://metralabs.com/index.php?option=com\_content&view=article&id=70&Itemid=64}, Aufgerufen am 13.04.2015},
 
   Owner                    = {andre},
   Timestamp                = {2015.04.13}
@@ -316,7 +326,7 @@
 @Standard{MIL,
   Title                    = {Mobile Indoor Localization},
   Author                   = {{Microsoft Research}},
-  Url                      = {http://research.microsoft.com/en-us/projects/indoorloc/},
+  Note                     = {\url{http://research.microsoft.com/en-us/projects/indoorloc/}, Aufgerufen am 22.03.2015},
 
   Owner                    = {andre},
   Timestamp                = {2015.03.22}
@@ -325,7 +335,7 @@
 @Electronic{MobGerSt,
   Title                    = {Marktanteile mobiler Betriebssysteme Q1 2014},
   Author                   = {{mobile-studien.de}},
-  Url                      = {http://mobile-studien.de/marktanteile-betriebssysteme/marktanteile-mobiler-betriebssysteme-q1-2014/},
+  Note                     = {\url{http://mobile-studien.de/marktanteile-betriebssysteme/marktanteile-mobiler-betriebssysteme-q1-2014/}, Aufgerufen am 16.03.2015},
   Year                     = {2014},
 
   Owner                    = {andre},
@@ -346,7 +356,7 @@
 @Electronic{nRF5,
   Title                    = {nRF51822 Datasheet},
   Author                   = {{Nordic Semiconductor}},
-  Url                      = {http://www.nordicsemi.com/eng/Products/Bluetooth-Smart-Bluetooth-low-energy/nRF51822},
+  Note                     = {\url{http://www.nordicsemi.com/eng/Products/Bluetooth-Smart-Bluetooth-low-energy/nRF51822}, Aufgerufen am 27.03.2015},
 
   Owner                    = {andre},
   Timestamp                = {2015.03.27}
@@ -357,16 +367,16 @@
   Author                   = {{P. Kyösti et al}},
   Institution              = {WINNER},
   Year                     = {2007},
+  Note                     = {\url{http://www.ist-winner.org/WINNER2-Deliverables/D1.1.2v1.1.pdf}, Aufgerufen am 23.04.2015},
 
   Owner                    = {andre},
-  Timestamp                = {2015.04.23},
-  Url                      = {http://www.ist-winner.org/WINNER2-Deliverables/D1.1.2v1.1.pdf}
+  Timestamp                = {2015.04.23}
 }
 
 @Electronic{IMUFilter,
   Title                    = {Android Sensor Fusion Tutorial},
   Author                   = {{P. Lawitzki}},
-  Url                      = {http://www.codeproject.com/Articles/729759/Android-Sensor-Fusion-Tutorial},
+  Note                     = {\url{http://www.codeproject.com/Articles/729759/Android-Sensor-Fusion-Tutorial}, Aufgerufen am 16.04.2015},
 
   Owner                    = {andre},
   Timestamp                = {2015.04.16}
@@ -376,16 +386,16 @@
   Title                    = {Node Positioning in ZigBee Network Using Trilateration MethodBased on the Received Signal Strength Indicator (RSSI)},
   Author                   = {{R. Mardeni} and {S. N. Othman}},
   Journal                  = {European Journal of Scientific Research},
+  Note                     = {\url{http://godieboy.com/wp-content/uploads/2012/05/ejsr\_46\_1\_05.pdf}, Aufgerufen am 31.03.2015},
 
   Owner                    = {andre},
-  Timestamp                = {2015.03.31},
-  Url                      = {http://godieboy.com/wp-content/uploads/2012/05/ejsr\_46\_1\_05.pdf}
+  Timestamp                = {2015.03.31}
 }
 
 @Electronic{AndWLBT,
   Title                    = {Nexus 4 loses wifi connection when bluetooth is in use},
   Author                   = {{r...@themmteam.com}},
-  Url                      = {https://code.google.com/p/android/issues/detail?id=41631},
+  Note                     = {\url{https://code.google.com/p/android/issues/detail?id=41631}, Aufgerufen am 18.04.2015},
 
   Owner                    = {andre},
   Timestamp                = {2015.04.18}
@@ -394,7 +404,7 @@
 @Electronic{ROSErkl,
   Title                    = {About ROS},
   Author                   = {{ROS.org}},
-  Url                      = {http://www.ros.org/about-ros/},
+  Note                     = {\url{http://www.ros.org/about-ros/}, Aufgerufen am 16.04.2015},
 
   Owner                    = {andre},
   Timestamp                = {2015.04.16}
@@ -403,7 +413,7 @@
 @Electronic{ROSjava,
   Title                    = {rosjava},
   Author                   = {{ROSjava Organisation}},
-  Url                      = {http://wiki.ros.org/rosjava},
+  Note                     = {\url{http://wiki.ros.org/rosjava}, Aufgerufen am 15.04.2015},
 
   Owner                    = {andre},
   Timestamp                = {2015.04.15}
@@ -412,7 +422,7 @@
 @Electronic{CR2450,
   Title                    = {Datenblatt CR2450B},
   Author                   = {{Sony Corporation}},
-  Url                      = {http://www.sony.net/Products/MicroBattery/cr/pdf/cr2450b.pdf},
+  Note                     = {\url{http://www.sony.net/Products/MicroBattery/cr/pdf/cr2450b.pdf}, Aufgerufen am 25.03.2015},
 
   Owner                    = {andre},
   Timestamp                = {2015.03.25}
@@ -421,7 +431,7 @@
 @Standard{EVA,
   Title                    = {Evaluation Of RF-Based Indoor Localization Solutions For The Future Internet (EVARILOS)},
   Author                   = {{Technische Universität Berlin} and {ADVANTIC Sistemas y Servicios S.L.} and {iMinds} and {SICS Swedish ICT AB} and {Televic Healthcare}},
-  Url                      = {http://www.evarilos.eu},
+  Note                     = {\url{http://www.evarilos.eu}, Aufgerufen am 22.03.2015},
 
   Owner                    = {andre},
   Timestamp                = {2015.03.22}
@@ -432,16 +442,16 @@
   Author                   = {{U. Kauss}},
   Journal                  = {tomshardware.de},
   Year                     = {2006},
+  Note                     = {\url{http://www.tomshardware.de/nokia-stellt-wibree-vor,news-14032.html}, Aufgerufen am 15.03.2015},
 
   Owner                    = {andre},
-  Timestamp                = {2015.03.15},
-  Url                      = {http://www.tomshardware.de/nokia-stellt-wibree-vor,news-14032.html}
+  Timestamp                = {2015.03.15}
 }
 
 @Electronic{Airpo,
   Title                    = {iBeacon Airport},
   Author                   = {{www.contechlab.com}},
-  Url                      = {http://www.contechlab.com/ibeacon-application-in-airport/},
+  Note                     = {\url{http://www.contechlab.com/ibeacon-application-in-airport/}, Aufgerufen am 26.03.2015},
 
   Owner                    = {andre},
   Timestamp                = {2015.03.26}
@@ -451,7 +461,7 @@
   Title                    = {FM-based Indoor Localization},
   Organization             = {Microsoft Research},
   Author                   = {{Y. Chen} and {D. Lymberopoulos} and {J. Liu} and {B. Priyantha}},
-  Url                      = {http://research.microsoft.com/pubs/163038/sys029fp-Chen.pdf},
+  Note                     = {\url{http://research.microsoft.com/pubs/163038/sys029fp-Chen.pdf}, Aufgerufen am 14.03.2015},
 
   Owner                    = {andre},
   Timestamp                = {2015.03.14}

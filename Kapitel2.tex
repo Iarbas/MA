@@ -93,25 +93,43 @@ Kein Empfang & Hier wurde ein Beacon nicht erkannt und somit liegt keine physisc
 \label{table:Ranging}
 \end{table}
 \subsection{Mikro-Lokalisierung}
-\begin{wrapfigure}{r}{8cm}
+%\begin{wrapfigure}{r}{8cm}
+%\centering
+%\begin{tikzpicture}
+%\node[anchor=mid,inner sep=0] (Beacon1) at (0,0){\includegraphics[scale=0.1]{Bilder/Beacon}};
+%\node[above left] (P1) at (Beacon1) {$P_1$};
+%\node[anchor=mid,inner sep=0] (Beacon2) at (6,0){\includegraphics[scale=0.1]{Bilder/Beacon}};
+%\node[above right] (P2) at (Beacon2) {$P_2$};
+%\node[anchor=mid,inner sep=0] (Beacon3) at (3,5){\includegraphics[scale=0.1]{Bilder/Beacon}};
+%\node[above right] (P3) at (Beacon3) {$P_3$};
+%\node[anchor=mid,inner sep=0] (MotoG) at (3,2.1){\includegraphics[scale=0.04]{Bilder/MotoG}};
+%\node[above right, inner sep=6] (P4) at (MotoG) {$P_{Inter}$};
+%\draw [thick, ->] (Beacon1) -- node[above] {$r_1$} ++(MotoG);
+%\draw [thick, ->] (Beacon2) -- node[above] {$r_2$} ++(MotoG);
+%\draw [thick, ->] (Beacon3) -- node[right] {$r_3$} ++(MotoG);
+%\end{tikzpicture}
+%\caption{Beispiel einer Trilateration zur Positionsbestimmung}
+%\label{fig:Trilat}
+%\end{wrapfigure}
+Im Gegensatz zur relativen Lokalisierung mittels Lagebeschreibung existiert noch die Methode der Mikro-Lokalisierung. Diese berechnet eine genaue Distanz zu einem Beacon und letztlich kann mithilfe von zusätzlichen Signalen mehrerer Beacons eine genaue Lokalisierung mit Koordinaten im Raum durchgeführt werden. Für die Bestimmung einer Position aus den empfangenen Beacon-Signalen existieren mehrere Verfahren. Ein gängige Methode ist die Tri,- bzw. Multilateration, die aus der Entfernung eines Punktes zwischen drei oder mehreren Orientierungspunkten dessen Position in einem Koordinatensystem bestimmt. In diesem Fall ließen sich die Positionen der Beacons, die Orientierungspunkte und die Entfernungen aus den Signalen der Beacons berechnen. Mit einem Modell der Signalausbreitung wird dabei die Signalstärke, die durch den Weg vom Beacon zum Empfangsgerät geschwächt wurde, direkt in eine Distanz umgerechnet. Im übernächsten Kapitel wird ein solches Modell dafür beschrieben. An dieser Stelle soll noch einmal auf die Vorgehensweise zur Lokalisierung mittels Trilateration eingegangen werden. Dafür dient Abbildung \ref{fig:Trilat} zur Veranschaulichung der Lösung. Im ersten Schritt werden dazu die Positionen der Beacons zur Vereinfachung in ein neues Koordinatensystem transformiert. Dabei wird ein Beacon in den Koordinatenursprung verlegt und ein zweiter durch Rotation um die Z-Achse auf die X-Achse gesetzt.
+\begin{figure}[H]
 \centering
 \begin{tikzpicture}
-\node[anchor=mid,inner sep=0] (Beacon1) at (0,0){\includegraphics[scale=0.1]{Bilder/Beacon}};
-\node[above left] (P1) at (Beacon1) {$P_1$};
-\node[anchor=mid,inner sep=0] (Beacon2) at (6,0){\includegraphics[scale=0.1]{Bilder/Beacon}};
-\node[above right] (P2) at (Beacon2) {$P_2$};
-\node[anchor=mid,inner sep=0] (Beacon3) at (3,5){\includegraphics[scale=0.1]{Bilder/Beacon}};
-\node[above right] (P3) at (Beacon3) {$P_3$};
-\node[anchor=mid,inner sep=0] (MotoG) at (3,2.1){\includegraphics[scale=0.04]{Bilder/MotoG}};
-\node[above right, inner sep=6] (P4) at (MotoG) {$P_{Inter}$};
+\node[anchor=mid,inner sep=0] (Beacon1) at (0,0){\includegraphics[scale=0.15]{Bilder/Beacon}};
+\node[above left, inner sep=6] (P1) at (Beacon1) {$P_1$};
+\node[anchor=mid,inner sep=0] (Beacon2) at (6,0){\includegraphics[scale=0.15]{Bilder/Beacon}};
+\node[above right, inner sep=6] (P2) at (Beacon2) {$P_2$};
+\node[anchor=mid,inner sep=0] (Beacon3) at (3,5){\includegraphics[scale=0.15]{Bilder/Beacon}};
+\node[above right, inner sep=6] (P3) at (Beacon3) {$P_3$};
+\node[anchor=mid,inner sep=0] (MotoG) at (3,2.1){\includegraphics[scale=0.06]{Bilder/MotoG}};
+\node[above right, inner sep=10] (P4) at (MotoG) {$P_{Inter}$};
 \draw [thick, ->] (Beacon1) -- node[above] {$r_1$} ++(MotoG);
 \draw [thick, ->] (Beacon2) -- node[above] {$r_2$} ++(MotoG);
 \draw [thick, ->] (Beacon3) -- node[right] {$r_3$} ++(MotoG);
 \end{tikzpicture}
 \caption{Beispiel einer Trilateration zur Positionsbestimmung}
 \label{fig:Trilat}
-\end{wrapfigure}
-Im Gegensatz zur relativen Lokalisierung mittels Lagebeschreibung existiert noch die Methode der Mikro-Lokalisierung. Diese berechnet eine genaue Distanz zu einem Beacon und letztlich kann mithilfe von zusätzlichen Signalen mehrerer Beacons eine genaue Lokalisierung mit Koordinaten im Raum durchgeführt werden. Für die Bestimmung einer Position aus den empfangenen Beacon-Signalen existieren mehrere Verfahren. Ein gängige Methode ist die Tri,- bzw. Multilateration, die aus der Entfernung eines Punktes zwischen drei oder mehreren Orientierungspunkten dessen Position in einem Koordinatensystem bestimmt. In diesem Fall ließen sich die Positionen der Beacons, die Orientierungspunkte und die Entfernungen ließen sich aus den Signalen der Beacons berechnen. Mit einem Modell der Signalausbreitung wird dabei die Signalstärke, die durch den Weg vom Beacon zum Empfangsgerät geschwächt wurde, direkt in eine Distanz umgerechnet. Im übernächsten Kapitel wird ein solches Modell dafür beschrieben. An dieser Stelle soll noch einmal auf die Vorgehensweise zur Lokalisierung mittels Trilateration eingegangen werden. Dafür dient Abbildung \ref{fig:Trilat} zur Veranschaulichung der Lösung. Im ersten Schritt werden dazu die Positionen der Beacons zur Vereinfachung in ein neues Koordinatensystem transformiert. Dabei wird ein Beacon in den Koordinatenursprung verlegt und ein zweiter durch Rotation um die Z-Achse auf die X-Achse gesetzt.\\ \\
+\end{figure}
 Translation:
 \begin{align*}
 T &= -P_1\\
@@ -161,11 +179,14 @@ Viele Unternehmen nutzen die Möglichkeiten einer vernetzten Welt, um das Verhal
 \label{Airpo}
 \end{wrapfigure}
 Im Gegensatz dazu stellt die Mikro-Lokalisierung ein weiteres mögliches Szenario dar. Sie soll dazu dienen, Menschen oder Objekte genau zu lokalisieren, um unter Verwendung von speziellen Applikationen eine bessere Orientierung zu gewährleisten. Daran interessiert sind meist Branchen, die ihre Kundschaft gerne schnell und ohne Umwege zu dem führen möchten, weswegen sie in die Einrichtung des Unternehmens gekommen sind. Als Beispiele können hier Messehallen- und Flughafenbetreiber genannt werden. In diesen Branchen sind die Gebäude meist sehr unübersichtlich und die Besucher häufig ortsfremd. Der Vorteil den die Unternehmen aus dem System ziehen können, ist eine bessere Verteilung der Kunden durch eine intelligente Pfadplanung. So können die Platzkapazitäten der Einrichtungen besser genutzt und die Gäste somit schneller abgefertigt werden. Wenn zudem ein Unternehmen in seinen Gebäuden eine ähnliches System wie ein Navigationsgerät für die Straße bieten kann, bedeutet dies auch einen Wettbewerbsvorteil und fördert die Kundenzufriedenheit. \\ \\
-Grundsätzlich sind dies hier nur Annahmen für mögliche Szenarien. Da es noch keine praktikablen Anwendungen der Indoor-Lokalisierung gibt, können keine genauen Vorhersagen diesbezüglich getroffen werden. Viele Unternehmen schrecken noch davor zurück, weil kein einheitlicher Standard existiert und nur wenige Menschen mit der Technik vertraut sind. \par\bigskip 
+Grundsätzlich sind dies hier nur Annahmen für mögliche Szenarien. Da es noch keine praktikablen Anwendungen der Indoor-Lokalisierung gibt, können keine genauen Vorhersagen diesbezüglich getroffen werden. Viele Unternehmen schrecken noch davor zurück, weil kein einheitlicher Standard existiert und nur wenige Menschen mit der Technik vertraut sind. 
+\newpage
 \subsection{Planungskonzepte für Beacon-Konfigurationen}
-Bisherige Ansätze um ein Lokalisierungssystem in einem Raum zu realisieren, beruhen auf fachmännischen Einschätzungen des Beacon-Installateurs. Das bedeutet, dass sich das Konzept lediglich auf Erfahrungswerte beruft. Die Beacons werden dabei an strategische Punkte gesetzt und manuell an jeder Position neu konfiguriert. Wie schon oben beschrieben, werden die Befestigungen der Beacons im Raum vermessen oder grob geschätzt und so zur Positionsbestimmung in eine Lokalisierungs-Applikation ebenfalls wieder manuell eingepflegt. Von der Firma Estimote gibt es seit Neuestem eine Applikation namens "`Estimote Indoor Location "', die den Entwickler einer Lokalisierungs-Applikation unterstützen soll. Der Entwickler installiert dazu an jeder der vier Wände eines Raumes einen Beacon der Firma, startet ausgehend vom Eingang die App und läuft im Uhrzeigersinn den ganzen Raum ab. Dabei werden die Signale der Beacons an den Wänden aufgezeichnet und mithilfe der inertialen Sensoren des Smartphones zusätzlich die Bewegungsinformationen gespeichert. Daraus errechnet die App eine Karte vom Raum und liefert auch gleich eine Positionsbestimmung mithilfe der genannten Sensordaten in Echtzeit. Diese Karte kann auch in weiteren Apps für das Smartphone verwendet werden, jedoch ist dafür eine Migration der Daten notwendig. Da für diese Arbeit nur drei Beacons zur Verfügung standen und diese App erst in der späten Phase der Arbeit veröffentlicht wurde, wird hier nicht mehr auf dieses Konzept eingegangen. Jedoch lassen die noch engen Begrenzungen der Anwendung (konstante Anzahl von vier Beacons, Einstellung der Parameter wieder manuell nach Erfahrungswert) keinen Handlungsspielraum für die Optimierung der Beacon-Konfigurationen zu. Zudem muss immer ein Entwickler die Räume ablaufen und später die Daten vom Smartphone in die eigene Entwicklung migrieren. Für kleine Räume ist diese Strategie sicherlich hilfreich, jedoch wird sie bei Großprojekten, wie z.B. der Schaffung eines Ortungssystems in einem Flughafen schlicht unbrauchbar.
-\begin{figure}[H]
+\begin{wrapfigure}{r}{6cm}
 \centering
-\includegraphics[scale=0.3]{Bilder/TrackEstimote}
+\includegraphics[scale=0.23]{Bilder/TrackEstimote}
 \caption{Demo der Estimote Indoor Localization App \cite{TrEs}}
-\end{figure}
+\label{fig:EstiPlan}
+\end{wrapfigure}
+Bisherige Ansätze um ein Lokalisierungssystem in einem Raum zu realisieren, beruhen auf fachmännischen Einschätzungen des Beacon-Installateurs. Das bedeutet, dass sich das Konzept lediglich auf Erfahrungswerte beruft. Die Beacons werden dabei an strategische Punkte gesetzt und manuell an jeder Position neu konfiguriert. Wie schon oben beschrieben, werden die Befestigungen der Beacons im Raum vermessen oder grob geschätzt und so zur Positionsbestimmung in eine Lokalisierungs-Applikation ebenfalls wieder manuell eingepflegt. Von der Firma Estimote gibt es seit Neuestem eine Applikation namens "`Estimote Indoor Location "', die den Entwickler einer Lokalisierungs-Applikation unterstützen soll. Der Entwickler installiert dazu an jeder der vier Wände eines Raumes einen Beacon der Firma, startet ausgehend vom Eingang die App und läuft im Uhrzeigersinn den ganzen Raum ab. Dabei werden die Signale der Beacons an den Wänden aufgezeichnet und mithilfe der inertialen Sensoren des Smartphones zusätzlich die Bewegungsinformationen gespeichert. Daraus errechnet die App eine Karte vom Raum und liefert auch gleich eine Positionsbestimmung mithilfe der genannten Sensordaten in Echtzeit. Die Demonstration des Programms ist hierfür in Abbildung \ref{fig:EstiPlan} einmal festgehalten. Der Vorteil dieser App ist es, dass die Karte auch in weiteren Apps für das Smartphone verwendet werden kann, jedoch ist dafür eine Migration der Daten notwendig. \\ \\
+Da für die Experimente in dieser Arbeit nur drei Beacons zur Verfügung standen und diese App erst in der Endphase der Bearbeitungszeit veröffentlicht wurde, wird hier nicht mehr auf dieses Konzept eingegangen. Jedoch lassen die noch engen Begrenzungen der Anwendung (konstante Anzahl von vier Beacons, Einstellung der Parameter wieder manuell nach Erfahrungswert) keinen Handlungsspielraum für die Optimierung der Beacon-Konfigurationen zu. Zudem muss immer ein Entwickler die Räume ablaufen und später die Daten vom Smartphone in die eigene Entwicklung migrieren. Für kleine Räume ist diese Strategie sicherlich hilfreich, jedoch wird sie bei Großprojekten, wie z.B. der Schaffung eines Ortungssystems in einem Flughafen schlicht unbrauchbar.

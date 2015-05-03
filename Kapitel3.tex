@@ -42,21 +42,21 @@ Da die Simulation zur Erstellung eines Indoor-Lokalisierungssystems in Gebäuden
     	myarrow/.style={->, >=latex', shorten >=1pt, thick}, 
 	}  
     \node[cloud, cloud puffs=15.7, text width=3cm, draw, fill=red!10, ] (cloud) at (0,0) {Kommunikations-Framework};
-    \node[sensor] (BeaconSig) at (-6,1) {Beacon-Signale};
-    \node[sensor] (IMU) at (-6,-1) {Inertial-sensoren};
+    \node[sensor] (BeaconSig) at (-5.5,1) {Beacon-Signale};
+    \node[sensor] (IMU) at (-5.5,-1) {Inertial-sensoren};
     \node[above of=BeaconSig] (App) {Smartphone-App};
     
     \node[sensor] (Pos) at (0,-5) {Positionsdaten};
     \node[below of=Pos] (Robo) {Middleware vom Roboter};
     
-    \node[sensor] (Verar) at (6,1) {Informations-Verarbeitung};
-    \node[sensor] (Steuer) at (6,-1.3) {Steuerung};
+    \node[sensor] (Verar) at (5.5,1) {Informations-Verarbeitung};
+    \node[sensor] (Steuer) at (5.5,-1.3) {Steuerung};
     \node[above of=Verar] (PC) {Simulationsumgebung};
     
     \draw[myarrow] (BeaconSig.east) -- ++(1,0) -- ++(0,0.2) |- (Verar.170);
-	\draw[myarrow] (IMU.east) -- ++(2.5,0) -- ++(0,0.5) |- (Verar.180);
+	\draw[myarrow] (IMU.east) -- ++(2,0) -- ++(0,0.5) |- (Verar.180);
 	\draw[myarrow] (Pos.110) -- ++(0,3.45) -- ++(2,0) -- ++(0,1) |- (Verar.190);
-	\draw[myarrow] (Steuer.west) -- ++(-4,0) -| (Pos.70);
+	\draw[myarrow] (Steuer.west) -- ++(-3.5,0) -| (Pos.70);
 
     \begin{pgfonlayer}{background}
         \path (App.north -| BeaconSig.west)+(-0.2,0.2) node (a) {};

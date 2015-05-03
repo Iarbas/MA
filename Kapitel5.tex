@@ -14,24 +14,37 @@ Für die Versuche wurde zunächst ein großer Raum benötigt, damit der Abstand 
 \addplot[color=mint] table [col sep=comma] {TikzDaten/Meter10Normal.dat};
 \end{groupplot}
 \end{tikzpicture}
-\caption{Verlauf der gemessenen Signalstärke eines Beacons über die Zeit aus einer Entfernung von 1, 4 und 10 Metern}
+\caption{Verlauf der Signalstärke aus einer Entfernung von 1, 4 und 10 Metern}
 \label{fig:MeterNormal}
 \end{figure}
 Für die ersten vier Distanz-Meter ist diese Aussage über alle Messreihen die Regel, für darauffolgende größere Entfernungen passiert es jedoch, dass sich die Signalstärke wieder erhöht und sich das Rauschen vermindert. Dies ist in Abbildung  \ref{fig:MittelwertAlle} einmal dargestellt. Besonders deutlich wird die Missachtung der Regel zwischen dem zehnten und dem fünfzehnten Meter, wo der Verlauf der Signalstärke eher einer Achterbahnfahrt gleicht. Der Grund dafür könnte die "`Verschmutzung"' des Raumes durch andere Signale im 2,4 GHz Band sein oder auch durch Reflektionen der Wände, der Decke oder des Fußbodens hervorgerufen werden. Aufgrund der schon erwähnten Asynchronität der Beacon-Signale, der nicht einsehbaren Messzyklen-Dauer der Estimote SDK und/oder auch der parallelen Nutzung von Bluetooth- und WLAN-Modul des Smartphones, ergab sich anfänglich der Verdacht, dass die Ursache für die Signalstörungen in der Messwertaufnahme mithilfe der Lighthouse Keeper-App selber liegt. Somit wäre es denkbar, dass die stärksten Signale zufällig nicht aufgenommen und nur deren "`Echo"' wahrgenommen wird, weil ihnen zu dem Zeitpunkt, als die Signale die Antennen vom Smartphone passierten, niemand "`zuhörte"'. Dieser Verdacht sieht sich im Nachhinein nicht bestätigt, wenn nur Abbildung \ref{fig:MeterNormal} in dem Abstand von einem Meter betrachtet wird. Hier ist der Abstand zwischen Smartphone und Beacon sehr gering, nichtsdestotrotz werden keine reflektierten Signale aus größerer Entfernung aufgezeichnet, weder in dieser Messung noch in weiteren Messungen in kurzer Entfernung. Also muss die Verstärkung des Rauschens auf die physikalischen, statt den programmiertechnischen Erklärungen zurückzuführen sein. In dieser ersten Betrachtung des Systems kann schon von vornherein gesagt werden, dass das Rauschverhalten bzw. das Auftreten von Störungen raumabhängig und somit nur schwer vorhersagbar ist.
 \begin{figure}[H] 
 \centering
 \begin{tikzpicture}
-\begin{axis}[ybar,enlargelimits=0.04,bar width=1.5mm,xlabel={Abstand der einzelnen Beacons in Metern},ylabel={Gemittelter RSSI-Wert in dBm},width=0.7\paperwidth, height=0.25\paperheight, ymax=-60, symbolic x coords={0.5,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15}, xticklabel=\pgfmathprintnumber{\tick}, xtick=data, y dir=reverse, legend style={at={(0.5,1.15)},anchor=south,legend columns=-1},]
+\begin{axis}[ybar,enlargelimits=0.04,bar width=1.5mm,xlabel={Abstand der einzelnen Beacons in Metern},ylabel={Gemittelter RSSI-Wert in dBm},width=0.7\paperwidth, height=0.22\paperheight, ymax=-60, symbolic x coords={0.5,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15}, xticklabel=\pgfmathprintnumber{\tick}, xtick=data, y dir=reverse, legend style={at={(0.5,1.15)},anchor=south,legend columns=-1},]
 \addplot+[fill=dblue] table [col sep=comma] {TikzDaten/MittelwertAlleBlau.dat}; 
 \addplot+[fill=ice] table [col sep=comma] {TikzDaten/MittelwertAlleEis.dat};
 \addplot+[fill=mint] table [col sep=comma] {TikzDaten/MittelwertAlleMinze.dat};
 \legend{Beacon 1, Beacon 2, Beacon 3}
 \end{axis}
 \end{tikzpicture}
-\caption{Mittelwert der RSSI-Werte von allen Distanzen, wobei die Farbe der Säule für die Farbe des jeweiligen Beacons steht}
+\caption{Mittelwert der RSSI-Werte von allen Distanzen}
 \label{fig:MittelwertAlle}
 \end{figure}
-Um nun doch wie erwünscht eine qualitativ hochwertige Schätzung über die Signalausbreitung von BLE-Signalen zu gewinnen, muss es zum Anfang ein Modell geben, dass zuerst von einem völlig idealen Verhalten ausgeht. Es muss dabei die Realität nur im Groben abbilden können und ausschließlich den Grundstein für die Simulation und deren Erweiterungen legen. Um eine Theorie dafür aufstellen zu können, müssen die gesammelten Daten genauer betrachtet und die Ausbreitung des BLE-Signals der Beacons ohne Störungen herausgefiltert werden. In Abbildung \ref{fig:MittelwertAlle} wurden schon einmal alle Messreihen in einem Diagramm zusammengefasst. Dabei wurde von jeder Messung eines jeden Beacons der Mittelwert der empfangenen Empfangsstärke über der Distanz zwischen Smartphone und Leuchtfeuer aufgetragen. Auf den ersten Blick fällt auf, dass lediglich bis vier Meter eine genaue Aussage über die Entfernung getroffen werden kann. Die Unterschiede bzw. das Fehlen eines Unterschiedes macht es für größere Entfernungen schwer, anhand dessen eine qualitative Berechnung durchzuführen. Deswegen wird der Anteil an darstellbaren Informationen in Abbildung \ref{fig:DraufVert} und \ref{fig:SeitVert} erhöht, indem nicht der Mittelwert aller Messungen, sondern die Verteilung der empfangenen Signalstärke farblich über die Entfernungen markiert wurde. Hier erscheint verstärkt das Phänomen, dass das Rauschen nicht mit der Distanz korreliert, sondern stark ortsabhängig ist. Zumindest erhöht sich mit einem größeren Luftweg die Wahrscheinlichkeit, dass dies auftritt. Für die Parameterbestimmung des Modells ist es jedoch wichtig, dass die allgemeine Theorie auch von den Messwerten erfüllt wird. Insbesondere bei der Signalausbreitung wird davon ausgegangen, dass die Signalstärke über den zurückgelegten Weg abnimmt. Ist dies nicht der Fall, muss eine neue Theorie (mit Reflexionen, Signalauslöschung etc.) gefunden oder die Daten müssen so aufbereitet werden, dass die Theorie wieder zutrifft. In Folge letzterer Aussage werden statt aller Messwerte einer Entfernung nur die 100 stärksten zur Mittelwertbildung herangezogen, wie es in Abbildung \ref{fig:Mittelwert100} gezeigt wird, sieht die Entwicklung der Abnahme der Signalstärke deutlich vorhersehbarer aus und wird dadurch verwertbar. 
+Um nun doch wie erwünscht eine qualitativ hochwertige Schätzung über die Signalausbreitung von BLE-Signalen zu gewinnen, muss es zum Anfang ein Modell geben, dass zuerst von einem völlig idealen Verhalten ausgeht. Es muss dabei die Realität nur im Groben abbilden können und ausschließlich den Grundstein für die Simulation und deren Erweiterungen legen. Um eine Theorie dafür aufstellen zu können, müssen die gesammelten Daten genauer betrachtet und die Ausbreitung des BLE-Signals der Beacons ohne Störungen herausgefiltert werden. In Abbildung \ref{fig:MittelwertAlle} wurden schon einmal alle Messreihen in einem Diagramm zusammengefasst. Dabei wurde von jeder Messung eines jeden Beacons der Mittelwert der empfangenen Empfangsstärke über der Distanz zwischen Smartphone und Leuchtfeuer aufgetragen. Auf den ersten Blick fällt auf, dass lediglich bis vier Meter eine genaue Aussage über die Entfernung getroffen werden kann. Die Unterschiede bzw. das Fehlen eines Unterschiedes macht es für größere Entfernungen schwer, anhand dessen eine qualitative Berechnung durchzuführen. Deswegen wird der Anteil an darstellbaren Informationen in Abbildung \ref{fig:DraufVert} und \ref{fig:SeitVert} erhöht, indem nicht der Mittelwert aller Messungen, sondern die Verteilung der empfangenen Signalstärke farblich über die Entfernungen markiert wurde. Hier erscheint verstärkt das Phänomen, dass das Rauschen nicht mit der Distanz korreliert, sondern stark ortsabhängig ist. Zumindest erhöht sich mit einem größeren Luftweg die Wahrscheinlichkeit, dass dies auftritt. Für die Parameterbestimmung des Modells ist es jedoch wichtig, dass die allgemeine Theorie auch von den Messwerten erfüllt wird. Insbesondere bei der Signalausbreitung wird davon ausgegangen, dass die Signalstärke über den zurückgelegten Weg abnimmt. Ist dies nicht der Fall, muss eine neue Theorie (mit Reflexionen, Signalauslöschung etc.) gefunden oder die Daten müssen so aufbereitet werden, dass die Theorie wieder zutrifft. In Folge letzterer Aussage werden statt aller Messwerte einer Entfernung nur die 100 stärksten zur Mittelwertbildung herangezogen, wie es in Abbildung \ref{fig:Mittelwert100} gezeigt wird, sieht die Entwicklung der Abnahme der Signalstärke deutlich vorhersehbarer aus und wird dadurch verwertbar.
+\begin{figure}[H] 
+\centering
+\begin{tikzpicture}
+\begin{axis}[ybar,enlargelimits=0.04,bar width=1.5mm,xlabel={Abstand der einzelnen Beacons in Metern},ylabel={Gemittelter RSSI-Wert in dBm},width=0.7\paperwidth, height=0.22\paperheight, ymax=-60, symbolic x coords={0.5,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15}, xticklabel=\pgfmathprintnumber{\tick}, xtick=data, y dir=reverse, legend style={at={(0.5,1.15)},anchor=south,legend columns=-1},]
+\addplot+[fill=dblue] table [col sep=comma] {TikzDaten/Mittelwert100Blau.dat}; 
+\addplot+[fill=ice] table [col sep=comma] {TikzDaten/Mittelwert100Eis.dat};
+\addplot+[fill=mint] table [col sep=comma] {TikzDaten/Mittelwert100Minze.dat};
+\legend{Beacon 1, Beacon 2, Beacon 3}
+\end{axis}
+\end{tikzpicture}
+\caption{Mittelwert der 100 stärksten RSSI-Werte von allen Distanzen}
+\label{fig:Mittelwert100}
+\end{figure}
 \begin{figure}[H] 
 \centering
 \begin{tikzpicture}
@@ -52,19 +65,6 @@ Um nun doch wie erwünscht eine qualitativ hochwertige Schätzung über die Sign
 \caption{Seitliche Ansicht auf die Signalstärken-Verteilung zu den einzelnen Distanzen}
 \label{fig:SeitVert}
 \end{figure} 
-\begin{figure}[H] 
-\centering
-\begin{tikzpicture}
-\begin{axis}[ybar,enlargelimits=0.04,bar width=1.5mm,xlabel={Abstand der einzelnen Beacons in Metern},ylabel={Gemittelter RSSI-Wert in dBm},width=0.7\paperwidth, height=0.2\paperheight, ymax=-60, symbolic x coords={0.5,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15}, xticklabel=\pgfmathprintnumber{\tick}, xtick=data, y dir=reverse, legend style={at={(0.5,1.15)},anchor=south,legend columns=-1},]
-\addplot+[fill=dblue] table [col sep=comma] {TikzDaten/Mittelwert100Blau.dat}; 
-\addplot+[fill=ice] table [col sep=comma] {TikzDaten/Mittelwert100Eis.dat};
-\addplot+[fill=mint] table [col sep=comma] {TikzDaten/Mittelwert100Minze.dat};
-\legend{Beacon 1, Beacon 2, Beacon 3}
-\end{axis}
-\end{tikzpicture}
-\caption{Mittelwert der 100 stärksten RSSI-Werte von allen Distanzen, wobei die Farbe der Säule für die Farbe des jeweiligen Beacons steht}
-\label{fig:Mittelwert100}
-\end{figure}
 \section{Evaluierung der SDK-eigenen Distanzschätzung}
 In dem Abschnitt über ROSjava wurde in Bild \ref{fig:ROSjavaImpl} eine von der SDK berechneten Distanz erwähnt. Diese ist jedoch nur eingeschränkt nutzbar, wie es Abbildung \ref{fig:DisrealDistance} belegt. Hier wurden die tatsächlichen Distanzen mit denen aus den 100 stärksten Signalen geschätzten Entfernungen der SDK gegenübergestellt und zueinander aufgetragen. Dazu wurde der optimale Verlauf mit eingetragen, bei dem die geschätzten Werte gleich den tatsächlichen entsprechen. Das Ergebnis der SDK-internen Berechnung spiegelt dabei in keinster Weise die Realität ab und verlangt die Entwicklung eines neuen Modells, da mit diesem Resultat kein Indoor-Lokalisierungssystem mittels Trilateration oder Landmarken betrieben werden kann.  
 \begin{figure}[H] 

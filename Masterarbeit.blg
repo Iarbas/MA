@@ -1,47 +1,135 @@
 This is BibTeX, Version 0.99d (TeX Live 2013/Debian)
 Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: Masterarbeit.aux
-I found no \bibdata command---while reading file Masterarbeit.aux
-I found no \bibstyle command---while reading file Masterarbeit.aux
-You've used 4 entries,
-            0 wiz_defined-function locations,
-            91 strings with 530 characters,
-and the built_in function-call counts, 0 in all, are:
-= -- 0
-> -- 0
-< -- 0
-+ -- 0
-- -- 0
-* -- 0
-:= -- 0
-add.period$ -- 0
-call.type$ -- 0
-change.case$ -- 0
+The style file: plaindin.bst
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Database file #1: Quellen.bib
+Warning--entry type for "Shoe" isn't style-file defined
+--line 5 of file Quellen.bib
+Warning--entry type for "Bibel" isn't style-file defined
+--line 28 of file Quellen.bib
+Warning--entry type for "iBPa" isn't style-file defined
+--line 48 of file Quellen.bib
+Warning--entry type for "MotoGV" isn't style-file defined
+--line 57 of file Quellen.bib
+Warning--entry type for "GSwiB" isn't style-file defined
+--line 66 of file Quellen.bib
+Warning--entry type for "BLElogo" isn't style-file defined
+--line 104 of file Quellen.bib
+Warning--entry type for "EstSDK" isn't style-file defined
+--line 175 of file Quellen.bib
+Warning--entry type for "TrEs" isn't style-file defined
+--line 184 of file Quellen.bib
+Warning--entry type for "BeaEx" isn't style-file defined
+--line 193 of file Quellen.bib
+Warning--entry type for "DigRev" isn't style-file defined
+--line 203 of file Quellen.bib
+Warning--entry type for "AndStu" isn't style-file defined
+--line 212 of file Quellen.bib
+Warning--entry type for "GIM" isn't style-file defined
+--line 221 of file Quellen.bib
+Warning--entry type for "BuNet" isn't style-file defined
+--line 240 of file Quellen.bib
+Warning--entry type for "You" isn't style-file defined
+--line 290 of file Quellen.bib
+Warning--entry type for "GUIDE" isn't style-file defined
+--line 308 of file Quellen.bib
+Warning--entry type for "Mira" isn't style-file defined
+--line 317 of file Quellen.bib
+Warning--entry type for "MIL" isn't style-file defined
+--line 326 of file Quellen.bib
+Warning--entry type for "MobGerSt" isn't style-file defined
+--line 335 of file Quellen.bib
+Warning--entry type for "nRF5" isn't style-file defined
+--line 356 of file Quellen.bib
+Warning--entry type for "IMUFilter" isn't style-file defined
+--line 376 of file Quellen.bib
+Warning--entry type for "AndWLBT" isn't style-file defined
+--line 395 of file Quellen.bib
+Warning--entry type for "ROSErkl" isn't style-file defined
+--line 404 of file Quellen.bib
+Warning--entry type for "ROSjava" isn't style-file defined
+--line 413 of file Quellen.bib
+Warning--entry type for "CR2450" isn't style-file defined
+--line 422 of file Quellen.bib
+Warning--entry type for "EVA" isn't style-file defined
+--line 431 of file Quellen.bib
+Warning--entry type for "Airpo" isn't style-file defined
+--line 463 of file Quellen.bib
+Warning--entry type for "WLAN" isn't style-file defined
+--line 472 of file Quellen.bib
+Warning--empty year in Shoe
+Warning--empty year in iBPa
+Warning--empty year in MotoGV
+Warning--empty year in GSwiB
+Warning--there's no year in Moto
+Warning--empty number in SPEA2
+Warning--empty note in SPEA2
+Warning--empty year in TrEs
+Warning--empty year in EstSDK
+Warning--empty year in DigRev
+Warning--empty year in AndStu
+Warning--empty year in GIM
+Warning--there's no year in Stau
+Warning--empty year in You
+Warning--empty number in ROSPaper
+Warning--empty year in GUIDE
+Warning--empty year in Mira
+Warning--empty year in MIL
+Warning--empty year in nRF5
+Warning--empty number in WII
+Warning--empty year in IMUFilter
+Warning--there's no year in Trilat
+Warning--empty year in ROSjava
+Warning--empty year in ROSErkl
+Warning--empty year in AndWLBT
+Warning--empty year in CR2450
+Warning--empty year in EVA
+Warning--empty year in Airpo
+Warning--empty year in WLAN
+You've used 41 entries,
+            4335 wiz_defined-function locations,
+            1051 strings with 13111 characters,
+and the built_in function-call counts, 13465 in all, are:
+= -- 1295
+> -- 433
+< -- 69
++ -- 178
+- -- 137
+* -- 874
+:= -- 2678
+add.period$ -- 16
+call.type$ -- 41
+change.case$ -- 151
 chr.to.int$ -- 0
-cite$ -- 0
-duplicate$ -- 0
-empty$ -- 0
-format.name$ -- 0
-if$ -- 0
+cite$ -- 70
+duplicate$ -- 439
+empty$ -- 1127
+format.name$ -- 273
+if$ -- 2824
 int.to.chr$ -- 0
-int.to.str$ -- 0
-missing$ -- 0
-newline$ -- 0
-num.names$ -- 0
-pop$ -- 0
-preamble$ -- 0
-purify$ -- 0
+int.to.str$ -- 41
+missing$ -- 158
+newline$ -- 229
+num.names$ -- 81
+pop$ -- 258
+preamble$ -- 1
+purify$ -- 151
 quote$ -- 0
-skip$ -- 0
+skip$ -- 438
 stack$ -- 0
-substring$ -- 0
-swap$ -- 0
-text.length$ -- 0
+substring$ -- 431
+swap$ -- 116
+text.length$ -- 69
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 0
-warning$ -- 0
-while$ -- 0
-width$ -- 0
-write$ -- 0
-(There were 2 error messages)
+type$ -- 167
+warning$ -- 29
+while$ -- 150
+width$ -- 43
+write$ -- 498
+(There were 56 warnings)

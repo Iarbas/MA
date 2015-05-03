@@ -2,8 +2,7 @@
 Nach der sehr detaillreichen Analyse der Messwerte wird in diesem Kapitel ein Modell aus den aufbereiteten Daten gewonnen und dieses anschließend in eine Simulationsumgebung implementiert. Aus den Messungen muss zunächst qualitativ eine Aussage über das Verhalten der BLE-Signale getroffen werden, um nachfolgend ein geeignetes mathematisches Modell zu finden. Dieses gewählte Modell wird darauf an die Gegebenheiten mit einer Parameterschätzung angepasst. Für die Anpassung wird zunächst ein Minimierungsproblem anhand der Messwerte aus dem vorigen Kapitel erstellt, welches mit einem Partikel-Schwarm-Optimierer gelöst wird. Die daraus gewonnenen Parameter lassen sich in die Modellgleichung einsetzen, um mit dessen Hilfe die Signalausbreitung der Beacons in einem Gebäude vorherzusagen. \\ \\
 Die Vorhersage der Aubreitung von BLE-Funkwellen in einer Simulation kann dazu genutzt werden, mithilfe von einem Optimierungsverfahren die Leuchtfeuer in einem Raum so anzubringen, dass ein Lokalisierungssystem aus dieser Technologie mit maximaler Genauigkeit konfiguriert werden kann. Um zuerst die Abmessungen des betreffenden Raumes zu ermitteln, wird der Grundriss durch die Verwendung des Scitos G5 und der Software Miracenter als Bilddatei erstellt. Somit gelten die Wände als Begrenzung und der verbleibende Rest als Platz für die Signalausbreitung. Die maximale Genauigkeit der Positionsbestimmung würde logischerweise erreicht werden, wenn der komplette Raum mit Beacons unter Einhaltung des Mindestabstandes übersäht wäre, was jedoch nicht ökonomisch ist. Deswegen wird zusätzlich die Anzahl der Beacons in die Problemformulierung mit eingearbeitet, sodass für jede mögliche Beacon-Anzahl eine optimale Konfiguration existiert. 
 \section{Modellbildung}
-Zunächst wird in diesem Abschnitt das zugrunde liegende Modell für das Verhalten der Signalausbreitung der Beacons bestimmt. Dazu wird aus Tabelle \ref{tab:Uebersicht} ein geeignetes Kanalmodell ausgesucht und dessen ungefährer Verlauf bestimmt. An diesem Verlauf wird es an den realen Messwerten validiert und anschließend in dessen Qualität durch die Parameterschätzung verbessert. Die genannten Modelle in der Tabelle können mit ihren Spezifikationen im Grunde alle als Ausbreitungsmodell für die Leuchtfeuer dienen. Jedoch fällt die erste Wahl auf das sogenannte WINNER II Modell, weil in dessen Beschreibung die Anwendung in großen Räume mit hohem Aufkommen von Datenverkehr steht. Und da eben diese Gegebenheit in den Messungen aus dem vorigen Kapitel vorhanden waren und für den späteren Einsatzorte (z.B. Kaufhäuser, Flugplätze etc.) der Beacon-Systeme gegeben sein werden, bietet sich dieses Modell besonders vor den anderen an. Zudem beträgt die Reichweite eines Beacons nur 70 Meter, wohingegen die Geltungsbereiche der anderen Modelle dafür überdimensioniert erscheinen.
-\begin{table}[H]
+\begin{table}[b!]
 \begin{tabular}{|m{1.6cm}|m{1.9cm}|m{1.7cm}|m{1.6cm}|m{3.1cm}|m{3.1cm}|}
 \hline 
 Modell & Antennen-höhen & Frequenz & Bereich & In-/Outdoor & Bemerkungen \\ \hline 
@@ -15,6 +14,7 @@ WINNER II & $h\leq6$ m & 2 GHz -- 6GHz & $d=$[5 m ; 100 m] & Indoor-Indoor-Über
 \caption{Übersicht der Kanalmodelle im Indoor-Bereich, in Anlehung an \cite{Kanal}}
 \label{tab:Uebersicht}
 \end{table}
+Zunächst wird in diesem Abschnitt das zugrunde liegende Modell für das Verhalten der Signalausbreitung der Beacons bestimmt. Dazu wird aus Tabelle \ref{tab:Uebersicht} ein geeignetes Kanalmodell ausgesucht und dessen ungefährer Verlauf bestimmt. An diesem Verlauf wird es an den realen Messwerten validiert und anschließend in dessen Qualität durch die Parameterschätzung verbessert. Die genannten Modelle in der Tabelle können mit ihren Spezifikationen im Grunde alle als Ausbreitungsmodell für die Leuchtfeuer dienen. Jedoch fällt die erste Wahl auf das sogenannte WINNER II Modell, weil in dessen Beschreibung die Anwendung in großen Räume mit hohem Aufkommen von Datenverkehr steht. Und da eben diese Gegebenheit in den Messungen aus dem vorigen Kapitel vorhanden waren und für den späteren Einsatzorte (z.B. Kaufhäuser, Flugplätze etc.) der Beacon-Systeme gegeben sein werden, bietet sich dieses Modell besonders vor den anderen an. Zudem beträgt die Reichweite eines Beacons nur 70 Meter, wohingegen die Geltungsbereiche der anderen Modelle dafür überdimensioniert erscheinen.
 \subsection{Das WINNER II Modell}
 Das WINNER II Modell \cite{WII}, benannt nach dem "`Wireless-World-Initiative-New-Radio"' (WINNER)-Konsortium, welches aus dem Zusammenschluss mehrerer Unternehmen besteht und die Verbesserung der Leistung von Mobilfunkkommunikationssystemen anstrebt, beinhaltet verschiedene Aspekte in der Berechnung von Ausbreitungsverlsuten. Die Formel die dem Modell zu Grunde liegt, beschreibt den Verlust einer Signalsstärke in Abhängigkeit zu einem zurückgelegten Weg folgendermaßen:
 \begin{align*}
@@ -50,7 +50,7 @@ Als Gleichung aufgefasst wird die Geschwindigkeit $v$ im nächsten Zeitschritt $
 v\left( t+1 \right)&=\left( w\cdot v\left( t \right) \right) + \left( c_1\cdot r_1\cdot \left( p - x\left( t \right) \right) \right) + \left( c_2\cdot r_2\cdot \left( g - x\left( t \right) \right) \right) \\
 x\left( t+1 \right)&=x\left( t \right) + v\left( t+1 \right)
 \end{align}
-Der Vorteil dieses Verfahrens ist es, dass der komplette Suchraum abgetastet wird und durch die Intelligenz des Schwarms die Parametersätze mit den geringsten Kosten identifiziert werden. Der Nachteil ist der relativ hohe Rechenaufwand im Gegensatz zu anderen Verfahren (z.B. Newton, Trust-Region, Simplex etc.), zumal kein besseres Ergebnis mit dem PSO für ein solches Problem zu erwarten wäre. Jedoch baut der Erweiterte Partikel-Schwarm-Optimierer in dem nächsten Abschnitt auf dem PSO auf, sodass in diesem Teil der Arbeit die Vorstellung der einfachen Variante sich geradezu anbietet.\\ \\
+Das Abbruchkriterium wird hierbei mit einer maximalen Anzahl an Generationen/Durchläufen der Hauptschleife angegeben. Der Vorteil dieses Verfahrens ist es, dass der komplette Suchraum abgetastet wird und durch die Intelligenz des Schwarms die Parametersätze mit den geringsten Kosten identifiziert werden. Der Nachteil ist der relativ hohe Rechenaufwand im Gegensatz zu anderen Verfahren (z.B. Newton, Trust-Region, Simplex etc.), zumal kein besseres Ergebnis mit dem PSO für ein solches Problem zu erwarten wäre. Jedoch baut der Erweiterte Partikel-Schwarm-Optimierer in einem der nächsten Abschnitte auf diesem Verfahren auf, sodass in diesem Teil der Arbeit die Vorstellung der einfachen Variante zur Einführung vorteilig ist.\\ \\
 Als Ergebnis der Parameterschätzung wurden in Abbildung \ref{fig:WIISauelengraph} zunächst die berechneten RSSI-Werte für die jeweiligen Distanzen im Vergleich zu den gemmesenen Mittelwerte aller drei Beacons gegenübergestellt. Wie schon in der Analyse der Messwerte kritisiert, entspricht das Verhalten des Ausbreitungsverlustes ab dem zehnten Meter nicht mehr der theoretischen Annahme. Während der Verlauf vom ersten Abschnitt sehr gut geschätzt werden kann, versagt aber das einfache WINNER II-Modell bei größeren Distnazen. Ähnlich verhält es sich bei der Schätzung der Entfernung, wie Abbildung \ref{fig:WIIDistance} zeigt. Hier wurde das Modell lediglich nach $d$ umgestellt und als Eingabe dienten die Mittelwerte aus \ref{fig:WIISauelengraph}. In Tabelle \ref{tab:Parameterwerte} sind die Parameter aus der Optimierung aufgeführt, welche in das Modell zur Berechnung der letzten Diagramme eingesetzt wurden. 
 \begin{figure}[H] 
 \centering
@@ -67,18 +67,6 @@ Als Ergebnis der Parameterschätzung wurden in Abbildung \ref{fig:WIISauelengrap
 \caption{Durschnittlicher RSSI-Werte im Vergleich zum berechneten RSSI-Wert aus dem WINNER II-Modell über die einzelnen Entfernungen}
 \label{fig:WIISauelengraph}
 \end{figure}
-\begin{figure}[H] 
-\centering
-\begin{tikzpicture}
-\begin{axis}[xlabel={Reale Distanz in Meter},ylabel={Geschätzte Distanz in Meter},width=0.7\paperwidth, height=0.25\paperheight, enlarge y limits=0.01, enlarge x limits=false, xmin=0.3,xmax=15.7, legend pos=north west]
-\addplot+[red,mark=*,semithick] table [col sep=comma] {TikzDaten/WIIdberech.dat}; 
-\addplot+[mark=none,blue,very thick] table [col sep=comma] {TikzDaten/DisrealOptimum.dat};
-\legend{geschätzter Wert,optimaler Verlauf};
-\end{axis}
-\end{tikzpicture}
-\caption{Vergleich der Distanz-Schätzung mit dem WINNER II-Modell zur gemessenen Entfernung}
-\label{fig:WIIDistance}
-\end{figure}
 \begin{table}[H]
 \begin{center}
 \begin{tabular}{|c|c|c|}
@@ -91,33 +79,28 @@ Als Ergebnis der Parameterschätzung wurden in Abbildung \ref{fig:WIISauelengrap
 \hline
 \end{tabular}
 \end{center}
-\caption{Werte der Parameter}
+\caption{Parameter des Modells}
 \label{tab:Parameterwerte}
 \end{table} 
+\begin{figure}[H] 
+\centering
+\begin{tikzpicture}
+\begin{axis}[xlabel={Reale Distanz in Meter},ylabel={Geschätzte Distanz in Meter},width=0.7\paperwidth, height=0.25\paperheight, enlarge y limits=0.01, enlarge x limits=false, xmin=0.3,xmax=15.7, legend pos=north west]
+\addplot+[red,mark=*,semithick] table [col sep=comma] {TikzDaten/WIIdberech.dat}; 
+\addplot+[mark=none,blue,very thick] table [col sep=comma] {TikzDaten/DisrealOptimum.dat};
+\legend{geschätzter Wert,optimaler Verlauf};
+\end{axis}
+\end{tikzpicture}
+\caption{Vergleich der Distanz-Schätzung mit dem WINNER II-Modell zur gemessenen Entfernung}
+\label{fig:WIIDistance}
+\end{figure}
 \section{Vertrauens-Skala}
 Im Hinblick auf die verschiedenen Betriebsmodi der Beacons, den unterschiedlichen Arten der Positionsbestimmung (Landmarkensystem und Mikro-Lokalisierung) und vielen noch nicht vorgestellten Techniken mit denen sich die Vorhersage der Position bestimmen und verbessern lassen, fällt es sehr schwer die Güte der Leuchtfeuer-Signale einzuschätzen. Mit Güte soll gemeint sein, inwieweit dem Modell \ref{eq:WII} vertraut wird die aktuelle Position zu schätzen und wie genau diese Schätzung in Metern oder Zentimetern erfasst werden kann. Um unabhängig von der Art der Lokalisierung, dem Anwendungsbereich und den eingesetzten Techniken die Güte angeben zu können, wird lediglich die Wahrscheinlichkeit mit dem WINNER II-Modell die tatsächliche Distanz zu ermitteln, als Wert dafür angenommen. D.h. aus den Messungen der RSSI-Werte vom vorigen Kapitel werden diesesmal alle Daten für die Distanzberechnung herangezogen und mit einer Toleranz versehen. Die berechneten Entfernungen werden darauf mit realen Distanzen verglichen und im Falle, dass sie sich nur in einem definierten Spielraum voneinander unterscheiden, wird dies als eine erfolgreiche Positionsbestimmung angesehen. Der prozentuale Anteil aller erfolgreichen Berechnungen wird so als Gütemaß gewertet und somit wird Qualität der Beacon-Signale als eine statistische Wahrscheinlichkeit, des Empfanges einer für das Modell geeigneten Signalsstärke pro Messung, aufgefasst. Die Ergebnisse aus diesen Überlegungen finden sich in Abbildung \ref{fig:GueteSauelengraph05} und \ref{fig:GueteSauelengraph2} wieder. Sie zeigen einmal die Wahrscheinlichkeit $W_{berech}$ ein gültiges Signal zu empfangen bei einer Toleranz von $0,5$ und bei $2$ Metern, wobei die dazugehörigen festen Distanzen die jeweiligen gemittelten drei Messreihen $d_{mitt}$ darstellen. Zudem wurde versucht die Güte als Funktion zu charakterisieren. Dazu wurde die Funktion \ref{eq:Umkehrfunktion} aufgrund ihrer Art ausgewählt und um weitere Parameter erweitert \ref{eq:eUmkehrfunktion}, welche schließlich durch die Lösung des Minimierungsproblems\ref{eq:OptiUmkehrfunktion} und unter der Verwendung vom PSO bestimmt wurden (Ergebnis siehe Tabelle \ref{tab:ParameterwerteGuete}).
 \begin{align}
 W_{berech}&=\frac{1}{d_{mitt}+1} \label{eq:Umkehrfunktion}\\
 W_{berech}&=\frac{1}{p_1\cdot d_{mitt}+p_2} + p_3 \label{eq:eUmkehrfunktion}\\
-\underset{p_1,p_2,p_3}{min}\, J&=\sum_{k=1}^{k=15}\left ( W_{real}\left ( k \right ) - W_{berech} \right )^{2} \label{eq:OptiUmkehrfunktion} \\
+\underset{p_1,p_2,p_3}{min}\, J&=\sum_{k=1}^{k=15}\left ( W_{real}\left ( k \right ) - W_{berech} \right )^{2} \label{eq:OptiUmkehrfunktion}
 \end{align}
-\begin{table}[H]
-\begin{center}
-\begin{tabular}{|c|c|c|c|c|}
-\cline{3-5}
-\multicolumn{2}{c|}{} & \multicolumn{3}{c|}{Parameter} \\
-\cline{3-5}
-\multicolumn{2}{c|}{} & $p_1$ & $p_2$ & $p_3$ \\
-\hline
-\multirow{2}{*}{Toleranz} & $0,5$ m & $3,3777$ & $-0,6746$ & $0.0163$\\
-\cline{2-5}
-& $2$ m & $0,2035$ & $0,7145$ & $0,1594$\\
-\hline
-\end{tabular}
-\end{center}
-\caption{Werte der Parameter}
-\label{tab:ParameterwerteGuete}
-\end{table} 
 Der Vorteil dieser Betrachtweise liegt in den Funktionen der Beacons, da hier die Frequenz bzw. Häufigkeit der Sendevorgänge eingestellt werden kann. Durch die Erhöhung der ubertragungen pro Sekunde lässt sich somit die Zeit verringern, bis ein gültiges Signal das Messgerät erreicht. Anhand dieser Einstellmöglichkeiten lässt sich zusammen mit der hier vorgestellten Skala die Dynamik der Messungen beeinflussen. 
 \begin{figure}[H] 
 \centering
@@ -149,21 +132,79 @@ Der Vorteil dieser Betrachtweise liegt in den Funktionen der Beacons, da hier di
 \caption{Wahrscheinlichkeit des Empfangs gültiger Signale in einem Toleranzbereich von $2$ Metern und dessen Approximation}
 \label{fig:GueteSauelengraph2}
 \end{figure} 
+\begin{table}[H]
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|}
+\cline{3-5}
+\multicolumn{2}{c|}{} & \multicolumn{3}{c|}{Parameter} \\
+\cline{3-5}
+\multicolumn{2}{c|}{} & $p_1$ & $p_2$ & $p_3$ \\
+\hline
+\multirow{2}{*}{Toleranz} & $0,5$ m & $3,3777$ & $-0,6746$ & $0.0163$\\
+\cline{2-5}
+& $2$ m & $0,2035$ & $0,7145$ & $0,1594$\\
+\hline
+\end{tabular}
+\end{center}
+\caption{Parameter der Vertrauensskala}
+\label{tab:ParameterwerteGuete}
+\end{table} 
 \section{Entwicklung der Simulationsumgebung}
-Mit den gewonnen Erkenntnissen aus der Modellierung können nun Vorhersagen über die Signalausbreitung und der Genauigkeit von Beacons getroffen werden, die schließlich zu einer optimalen Planung eines Indoor-Lokalisierungssystems genutzt werden können. Dazu wird zunächst eine Entwicklungsumgebung zur Herstellung der Simulation benötigt. Als Basis der Simulation wird eine grafische Oberfläche (GUI) mit dem Editor GUIDE aus dem Programm MATLAB \cite{GUIDE} erstellt. In dieser Sektion werden die einzelnen Funktionen der GUI besprochen und deren Verarbeitungskette vorgestellt. Hierfür wird als erstes auf die Konvertierung der Zeichnung eines Grundrisses (als PNG-Bilddatei) in verarbeitbare Informationen eingegangen, welche von substantieller Bedeutung für den gesamten Simulations-Prozess sind. Anschließend kann darauf aufbauend die eigentliche Implementierung begonnen werden. Hierbei wird speziell der Aspekt einer optimalen Verteilung, unter besonderer Betrachtung der Vertrauens-Skala, aufgegriffen. Eigens dafür wurde der vorher vorgestellte Partikel-Schwarm-Algorithmus aus der Parameterschätzung erweitert, sodass er auch für den abstrakten Fall einer Anordnung von Funkbaken eingesetzt werden kann. Abschließend wird auf einen fiktiver Raum das komplette Lighthouse Keeper-Prinzip einmal dargestellt.  
+Mit den gewonnen Erkenntnissen aus der Modellbildung können nun Vorhersagen über die Signalausbreitung und der zu erwartenden Genauigkeit der Entfernungsschätzungen getroffen werden, die schließlich zu einer optimalen Planung eines Indoor-Lokalisierungssystems genutzt werden können. Dazu wird zunächst eine Entwicklungsumgebung zur Herstellung der Simulation benötigt. Als Basis der Simulation wird eine grafische Oberfläche (GUI) mit dem Editor GUIDE erstellt, der Teil des Programmes MATLAB \cite{GUIDE} ist. In dieser Sektion werden die einzelnen Funktionen der GUI besprochen und deren Verarbeitungskette vorgestellt. Hierfür wird als erstes die Konvertierung der Zeichnung eines Grundrisses (als PNG-Bilddatei) in verarbeitbare Informationen erläutert, die von substantieller Bedeutung für den gesamten Simulations-Prozess ist. Anschließend wir in der weiteren Implementierung speziell der Aspekt einer optimalen Verteilung, unter besonderer Betrachtung der Vertrauens-Skala, aufgegriffen. Eigens dafür wurde der vorher vorgestellte Partikel-Schwarm-Algorithmus aus der Parameterschätzung erweitert, sodass er auch für den abstrakten Fall einer Anordnung von Funkbaken eingesetzt werden kann. Abschließend wird mit einem fiktiven Grundriss das komplette Lighthouse Keeper-Prinzip exemplarisch vorgeführt.  
 \subsection{Grundrissanalyse}
-
-Erst wie ist das Bild aufgenommen, dann wie werden wände und der gültige Raum identifiziert, dann die fehlerkorrekturen. Bewertungssystem beschreiben. Dann die Umrechnung von Pixeln in Meter. Dann die Zusammenfassung in Polygonen (um später vereinfacht Signale im LOS oder NLOS ausfindig zu machen). Dann die Aufteilung des Raumes in einzelne Elemente, deren Größe angegeben werden kann und bestimmung ihrer Mittelpunkte. Dann die Positionierung der Beacon-Befestigungen im Mindestabstand.
-Vorgehensweise beim Einlesen des Bildes
+Für eine weitgehende Automation der gesamten Planung müssen die Grundrisse bzw. Rauminformationen, die mit der Software Miracenter (siehe Abschnitt \ref{sec:Mira}) generiert wurden, vor der Simulation ausgewertet werden. In der Auswertung oder Analyse dieser Daten muss das Programm selbstständig in der Lage sein, eine Wand oder generell einen Raum zu erkennen. Zudem müssen auch Befestigungspunkte definiert sein, an denen die Beacons angebracht werden können. Die Umsetzung dieser Funktionen basiert hierbei auf einer Eigenentwicklung, da bisher keine vergleichbaren Arbeiten existieren. Für die Erkennung von Wänden respektiven Räumen könnten zwar Algorithmen eingesetzt werden, die beispielsweise Formen erkennen oder Cluster von Farbgruppierungen bilden. Im Hinblick jedoch auf mögliche Erweiterungen der gesamten Problematik, z.B. mit Hindernissen oder mit Bereichen, in denen keine Beacons befestigt werden können, bietet sich das hier selbstentwickelte Verfahren an. Für ein besseres Verständnis wird der allgemeine Vorgang diesbezüglich in Abbildung \ref{fig:GrundAna} illustriert. Das Beispiel zeigt einen quadratischen Raum, wobei die Wände schwarz und die freien Räume in weiß gehalten sind. Die einzelnen Unterteilungen sollen die Pixel darstellen, sodass eine Auflösung von 7 $\times$ 7 Pixeln gegeben ist. In eine ersten Phase werden in vertikaler Reihenfolge die einzelnen Pixel von "`links nach rechts"', sowie deren Vorgängerpixel und deren Nachfolgerpixel betrachtet. Im vorliegenden Fall werden dafür zwei Matrizen mit 7 $\times$ 7 Einträgen initialisiert, in der jeder Eintrag zunächst auf Null gesetzt ist. Wechselt in der abgefragten Reihe ein weißer Pixel auf einen schwarzen, so wird die Position des schwarzen Pixels in der Befestigungs-Matrix um eins erhöht und in der Raum-Matrix wird die Position des weißen Pixels ebenfalls mit eins addiert. Die folgenden weißen Pixel werden anschließend auch als Raumkoordinaten markiert, solange kein weiterer schwarzer Punkt erscheint. Falls eine weitere Wand im Verlauf der Reihe detektiert wird, setzt die Raummarkierung aus und lediglich der schwarze Bildpunkt wird als Befestigung eingeschrieben. \\ \\
+Diese Vorgehensweise alleine ist jedoch nicht robust genug, was auch in der Abbildung skizziert wurde. In diesem Fall wurden zwei Befestigungen und zwei Raumpunkte falsch interpretiert, weil der Algorithmus nur den unmittelbaren Nachbarn eine Bildpunktes betrachtet und somit nicht feststellen konnte, ob der Raum abgeschlossen ist oder nicht. In Folge dieses bekannten Fehlers wurde für alle weißen Pixelkoordinaten an den Bild-Rändern eine rückwärtsgerichtete Suche implementiert, die bis zur nächsten Wand alle Einträge beider Matrizen um eins reduziert, wie auch rechts neben der ersten Phase zu sehen ist. Somit wird sichergestellt, dass die Räume stets abgeschlossen sind und keine Befestigungen an den Ecken existieren. Die gleiche Vorgehensweise wird dreimal in jede Richtung ("`von rechts nach links"', "`von unten nach oben"' und "`von oben nach unten"') wiederholt. Dabei entstehen Vertrauenswerte in den Matrizen, anhand derer über die endgültige Definition nach Befetigungen und Räumen entschieden wird. In den verschiedenen Versuchen und Testszenarien mit offenen Türen und verwinkelten Gängen erwies sich der vorgestellte Algorithmus als sehr zuverlässig. Zusätzlich wurde die Analyse auf den Rot-, Grün- und Blau-Farbraum (RGB) erweitert, sodass mit weiteren Farben spezielle Objekte erfasst werden. Z.B. können nun mit roten Farben Bereiche gekennzeichnet werden, an den keine Beacons befestigt werden können. \\ \\
+Damit die Bildinformationen in den metrischen Raum abgebildet werden können, muss zunächst deren Verhältnis von Pixel zu Meter bekannt sein. In der Simulation kann dieses Verhältnis direkt angegeben werden, indem die Abmessungen des gesamten Raumes in die GUI eingetragen werden. Aus diesen Informationen berechnet die Software eigenständig die Verhältnisse und überträgt die Pixel in metrische Koordinaten. Anschließend werden die Wände bzw. Befestigungen durch einfache Polygone ersetzt, wobei die Ecken von Wänden als Referenzpunkte genommen werden. Dies hat den Vorteil, dass für Aufteilung der Beacons entlang dieser Linien nur Abstandswerte kalkuliert werden müssen. Zudem kann die Kollision von Signalen und Wänden schneller berechnet und somit entschieden werden, ob sich ein Beacon in der LOS oder NLOS zu einem Punkt im Raum befindet. Im letzten Schritt der Analyse wird der Raum in einzelne Elemente untergliedert. Die Größe der Quadrate wird dazu in die Oberfläche der Simulation eingetragen. Die Aufteilung in finite Elemente ergibt sich aus der Nutzung der Vertrauens-Skala, die abhängig von der gewünschten Toleranz bzw. Lokalisierungs-Genauigkeit ist. Diese Toleranz bildet die Größe eines Raumelementes, in der die modellbasierte Entfernungsschätzung ($\pm$ der Toleranz) mit einer bestimmten Wahrscheinlichkeit den tatsächlichen Abstand von Raumelement zu Beacon angibt. \\ \\
 \input{GrundAnaly}
-
-%\subsection{Manuelle Planung}
-%Hier noch die manuelle Eingabe zeigen.
-%\subsection{Optimierung}
-%Hier spielt wieder die Richterskala, bzw. ihre definierte Güte mit ein.
-%\subsubsection{Erweiterter Partikel-Schwarm-Algorithmus}
-%Erklärung warum gerade ein genetischer Algorithmus. 
-%\subsubsection{Paretofront}
-%Auswahl eines Optimierungsergebnisses anhand von der Kalkulation Anzahl Beacons -> gewünschte Genauigkeit/Abdeckung
-%\subsection{Simulation}
-%Hier noch erwähnen, dass die Intervalllänge die Zeit verkürzt, bis die Wahrscheinlichkeiten zur optimalen lösung auftreten. Außerdem konnte die Sendeleistung der Beacons nicht genau übrprüft werden, weil nicht ausreichend Platz für die Experimente gegeben war. Hier müssten neue Versuche unternommen werden.
+\subsection{Optimierung der Beacon-Infrastruktur}
+Das erklärte Ziel des Lighthouse Kepper-Konzeptes ist es, eine größtmögliche Genauigkeit in der Lokalisierung von Objekten im Indoor-Bereich, bei einer minimalen Anzahl von Beacons zu erreichen. Der Unterschied zu den bisherigen Optimierungsverfahren in dieser Arbeit besteht zum einen in den zu beeinflussenden Parametern und zum anderen in der mehrkriteriellen Optimierungsaufgabe. Während bisherige Parameter zu den rationalen Zahlen gehörten und sie somit kontinuierlich änderbar waren, existieren in dieser Optimierungsaufgabe lediglich Parameter als Boolesche Variablen (Beacon platziert/nicht platziert). Zudem muss die Kostenfunktion nach zwei Kriterien (Genauigkeit und Anzahl) optimiert werden, weswegen ein Ansatz in Richtung Pareto-Optimierung führt. \\ \\
+Im folgenden Abschnitt wird der Algorithmus zur Optimierung der Beacon-Infrastruktur näher erläutert. Die Optimierung findet dabei unter Zuhilfenahme der Vertrauensskala als Genauigkeitsmaßstab und der Verwendung des Modells zu den Ausbreitungsverlsusten von BLE-Signalen statt. Im zweiten Teil wird auf die Bewertung der beiden unterschiedlichen Kriterien eingegangen und dazu wird der Begriff Pareto-Front näher erklärt. Ein Beispiel für die Optimierung findet sich im Anschluss an diese Sektion in dem Beispiel für den Lighthouse Kepper.  
+\subsubsection{Erweiterter Partikel-Schwarm-Algorithmus}
+Derweil genetische Algorithmen in den Bereichen der mathematischen Problemformulierungen nur eine geringe Rolle spielen und nur in wenigen Ausnahmen bessere Ergebnisse als herkömmliche Verfahren liefern, stellen sie bei Problemen mit Entscheidungszweigen die einzige praktikable Lösung dar. Die Arbeit hinter der Erweiterung des PSO wurde dabei maßgeblich noch von zwei weiteren genetischen Algorithmen beeinflußt. Es finden sich Teile des "`Strength Pareto Evolutionary Algorithm 2"' (SPEA2) \cite{SPEA2} sowie des "`Simulated Annealing"'-Verfahrens \cite{SimAnn} in dieser neuen Methode wieder. Denn erst die Kombination aller genannten Ansätze lieferte die gewünschten Ergebnisse. Für die eigentliche Optimierung werden zunächst die Kostenfunktionen beider Merkmale benötigt. Indes die Funktion der Anzahl der Beacons mit $\min \: J_{Anzahl}$ trivial erscheint, unterliegt die Lokalisierungsgenauigkeit mehreren Faktoren, die je nach Anwendungsfall unterschiedlich gewichtet werden können. Statt unterschiedlichen Formulierungen des Problems wird stellvertretend für die Qualität von Signalen die Vertrauensskala als allgemeine Referenz gewählt. Es wird davon ausgegangen, dass die Ortungs-Genauigkeit beispielsweise mithilfe der Trilateration überall gleich ist, solange Beacon-Signale empfangen werden. Es hängt jedoch von den Wahrscheinlichkeiten ab, wie lange auf ein gültiges Signal gewartet werden muss, bis eine Positionsbestimmung die gewünschten Ergebnisse liefert. \\ \\
+Ausgehend von der Forderung eine bestmögliche Abdeckung des Raumes mit Beacon-Signalen zu erreichen, stellt sich die Frage nach der Relation der Vertrauenswerte in jedem Abschnitt des Raumes. Würden angenommen zwei Beacons relativ nah nebeneinander liegen, würde in ihrem unmittelbaren Umkreis der Vertrauenswert besonders hoch liegen, falls von beiden Beacons die Werte addiert werden. Jedoch sind zwei Beacons in einem konzentrierten Bereich wenig effektiv, wenn in einer entfernten Ecke eines Raumes dafür keine Beacons plaziert wurden. Unter Betrachtung dieser Überlegung wurde so eine Gütekriterium festgelegt, die sich aus dem höhsten Vertrauenswert eines Beacons in jedem Raumelemente zusammensetzt. Mathematisch formuliert werden über die Anzahl aller Beacons $n$ und über die Menge der Raumelemente $m$ zuerst die einzelnen Entfernungen $d_{n,m}$ bestimmt. Darauf folgend wird anhand der Gleichung \ref{eq:eUmkehrfunktion} die einzelnen Vertrauneswerte $W_{n,m}$ geschätzt und daraus das Gütemaß mithilfe der Summe der besten Signale in einem Raumelement $best\left \{ W_{1...n_{end},m} \right \} $ gebildet. Somit ergibt sich folgendes Maximierungsproblem:  
+\begin{align*}
+d_{n,m} &= \sqrt{\left ( Pos^{Beacon}_{n,x} - Pos^{Element}_{m,x}\right )^2 + \left ( Pos^{Beacon}_{n,y} - Pos^{Element}_{m,y}\right )^2}\\
+W_{n,m} &= \frac{1}{p_1\cdot d_{n,m}+p_2} + p_3\\
+\underset{Pos^{Beacon}}{\max} J_{\text{Qualität}} &= \sum_{m=1}^{m_{end}}best\left \{ W_{1...n_{end},m} \right \}
+\end{align*}
+Der erweiterter Partikel-Schwarm-Algorithmus muss nun nach den Positionen kleinen Sender optimieren, die schon in der Grundrissanalyse vorgegeben wurden. Dabei bedient sich das Verfahren an dem Belohnungs-/Bestarfungssystem (oder auch Selektion genannt) aus SPEA2 und der Heuristiken aus dem Simulated Annealing. In der Initialisierungsphase werden die einzelnen Populationen des Schwarms mit Beacons voll besetzt, sodass diesesmal beim PSO jeder Partikel den gleichen Startwert besitzt. Lediglich im Belohnungs-/Bestarfungssystem werden die Gewichtungen anfangs für eine Zunahme bzw. Abnahme von Beacons zufällig zwischen den Werten 0 und 1 vergeben. Im nächsten Schritt wird für jede Konfiguration die jeweilige Güte $J$ berechnet und anschließend im Bewertungssystem mit der vorigen Generation verglichen. Als Maßtab für eine bessere oder schlechtere Generation kommen daher die vorher definierten Kriterien zum Einsatz. Dabei werden im Endeffekt die Konfigurationen mit der geringen Anzahl an Beacons faktisch besser bewertet. Dieser Schritt war notwendig, da mit weniger Beacons die räumliche Abdeckung naturgemäß abnimmt und somit $J_{\text{Qualität}}$ nie ansteigen wird. Jedoch lassen sich Partikel mit gleicher Beacon-Anzahl in ihrer Qualität vergleichen und hier wird das Individuum belohnt, welches die höhste Güte in der Vertrauensskala aufweist und das mit dem niedrigerem Wert bestraft. Dementsprechend werden die jeweiligen Gewichtungen in den Grenzen 0 und 1 prozentual erhöht bzw. gesenkt. Im Folgenden kommt der Charakter des PSO zum Einsatz. Denn bei der Neuanordnung der Konfigurationen werden alle Gewichtungen eines Partikels mit speziellen Individuen verrechnet. Diese Partikel bzw. deren Gewichtungen bestehen aus denen mit der besten Fitness im Schwarm und aus der eigenen besten Fitness, die jemals erreicht wurde. Im Grunde werden die einzelnen Gewichtungen zur Wegnahme oder Anbringung eines Bbeacons einander gegenüber gestellt, wobei sich der größere Wert durchsetzt. Tritt dabei nach einer unbestimmten Iterationszeit ein totes Ende auf, d.h. das alle Gewichtungen genau 0 oder 1 sind, behilft sich der Algorithmus mit den Heuristiken des Simulated Annealing-Verfahrens. In diesem speziellen Fall wird ein totes Ende detektiert und das betroffende Individuum "`mischt"' seine Gewichtungen mit anderen zufällig gewählten Partikeln und findet meist so aus einem lokalen Optimum heraus, solange es sich nicht im globalen befindet. \\ \\
+Zur Veranschaulichung wird hier noch einmal die Hauptschleife im ersten Aufruf durchlaufen: \par\bigskip
+\begin{tabular}[h]{lll}
+	Eingabe: & $\mathbf{N}$ & (Größe des Schwarms)\\
+	& $\mathbf{D}$ & (Dimension des Problems -- Anzahl an Befestigungspunkten) \\
+	& $\mathbf{I}$ & (Maximale Anzahl an Generationen) \\
+	& $\mathbf{KR}$ & (Mittelpunkt-Koordinaten der Raumelemente) \\
+	& $\mathbf{KB}$ & (Koordinaten der Befestigungen) \\
+	Ausgabe: & $\mathbf{F}$ & (Fitnesswerte einer jeden Generation) \\
+	& $\mathbf{E}$ & (Konfigurationen mit den besten pareto-optimierten Kriterien) \\ \\
+	Schritt 1: & \multicolumn{2}{p{13cm}}{\textbf{Initialisierung:} Generierung der Konfigurationen $\mathbf{B}_0$ und aller Gewichtungen $\mathbf{G}_{Zu,n}$ und $\mathbf{G}_{Weg,n}$ der Beacons für alle Partikel.} \\ \\
+	Schritt 2: & \multicolumn{2}{p{13cm}}{\textbf{Fitnessbestimmung:} Berechnung der Fitnesswerte für jedes Individuum im Schwarm.} \\ \\
+	Schritt 3: & \multicolumn{2}{p{13cm}}{\textbf{Bewertung:} Vergleich aller Kopien der vorherigen Generation mit der neuen. Falls die neuen Parametersätze optimalere Ergebnisse liefern, werden alle Zustände auf Unterschiede untersucht und lediglich die Veränderungen belohnt. Bei schlechteren Fitnesswerten werden sie hingegen bestraft.} \\ \\
+	Schritt 4: & \multicolumn{2}{p{13cm}}{\textbf{Schwarmintelligenz:} Mit den Gewichtungen der besten Konfigurationen und der aktuellen Generation werden die Beacons neu verteilt.} \\ \\
+	Schritt 5: & \multicolumn{2}{p{13cm}}{\textbf{Totes Ende-Detektierung:} Falls keine Änderungen mehr eintreten, werden die Eigenschaften der Partikel zufällig mit denen anderer Individuen auf der Pareto-Front kombiniert.} \\ \\
+\end{tabular} 
+\subsubsection{Paretofront}
+Mehrkriterielle Probleme werden häufig als Pareto-Optimierung, nach dem italienischen Ingenieur, Ökonom und Soziologe \textit{Vilfredo Federico Pareto}, bezeichnet. Die Optimierung verläuft dabei unter Betrachtung mehrerer Kostenfunktionen, wobei die Veränderungen der Kosten eines Problems sich auf die der anderen auswirkt. Jedoch bedingt die Verbesserung eines Kriteriums in der beacon-Problematik die qualitative Verschlechterung des anderen. Wie weit diese Wechselwirkungen ausgeprägt sind, zeichnet sich beim Übertragen der Fitnesswerte in den gleichen mathematischen Raum ab. Dabei bildet sich eine Front, in dessen Richtung des negativen Gradienten keine weiteren Lösungen zu finden sind. Der Vorteil der in Abbildung \ref{fig:Paretofront} dargestellten Pareto-Front ist die Möglichkeit zwischen den Kriterien abzuwägen. Falls der Kunde eine qualitativ hochwertige und flächendeckende Lokalisierung benötigt, kann er sich aus der Menge an Lösungen eine für ihn ökonomische optimale Konfiguration auswählen. Für den Kunden mit geringeren Ansprüchen würden Konfigurationen mit weniger Beacons ausreichen, welche er sich unter den gleichen Optimalitätsbedingen auswählen kann und somit ist die Anforderungen an eine universelle optimale Planung erfüllt.
+\begin{figure}[H] 
+\centering
+\begin{tikzpicture}
+\begin{axis}[xlabel={Relativer Vertrauenswert}, ylabel={Anzahl der Beacons},x dir=reverse, width=0.7\paperwidth, height=0.4\paperheight, enlarge y limits=false, enlarge x limits=false, xmin=1,xmax=68, ymin=1, ymax=76, legend pos=north east]
+\addplot+[blue,mark=*,semithick] table [col sep=comma] {TikzDaten/Paretofront.dat}; 
+\addplot+[color=black, only marks, mark=*, mark options={scale=.2}] table [col sep=comma] {TikzDaten/Generationen.dat};
+\legend{Pareto-Optimum,alle Fitnesswerte};
+\end{axis}
+\end{tikzpicture}
+\caption{Beispiel einer Paretofront}
+\label{fig:Paretofront}
+\end{figure}
+\subsection{Simulationsbeispiel}
+Zum Abschluss der Thematik wurde in Abbildung \ref{fig:Simulationsbeispiel} einmal eine komplette Simulation durchgeführt. Als test diente dazu ein fiktiver Raum in quadratischer Form mit den Abmessungen von 11,9 $\times$ 7 Metern. Zur Vereinfachung wurde die gleiche Höhe für die Sender wie für die Empfänger gewählt, welche denen in den statischen Experimenten gleichen. Als Toleranz für die Vertrauensskala wurde der Wert von einem Meter gewählt. Diese Wert wurde gleichsam in die Größe der Raumelemente übernommen, die schachbrettförmig über die gesamte Grundfläche verteilt sind. In der echten Simulationsumgebung sind die Seiten der Unterteilungen gleich lang. Jedoch wurde das Bild für eine bessere Darstellung in der Schriftform gestreckt. \\ \\
+Die Optimierung wurde hier für die Zahl von 5000 Generationen durchlaufen und die Ergebnisse sind in der Paretofront im rechten unteren Teil des Bildes zu erkennen. Der Nutzer der Lighthouse Keeper-Simulation kann hier auf die einzelnen Konfigurationen der Pareto-Optimierung per Maus klicken. Dadurch entsteht im linken Teil die optimalen Beacon-Konfigurationen mit der zu erwartenden Qualität der Lokalisierung. Diese kann als Textdatei mit den Positionsstandorten der Beacon und den einzelnen Vertrauenswerten für jedes Raumelement abgespeichert werden. Zur Veranschaulichung wurde die Werte der berechneten Wahrscheinlichkeiten für gültige Signale farblich in den jeweiligen Raumaufteilungen markiert. Die Farbskala reicht hierbei von blau für einen 100 prozentigen gültigen Empfang, über gelb für 50 Prozent und bis tiefrot für 0 Prozent. \\ \\
+Der Gedanke hinter dieser Aufführung ist es, dass die Signalqualität sichtbar gemacht wird. Unabhängig von der Reichweite bzw. Signalleistung und der Frequenz der Sendeintervalle, will der Anwender eines Lokalisierungssystems die Sicherheit und Genauigkeit der Ortung betrachten können. Mit dieser Simulationsumgebung wird somit nicht nur die Planung realisiert, sondern auch die Machbarkeit eines auf Beacons basierendem Ortungssystems für eine erwünschte Genauigkeit und Dynamik untersucht. Somit kann schon alleine mit Grundrisszeichnungen eine vorläufige Planung durchgeführt werden und sich der Kunde ohne großen Aufwand einen ersten Eindruck über die Leistungsfähigkeit des Systems machen. 
+\begin{landscape}
+\begin{figure}[H] 
+\includegraphics[scale=0.35]{Bilder/Simulationsbeispiel.png}
+\caption{Beispiel einer Lighthouse Keeper-Simulation}
+\label{fig:Simulationsbeispiel}
+\end{figure}
+\end{landscape}
