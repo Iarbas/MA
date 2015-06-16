@@ -1,3 +1,31 @@
+%\documentclass[12pt,a4paper]{article}
+%\usepackage{standalone}
+%\usepackage[T1]{fontenc}                       
+%\usepackage[utf8]{inputenc}                    
+%\usepackage{ngerman}
+%\usepackage{pifont,mathptmx,charter,courier}   
+%\usepackage[scaled]{helvet} 
+%\usepackage{tikz}							   % fuer schoene Zeichnungen
+%\usetikzlibrary{intersections, calc, arrows, shapes, shapes.symbols, positioning, shadows, shadows.blur, trees, decorations.markings, patterns, pgfplots.groupplots, fadings}
+%\usepackage{smartdiagram}
+%\usepackage{pgfplots}
+%\usepgfplotslibrary{colormaps}
+%\pgfplotsset{compat=1.6, /pgf/number format/use comma, /pgf/number format/1000 sep={}, y tick label style={/pgf/number format/use comma, /pgf/number format/1000 sep={}}, x tick label style={/pgf/number format/use comma, /pgf/number format/1000 sep={}}}
+%
+%\pgfkeys{/pgfplots/linelabel/.style args={#1:#2:#3}{name path global=labelpath,execute at end plot={
+%\path [name path global = labelpositionline](rel axis cs:#1,0) -- (rel axis cs:#1,1);
+%\draw [text=black,inner sep=1pt,name intersections={of=labelpath and labelpositionline}] (intersection-1) -- +(#2) node [label={#3}] {};},}}
+%
+%\begin{document}
+%\begin{tikzpicture}
+%    \begin{axis}[xmin=-6, xmax=6,  axis x line=bottom, ymax=1.2, axis y line=left, xlabel={Zeit}, ylabel={Anzahl der Personen}, xtick = \empty, ytick = \empty]
+%        \addplot[blue, mark=none, thick, samples=100, domain=-6:6, linelabel=0.35:{-.5cm,1.6cm}:Tipping Point] (x,{1/(1+exp(-x))}) node [fill=red!100, draw=none, rounded corners, pos=0.35] {};
+%    \end{axis}
+%\end{tikzpicture}
+%\end{document}
+
+
+
 \documentclass[12pt,a4paper]{article}
 \usepackage{standalone}
 \usepackage[T1]{fontenc}                       
@@ -5,14 +33,34 @@
 \usepackage{ngerman}
 \usepackage{pifont,mathptmx,charter,courier}   
 \usepackage[scaled]{helvet} 
+\usepackage{tikz}							   % fuer schoene Zeichnungen
+\usetikzlibrary{intersections, calc, arrows, shapes, shapes.symbols, positioning, shadows, shadows.blur, trees, decorations.markings, patterns, pgfplots.groupplots, fadings}
+\usepackage{smartdiagram}
+\usepackage{pgfplots}
+\usepgfplotslibrary{colormaps}
+\pgfplotsset{compat=1.6, /pgf/number format/use comma, /pgf/number format/1000 sep={}, y tick label style={/pgf/number format/use comma, /pgf/number format/1000 sep={}}, x tick label style={/pgf/number format/use comma, /pgf/number format/1000 sep={}}}
+
+\tikzset{
+    precise pin/.style args={#1:#2}{
+        pin={[
+            inner sep=0pt,
+            label={[
+             append after command={
+                    node [
+                        inner sep=0pt,
+                        at=(\tikzlastnode.#1),
+                        anchor=#1+180
+                    ] {#2}
+                }
+            ]center:{}}
+        ]#1:{}}
+    }
+}
+
 \begin{document}
-\section{Robot Operating System -- ROS}
-Das Robot Operating System oder kurz ROS, ist ein Projekt für die Kommunikation verschiedener Hardware-Plattformen untereinander. Anhand der Namensgebung leitet sich auch schnell der Einsatzzweck -- nämlich für Robotersysteme -- her. Dabei liegen die Schwerpunkte des Projektes auf \cite{ROSPaper}:
-\begin{itemize}
-\item "`Peer to Peer"' (P2P)-Verbindungen
-\item Modularem Aufbau
-\item Unterstützung mehrerer Programmiersprachen
-\item freier Nutzung und Open-Source
-\end{itemize}
-Ein System das auf ROS aufbaut, besteht dabei aus mehreren miteinander verbundenen Rechnern (sog. "`Hosts"') die zur Laufzeit über P2P miteinander kommunizieren. Bei der P2P-Verbindung können alle Teilnehmer ihre "`Dienste"' bzw. ihre Informationen gleichermaßen einander anbieten und nutzen, indem sie Daten im Netzwerk gleichzeitig empfangen und senden können. Dabei läuft auf einem zentralen Server der eigentliche Kern des Frameworks, über den der sämtliche Datenverkehr geleitet wird. Und auf den Host-Systemen laufen die eigentlichen Anwendungen ("`Nodes"'), die über Schnittstellen ("`Sockets"') des Betriebssytems ihre Daten auf das Netzwerk und schließlich an ROS verteilen. Ausgehend von den Nodes werden den gesendeten Nachrichten gesondert Bezeichnungen ("`Topics"') zugeordnet und mit einem Datentyp versehen. Diese Informationen sind allen Teilnehmer des P2P-Netzwerkes bekannt und können von ihnen angefordert werden. Der Kern organisiert dabei eine einheitliche Uhrzeit, die dadurch für alle Nachrichten bzw. deren Zeitstempel in den verteilten Systemen konsistent bleibt und so eine Synchronisierung der Messwerte nicht mehr nötig wird. Somit ermöglicht die Verwendung von ROS den Aufbau des gesamten Kommunikations-Frameworks, wie es in der Konzept-Planung in \ref{sec:KonSofArch} festgehalten wurde.
+\begin{tikzpicture}[pin distance=1.5cm]
+    \begin{axis}[xmin=-6, xmax=6,  axis x line=bottom, ymax=1.2, axis y line=left, xlabel={Zeit}, ylabel={Anzahl der Personen}, xtick = \empty, ytick = \empty]
+        \addplot[blue, mark=none, thick, samples=100, domain=-6:6] (x,{1/(1+exp(-x))}) node [fill=red!100, draw=none, rounded corners, pos=0.35, precise pin=105:{\color{black}Tipping Point}, outer sep=0pt] {};
+    \end{axis}
+\end{tikzpicture}
 \end{document}

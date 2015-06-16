@@ -9,7 +9,7 @@
 \usepackage{mathrsfs,amssymb}                  % Mathezeug
 \usepackage[intlimits]{empheq}                 %
 \usepackage{amsmath}                           %
-\usepackage{array}                             % Tabellenerweiterung ->
+\usepackage{array, ragged2e}                   % Tabellenerweiterung ->
 \usepackage{tabularx}
 \usepackage{colortbl}						   % Farbe in Tabellen
 \usepackage{multirow}						   % Selbsterklaerend
@@ -44,6 +44,7 @@
 \usepackage{pgfplots}
 \usepgfplotslibrary{colormaps}
 \pgfplotsset{compat=1.6, /pgf/number format/use comma, /pgf/number format/1000 sep={}, y tick label style={/pgf/number format/use comma, /pgf/number format/1000 sep={}}, x tick label style={/pgf/number format/use comma, /pgf/number format/1000 sep={}}}
+
 
 % Zum Zeichnen von Kreisdiagrammen
 \tikzset{
@@ -156,3 +157,4 @@
 
 % Fuer die Zentrierung von Tabelleneintraegen
 \newcolumntype{C}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+\newcolumntype{M}[1]{>{\RaggedRight\arraybackslash}m{#1}}

@@ -1,9 +1,59 @@
-\BOOKMARK [0][-]{chapter.1}{Modellentwurf und Simulation}{}% 1
-\BOOKMARK [1][-]{section.1.1}{Modellbildung}{chapter.1}% 2
-\BOOKMARK [2][-]{subsection.1.1.1}{Das WINNER II Modell}{section.1.1}% 3
-\BOOKMARK [2][-]{subsection.1.1.2}{Parametersch\344tzung}{section.1.1}% 4
-\BOOKMARK [1][-]{section.1.2}{Vertrauens-Skala}{chapter.1}% 5
-\BOOKMARK [1][-]{section.1.3}{Entwicklung der Simulationsumgebung}{chapter.1}% 6
-\BOOKMARK [2][-]{subsection.1.3.1}{Grundrissanalyse}{section.1.3}% 7
-\BOOKMARK [2][-]{subsection.1.3.2}{Optimierung der Beacon-Infrastruktur}{section.1.3}% 8
-\BOOKMARK [2][-]{subsection.1.3.3}{Simulationsbeispiel}{section.1.3}% 9
+\BOOKMARK [0][-]{chapter*.4}{Abbildungsverzeichnis}{}% 1
+\BOOKMARK [0][-]{chapter*.5}{Tabellenverzeichnis}{}% 2
+\BOOKMARK [0][-]{chapter*.7}{Abk\374rzungsverzeichnis}{}% 3
+\BOOKMARK [0][-]{chapter.1}{Einleitung}{}% 4
+\BOOKMARK [0][-]{chapter.2}{Stand der Technik \205 Einf\374hrung in die Beacon-Technologie}{}% 5
+\BOOKMARK [1][-]{section.2.1}{Entwicklungsgeschichte}{chapter.2}% 6
+\BOOKMARK [1][-]{section.2.2}{Aufbau und Funktionsweise von Beacons}{chapter.2}% 7
+\BOOKMARK [1][-]{section.2.3}{Ortungsmethoden}{chapter.2}% 8
+\BOOKMARK [2][-]{subsection.2.3.1}{Definitionen verschiedener Anwendungsfelder}{section.2.3}% 9
+\BOOKMARK [2][-]{subsection.2.3.2}{Mikro-Lokalisierung}{section.2.3}% 10
+\BOOKMARK [1][-]{section.2.4}{Anwendungsbereiche der Indoor-Lokalisierung}{chapter.2}% 11
+\BOOKMARK [2][-]{subsection.2.4.1}{M\366gliche Einsatzszenarien}{section.2.4}% 12
+\BOOKMARK [2][-]{subsection.2.4.2}{Planungskonzepte f\374r Beacon-Konfigurationen}{section.2.4}% 13
+\BOOKMARK [0][-]{chapter.3}{Konzeptplanung}{}% 14
+\BOOKMARK [1][-]{section.3.1}{Vor\374berlegungen}{chapter.3}% 15
+\BOOKMARK [1][-]{section.3.2}{Zielsetzungen}{chapter.3}% 16
+\BOOKMARK [2][-]{subsection.3.2.1}{Hardware-Anforderungen}{section.3.2}% 17
+\BOOKMARK [2][-]{subsection.3.2.2}{Konzept der Software-Architektur}{section.3.2}% 18
+\BOOKMARK [0][-]{chapter.4}{Software-Entwicklung}{}% 19
+\BOOKMARK [1][-]{section.4.1}{Verwendete Hardware}{chapter.4}% 20
+\BOOKMARK [2][-]{subsection.4.1.1}{Motorola Moto G}{section.4.1}% 21
+\BOOKMARK [2][-]{subsection.4.1.2}{Youbot}{section.4.1}% 22
+\BOOKMARK [2][-]{subsection.4.1.3}{Scitos G5}{section.4.1}% 23
+\BOOKMARK [1][-]{section.4.2}{Verwendete Software}{chapter.4}% 24
+\BOOKMARK [2][-]{subsection.4.2.1}{Robot Operating System \205 ROS}{section.4.2}% 25
+\BOOKMARK [2][-]{subsection.4.2.2}{Miracenter}{section.4.2}% 26
+\BOOKMARK [2][-]{subsection.4.2.3}{Android-Studio, Estimote SDK und ROSjava}{section.4.2}% 27
+\BOOKMARK [1][-]{section.4.3}{App-Entwicklung}{chapter.4}% 28
+\BOOKMARK [2][-]{subsection.4.3.1}{Beacon-Detektierung}{section.4.3}% 29
+\BOOKMARK [2][-]{subsection.4.3.2}{Lagemessung}{section.4.3}% 30
+\BOOKMARK [2][-]{subsection.4.3.3}{ROS-Anbindung}{section.4.3}% 31
+\BOOKMARK [2][-]{subsection.4.3.4}{Programmablauf}{section.4.3}% 32
+\BOOKMARK [0][-]{chapter.5}{Experimente}{}% 33
+\BOOKMARK [1][-]{section.5.1}{Messung der BLE-Signalausbreitung}{chapter.5}% 34
+\BOOKMARK [1][-]{section.5.2}{Evaluierung der SDK-eigenen Distanzsch\344tzung}{chapter.5}% 35
+\BOOKMARK [1][-]{section.5.3}{Auswirkung der Smartphone-Orientierung}{chapter.5}% 36
+\BOOKMARK [1][-]{section.5.4}{Wechselwirkungen zwischen Funkquellen}{chapter.5}% 37
+\BOOKMARK [1][-]{section.5.5}{Energieverbrauch eines Beacons}{chapter.5}% 38
+\BOOKMARK [0][-]{chapter.6}{Modellentwurf und Simulation}{}% 39
+\BOOKMARK [1][-]{section.6.1}{Modellbildung}{chapter.6}% 40
+\BOOKMARK [2][-]{subsection.6.1.1}{Das WINNER II-Modell}{section.6.1}% 41
+\BOOKMARK [2][-]{subsection.6.1.2}{Parametersch\344tzung}{section.6.1}% 42
+\BOOKMARK [1][-]{section.6.2}{Vertrauensskala}{chapter.6}% 43
+\BOOKMARK [1][-]{section.6.3}{Entwicklung der Simulationsumgebung}{chapter.6}% 44
+\BOOKMARK [2][-]{subsection.6.3.1}{Grundrissanalyse}{section.6.3}% 45
+\BOOKMARK [2][-]{subsection.6.3.2}{Optimierung der Beacon-Infrastruktur}{section.6.3}% 46
+\BOOKMARK [2][-]{subsection.6.3.3}{Simulationsbeispiel}{section.6.3}% 47
+\BOOKMARK [0][-]{chapter.7}{Evaluierung}{}% 48
+\BOOKMARK [1][-]{section.7.1}{Dynamisches Experiment}{chapter.7}% 49
+\BOOKMARK [2][-]{subsection.7.1.1}{Durchf\374hrung}{section.7.1}% 50
+\BOOKMARK [2][-]{subsection.7.1.2}{Einsatz des Lighthouse Keepers}{section.7.1}% 51
+\BOOKMARK [2][-]{subsection.7.1.3}{Pfadplanung und Navigation}{section.7.1}% 52
+\BOOKMARK [1][-]{section.7.2}{Auswertung}{chapter.7}% 53
+\BOOKMARK [1][-]{section.7.3}{Diskussion}{chapter.7}% 54
+\BOOKMARK [0][-]{chapter.8}{Zusammenfassung und Ausblick}{}% 55
+\BOOKMARK [0][-]{chapter.8}{Literaturverzeichnis}{}% 56
+\BOOKMARK [0][-]{appendix*.61}{Anhang}{}% 57
+\BOOKMARK [1][-]{section.Alph0.1}{Bilder}{appendix*.61}% 58
+\BOOKMARK [0][-]{appendix*.66}{Selbstst\344ndigkeitserkl\344rung}{}% 59

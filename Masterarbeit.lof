@@ -3,15 +3,15 @@
 \contentsline {figure}{\numberline {\relax 2.1}{\ignorespaces Offizielles Bluetooth Smart Logo \cite {BLElogo}\relax }}{6}{figure.caption.8}
 \contentsline {figure}{\numberline {\relax 2.2}{\ignorespaces Explosionszeichnung Beacon \cite {BeaEx}\relax }}{6}{figure.caption.9}
 \contentsline {figure}{\numberline {\relax 2.3}{\ignorespaces Signalschw\IeC {\"a}chung durch Objekte, z.B. W\IeC {\"a}nde \cite {GSwiB}\relax }}{8}{figure.caption.10}
-\contentsline {figure}{\numberline {\relax 2.4}{\ignorespaces menschliche K\IeC {\"o}rper blockieren zus\IeC {\"a}tzlich die Signale \cite {GSwiB}\relax }}{8}{figure.caption.10}
+\contentsline {figure}{\numberline {\relax 2.4}{\ignorespaces Menschliche K\IeC {\"o}rper blockieren zus\IeC {\"a}tzlich die Signale \cite {GSwiB}\relax }}{8}{figure.caption.10}
 \contentsline {figure}{\numberline {\relax 2.5}{\ignorespaces Beispiel einer Trilateration zur Positionsbestimmung\relax }}{11}{figure.caption.13}
-\contentsline {figure}{\numberline {\relax 2.6}{\ignorespaces Beacon Nutzung in Gesch\IeC {\"a}ften \cite {Shoe}\relax }}{13}{figure.caption.14}
-\contentsline {figure}{\numberline {\relax 2.7}{\ignorespaces Beacon Nutzung im Flugh\IeC {\"a}fen \cite {Airpo}\relax }}{14}{figure.caption.15}
-\contentsline {figure}{\numberline {\relax 2.8}{\ignorespaces Demo der Estimote Indoor Localization App \cite {TrEs}\relax }}{15}{figure.caption.16}
+\contentsline {figure}{\numberline {\relax 2.6}{\ignorespaces Beacon-Nutzung in Gesch\IeC {\"a}ften \cite {Shoe}\relax }}{13}{figure.caption.14}
+\contentsline {figure}{\numberline {\relax 2.7}{\ignorespaces Beacon-Nutzung im Flugh\IeC {\"a}fen \cite {Airpo}\relax }}{14}{figure.caption.15}
+\contentsline {figure}{\numberline {\relax 2.8}{\ignorespaces Demonstration der Estimote Indoor Localization App \cite {TrEs}\relax }}{15}{figure.caption.16}
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {\relax 3.1}{\ignorespaces Kreislauf einer Prozessplanung\relax }}{18}{figure.caption.17}
-\contentsline {figure}{\numberline {\relax 3.2}{\ignorespaces \IeC {\"U}berblick auf die Software-Anforderungen\relax }}{21}{figure.caption.18}
-\contentsline {figure}{\numberline {\relax 3.3}{\ignorespaces \IeC {\"U}berblick \IeC {\"u}ber die Software-Anforderungen\relax }}{21}{figure.caption.19}
+\contentsline {figure}{\numberline {\relax 3.2}{\ignorespaces \IeC {\"U}berblick \IeC {\"u}ber die Software-Anforderungen\relax }}{21}{figure.caption.18}
+\contentsline {figure}{\numberline {\relax 3.3}{\ignorespaces \IeC {\"U}berblick \IeC {\"u}ber die Simulationsumgebung\relax }}{21}{figure.caption.19}
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {\relax 4.1}{\ignorespaces Vorderseite des Motorola Moto G \cite {MotoGV}\relax }}{24}{figure.caption.20}
 \contentsline {figure}{\numberline {\relax 4.2}{\ignorespaces R\IeC {\"u}ckseite vom Moto G mit Antennen-Ger\IeC {\"u}st \cite {Moto}\relax }}{24}{figure.caption.20}
@@ -30,15 +30,31 @@
 \contentsline {figure}{\numberline {\relax 5.5}{\ignorespaces Seitliche Ansicht auf die Signalst\IeC {\"a}rken-Verteilung zu den einzelnen Distanzen\relax }}{41}{figure.caption.31}
 \contentsline {figure}{\numberline {\relax 5.6}{\ignorespaces Vergleich der durschnittlichen Distanz-Sch\IeC {\"a}tzung zur realen Entfernung\relax }}{42}{figure.caption.32}
 \contentsline {figure}{\numberline {\relax 5.7}{\ignorespaces Skizzierung der Anordnung der Beacons und der Drehung des Roboterarms\relax }}{43}{figure.caption.33}
-\contentsline {figure}{\numberline {\relax 5.8}{\ignorespaces Verlauf der gemessenen Signalst\IeC {\"a}rke der drei an den Raumachsen befestigten Beacons und der Drehung des Smartphones in Z-Richtung \IeC {\"u}ber die Zeit\relax }}{44}{figure.caption.34}
+\contentsline {figure}{\numberline {\relax 5.8}{\ignorespaces Verlauf der gemessenen Signalst\IeC {\"a}rke zu der Drehung des Smartphones in Z-Richtung\relax }}{44}{figure.caption.34}
 \contentsline {figure}{\numberline {\relax 5.9}{\ignorespaces Gleichzeitige Messung dreier naheliegender Beacon-Signale\relax }}{45}{figure.caption.35}
-\contentsline {figure}{\numberline {\relax 5.10}{\ignorespaces Verlauf der gemessenen Signalst\IeC {\"a}rke dreier nah nebeneinander liegender Beacons \IeC {\"u}ber die Zeit aus einer Entfernung von einem Meter\relax }}{46}{figure.caption.36}
+\contentsline {figure}{\numberline {\relax 5.10}{\ignorespaces Verlauf der Signalst\IeC {\"a}rke dreier nah nebeneinander liegender Beacons aus einer Entfernung von einem Meter\relax }}{46}{figure.caption.36}
 \contentsline {figure}{\numberline {\relax 5.11}{\ignorespaces Anteile eines Datenpakets in der Beacon-Kommunikation auf der MAC-Ebene\relax }}{47}{figure.caption.38}
 \contentsline {figure}{\numberline {\relax 5.12}{\ignorespaces Einfluss der einstellbaren Parameter auf die Lebensdauer einer CR2450-Batterie\relax }}{49}{figure.caption.39}
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {\relax 6.1}{\ignorespaces Qualitativer Verlauf des WINNER II-Modells\relax }}{54}{figure.caption.41}
-\contentsline {figure}{\numberline {\relax 6.2}{\ignorespaces Durschnittlicher RSSI-Werte im Vergleich zum berechneten RSSI-Wert aus dem WINNER II-Modell \IeC {\"u}ber die einzelnen Entfernungen\relax }}{56}{figure.caption.42}
+\contentsline {figure}{\numberline {\relax 6.2}{\ignorespaces Durschnittlicher RSSI-Wert und berechneter RSSI-Wert im Vergleich\relax }}{56}{figure.caption.42}
 \contentsline {figure}{\numberline {\relax 6.3}{\ignorespaces Vergleich der Distanz-Sch\IeC {\"a}tzung mit dem WINNER II-Modell zur gemessenen Entfernung\relax }}{57}{figure.caption.44}
-\contentsline {figure}{\numberline {\relax 6.4}{\ignorespaces Wahrscheinlichkeit des Empfangs g\IeC {\"u}ltiger Signale in einem Toleranzbereich von $0,5$ Metern und dessen Approximation\relax }}{58}{figure.caption.45}
+\contentsline {figure}{\numberline {\relax 6.4}{\ignorespaces Wahrscheinlichkeit des Empfangs g\IeC {\"u}ltiger Signale in einem Toleranzbereich von $0,5$ Meter und dessen Approximation\relax }}{58}{figure.caption.45}
 \contentsline {figure}{\numberline {\relax 6.5}{\ignorespaces Wahrscheinlichkeit des Empfangs g\IeC {\"u}ltiger Signale in einem Toleranzbereich von $2$ Metern und dessen Approximation\relax }}{59}{figure.caption.46}
 \contentsline {figure}{\numberline {\relax 6.6}{\ignorespaces Schematischer Ablauf der Grundriss-Analyse\relax }}{62}{figure.caption.48}
+\contentsline {figure}{\numberline {\relax 6.7}{\ignorespaces Beispiel einer Paretofront\relax }}{66}{figure.caption.49}
+\contentsline {figure}{\numberline {\relax 6.8}{\ignorespaces Beispiel einer Lighthouse Keeper-Simulation\relax }}{68}{figure.caption.50}
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {\relax 7.1}{\ignorespaces Grundriss des Testraumes\relax }}{70}{figure.caption.51}
+\contentsline {figure}{\numberline {\relax 7.2}{\ignorespaces Foto des Testraumes\relax }}{70}{figure.caption.51}
+\contentsline {figure}{\numberline {\relax 7.3}{\ignorespaces Bearbeiteter Grundriss\relax }}{70}{figure.caption.52}
+\contentsline {figure}{\numberline {\relax 7.4}{\ignorespaces Beacon-Konfiguration der dynamischen Experimente\relax }}{71}{figure.caption.53}
+\contentsline {figure}{\numberline {\relax 7.5}{\ignorespaces Drift des Scitos G5\relax }}{72}{figure.caption.54}
+\contentsline {figure}{\numberline {\relax 7.6}{\ignorespaces Haltepunkte mit Drift\relax }}{73}{figure.caption.55}
+\contentsline {figure}{\numberline {\relax 7.7}{\ignorespaces Haltepunkte ohne Drift\relax }}{73}{figure.caption.55}
+\contentsline {figure}{\numberline {\relax 7.8}{\ignorespaces Beseitigung vom Drift\relax }}{73}{figure.caption.56}
+\contentsline {figure}{\numberline {\relax 7.9}{\ignorespaces Zeitlicher Verlauf der Signalst\IeC {\"a}rke und des Abstandes f\IeC {\"u}r Beacon 1\relax }}{74}{figure.caption.57}
+\contentsline {figure}{\numberline {\relax 7.10}{\ignorespaces Zeitlicher Verlauf der Signalst\IeC {\"a}rke und des Abstandes f\IeC {\"u}r Beacon 2\relax }}{75}{figure.caption.58}
+\contentsline {figure}{\numberline {\relax 7.11}{\ignorespaces Zeitlicher Verlauf der Signalst\IeC {\"a}rke und des Abstandes f\IeC {\"u}r Beacon 3\relax }}{75}{figure.caption.59}
+\addvspace {10\p@ }
+\addvspace {10\p@ }

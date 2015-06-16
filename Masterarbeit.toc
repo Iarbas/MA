@@ -1,5 +1,5 @@
-\contentsline {chapter}{Abbildungsverzeichnis}{VIII}{chapter*.5}
-\contentsline {chapter}{Tabellenverzeichnis}{IX}{chapter*.6}
+\contentsline {chapter}{Abbildungsverzeichnis}{VII}{chapter*.4}
+\contentsline {chapter}{Tabellenverzeichnis}{IX}{chapter*.5}
 \contentsline {chapter}{Abk\IeC {\"u}rzungsverzeichnis}{XI}{chapter*.7}
 \contentsline {chapter}{\numberline {1}Einleitung}{1}{chapter.1}
 \contentsline {chapter}{\numberline {2}Stand der Technik -- Einf\IeC {\"u}hrung in die Beacon-Technologie}{5}{chapter.2}
@@ -38,12 +38,24 @@
 \contentsline {section}{\numberline {5.5}Energieverbrauch eines Beacons}{46}{section.5.5}
 \contentsline {chapter}{\numberline {6}Modellentwurf und Simulation}{51}{chapter.6}
 \contentsline {section}{\numberline {6.1}Modellbildung}{51}{section.6.1}
-\contentsline {subsection}{\numberline {6.1.1}Das WINNER II Modell}{53}{subsection.6.1.1}
+\contentsline {subsection}{\numberline {6.1.1}Das WINNER II-Modell}{53}{subsection.6.1.1}
 \contentsline {subsection}{\numberline {6.1.2}Parametersch\IeC {\"a}tzung}{54}{subsection.6.1.2}
-\contentsline {section}{\numberline {6.2}Vertrauens-Skala}{57}{section.6.2}
+\contentsline {section}{\numberline {6.2}Vertrauensskala}{57}{section.6.2}
 \contentsline {section}{\numberline {6.3}Entwicklung der Simulationsumgebung}{59}{section.6.3}
 \contentsline {subsection}{\numberline {6.3.1}Grundrissanalyse}{60}{subsection.6.3.1}
 \contentsline {subsection}{\numberline {6.3.2}Optimierung der Beacon-Infrastruktur}{62}{subsection.6.3.2}
 \contentsline {subsubsection}{Erweiterter Partikel-Schwarm-Algorithmus}{63}{subsection.6.3.2}
-\contentsline {chapter}{Literaturverzeichnis}{65}{subsection.6.3.2}
-\contentsline {chapter}{Selbstst\IeC {\"a}ndigkeitserkl\IeC {\"a}rung}{69}{chapter*.50}
+\contentsline {subsubsection}{Paretofront}{66}{subsection.6.3.2}
+\contentsline {subsection}{\numberline {6.3.3}Simulationsbeispiel}{67}{subsection.6.3.3}
+\contentsline {chapter}{\numberline {7}Evaluierung}{69}{chapter.7}
+\contentsline {section}{\numberline {7.1}Dynamisches Experiment}{69}{section.7.1}
+\contentsline {subsection}{\numberline {7.1.1}Durchf\IeC {\"u}hrung}{69}{subsection.7.1.1}
+\contentsline {subsection}{\numberline {7.1.2}Einsatz des Lighthouse Keepers}{70}{subsection.7.1.2}
+\contentsline {subsection}{\numberline {7.1.3}Pfadplanung und Navigation}{71}{subsection.7.1.3}
+\contentsline {section}{\numberline {7.2}Auswertung}{72}{section.7.2}
+\contentsline {section}{\numberline {7.3}Diskussion}{76}{section.7.3}
+\contentsline {chapter}{\numberline {8}Zusammenfassung und Ausblick}{77}{chapter.8}
+\contentsline {chapter}{Literaturverzeichnis}{79}{chapter.8}
+\contentsline {chapter}{\nonumberline Anhang}{85}{appendix*.61}
+\contentsline {section}{\numberline {A}Bilder}{85}{section.Alph0.1}
+\contentsline {chapter}{Selbstst\IeC {\"a}ndigkeitserkl\IeC {\"a}rung}{89}{appendix*.66}
